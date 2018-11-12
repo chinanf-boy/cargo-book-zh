@@ -9,7 +9,7 @@
 [size-img]: https://packagephobia.now.sh/badge?p=Name
 [size]: https://packagephobia.now.sh/result?p=Name
 
-「 Cargo 官书文档 」
+「 Cargo 官书文档(草稿版) 」
 
 [中文](./readme.md) | [english](https://github.com/istankovic/cargo-book)
 
