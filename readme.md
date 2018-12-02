@@ -21,13 +21,12 @@
 <!-- repo = 'rust-lang/cargo' -->
 <!-- commit = 'a472e7c46f6df06f86bc3032181386087a1bb8c7' -->
 <!-- time = '2018-11-27' -->
+翻译的原文 | 与日期 | 最新更新 | 更多
+---|---|---|---
+[commit] | ⏰ 2018-11-27 | ![last] | [中文翻译][translate-list]
 
-| 翻译的原文 | 与日期        | 最新更新 | 更多                       |
-| ---------- | ------------- | -------- | -------------------------- |
-| [commit]   | ⏰ 2017-08-05 | ![last]  | [中文翻译][translate-list] |
-
-[last]: https://img.shields.io/github/last-commit/istankovic/cargo-docs.svg
-[commit]: https://github.com/istankovic/cargo-docs/tree/bd26d573f3044b11abfb0555cb308e5f0e3ecf64
+[last]: https://img.shields.io/github/last-commit/rust-lang/cargo.svg
+[commit]: https://github.com/rust-lang/cargo/tree/a472e7c46f6df06f86bc3032181386087a1bb8c7
 
 <!-- doc-templite END generated -->
 
