@@ -21,10 +21,9 @@
 <!-- repo = 'istankovic/cargo-book' -->
 <!-- commit = 'bd26d573f3044b11abfb0555cb308e5f0e3ecf64' -->
 <!-- time = '2017-08-05' -->
-
-| 翻译的原文 | 与日期        | 最新更新 | 更多                       |
-| ---------- | ------------- | -------- | -------------------------- |
-| [commit]   | ⏰ 2017-08-05 | ![last]  | [中文翻译][translate-list] |
+翻译的原文 | 与日期 | 最新更新 | 更多
+---|---|---|---
+[commit] | ⏰ 2017-08-05 | ![last] | [中文翻译][translate-list]
 
 [last]: https://img.shields.io/github/last-commit/istankovic/cargo-book.svg
 [commit]: https://github.com/istankovic/cargo-book/tree/bd26d573f3044b11abfb0555cb308e5f0e3ecf64
