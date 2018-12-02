@@ -1,6 +1,6 @@
-# istankovic/cargo-book [![explain]][source] [![translate-svg]][translate-list]
+# rust-lang/cargo/tree/master/src/doc  [![translate-svg]][translate-list]
 
-<!-- [![size-img]][size] -->
+<!-- [![explain]][source] -->
 
 [explain]: http://llever.com/explain.svg
 [source]: https://github.com/chinanf-boy/Source-Explain
@@ -11,52 +11,63 @@
 
 「 Cargo 官书文档(草稿版) 」
 
-[中文](./readme.md) | [english](https://github.com/istankovic/cargo-book)
+[中文](./readme.md) | [english](https://github.com/istankovic/cargo-docs)
 
 ---
 
 ## 校对 🀄️
 
 <!-- doc-templite START generated -->
-<!-- repo = 'istankovic/cargo-book' -->
-<!-- commit = 'bd26d573f3044b11abfb0555cb308e5f0e3ecf64' -->
-<!-- time = '2017-08-05' -->
-翻译的原文 | 与日期 | 最新更新 | 更多
----|---|---|---
-[commit] | ⏰ 2017-08-05 | ![last] | [中文翻译][translate-list]
+<!-- repo = 'rust-lang/cargo' -->
+<!-- commit = 'a472e7c46f6df06f86bc3032181386087a1bb8c7' -->
+<!-- time = '2018-11-27' -->
 
-[last]: https://img.shields.io/github/last-commit/istankovic/cargo-book.svg
-[commit]: https://github.com/istankovic/cargo-book/tree/bd26d573f3044b11abfb0555cb308e5f0e3ecf64
+| 翻译的原文 | 与日期        | 最新更新 | 更多                       |
+| ---------- | ------------- | -------- | -------------------------- |
+| [commit]   | ⏰ 2017-08-05 | ![last]  | [中文翻译][translate-list] |
+
+[last]: https://img.shields.io/github/last-commit/istankovic/cargo-docs.svg
+[commit]: https://github.com/istankovic/cargo-docs/tree/bd26d573f3044b11abfb0555cb308e5f0e3ecf64
 
 <!-- doc-templite END generated -->
 
-# 概要
+## 切换到 https://github.com/rust-lang/cargo/tree/master/src/doc 文档
 
-- [x] readme
-- [x] [SUMMARY](./src/SUMMARY.md)
-- [ ] [入门](./src/getting-started.zh.md)
-  - [ ] [安装](./src/01-01-installation.zh.md)
-  - [ ] [Cargo 的第一步](./src/01-02-first-steps.zh.md)
-- [ ] [指南](./src/guide.zh.md)
-  - [ ] [为什么,Cargo 存在](./src/02-01-why-cargo-exists.zh.md)
-  - [ ] [创建一个新项目](./src/02-02-creating-a-new-project.zh.md)
-  - [ ] [在现有的 Cargo 项目上工作](./src/02-03-working-on-an-existing-project.zh.md)
-  - [ ] [依赖](./src/02-04-dependencies.zh.md)
-  - [ ] [项目布局](./src/02-05-project-layout.zh.md)
-  - [ ] [测试](./src/02-06-tests.zh.md)
-  - [ ] [持续集成](./src/02-07-continuous-integration.zh.md)
-- [ ] [Cargo 深度](./src/cargo-in-depth.zh.md)
-  - [ ] [指定依赖项](./src/03-01-specifying-dependencies.zh.md)
-  - [ ] [Cargo.toml 格式](./src/03-02-manifest.zh.md)
-  - [ ] [配置](./src/03-03-config.zh.md)
-  - [ ] [环境变量](./src/03-04-environment-variables.zh.md)
-  - [ ] [构建脚本](./src/03-05-build-scripts.zh.md)
-  - [ ] [发布到 crates.io ](./src/03-06-crates-io.zh.md)
-  - [ ] [包 ID 规格](./src/03-07-pkgid-spec.zh.md)
-  - [ ] [源，更换](./src/03-08-source-replacement.zh.md)
-  - [ ] [外部工具](./src/03-09-external-tools.zh.md)
-  - [ ] [政策](./src/03-10-policies.zh.md)
-- [ ] [常见问题](./src/faq.zh.md)
+- [x] [介绍](./src/index.zh.md)
+
+- [x] [入门](./src/getting-started/index.zh.md)
+
+  - [x] [安装](./src/getting-started/installation.zh.md)
+  - [x] [Cargo 的第一步](./src/getting-started/first-steps.zh.md)
+
+- [x] [Cargo 指南](./src/guide/index.zh.md)
+
+  - [x] [为什么 Cargo 存在](./src/guide/why-cargo-exists.zh.md)
+  - [x] [创建一个新包](./src/guide/creating-a-new-project.zh.md)
+  - [x] [处理现有包](./src/guide/working-on-an-existing-project.zh.md)
+  - [x] [依赖](./src/guide/dependencies.zh.md)
+  - [x] [包装布局](./src/guide/project-layout.zh.md)
+  - [x] [Cargo.toml 与 Cargo.lock](./src/guide/cargo-toml-vs-cargo-lock.zh.md)
+  - [x] [测试](./src/guide/tests.zh.md)
+  - [x] [持续集成](./src/guide/continuous-integration.zh.md)
+  - [x] [构建缓存](./src/guide/build-cache.zh.md)
+
+- [x] [Cargo 参考](./src/reference/index.zh.md)
+
+  - [ ] [指定依赖项](./src/reference/specifying-dependencies.zh.md)
+  - [ ] [清单格式](./src/reference/manifest.zh.md)
+  - [ ] [组态](./src/reference/config.zh.md)
+  - [ ] [环境变量](./src/reference/environment-variables.zh.md)
+  - [ ] [构建脚本](./src/reference/build-scripts.zh.md)
+  - [ ] [在 crates.io 上发布](./src/reference/publishing.zh.md)
+  - [ ] [包 ID 规格](./src/reference/pkgid-spec.zh.md)
+  - [ ] [来源更换](./src/reference/source-replacement.zh.md)
+  - [ ] [外部工具](./src/reference/external-tools.zh.md)
+  - [ ] [不稳定的功能](./src/reference/unstable.zh.md)
+
+- [ ] [常问问题](./src/faq.zh.md)
+- [ ] [附录:词汇表](./src/appendix/glossary.zh.md)
+
 
 ### 贡献
 
@@ -68,16 +79,16 @@
 
 ---
 
-# Cargo Book
+# Cargo docs
 
 ### 要求
 
-建立这本书需要[mdBook]。拿到并使用它:
+建立这本书需要[mddocs]。拿到并使用它:
 
-[mdbook]: https://github.com/azerupi/mdBook
+[mddocs]: https://github.com/azerupi/mddocs
 
 ```bash
-$ cargo install mdbook
+$ cargo install mddocs
 ```
 
 ### 构建
@@ -94,24 +105,24 @@ $ mdbook build
 mdbook serve --open
 ```
 
-输出将在`book`子目录。要查看它,请在 Web 浏览器中打开它.
+输出将在`docs`子目录。要查看它,请在 Web 浏览器中打开它.
 
-_火狐:_
+_Firefox:_
 
 ```bash
-$ firefox book/index.html                       # Linux
-$ open -a "Firefox" book/index.html             # OS X
-$ Start-Process "firefox.exe" .\book\index.html # Windows (PowerShell)
-$ start firefox.exe .\book\index.html           # Windows (Cmd)
+$ firefox docs/index.html                       # Linux
+$ open -a "Firefox" docs/index.html             # OS X
+$ Start-Process "firefox.exe" .\docs\index.html # Windows (PowerShell)
+$ start firefox.exe .\docs\index.html           # Windows (Cmd)
 ```
 
 _Chrome:_
 
 ```bash
-$ google-chrome book/index.html                 # Linux
-$ open -a "Google Chrome" book/index.html       # OS X
-$ Start-Process "chrome.exe" .\book\index.html  # Windows (PowerShell)
-$ start chrome.exe .\book\index.html            # Windows (Cmd)
+$ google-chrome docs/index.html                 # Linux
+$ open -a "Google Chrome" docs/index.html       # OS X
+$ Start-Process "chrome.exe" .\docs\index.html  # Windows (PowerShell)
+$ start chrome.exe .\docs\index.html            # Windows (Cmd)
 ```
 
 ## 贡献
