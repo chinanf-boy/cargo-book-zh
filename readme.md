@@ -82,12 +82,12 @@
 
 ### 要求
 
-建立这本书需要[mddocs]。拿到并使用它:
+建立这本书需要[mdBook]。安装它:
 
-[mddocs]: https://github.com/azerupi/mddocs
+[mdBook]: https://github.com/azerupi/mdBook
 
 ```bash
-$ cargo install mddocs
+$ cargo install mdBook
 ```
 
 ### 构建
@@ -98,30 +98,24 @@ $ cargo install mddocs
 $ mdbook build
 ```
 
-自动开启浏览器，查看:
-
-```
-mdbook serve --open
-```
-
-输出将在`docs`子目录。要查看它,请在 Web 浏览器中打开它.
+将输出在`book`子目录。要查看它,可以在 Web 浏览器中打开它.
 
 _Firefox:_
 
 ```bash
-$ firefox docs/index.html                       # Linux
-$ open -a "Firefox" docs/index.html             # OS X
-$ Start-Process "firefox.exe" .\docs\index.html # Windows (PowerShell)
-$ start firefox.exe .\docs\index.html           # Windows (Cmd)
+$ firefox book/index.html                       # Linux
+$ open -a "Firefox" book/index.html             # OS X
+$ Start-Process "firefox.exe" .\book\index.html # Windows (PowerShell)
+$ start firefox.exe .\book\index.html           # Windows (Cmd)
 ```
 
 _Chrome:_
 
 ```bash
-$ google-chrome docs/index.html                 # Linux
-$ open -a "Google Chrome" docs/index.html       # OS X
-$ Start-Process "chrome.exe" .\docs\index.html  # Windows (PowerShell)
-$ start chrome.exe .\docs\index.html            # Windows (Cmd)
+$ google-chrome book/index.html                 # Linux
+$ open -a "Google Chrome" book/index.html       # OS X
+$ Start-Process "chrome.exe" .\book\index.html  # Windows (PowerShell)
+$ start chrome.exe .\book\index.html            # Windows (Cmd)
 ```
 
 ## 贡献
