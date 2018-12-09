@@ -98,24 +98,24 @@ $ cargo install mdBook
 $ mdbook build
 ```
 
-将输出在`book`子目录。要查看它,可以在 Web 浏览器中打开它.
+将输出在`docs`子目录。要查看它,可以在 Web 浏览器中打开它.
 
 _Firefox:_
 
 ```bash
-$ firefox book/index.html                       # Linux
-$ open -a "Firefox" book/index.html             # OS X
-$ Start-Process "firefox.exe" .\book\index.html # Windows (PowerShell)
-$ start firefox.exe .\book\index.html           # Windows (Cmd)
+$ firefox docs/index.html                       # Linux
+$ open -a "Firefox" docs/index.html             # OS X
+$ Start-Process "firefox.exe" .\docs\index.html # Windows (PowerShell)
+$ start firefox.exe .\docs\index.html           # Windows (Cmd)
 ```
 
 _Chrome:_
 
 ```bash
-$ google-chrome book/index.html                 # Linux
-$ open -a "Google Chrome" book/index.html       # OS X
-$ Start-Process "chrome.exe" .\book\index.html  # Windows (PowerShell)
-$ start chrome.exe .\book\index.html            # Windows (Cmd)
+$ google-chrome docs/index.html                 # Linux
+$ open -a "Google Chrome" docs/index.html       # OS X
+$ Start-Process "chrome.exe" .\docs\index.html  # Windows (PowerShell)
+$ start chrome.exe .\docs\index.html            # Windows (Cmd)
 ```
 
 ## 贡献
