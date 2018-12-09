@@ -60,7 +60,7 @@
   - [ ] [构建脚本](./src/reference/build-scripts.zh.md)
   - [ ] [在 crates.io 上发布](./src/reference/publishing.zh.md)
   - [ ] [包 ID 规格](./src/reference/pkgid-spec.zh.md)
-  - [ ] [来源更换](./src/reference/source-replacement.zh.md)
+  - [x] [来源更换](./src/reference/source-replacement.zh.md)
   - [ ] [外部工具](./src/reference/external-tools.zh.md)
   - [ ] [不稳定的功能](./src/reference/unstable.zh.md)
 
