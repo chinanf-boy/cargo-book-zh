@@ -55,8 +55,8 @@
 
   - [ ] [指定依赖项](./src/reference/specifying-dependencies.zh.md)
   - [ ] [清单格式](./src/reference/manifest.zh.md)
-  - [ ] [组态](./src/reference/config.zh.md)
-  - [ ] [环境变量](./src/reference/environment-variables.zh.md)
+  - [x] [配置](./src/reference/config.zh.md)
+  - [x] [环境变量](./src/reference/environment-variables.zh.md)
   - [ ] [构建脚本](./src/reference/build-scripts.zh.md)
   - [x] [在 crates.io 上发布](./src/reference/publishing.zh.md)
   - [ ] [包 ID 规格](./src/reference/pkgid-spec.zh.md)
