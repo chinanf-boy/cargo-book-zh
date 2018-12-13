@@ -64,8 +64,8 @@
   - [ ] [外部工具](./src/reference/external-tools.zh.md)
   - [ ] [不稳定的功能](./src/reference/unstable.zh.md)
 
-- [ ] [常问问题](./src/faq.zh.md)
-- [ ] [附录:词汇表](./src/appendix/glossary.zh.md)
+- [x] [常问问题](./src/faq.zh.md)
+- [x] [附录:词汇表](./src/appendix/glossary.zh.md)
 
 
 ### 贡献
