@@ -1,10 +1,10 @@
 ## 依赖指定
 
-您依赖的箱子，其实有多个来源，如[crates.io],`git`的存储库或本地文件系统上的子目录。您还可以临时覆盖依赖项的位置 - 例如, 便于能够测试您在本地工作的依赖项中的错误修复。您可以为不同的平台，和仅在开发期间使用不同的依赖项。我们来看看如何做到这些.
+您的箱子，可以依赖多个来源的库，如[crates.io],`git`的存储库或本地文件系统上的子目录。您还可以临时覆盖依赖项的位置 - 例如, 便于能够测试您在本地工作的依赖项中的错误修复。您可以为不同的平台，和或仅在开发期间使用不同的依赖项。我们来看看如何做到这些.
 
 ### 指定依赖，来自 crates.io
 
-默认情况下，Cargo 是准备好在[crates.io]上查找依赖项。在这种情况下,只需要名称和版本字符串。在[Cargo 指南](../guide/index.zh.md),我们选择了依赖-`time`箱:
+默认情况下，Cargo 是准备好，在[crates.io]上查找依赖项。在这种情况下,只需要名称和版本字符串。在[Cargo 指南](../guide/index.zh.md),我们选择了一个依赖项-`time`箱:
 
 ```toml
 [dependencies]
@@ -178,11 +178,9 @@ $ cargo build
     Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
 ```
 
-<!--  -->
+就是这样! 您现在正在使用本地版本`uuid`构建(注意构建输出中括号中的路径)。如果您没有看到构建本地路径版本，那么您可能需要运行`cargo update -p uuid --precise $version`，这里`$version`是本地签出版本的`uuid`副本。
 
-就是这样!您现在正在使用本地版本构建`uuid`(注意构建输出中括号中的路径).如果您没有看到构建本地路径版本,那么您可能需要运行`cargo update -p uuid --precise $version`哪里`$version`是本地签出的副本的版本`uuid`.
-
-一旦你修复了你最初发现的错误,你要做的下一件事就是将其作为拉取请求提交给`uuid`箱子本身.一旦你完成了这个,你也可以更新`[patch]`部分.里面的内容`[patch]`就像是`[dependencies]`部分,所以一旦你的拉动请求合并,你可以改变你的`path`依赖:
+一旦你修复了你最初发现的错误，你要做的下一件事就是将其作为拉取请求提交给`uuid`箱子本身。一旦你完成了这个,你也可以更新下`[patch]`部分。`[patch]`里面的内容列表就像是`[dependencies]`部分，所以一旦你的拉动请求合并，你就可以改变你的`path`依赖:
 
 ```toml
 [patch.crates-io]
@@ -193,9 +191,11 @@ uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 
 ### Working with an unpublished minor version
 
-现在让我们从错误修复到添加功能稍微改变一下.在努力的同时`my-library`你发现需要一个全新的功能`uuid`箱.您已实现此功能,并在上面本地测试`[patch]`,并提交了拉取请求.让我们来看看在实际发布之前你如何继续使用和测试它.
+> 与 一个未发布的次要版本，一起工作
 
-我们也说当前版本的`uuid`在 crates.io 上`1.0.0`,但从那时起,git 存储库的主分支已更新为`1.0.1`.此分支包含您之前提交的新功能.要使用此存储库,我们将编辑我们的`Cargo.toml`看起来像
+现在让我们稍微改变一下，从错误修复，变成要添加功能。在努力`my-library`的同时，你发现需要`uuid`箱的一个全新的功能。而您已实现`uuid`此功能，并在`[patch]`上面进行本地测试，并提交了拉取请求。让我们来看看在实际发布之前，你如何继续使用和测试它。
+
+我们也说当前版本的`uuid`，在 crates.io 上是`1.0.0`版本，但从提交那时起,git 存储库的主分支已更新为`1.0.1`。此分支包含您之前提交的新功能。要使用此存储库,我们将编辑我们的`Cargo.toml`，看起来像
 
 ```toml
 [package]
@@ -210,11 +210,11 @@ uuid = "1.0.1"
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 ```
 
-注意我们对本地的依赖`uuid`已更新为`1.0.1`因为这是我们在箱子出版后实际需要的东西.但是,这个版本在 crates.io 上不存在,所以我们提供了它`[patch]`清单的一部分.
+注意我们对本地`uuid`的依赖已更新为`1.0.1`，因为这是我们在箱子发布后实际需要的东西。但是,这个版本在 crates.io 上不存在,所以我们提供给它清单的`[patch]`部分.
 
-现在,当我们的库被构建时,它将被取出`uuid`从 git 存储库并解析到存储库中的 1.0.1 而不是尝试从 crates.io 下载版本.一旦 1.0.1 发布在 crates.io 上`[patch]`部分可以删除.
+现在,当我们的库被构建时,它将`uuid`从 git 存储库取出，并解析到存储库中的 1.0.1 ，而不是尝试从 crates.io 下载版本。一旦 1.0.1 发布在 crates.io 上，那`[patch]`部分就可以删除了。
 
-值得注意的是`[patch]`适用*及物动词*.假设您使用`my-library`在更大的包中,例如:
+值得注意的是，`[patch]`是*连带关系*。假设您在更大的包中使用`my-library`,例如:
 
 ```toml
 [package]
@@ -230,11 +230,13 @@ uuid = "1.0"
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 ```
 
-记住这一点`[patch]`适用*及物动词*但只能在*顶层*所以我们的消费者`my-library`不得不重复`[patch]`部分如有必要.不过,在这里,新的`uuid`箱子适用于*都*我们对...的依赖`uuid`和`my-library -> uuid`依赖.该`uuid`crate 将被解析为整个 crate 图表 1.0.1 的一个版本,并且它将从 git 存储库中提取.
+记住这`[patch]`是*连带关系*，但只能在*顶层*，所以我们的`my-library`消费者不得不重写`[patch]`部分(如有必要的话)。不过,在这里，新的`uuid`箱子会适用对`uuid`的依赖和`my-library -> uuid`的依赖，两个依赖**都**指定了。该`uuid`箱 将被解析为整个 crate 关系图 的 1.0.1 版本，并且它是将从 git 存储库中提取。
 
 #### Overriding repository URL
 
-如果未加载要覆盖的依赖项`crates.io`,你将不得不改变一下你的使用方式`[patch]`:
+> 覆盖 注册表 URL
+
+如果要覆盖的依赖项不是加载自`crates.io`，你将不得不改变一下你的`[patch]`使用方式:
 
 ```toml
 [patch."https://github.com/your/repository"]
@@ -245,7 +247,9 @@ my-library = { path = "../my-library/path" }
 
 ### Prepublishing a breaking change
 
-作为最后一个场景,让我们来看看使用一个新的主要版本的箱子,通常伴随着重大变化.坚持我们以前的板条箱,这意味着我们将创建 2.0.0 版本`uuid`箱.在我们提交了所有上游更改后,我们可以更新我们的清单`my-library`看起来像:
+> 预发布一个重要变化
+
+让我们来看看最后一个场景。若要使用一个新的主要版本的箱子，其通常伴随着重大变化。而要坚持使用我们以前的箱，这意味着我们将创建 2.0.0 版本`uuid`箱。在我们提交了所有上游更改后，我们可以更新我们的`my-library`清单，看起来像:
 
 ```toml
 [dependencies]
@@ -255,7 +259,7 @@ uuid = "2.0"
 uuid = { git = "https://github.com/rust-lang-nursery/uuid", branch = "2.0.0" }
 ```
 
-就是这样!与前面的示例一样,2.0.0 版本实际上并不存在于 crates.io 上,但我们仍然可以通过使用`[patch]`部分.作为一个思考练习让我们再看看`my-binary`从上面再次表现出来:
+就是这样!与前面的示例一样,2.0.0 版本实际上，并不存在于 crates.io 上,但我们仍然可以通过`[patch]`部分使用。作为一个思考练习，让我们再看看`my-binary`(被使用)的再次表现:
 
 ```toml
 [package]
@@ -271,29 +275,33 @@ uuid = "1.0"
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid', branch = '2.0.0' }
 ```
 
-请注意,这实际上将解析为两个版本的`uuid`箱.该`my-binary`箱子将继续使用 1.x.y 系列`uuid`箱子但是`my-library`crate 将使用 2.0.0 版本`uuid`.这将允许您通过依赖关系图逐步推出对包的更改,而无需一次性更新所有内容.
+请注意,这实际上将解析为两个版本的`uuid`箱。该`my-binary`箱子将继续使用 1.x.y 系列的`uuid`箱子，但是`my-library`箱 会使用 2.0.0 版本`uuid`。这将允许您通过依赖关系图逐步推出对包的更改,而无需一次性更新所有内容。
 
 ### Overriding with local dependencies
 
-有时你只是暂时在箱子上工作而你不想修改`Cargo.toml`喜欢的`[patch]`以上部分.对于这个用例,Cargo 提供了更为有限的覆盖版本**路径覆盖**.
+> 覆盖 本地依赖项
 
-路径覆盖是通过指定的`.cargo/config`代替`Cargo.toml`,你可以找到[有关此配置的更多文档][config-docs].代替`.cargo/config`你将指定一个名为的密钥`paths`:
+有时你只是暂时在一个箱子上工作，而你不想修改`Cargo.toml`中像上诉的`[patch]`部分。对于这个用例，Cargo 提供了更为有限的覆盖版本**路径覆盖**.
 
-[config-docs]: reference/config.md
+路径覆盖是通过`.cargo/config`指定，而不是`Cargo.toml`，你可以寻找[有关此配置的更多文档][config-docs]。在`.cargo/config`内，你要指定的是一个名为`paths`字段:
+
+[config-docs]: ./config.zh.md
 
 ```toml
 paths = ["/path/to/uuid"]
 ```
 
-该数组应填充包含 a 的目录`Cargo.toml`.在这种情况下,我们只是添加`uuid`,所以它将是唯一一个被覆盖的人.此路径可以是包含该路径的绝对路径或相对路径`.cargo`夹.
+该数组应填充包含`Cargo.toml`的目录。在这种情况下,我们只是添加`uuid`，所以它将是唯一一个被覆盖的。此路径可以是包含该路径的绝对路径或相对`.cargo`文件夹的路径.
 
-路径覆盖比限制更严格`[patch]`但是,部分不能改变依赖图的结构.当使用路径替换时,前一组依赖项必须完全匹配新的`Cargo.toml`规格.例如,这意味着路径覆盖不能用于测试向条件箱添加依赖项`[patch]`必须在那种情况下使用.因此,路径覆盖的使用通常与快速错误修复隔离,而不是更大的更改.
+路径覆盖，比`[patch]`部分的限制更严格，但是，路径覆盖不能改变依赖图的结构。而当使用路径替换时，前一组依赖项必须完全匹配新的`Cargo.toml`规格。如此，就意味着路径覆盖不能用于向箱添加依赖项的测试，而换成`[patch]`在该种情况下使用。因此，路径覆盖的使用，通常会与快速错误修复分隔开来，而不是大更新分开。
 
-注意:使用本地配置覆盖路径仅适用于已发布到的包[crates.io].您无法使用此功能告诉 Cargo 如何查找本地未发布的板条箱.
+注意:使用本地配置覆盖路径，仅适用于已发布到[crates.io]的包。您无法使用此功能告诉 Cargo 如何查找本地未发布的箱。
 
 ### Platform specific dependencies
 
-特定于平台的依赖项采用相同的格式,但在 a 下列出`target`部分.通常像锈一样`#[cfg]`语法将用于定义这些部分:
+> 平台决定依赖
+
+特定于平台的依赖项采用相同的格式,但在`target`下列出。像正常 Rust 一样的`#[cfg]`语法，将用于定义这些部分:
 
 ```toml
 [target.'cfg(windows)'.dependencies]
@@ -309,9 +317,9 @@ native = { path = "native/i686" }
 native = { path = "native/x86_64" }
 ```
 
-与 Rust 一样,这里的语法支持`not`,`any`,和`all`运算符组合各种 cfg 名称/值对.请注意`cfg`语法仅在 Cargo 0.9.0(Rust 1.8.0)之后可用.
+与 Rust 一样，这里的语法支持`not`,`any`,和`all`运算符组合各种 cfg 名称/值对。请注意`cfg`语法仅在 Cargo 0.9.0(Rust 1.8.0)之后可用.
 
-此外`#[cfg]`语法,Cargo 还支持列出依赖关系适用的完整目标:
+除了`#[cfg]`语法，Cargo 还支持列出依赖关系适用的完整目标:
 
 ```toml
 [target.x86_64-pc-windows-gnu.dependencies]
@@ -321,7 +329,7 @@ winhttp = "0.4.0"
 openssl = "1.0.1"
 ```
 
-如果您使用的是自定义目标规范,请引用完整路径和文件名:
+如果您使用的是自定义目标规范，请引用完整路径和文件名:
 
 ```toml
 [target."x86_64/windows.json".dependencies]
@@ -338,18 +346,20 @@ native = { path = "native/x86_64" }
 
 ### Development dependencies
 
-你可以添加一个`[dev-dependencies]`你的部分`Cargo.toml`其格式相当于`[dependencies]`:
+> 开发(Dev)依赖项
+
+你可以添加一个`[dev-dependencies]`表格到`Cargo.toml`，其格式相当于`[dependencies]`:
 
 ```toml
 [dev-dependencies]
 tempdir = "0.3"
 ```
 
-编译用于构建的包时不使用 Dev 依赖性,但用于编译测试,示例和基准.
+编译用于构建的包时，不会使用 Dev 依赖,但用于编译测试,示例和基准。
 
-这些依赖关系是*不*传播到依赖于此包的其他包.
+这些依赖关系是*不会*传播到依赖于此包的其他包.
 
-您还可以使用具有特定于目标的开发依赖项`dev-dependencies`在目标节标题而不是`dependencies`.例如:
+您还可以让`dev-dependencies`具有特定目标的开发依赖项，而不是`dependencies`标题。例如:
 
 ```toml
 [target.'cfg(unix)'.dev-dependencies]
@@ -360,38 +370,44 @@ mio = "0.0.1"
 
 ### Build dependencies
 
-您可以依赖其他基于 Cargo 的板条箱在构建脚本中使用.依赖关系是通过`build-dependencies`清单的一部分:
+> 构建 依赖项
+
+您可以在构建脚本中使用，依赖其他基于 Cargo 的箱。依赖关系是由清单的`build-dependencies`部分定义:
 
 ```toml
 [build-dependencies]
 cc = "1.0.3"
 ```
 
-构建脚本**才不是**有权访问中列出的依赖项`dependencies`要么`dev-dependencies`部分.除非在下面列出,否则构建依赖项同样不可用于包本身`dependencies`部分也是如此.包本身及其构建脚本是单独构建的,因此它们的依赖关系不必重合.通过将独立依赖性用于独立目的,使 Cargo 更简单,更清洁.
+构建脚本**并不是**有权访问中 dependencies`要么`dev-dependencies`部分列出的依赖项`。除非也在`dependencies`部分下面列出，否则构建依赖项同样不可用于包本身。包本身及其构建脚本是分开构建的，因此它们的依赖关系不重合。通过将独立依赖用于独立目的，使 Cargo 更简单，更清洁。
 
 ### Choosing features
 
-如果您依赖的包提供条件功能,您可以指定使用哪个:
+> 选择 特性
+
+如果您依赖的包提供条件特性，您可以指定使用哪个:
 
 ```toml
 [dependencies.awesome]
 version = "1.3.5"
-default-features = false # do not include the default features, and optionally
-                         # cherry-pick individual features
+default-features = false # 不会包括默认特性, 和 任君选
+                         # 单特性
 features = ["secure-password", "civet"]
 ```
 
-有关功能的更多信息,请参阅[清单文件](reference/manifest.md#the-features-section).
+有关 features 的更多信息,请参阅[清单文档](./manifest.zh.md#the-features-section).
 
 ### Renaming dependencies in `Cargo.toml`
 
-写作的时候`[dependencies]`部分`Cargo.toml`您为依赖项编写的密钥通常与您在代码中导入的包的名称相匹配.但是,对于某些项目,您可能希望在代码中引用具有不同名称的包,而不管它是如何在 crates.io 上发布的.例如,您可能希望:
+> 在`Cargo.toml`中的重命名依赖项
 
-- 避免需要`use foo as bar`在 Rust 来源.
-- 取决于箱子的多个版本.
-- 依赖来自不同注册管理机构的同名包装箱.
+写`Cargo.toml`的`[dependencies]`部分的时候，您为依赖项编写的字段通常与您在代码中导入的包的名称相匹配。但是，对于某些项目，您可能希望在代码中引用具有不同名称的包，而不管它是如何在 crates.io 上发布的。例如，您可能希望:
 
-为了支持这个 Cargo 支持 a`package`关键在于`[dependencies]`应该依赖哪个包的部分:
+- 避免在 Rust 代码常用`use foo as bar`.
+- 依赖箱子的多个版本.
+- 依赖来自不同注册表管理机构的同名箱.
+
+为了支持这个 ，Cargo 在`[dependencies]`部分使用 一个`package`字段，决定应该依赖哪个包:
 
 ```toml
 [package]
@@ -412,20 +428,20 @@ extern crate bar; // git repository
 extern crate baz; // registry `custom`
 ```
 
-所有这三个板条箱的包装名称都是`foo`在他们自己`Cargo.toml`所以我们明确地使用了`package`告知 Cargo 我们想要的关键`foo`包即使我们在本地调用其他东西.该`package`key,如果未指定,则默认为所请求的依赖项的名称.
+所有这三个箱的包名称在他们自己`Cargo.toml`，都是`foo`，所以我们明确地告知 Cargo ，使用的是我们想要的`package`字段(如 package = "foo"包名，即我们在本地调用其他东西)。如果没有指定`package`，则默认为所请求的依赖项的名称。
 
-请注意,如果您有可选的依赖项,例如:
+请注意,如果您有一个可选的(optional)依赖项,例如:
 
 ```toml
 [dependencies]
 foo = { version = "0.1", package = 'bar', optional = true }
 ```
 
-你依赖于箱子`bar`来自 crates.io,但你的箱子有一个`foo`功能而不是`bar`特征.也就是说,在重命名时,功能的名称取决于依赖项的名称,而不是包名称.
+你依赖于一个`bar`箱子，其来自 crates.io，但你箱子有一个`foo`特性，取代了一个`bar`特性。也就是说,在重命名时,特性的名称拿掉了依赖项的名称,而不是包名称。
 
-启用传递依赖项的工作方式类似,例如我们可以将以下内容添加到上面的清单中:
+启用传递依赖项的工作方式类似,例如我们可以将以下内容，添加到上面的清单中:
 
 ```toml
 [features]
-log-debug = ['foo/log-debug'] # using 'bar/log-debug' would be an error!
+log-debug = ['foo/log-debug'] # 使用 'bar/log-debug' 就会出现一个错误!
 ```
