@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>外部工具 - Rust Cargo 官书（非官方翻译)</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Cargo ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    
+
+    
+</head>
+
+<body class="light">
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">var path_to_root = "../";</script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = 'light'; }
+        document.body.className = theme;
+        document.querySelector('html').className = theme + ' js';
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <ol class="chapter"><li class="affix"><a href="../index.zh.html">介绍</a></li><li><a href="../getting-started/index.zh.html"><strong aria-hidden="true">1.</strong> 入门</a></li><li><ol class="section"><li><a href="../getting-started/installation.zh.html"><strong aria-hidden="true">1.1.</strong> 安装</a></li><li><a href="../getting-started/first-steps.zh.html"><strong aria-hidden="true">1.2.</strong> Cargo 的第一步</a></li></ol></li><li><a href="../guide/index.zh.html"><strong aria-hidden="true">2.</strong> Cargo 指南</a></li><li><ol class="section"><li><a href="../guide/why-cargo-exists.zh.html"><strong aria-hidden="true">2.1.</strong> 为什么 Cargo 存在</a></li><li><a href="../guide/creating-a-new-project.zh.html"><strong aria-hidden="true">2.2.</strong> 创建一个新包</a></li><li><a href="../guide/working-on-an-existing-project.zh.html"><strong aria-hidden="true">2.3.</strong> 处理现有包</a></li><li><a href="../guide/dependencies.zh.html"><strong aria-hidden="true">2.4.</strong> 依赖</a></li><li><a href="../guide/project-layout.zh.html"><strong aria-hidden="true">2.5.</strong> 包装布局</a></li><li><a href="../guide/cargo-toml-vs-cargo-lock.zh.html"><strong aria-hidden="true">2.6.</strong> Cargo.toml 与 Cargo.lock</a></li><li><a href="../guide/tests.zh.html"><strong aria-hidden="true">2.7.</strong> 测试</a></li><li><a href="../guide/continuous-integration.zh.html"><strong aria-hidden="true">2.8.</strong> 持续集成</a></li><li><a href="../guide/build-cache.zh.html"><strong aria-hidden="true">2.9.</strong> 构建缓存</a></li></ol></li><li><a href="../reference/index.zh.html"><strong aria-hidden="true">3.</strong> Cargo 参考</a></li><li><ol class="section"><li><a href="../reference/specifying-dependencies.zh.html"><strong aria-hidden="true">3.1.</strong> 指定依赖项</a></li><li><a href="../reference/manifest.zh.html"><strong aria-hidden="true">3.2.</strong> 清单格式</a></li><li><a href="../reference/config.zh.html"><strong aria-hidden="true">3.3.</strong> 组态</a></li><li><a href="../reference/environment-variables.zh.html"><strong aria-hidden="true">3.4.</strong> 环境变量</a></li><li><a href="../reference/build-scripts.zh.html"><strong aria-hidden="true">3.5.</strong> 构建脚本</a></li><li><a href="../reference/publishing.zh.html"><strong aria-hidden="true">3.6.</strong> 在 crates.io 上发布</a></li><li><a href="../reference/pkgid-spec.zh.html"><strong aria-hidden="true">3.7.</strong> 包 ID 规格</a></li><li><a href="../reference/source-replacement.zh.html"><strong aria-hidden="true">3.8.</strong> 来源更换</a></li><li><a href="../reference/external-tools.zh.html" class="active"><strong aria-hidden="true">3.9.</strong> 外部工具</a></li><li><a href="../reference/unstable.zh.html"><strong aria-hidden="true">3.10.</strong> 不稳定的功能</a></li></ol></li><li><a href="../faq.zh.html"><strong aria-hidden="true">4.</strong> 常问问题</a></li><li><a href="../appendix/glossary.zh.html"><strong aria-hidden="true">5.</strong> 附录:词汇表</a></li></ol>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            
+            <div id="menu-bar" class="menu-bar">
+                <div id="menu-bar-sticky-container">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- START - Rust Cookbook customization -->
+                        <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit"
+                            aria-haspopup="true" aria-expanded="false" aria-controls="edit">
+                            <i class="fa fa-edit">Edit</i>
+                        </button>
+                        <!-- END - Rust Cookbook customization -->
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme"
+                            aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Rust Cargo 官书（非官方翻译)</h1>
+                    
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <!-- // START - Rust Cookbook customization -->
+            <script>
+                document.getElementById("edit-button").addEventListener("click", function () {
+                    var editWindow = window.open("https://github.com/chinanf-boy/cargo-book-zh/edit/master/src/reference/external-tools.zh.md");
+                });</script>
+            <!-- // END - Rust Cookbook customization -->
+
+            <div id="content" class="content">
+                <main>
+                    <a class="header" href="#external-tools" id="external-tools"><h2>External tools</h2></a>
+<p>外部工具</p>
+<p>Cargo 的目标之一是与第三方工具(如 IDE 和其他构建系统)的简单集成。为了简化集成,Cargo 有几个设施:</p>
+<ul>
+<li>
+<p>一个<code>cargo metadata</code>命令,以 JSON 格式输出包结构和依赖关系信息,</p>
+</li>
+<li>
+<p>一个<code>--message-format</code>标志,输出有关特定构建的信息,以及</p>
+</li>
+<li>
+<p>支持自定义子命令.</p>
+</li>
+</ul>
+<a class="header" href="#information-about-package-structure" id="information-about-package-structure"><h3>Information about package structure</h3></a>
+<p>包结构的资料</p>
+<p>您可以使用<code>cargo metadata</code>命令，以获取有关包结构和依赖关系的信息。命令的输出如下所示:</p>
+<pre><code class="language-text">{
+  // Integer 版本格式数字.
+  &quot;version&quot;: integer,
+
+  // 工作区包的列表, 包括 依赖项.
+  &quot;packages&quot;: [
+    {
+      // 包 识别id 队列.
+      &quot;id&quot;: PackageId,
+
+      &quot;name&quot;: string,
+
+      &quot;version&quot;: string,
+
+      &quot;source&quot;: SourceId,
+
+      // 确认依赖的一个列表, 可看 `resolve` 字段中的真实依赖.
+      &quot;dependencies&quot;: [ Dependency ],
+
+      &quot;targets: [ Target ],
+
+      //  Cargo.toml 路径
+      &quot;manifest_path&quot;: string,
+    }
+  ],
+
+  &quot;workspace_members&quot;: [ PackageId ],
+
+  // 依赖 关系图.
+  &quot;resolve&quot;: {
+     &quot;nodes&quot;: [
+       {
+         &quot;id&quot;: PackageId,
+         &quot;dependencies&quot;: [ PackageId ]
+       }
+     ]
+  }
+}
+</code></pre>
+<p>格式稳定且有版本化。调用<code>cargo metadata</code>时，你应该通过<code>--format-version</code>明确标记，以避免向前不兼容的危险。</p>
+<p>如果你正在使用 Rust,这有个<a href="https://crates.io/crates/cargo_metadata">cargo_metadata</a>箱.</p>
+<a class="header" href="#information-about-build" id="information-about-build"><h3>Information about build</h3></a>
+<p>关于构建的资料</p>
+<p>传递<code>--message-format=json</code>给，Cargo， 将在构建期间输出以下信息:</p>
+<ul>
+<li>
+<p>编译器错误和警告,</p>
+</li>
+<li>
+<p>制作的工件,</p>
+</li>
+<li>
+<p>构建脚本的结果(例如,本机依赖项).</p>
+</li>
+</ul>
+<p>输出以每行格式的 JSON 对象转到 stdout。<code>reason</code>字段区分不同类型的消息.</p>
+<p>有关 Makefile 兼容格式的依赖关系的信息存储在工件旁的<code>.d</code>文件中。</p>
+<a class="header" href="#custom-subcommands" id="custom-subcommands"><h3>Custom subcommands</h3></a>
+<p>自定义的子命令</p>
+<p>Cargo 设计为，可以使用新的子命令进行扩展，而无需修改 Cargo 本身。这是通过转化一个 cargo <code>(?&lt;command&gt;[^ ]+)</code>的命令调用，变化为调用外部工具<code>cargo-${command}</code>来实现的。外部工具必须存在于用户其中一个<code>$PATH</code>目录中.</p>
+<p>当 Cargo 调用自定义子命令时，子命令的第一个参数将像往常一样是自定义子命令的文件名。第二个参数将是子命令名称本身。例如,在调用<code>cargo-${command}</code>时，第二个参数是<code>${command}</code>。命令行上的其他所有参数将保持不变.</p>
+<p>Cargo 还可以用<code>cargo help ${command}</code>显示自定义子命令的帮助输出。Cargo 假定子命令将在第三个参数出现时，打印帮助消息<code>--help</code>.所以,<code>cargo help ${command}</code>会调用<code>cargo-${command} ${command} --help</code>.</p>
+<p>自定义子命令可以使用<code>CARGO</code>环境变量回调 Cargo。或者,它可以链接到作为一个库的<code>cargo</code>箱,但这种方法有缺点:</p>
+<ul>
+<li>
+<p>Cargo 作为库是不稳定的:API 可能会更改，但不会弃用</p>
+</li>
+<li>
+<p>链接的 Cargo 库的版本可能与 Cargo 二进制文件不同</p>
+</li>
+</ul>
+
+                </main>
+
+                <nav class="nav-wrapper" aria-label="Page navigation">
+                    <!-- Mobile navigation buttons -->
+                    
+                    <a rel="prev" href="../reference/source-replacement.zh.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    
+
+                    
+                    <a rel="next" href="../reference/unstable.zh.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    
+
+                    <div style="clear: both"></div>
+                </nav>
+            </div>
+        </div>
+
+        <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            
+            <a href="../reference/source-replacement.zh.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter"
+                aria-keyshortcuts="Left">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            
+
+            
+            <a href="../reference/unstable.zh.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            
+        </nav>
+
+    </div>
+
+    
+
+    
+    <!-- Google Analytics Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128555056-1"></script>
+    
+    <script type="text/javascript">
+        var localAddrs = ["localhost", "127.0.0.1", ""];
+        if (localAddrs.indexOf(document.location.hostname) === -1) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-128555056-1');
+        }
+    </script>
+    
+
+    
+
+    
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+    
+
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+    
+
+    
+
+</body>
+
+</html>
