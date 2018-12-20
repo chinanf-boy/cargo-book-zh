@@ -169,7 +169,6 @@ build = &quot;build.rs&quot;
 </code></pre>
 <p>指定的<code>build</code>命令应执行的 Rust 文件(相对于包根)，将在包编译其他内容之前，被编译和调用，从而具备 Rust 代码所依赖的构建或生成的工件。默认情况下 Cargo 在包根文件中寻找<code>&quot;build.rs&quot;</code>(即使您没有给<code>build</code>字段指定值)使用<code>build = &quot;custom_build_name.rs&quot;</code>指定自定义生成名，或<code>build = false</code>禁用对构建脚本的自动检测。</p>
 <p>Build 命令的一些用例是:</p>
-<!-- HERE -->
 <ul>
 <li>构建一个捆绑的 C 库.</li>
 <li>在主机系统上找到 C 库.</li>
@@ -255,7 +254,6 @@ build = &quot;build.rs&quot;
 <blockquote>
 <p>覆盖 构建脚本</p>
 </blockquote>
-<!-- HERE -->
 <p>如果一个清单包含<code>links</code>关键字，那 Cargo 支持重写用自定义库指定的构建脚本。此功能的目的是防止完全运行有问题的构建脚本，而是提前提供下元数据。</p>
 <p>要覆盖构建脚本,请将下列配置放在任何可接受的 Cargo 的<a href="./config.zh.html">配置位置</a>中。</p>
 <pre><code class="language-toml">[target.x86_64-unknown-linux-gnu.foo]
@@ -360,8 +358,8 @@ use std::path::Path;
 fn main() {
     let out_dir = env::var(&quot;OUT_DIR&quot;).unwrap();
 
-    // note that there are a number of downsides to this approach, the comments
-    // below detail how to improve the portability of these commands.
+    // 请注意，这种方法存在许多缺点，
+    // 下个代码展示，会详细介绍如何提高这些命令的可移植性。
     Command::new(&quot;gcc&quot;).args(&amp;[&quot;src/hello.c&quot;, &quot;-c&quot;, &quot;-fPIC&quot;, &quot;-o&quot;])
                        .arg(&amp;format!(&quot;{}/hello.o&quot;, out_dir))
                        .status().unwrap();
@@ -382,8 +380,8 @@ fn main() {
 <p>但不要害怕，这里<code>build-dependencies</code>就帮到你! Cargo 生态系统有许多包，为了使此类任务更加容易、可移植和标准化。构建脚本可以写成:</p>
 <pre><code class="language-rust ignore">// build.rs
 
-// Bring in a dependency on an externally maintained `cc` package which manages
-// invoking the C compiler.
+// 依赖于外部维护的`cc`包，管理
+// 调用C编译器。
 extern crate cc;
 
 fn main() {
@@ -415,9 +413,9 @@ void hello() {
 </code></pre>
 <pre><code class="language-rust ignore">// src/main.rs
 
-// Note the lack of the `#[link]` attribute. We’re delegating the responsibility
-// of selecting what to link to over to the build script rather than hardcoding
-// it in the source file.
+// 注意缺少`#[link]`属性。 我们选择，将责任委派给
+// 构建脚本的链接，而不是硬编码
+// 它在源文件中.
 extern { fn hello(); }
 
 fn main() {
