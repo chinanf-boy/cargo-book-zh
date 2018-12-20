@@ -15,7 +15,7 @@
 
 ---
 
-## 校对 中
+## 校对 ✅
 
 <!-- doc-templite START generated -->
 <!-- repo = 'rust-lang/cargo' -->
@@ -54,7 +54,7 @@
 - [x] [Cargo 参考](./src/reference/index.zh.md)
 
   - [x] [指定依赖项](./src/reference/specifying-dependencies.zh.md)
-  - [ ] [清单格式](./src/reference/manifest.zh.md)
+  - [x] [清单格式](./src/reference/manifest.zh.md)
   - [x] [配置](./src/reference/config.zh.md)
   - [x] [环境变量](./src/reference/environment-variables.zh.md)
   - [x] [构建脚本](./src/reference/build-scripts.zh.md)

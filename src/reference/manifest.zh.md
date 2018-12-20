@@ -171,96 +171,93 @@ workspace = "path/to/workspace/root"
 [package]
 # ...
 
-# A short blurb about the package. This is not rendered in any format when
-# uploaded to crates.io (aka this is not markdown).
+# 关于包的简短介绍. 这不会以任何格式呈现
+# 到 crates.io (又名 这不是markdown).
 description = "..."
 
-# These URLs point to more information about the package. These are
-# intended to be webviews of the relevant data, not necessarily compatible
-# with VCS tools and the like.
+# 这些URL指向有关包的更多信息 这些是
+# 旨在成为相关数据的网页入口, 不一定兼容
+# VCS工具(类似的)等.
 documentation = "..."
 homepage = "..."
 repository = "..."
 
-# This points to a file under the package root (relative to this `Cargo.toml`).
-# The contents of this file are stored and indexed in the registry.
-# crates.io will render this file and place the result on the crate's page.
+# 这指向包根目录下的文件 (与 `Cargo.toml` 相对的).
+# 该文件的内容会存储，并在注册表中编入索引。
+# crates.io 将渲染此文件，并将结果放在包的页面上.
 readme = "..."
 
-# This is a list of up to five keywords that describe this crate. Keywords
-# are searchable on crates.io, and you may choose any words that would
-# help someone find this crate.
+# 这是一个，最多五个描述此箱的关键字的列表. 关键词
+# 可以在 crates.io 上搜索, 和你可以选择任何单词
+# 帮助别人找到这个箱子。
 keywords = ["...", "..."]
 
-# This is a list of up to five categories where this crate would fit.
-# Categories are a fixed list available at crates.io/category_slugs, and
-# they must match exactly.
+# 这是此箱子最适合的(最多五个)类别的列表.
+# 类别是 crates.io/category_slugs 上可用的固定列表, 和
+# 他们必须完全匹配.
 categories = ["...", "..."]
 
-# This is an SPDX 2.1 license expression for this package.  Currently
-# crates.io will validate the license provided against a whitelist of
-# known license and exception identifiers from the SPDX license list
-# 2.4.  Parentheses are not currently supported.
+# 这是此包的SPDX 2.1许可证表达式.  目前
+# crates.io将根据白名单的已知许可证和SPDX许可证列表2.4中的异常标识符，
+# 验证提供的许可证。目前不支持括号。
 #
-# Multiple licenses can be separated with a `/`, although that usage
-# is deprecated.  Instead, use a license expression with AND and OR
-# operators to get more explicit semantics.
+# 使用AND和OR的许可证表达式
+# 运算符以获得更明确的语义。
 license = "..."
 
-# If a package is using a nonstandard license, then this key may be specified in
-# lieu of the above key and must point to a file relative to this manifest
-# (similar to the readme key).
+# 如果程序包使用非标准许可证, 则可以指定此 key
+# 代替上述 key 和 必须指向相对于此清单的文件
+# (类似于 readme key).
 license-file = "..."
 
-# Optional specification of badges to be displayed on crates.io.
+# 要在crates.io上显示的徽章规范，的可选项。
 #
-# - The badges pertaining to build status that are currently available are
-#   Appveyor, CircleCI, GitLab, and TravisCI.
-# - Available badges pertaining to code test coverage are Codecov and
+#  - 与当前可用的构建状态有关的徽章是
+#   Appveyor, CircleCI, GitLab, 和 TravisCI.
+# - 与代码测试覆盖有关的可用徽章是 Codecov 和
 #   Coveralls.
-# - There are also maintenance-related badges based on isitmaintained.com
-#   which state the issue resolution time, percent of open issues, and future
-#   maintenance intentions.
+# - 还有基于 isitmaintained.com的维护相关徽章
+#   其中说明了问题解决时间，未决问题的百分比和未来
+#   维护意图。
 #
-# If a `repository` key is required, this refers to a repository in
-# `user/repo` format.
+# 若要求一个`repository` key, 就表示一个`user/repo` 格式的存储库
 [badges]
 
-# Appveyor: `repository` is required. `branch` is optional; default is `master`
-# `service` is optional; valid values are `github` (default), `bitbucket`, and
-# `gitlab`; `id` is optional; you can specify the appveyor project id if you
-# want to use that instead. `project_name` is optional; use when the repository
-# name differs from the appveyor project name.
+# Appveyor: `repository` 是必须的. `branch` 是可选的; 默认为 `master`
+# `service` 是可选的; 有效值是 `github` (默认), `bitbucket`, 和
+# `gitlab`; `id` 是可选的; 如果你想改用，可以指定appveyor 项目ID.
+# `project_name` 是可选的; 使用在 repository
+# 名称 与 appveyor 项目名称 不同的情况.
 appveyor = { repository = "...", branch = "master", service = "github" }
 
-# Circle CI: `repository` is required. `branch` is optional; default is `master`
+# Circle CI: `repository` 是必须的. `branch` 是可选的; 默认为 `master`
 circle-ci = { repository = "...", branch = "master" }
 
-# GitLab: `repository` is required. `branch` is optional; default is `master`
+# GitLab: `repository` 是必须的. `branch` 是可选的; 默认为 `master`
 gitlab = { repository = "...", branch = "master" }
 
-# Travis CI: `repository` in format "<user>/<project>" is required.
-# `branch` is optional; default is `master`
+# Travis CI: `repository`为 "<user>/<project>"格式 是必须的.
+# `branch` 是可选的; 默认为 `master`
 travis-ci = { repository = "...", branch = "master" }
 
-# Codecov: `repository` is required. `branch` is optional; default is `master`
-# `service` is optional; valid values are `github` (default), `bitbucket`, and
+# Codecov: `repository` 是必须的. `branch` 是可选的; 默认为 `master`
+# `service` 是可选的; 有效值是 `github` (默认), `bitbucket`, 和
 # `gitlab`.
 codecov = { repository = "...", branch = "master", service = "github" }
 
-# Coveralls: `repository` is required. `branch` is optional; default is `master`
-# `service` is optional; valid values are `github` (default) and `bitbucket`.
+# Coveralls: `repository` 是必须的. `branch` 是可选的; 默认为 `master`
+# `service` 是可选的; 有效值是 `github` (默认) 和 `bitbucket`.
 coveralls = { repository = "...", branch = "master", service = "github" }
 
-# Is it maintained resolution time: `repository` is required.
+# 是否保持解决时间: `repository` 是必须的.
 is-it-maintained-issue-resolution = { repository = "..." }
 
-# Is it maintained percentage of open issues: `repository` is required.
+# 它是否保持未解决问题的百分比: `repository` 是必须的.
 is-it-maintained-open-issues = { repository = "..." }
 
-# Maintenance: `status` is required. Available options are `actively-developed`,
+# Maintenance: `status` 是必须的. 可用的选项是 `actively-developed`,
 # `passively-maintained`, `as-is`, `experimental`, `looking-for-maintainer`,
-# `deprecated`, and the default `none`, which displays no badge on crates.io.
+# `deprecated`, 和 默认为 `none`, 不会在 crates.io 显示徽章.
 maintenance = { status = "..." }
 ```
 
@@ -300,32 +297,32 @@ Cargo 支持了，可通过顶层 配置文件(profile) 调用 rustc 的自定�
 目前有四个受支持的配置文件名称,它们都具有相同的配置。下面列出了可用的配置,以及每个配置文件的默认设置.
 
 ```toml
-# The development profile, used for `cargo build`.
+# 此为 开发配置文件, 给 `cargo build` 所使用.
 [profile.dev]
-opt-level = 0      # controls the `--opt-level` the compiler builds with.
-                   # 0-1 is good for debugging. 2 is well-optimized. Max is 3.
-                   # 's' attempts to reduce size, 'z' reduces size even more.
-debug = true       # (u32 or bool) Include debug information (debug symbols).
-                   # Equivalent to `-C debuginfo=2` compiler flag.
-rpath = false      # controls whether compiler should set loader paths.
-                   # If true, passes `-C rpath` flag to the compiler.
-lto = false        # Link Time Optimization usually reduces size of binaries
-                   # and static libraries. Increases compilation time.
-                   # If true, passes `-C lto` flag to the compiler, and if a
-                   # string is specified like 'thin' then `-C lto=thin` will
-                   # be passed.
-debug-assertions = true # controls whether debug assertions are enabled
-                   # (e.g. debug_assert!() and arithmetic overflow checks)
-codegen-units = 16 # if > 1 enables parallel code generation which improves
-                   # compile times, but prevents some optimizations.
-                   # Passes `-C codegen-units`.
-panic = 'unwind'   # panic strategy (`-C panic=...`), can also be 'abort'
-incremental = true # whether or not incremental compilation is enabled
-overflow-checks = true # use overflow checks for integer arithmetic.
-                   # Passes the `-C overflow-checks=...` flag to the compiler.
+opt-level = 0      # 控制编译器构建的`--opt-level`。
+                   # 0-1适合调试。 2是良好优化的。最大为 3。
+                   # 's' 企图优化大小, 'z' 则 进一步优化大小.
+debug = true       # (u32 or bool) 包括调试信息（调试符号）.
+                   # 相当于 `-C debuginfo=2` 编译器 标志.
+rpath = false      # 控制 编译器 是否应该设置加载器路径.
+                   # 若为 true, 传递 `-C rpath` 标志 给 编译器.
+lto = false        # 链接时间优化通常会减少二进制文件和静态库的大小
+                   # 但会增加编译时间.
+                   # 若是 true, 传递 `-C lto` 标志 给 编译器, 和 若是一个
+                   # 字符串值 像 'thin' ，那会传递 `-C lto=thin`
+                   # 给 编译器
+debug-assertions = true # 控制是否启用调试断言
+                   # (e.g. debug_assert!() 和 算术溢出检查)
+codegen-units = 16 # if > 1 并行代码生成，以改善
+                   # 编译时间, 但阻止了些优化.
+                   # 传递 `-C codegen-units`.
+panic = 'unwind'   # 恐慌策略 (`-C panic=...`), 也可以是 'abort'
+incremental = true # 是否启用增量编译
+overflow-checks = true # 使用溢出检查进行整数运算。
+                   # 传递 `-C overflow-checks=...`标志 给 compiler.
 
-# The release profile, used for `cargo build --release` (and the dependencies
-# for `cargo test --release`,  including the local library or binary).
+# 发布(release)的配置文件, 用于 `cargo build --release` (和 依赖项的
+# `cargo test --release`,  包括本地 library 或 binary).
 [profile.release]
 opt-level = 3
 debug = false
@@ -337,8 +334,8 @@ panic = 'unwind'
 incremental = false
 overflow-checks = false
 
-# The testing profile, used for `cargo test` (for `cargo test --release` see
-# the `release` and `bench` profiles).
+# 测试的配置文件, 用于 `cargo test` (对于 `cargo test --release`，可看
+# `release` 和 `bench` 配置文件).
 [profile.test]
 opt-level = 0
 debug = 2
@@ -350,8 +347,8 @@ panic = 'unwind'
 incremental = true
 overflow-checks = true
 
-# The benchmarking profile, used for `cargo bench` (and the test targets and
-# unit tests for `cargo test --release`).
+# 基准的配置文件, 用于`cargo bench` (和 要测试的目标 和
+# 单元测试的 `cargo test --release`).
 [profile.bench]
 opt-level = 3
 debug = false
@@ -381,33 +378,32 @@ Cargo 支持特性，允许表达:
 name = "awesome"
 
 [features]
-# The default set of optional packages. Most people will want to use these
-# packages, but they are strictly optional. Note that `session` is not a package
-# but rather another feature listed in this manifest.
+# 默认的可选包集。大多数人都想使用这些
+# 包, 但它们是严格可选的。请注意，`session`不是包
+# 而是此清单中列出的另一个功能。
 default = ["jquery", "uglifier", "session"]
 
-# A feature with no dependencies is used mainly for conditional compilation,
-# like `#[cfg(feature = "go-faster")]`.
+# 没有依赖关系的特性，主要用于条件编译，
+# 像 `#[cfg(feature = "go-faster")]`.
 go-faster = []
 
-# The `secure-password` feature depends on the bcrypt package. This aliasing
-# will allow people to talk about the feature in a higher-level way and allow
-# this package to add more requirements to the feature in the future.
+# `secure-password` 特性 需要 bcrypt 包. 这种别名
+将允许人们以更高级别的方式讨论该 特性 和 允许
+# 此软件包将在未来为该特性添加更多要求.
 secure-password = ["bcrypt"]
 
-# Features can be used to reexport features of other packages. The `session`
-# feature of package `awesome` will ensure that the `session` feature of the
-# package `cookie` is also enabled.
+# 特性可用于重新导出其他包的特性. `awesome`包的 `session`
+# 特性将确保 cookie/session 也是可用的
 session = ["cookie/session"]
 
 [dependencies]
-# These packages are mandatory and form the core of this package’s distribution.
+# 这些包是强制性的，是该软件包发行版的核心。
 cookie = "1.2.0"
 oauth = "1.1.0"
 route-recognizer = "=2.1.0"
 
-# A list of all of the optional dependencies, some of which are included in the
-# above `features`. They can be opted into by apps.
+# 所以可选依赖项的列表, 其中一些是上面的
+# `features`. 它们可以通过应用程序选择加入。
 jquery = { version = "1.0.2", optional = true }
 uglifier = { version = "1.5.3", optional = true }
 bcrypt = { version = "*", optional = true }
@@ -419,8 +415,8 @@ civet = { version = "*", optional = true }
 ```toml
 [dependencies.awesome]
 version = "1.3.5"
-default-features = false # do not include the default features, and optionally
-                         # cherry-pick individual features
+default-features = false # 不包括默认功能，和可选,
+                         # 任君选 个性化特性
 features = ["secure-password", "civet"]
 ```
 
@@ -478,12 +474,12 @@ $ cargo build --release --features "shumway pdf"
 ```toml
 [workspace]
 
-# Optional key, inferred from path dependencies if not present.
-# Additional non-path dependencies that should be included must be given here.
-# In particular, for a virtual manifest, all members have to be listed.
+# 可选字段，从路径依赖推断（如果不存在）。
+# 此处必须给出，包含的其他非路径依赖。
+# 特别是, 对于 一个虚拟清单，所有成员都要列出来。
 members = ["path/to/member1", "path/to/member2", "path/to/member3/*"]
 
-# Optional key, empty if not present.
+# 可选字段, 如果不存在则为空
 exclude = ["path1", "path/to/dir2"]
 ```
 
@@ -543,24 +539,24 @@ Cargo 也将处理位于`src/bin/*.rs`任何文件作为可执行文件。如果
 您的包可以(可选地)包含命名为`examples`,`tests`和`benches`文件夹,Cargo 将分别将其视为包含示例、集成测试和基准。类似于`bin`目标，它们可以由单个文件或拥有`main.rs`文件的目录组成。
 
 ```
-▾ src/           # directory containing source files
-  lib.rs         # the main entry point for libraries and packages
-  main.rs        # the main entry point for packages producing executables
-  ▾ bin/         # (optional) directory containing additional executables
+▾ src/           # 包含源文件的目录
+  lib.rs         # 库和包的主要入口点
+  main.rs        # 包生成可执行文件的主要入口点
+  ▾ bin/         # （可选）包含其他可执行文件的目录
     *.rs
-  ▾ */           # (optional) directories containing multi-file executables
+  ▾ */           # （可选）包含多文件可执行文件的目录
     main.rs
-▾ examples/      # (optional) examples
+▾ examples/      # （可选）示例
   *.rs
-  ▾ */           # (optional) directories containing multi-file examples
+  ▾ */           # （可选）包含多文件示例的目录
     main.rs
-▾ tests/         # (optional) integration tests
+▾ tests/         # （可选）集成测试
   *.rs
-  ▾ */           # (optional) directories containing multi-file tests
+  ▾ */           # （可选）包含多文件测试的目录
     main.rs
-▾ benches/       # (optional) benchmarks
+▾ benches/       # （可选）基准
   *.rs
-  ▾ */           # (optional) directories containing multi-file benchmarks
+  ▾ */           # （可选）包含多文件基准的目录
     main.rs
 ```
 
@@ -620,46 +616,45 @@ Cargo 不会自动编译`tests`子目录内的文件，但是，集成测试可�
 # ...
 
 [lib]
-# The name of a target is the name of the library that will be generated. This
-# is defaulted to the name of the package, with any dashes replaced
-# with underscores. (Rust `extern crate` declarations reference this name;
-# therefore the value must be a valid Rust identifier to be usable.)
+# 生成目标与库的名称. 本该默认是
+# 包名, 替换所有破折号
+# 为 下划线. (Rust `extern crate` 声明会参考该名;
+# 因此，该值必须是可用的有效Rust标识符.)
 name = "foo"
 
-# This field points at where the crate is located, relative to the `Cargo.toml`.
+# 该字段，指向 crate 的入口(位置), 路径相对于 `Cargo.toml`.
 path = "src/lib.rs"
 
-# A flag for enabling unit tests for this target. This is used by `cargo test`.
+# 一个给目标启用单元测试 的 标志. 会被 `cargo test`使用.
 test = true
 
-# A flag for enabling documentation tests for this target. This is only relevant
-# for libraries, it has no effect on other sections. This is used by
-# `cargo test`.
+# 一个给目标启用文档测试 的 标志. 只与库相关
+# , 不会影响其他部分。会被
+# `cargo test`使用.
 doctest = true
 
-# A flag for enabling benchmarks for this target. This is used by `cargo bench`.
+# 一个给目标启用基准 的 标志. 会被 `cargo bench`使用.
 bench = true
 
-# A flag for enabling documentation of this target. This is used by `cargo doc`.
+# 一个给目标启用文档 的 标志. 会被 `cargo doc`使用.
 doc = true
 
-# If the target is meant to be a compiler plugin, this field must be set to true
-# for Cargo to correctly compile it and make it available for all dependencies.
+# 若该目标为 编译器扩展, 那要把该字段设为 true
+# ，以让 Cargo 正确编译和，可用于所有依赖项.
 plugin = false
 
-# If the target is meant to be a "macros 1.1" procedural macro, this field must
-# be set to true.
+# 若该目标为 "macros 1.1" 程序宏, 那要把该字段设为 true
 proc-macro = false
 
-# If set to false, `cargo test` will omit the `--test` flag to rustc, which
-# stops it from generating a test harness. This is useful when the binary being
-# built manages the test runner itself.
+# 若设为 false, `cargo test` 会为 rustc 省略 `--test` 标志, 这
+# 阻止它生成测试工具 这在二进制存在，
+# 构建管理测试运行器本身的情况下，有用.
 harness = true
 
-# If set then a target can be configured to use a different edition than the
-# `[package]` is configured to use, perhaps only compiling a library with the
-# 2018 edition or only compiling one unit test with the 2015 edition. By default
-# all targets are compiled with the edition specified in `[package]`.
+# 若设置了，那 目标会使用一个与`[package]`配置不同的版本
+# , 也许是，编译一个库
+2018年版本或，编译单元测试的2015年版本. 默认情况下
+# 所有目标都使用`[package]`中指定的版本进行编译。
 edition = '2015'
 ```
 

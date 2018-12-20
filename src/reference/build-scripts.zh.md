@@ -16,8 +16,6 @@ build = "build.rs"
 
 Build 命令的一些用例是:
 
-<!-- HERE -->
-
 - 构建一个捆绑的 C 库.
 - 在主机系统上找到 C 库.
 - 从规范中生成 Rust 模块.
@@ -112,8 +110,6 @@ build = "build.rs"
 ### Overriding Build Scripts
 
 > 覆盖 构建脚本
-
-<!-- HERE -->
 
 如果一个清单包含`links`关键字，那 Cargo 支持重写用自定义库指定的构建脚本。此功能的目的是防止完全运行有问题的构建脚本，而是提前提供下元数据。
 
@@ -249,8 +245,8 @@ use std::path::Path;
 fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
 
-    // note that there are a number of downsides to this approach, the comments
-    // below detail how to improve the portability of these commands.
+    // 请注意，这种方法存在许多缺点，
+    // 下个代码展示，会详细介绍如何提高这些命令的可移植性。
     Command::new("gcc").args(&["src/hello.c", "-c", "-fPIC", "-o"])
                        .arg(&format!("{}/hello.o", out_dir))
                        .status().unwrap();
@@ -275,8 +271,8 @@ fn main() {
 ```rust,ignore
 // build.rs
 
-// Bring in a dependency on an externally maintained `cc` package which manages
-// invoking the C compiler.
+// 依赖于外部维护的`cc`包，管理
+// 调用C编译器。
 extern crate cc;
 
 fn main() {
@@ -317,9 +313,9 @@ void hello() {
 ```rust,ignore
 // src/main.rs
 
-// Note the lack of the `#[link]` attribute. We’re delegating the responsibility
-// of selecting what to link to over to the build script rather than hardcoding
-// it in the source file.
+// 注意缺少`#[link]`属性。 我们选择，将责任委派给
+// 构建脚本的链接，而不是硬编码
+// 它在源文件中.
 extern { fn hello(); }
 
 fn main() {
