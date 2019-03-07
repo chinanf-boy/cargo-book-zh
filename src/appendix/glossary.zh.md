@@ -86,7 +86,7 @@ Cargo 有[_不稳定的特征标志_][cargo-unstable]，这可以用来实现 Ca
 - **路径来源**- 位于文件系统上的单个包(例如[路径依赖][path dependency])或一组多个包(如[路径覆盖][path overrides]).
 - **Git 来源**- 位于 git 存储库中的包(例如[git 依赖][git dependency]要么[git 来源][git source]).
 
-看到[来源更换]欲获得更多信息.
+看到[来源更换][source replacement]欲获得更多信息.
 
 ### Spec
 
