@@ -31,7 +31,7 @@ my-registry = { index = "https://my-intranet:8080/git/index" }
 token = "api-token"
 ```
 
-在`Cargo.toml`里面，您可以使用指定`registry`字段，让某个依赖项来自哪个注册表。但首先,您需要在文件的顶部包含适当的`cargo-features`:
+在`Cargo.toml`里面，您可以使用指定`registry`字段，让某个依赖项来自哪个注册表。但首先，您需要在文件的顶部包含适当的`cargo-features`:
 
 ```toml
 cargo-features = ["alternative-registries"]
@@ -43,7 +43,7 @@ cargo-features = ["alternative-registries"]
 other-create = { version = "1.0", registry = "my-registry"}
 ```
 
-一个`--registry`标志 已添加到与注册表交互的`publish`,`login`等命令中。示例:
+一个`--registry`标志 已添加到与注册表交互的`publish`，`login`等命令中。示例:
 
 ```
 cargo +nightly publish -Z unstable-options --registry my-registry
@@ -82,9 +82,9 @@ publish-lockfile = true
 - 原始问题:[#4686](https://github.com/rust-lang/cargo/issues/4686)
 - 跟踪问题:[#5655](https://github.com/rust-lang/cargo/issues/5655)
 
-`-Z offline`标志 可防止 Cargo 因任何原因尝试访问网络。通常情况下，如果 Cargo 要访问网络但它不可用,则会因错误而停止。
+`-Z offline`标志 可防止 Cargo 因任何原因尝试访问网络。通常情况下，如果 Cargo 要访问网络但它不可用，则会因错误而停止。
 
-请注意,这可能会导致与在线模式不同的依赖项解析。即使可能有索引的较新版本的本地副本，Cargo 也会将自己限制在本地可用的箱(crate)中。
+请注意，这可能会导致与在线模式不同的依赖项解析。即使可能有索引的较新版本的本地副本，Cargo 也会将自己限制在本地可用的箱(crate)中。
 
 ### no-index-update
 
@@ -101,7 +101,7 @@ publish-lockfile = true
 - 原始问题:[#4988](https://github.com/rust-lang/cargo/issues/4988)
 - 稳定问题:[#5133](https://github.com/rust-lang/cargo/issues/5133)
 
-运行命令如`cargo install`要么`cargo build`时,Cargo 当前会需要下载 dev 依赖项，即使它们未被使用。而该`-Z avoid-dev-deps`标志 则让 Cargo 避免在不需要时下载 dev 依赖项。该`Cargo.lock`如果跳过了 dev-dependencies，将不会生成相关信息。
+运行命令如`cargo install`要么`cargo build`时，Cargo 当前会需要下载 dev 依赖项，即使它们未被使用。而该`-Z avoid-dev-deps`标志 则让 Cargo 避免在不需要时下载 dev 依赖项。该`Cargo.lock`如果跳过了 dev-dependencies，将不会生成相关信息。
 
 ### minimal-versions
 
@@ -112,7 +112,7 @@ publish-lockfile = true
 
 当一个`Cargo.lock`文件被生成，`-Z minimal-versions`标志的使用， 将解析依赖关系为满足要求的最小 semver 版本(而不是最高版本)。
 
-此标志的预期用例，是在持续集成期间，检查 Cargo.toml 中指定的版本是否是您实际使用的最低版本的正确反映。也就是说,如果 Cargo.toml 有`foo = "1.0.0"`说明，那您依赖该特性，不会意外地添加`foo 1.5.0`。
+此标志的预期用例，是在持续集成期间，检查 Cargo.toml 中指定的版本是否是您实际使用的最低版本的正确反映。也就是说，如果 Cargo.toml 有`foo = "1.0.0"`说明，那您依赖该特性，不会意外地添加`foo 1.5.0`。
 
 ### out-dir
 
@@ -120,7 +120,7 @@ publish-lockfile = true
 
 - 原始问题:[#4875](https://github.com/rust-lang/cargo/issues/4875)
 
-此功能允许您指定,构建工件后，将复制到的目录。通常,工件只写入`target/release`要么`target/debug`目录。但是,确定明确的文件名可能很棘手，因为您需要解析 JSON 输出。而该`--out-dir`标志 可以更容易地预测访问工件。但是请注意,工件只是被复制,因此原件仍在`target`目录.例:
+此功能允许您指定，构建工件后，将复制到的目录。通常，工件只写入`target/release`要么`target/debug`目录。但是，确定明确的文件名可能很棘手，因为您需要解析 JSON 输出。而该`--out-dir`标志 可以更容易地预测访问工件。但是请注意，工件只是被复制，因此原件仍在`target`目录.例:
 
 ```
 cargo +nightly build --out-dir=out -Z unstable-options
@@ -155,7 +155,7 @@ opt-level = 3
 opt-level = 2
 
 # 构建 脚本和他们的 依赖项， 会编译的等级 -Copt-level=3
-# 默认情况, 构建 脚本 对剩下的配置使用相同的选择
+# 默认情况， 构建 脚本 对剩下的配置使用相同的选择
 [profile.dev.build-override]
 opt-level = 3
 ```
@@ -189,7 +189,7 @@ cargo +nightly build -Z config-profile
 - 原始问题:[#1286](https://github.com/rust-lang/cargo/issues/1286)
 - 跟踪问题:[rust-lang/Cargo#5565](https://github.com/rust-lang/cargo/issues/5565)
 
-目前,不可能在清单中具有相同名称的特性和依赖项。但如果你设置`namespaced-features`至`true`,功能和依赖项的命名空间就会是分开的。这样做的结果是,在特性请求中，依赖项必须以`crate:`为前缀。像这样:
+目前，不可能在清单中具有相同名称的特性和依赖项。但如果你设置`namespaced-features`至`true`，功能和依赖项的命名空间就会是分开的。这样做的结果是，在特性请求中，依赖项必须以`crate:`为前缀。像这样:
 
 ```toml
 [package]
@@ -203,7 +203,7 @@ foo = []
 baz = { version = "0.1", optional = true }
 ```
 
-为了防止不必要的，必须为每个可选依赖项显式声明特性的模版，将为任何不是定义为相同名称的特性，的可选依赖项创建隐式特性。但是,如果定义了与依赖项同名的特性，则该特性必须将依赖项作为必需项，正如`foo = ["crate:foo"]`。
+为了防止不必要的，必须为每个可选依赖项显式声明特性的模版，将为任何不是定义为相同名称的特性，的可选依赖项创建隐式特性。但是，如果定义了与依赖项同名的特性，则该特性必须将依赖项作为必需项，正如`foo = ["crate:foo"]`。
 
 ### Build-plan
 
@@ -211,7 +211,7 @@ baz = { version = "0.1", optional = true }
 
 - 跟踪问题:[rust-lang/Cargo#5579](https://github.com/rust-lang/cargo/issues/5579)
 
-`build`命令的`--build-plan`参数，将输出 JSON，其中包含有关将运行哪些命令，和不实际执行任何操作的信息。与其他构建工具集成时,这可能很有用。例:
+`build`命令的`--build-plan`参数，将输出 JSON，其中包含有关将运行哪些命令，和不实际执行任何操作的信息。与其他构建工具集成时，这可能很有用。例:
 
 ```
 cargo +nightly build --build-plan -Z unstable-options
@@ -223,7 +223,7 @@ cargo +nightly build --build-plan -Z unstable-options
 
 - 原始问题:[#2200](https://github.com/rust-lang/cargo/issues/2200)
 
-清单中`[package]`部分的该`default-run`选项，可用于指定`cargo run`选择的默认二进制文件。例如,当存在`src/bin/a.rs`和`src/bin/b.rs`两者时，选择前者:
+清单中`[package]`部分的该`default-run`选项，可用于指定`cargo run`选择的默认二进制文件。例如，当存在`src/bin/a.rs`和`src/bin/b.rs`两者时，选择前者:
 
 ```toml
 [package]
@@ -237,9 +237,9 @@ default-run = "a"
 - 跟踪问题:[rust-lang/rust#49803](https://github.com/rust-lang/rust/issues/49803)
 - RFC:[#2196](https://github.com/rust-lang/rfcs/blob/master/text/2196-metabuild.md)
 
-Metabuild 是一个具有声明性构建脚本的特性。作为不去写一个`build.rs`脚本，而是您在`Cargo.toml`中的`metabuild`字段，指定构建依赖项列表。其将自动生成一个构建脚本，该脚本按顺序运行每个构建依赖项。然后,Metabuild 包可以从`Cargo.toml`中读取元数据，执行他们的指定行为。
+Metabuild 是一个具有声明性构建脚本的特性。作为不去写一个`build.rs`脚本，而是您在`Cargo.toml`中的`metabuild`字段，指定构建依赖项列表。其将自动生成一个构建脚本，该脚本按顺序运行每个构建依赖项。然后，Metabuild 包可以从`Cargo.toml`中读取元数据，执行他们的指定行为。
 
-需要包括`cargo-features`在`Cargo.toml`的顶部, 一个`metadata`字段在`package`下，列出`build-dependencies`依赖项,并添加 metabuild 包所需的任何元数据。例:
+需要包括`cargo-features`在`Cargo.toml`的顶部， 一个`metadata`字段在`package`下，列出`build-dependencies`依赖项，并添加 metabuild 包所需的任何元数据。例:
 
 ```toml
 cargo-features = ["metabuild"]

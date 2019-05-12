@@ -2,7 +2,7 @@
 
 ### Travis CI
 
-要在 Travis CI 上测试您的项目,这里有一个`.travis.yml`文件示例:
+要在 Travis CI 上测试您的项目，这里有一个`.travis.yml`文件示例:
 
 ```yaml
 language: rust
@@ -19,7 +19,7 @@ matrix:
 
 ### GitLab CI
 
-要在 GitLab CI 上测试您的包,这里有一个`.gitlab-ci.yml`文件示例:
+要在 GitLab CI 上测试您的包，这里有一个`.gitlab-ci.yml`文件示例:
 
 ```yaml
 stages:
@@ -41,4 +41,4 @@ rust-nightly:
   allow_failure: true
 ```
 
-这将测试 stable 的通道和 nightly 通道,但 nightly 的任何破损,都不会使整体构建失败。欲获得更多信息，请看[GitLab CI](https://docs.gitlab.com/ce/ci/yaml/README.md).
+这将测试 stable 版本和 nightly 版本，但 nightly 的任何破损，都不会使整体构建失败。欲获得更多信息，请看[GitLab CI](https://docs.gitlab.com/ce/ci/yaml/README.md).

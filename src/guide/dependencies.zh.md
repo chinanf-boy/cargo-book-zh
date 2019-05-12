@@ -8,7 +8,7 @@
 
 ### 添加依赖项
 
-如果你的`Cargo.toml`，还没有`[dependencies]`部分,添加它，然后列出您要使用的包名称和版本。这个例子增加了一个`time`箱(crate)依赖:
+如果你的`Cargo.toml`，还没有`[dependencies]`部分，添加它，然后列出您要使用的包名称和版本。这个例子增加了一个`time`箱(crate)依赖:
 
 ```toml
 [dependencies]
@@ -32,7 +32,7 @@ time = "0.1.12"
 regex = "0.1.41"
 ```
 
-重新运行`cargo build`，Cargo 将获取新的依赖项及其所有依赖项,将它们全部编译,然后更新`Cargo.lock`:
+重新运行`cargo build`，Cargo 将获取新的依赖项及其所有依赖项，将它们全部编译，然后更新`Cargo.lock`:
 
 ```shell
 $ cargo build

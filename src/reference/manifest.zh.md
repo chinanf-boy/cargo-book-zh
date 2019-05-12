@@ -42,10 +42,10 @@ authors = ["Alice <a@example.com>", "Bob <b@example.com>"]
 
 Cargo 烘烤的概念是[语义版本控制](http://semver.org/)，所以确保你遵循一些基本规则:
 
-- 在您达到 1.0.0 之前,任何事情都会发生,但是如果您进行了重大变化的更新,则增加次要(minor)版本。在 Rust 语言中,重大变化包括，向结构添加字段，或增加变量到枚举。
-- 在 1.0.0 之后,只在增加主要(major)版本时进行重大变化。不要破坏建筑.
-- 在 1.0.0 之后,不要在补丁级别(patch)的版本添加任何新的公共 API(没有任何新的`pub`)。如果添加`pub`结构、特性、字段、类型、函数、方法或其他任何东东，则总是增加次要版本。
-- 使用具有三个数字部分的版本号,如 1.0.0，而不是 1.0。
+- 在您达到 1.0.0 之前，任何事情都会发生，但是如果您进行了重大变化的更新，则增加次要(minor)版本。在 Rust 语言中，重大变化包括，向结构添加字段，或增加变量到枚举。
+- 在 1.0.0 之后，只在增加主要(major)版本时进行重大变化。不要破坏建筑.
+- 在 1.0.0 之后，不要在补丁级别(patch)的版本添加任何新的公共 API(没有任何新的`pub`)。如果添加`pub`结构、特性、字段、类型、函数、方法或其他任何东东，则总是增加次要版本。
+- 使用具有三个数字部分的版本号，如 1.0.0，而不是 1.0。
 
 #### The `edition` field (optional)
 
@@ -65,7 +65,7 @@ edition = '2018'
 
 > `build` 字段 (可选)
 
-此字段指定包根目录中的文件,该文件是[构建脚本][1]，用于生成本机代码。可以在构建脚本[指导][1]中找到更多信息..
+此字段指定包根目录中的文件，该文件是[构建脚本][1]，用于生成本机代码。可以在构建脚本[指导][1]中找到更多信息..
 
 [1]: ./build-scripts.zh.md
 
@@ -96,7 +96,7 @@ build = "build.rs"
 
 此字段指定托管箱(crate)文档的网站的 URL。如果清单文件中没有指定 URL，[crates.io][cratesio]自动将你的箱子连接到相应的箱子的[docs.rs][docsrs]页.
 
-来自特定主机的文档链接被列入黑名单。如果已知主机不承载文档，并且可能具有恶意意图,例如广告跟踪网络，则主机被添加到黑名单中。下列主机的 URL 就被列入黑名单:
+来自特定主机的文档链接被列入黑名单。如果已知主机不承载文档，并且可能具有恶意意图，例如广告跟踪网络，则主机被添加到黑名单中。下列主机的 URL 就被列入黑名单:
 
 - rust-ci.org
 
@@ -109,9 +109,9 @@ build = "build.rs"
 
 > `exclude` 和 `include` 字段 (可选)
 
-出于打包和重建包的目的，您可以显式地指定一组[globs][globs]模式,匹配项应被忽略或包含。如`exclude`字段标识了在发布包时，不包括的一组文件，以及检测何时重建包时，应该忽略的文件，而`include`就是显式指定一定包含的文件。
+出于打包和重建包的目的，您可以显式地指定一组[globs][globs]模式，匹配项应被忽略或包含。如`exclude`字段标识了在发布包时，不包括的一组文件，以及检测何时重建包时，应该忽略的文件，而`include`就是显式指定一定包含的文件。
 
-如果一个 VCS 被用于一个包,则`exclude`字段将被植入 VCS 的忽略设置(例如 Git 的`.gitignore`)。
+如果一个 VCS 被用于一个包，则`exclude`字段将被植入 VCS 的忽略设置(例如 Git 的`.gitignore`)。
 
 ```toml
 [package]
@@ -125,7 +125,7 @@ exclude = ["build/**/*.o", "doc/**/*.md"]
 include = ["src/**/*", "Cargo.toml"]
 ```
 
-选项是相互排斥的: `include`设置覆盖`exclude`。 注意`include`必须是文件的详尽列表,否则可能不包括必要的源文件。
+选项是相互排斥的: `include`设置覆盖`exclude`。 注意`include`必须是文件的详尽列表，否则可能不包括必要的源文件。
 
 [globs]: https://docs.rs/glob/0.2.11/glob/struct.Pattern.md
 
@@ -133,7 +133,7 @@ include = ["src/**/*", "Cargo.toml"]
 
 > 转移成 类`gitignore` 模式匹配
 
-这些配置的当前解释实现都基于 UNIX Globs，如[`glob`箱](https://crates.io/crates/glob)。 若是我们想要 Cargo 的`include`和`exclude`尽可能配置为类似于`gitignore`。可看看[这个`gitignore`规范](https://git-scm.com/docs/gitignore)，其也是基于 Globs 的，但是还有许多其他的特性,这些特性使模式编写更容易,控制也更多。因此,我们正在迁移这些配置规则的解释实现,以使用[`ignore`箱](https://crates.io/crates/ignore)，并认真对待`gitignore`文件的每一条行规则。见[跟踪问题](https://github.com/rust-lang/cargo/issues/4268)有关迁移的更多细节。
+这些配置的当前解释实现都基于 UNIX Globs，如[`glob`箱](https://crates.io/crates/glob)。 若是我们想要 Cargo 的`include`和`exclude`尽可能配置为类似于`gitignore`。可看看[这个`gitignore`规范](https://git-scm.com/docs/gitignore)，其也是基于 Globs 的，但是还有许多其他的特性，这些特性使模式编写更容易，控制也更多。因此，我们正在迁移这些配置规则的解释实现，以使用[`ignore`箱](https://crates.io/crates/ignore)，并认真对待`gitignore`文件的每一条行规则。见[跟踪问题](https://github.com/rust-lang/cargo/issues/4268)有关迁移的更多细节。
 
 #### The `publish` field (optional)
 
@@ -151,7 +151,7 @@ publish = false
 
 > `workspace` 字段 (可选)
 
-这个`workspace`字段可用于配置此包将属于的工作区。如果没有指定,这将被推断为文件系统中第一个 Cargo.toml 的`[workspace]`。
+这个`workspace`字段可用于配置此包将属于的工作区。如果没有指定，这将被推断为文件系统中第一个 Cargo.toml 的`[workspace]`。
 
 ```toml
 [package]
@@ -159,7 +159,7 @@ publish = false
 workspace = "path/to/workspace/root"
 ```
 
-有关更多信息,请参见下面的工作区(workspace)表格的文档.
+有关更多信息，请参见下面的工作区(workspace)表格的文档.
 
 #### Package metadata
 
@@ -176,7 +176,7 @@ workspace = "path/to/workspace/root"
 description = "..."
 
 # 这些URL指向有关包的更多信息 这些是
-# 旨在成为相关数据的网页入口, 不一定兼容
+# 旨在成为相关数据的网页入口， 不一定兼容
 # VCS工具(类似的)等.
 documentation = "..."
 homepage = "..."
@@ -269,7 +269,7 @@ SPDX 2.1 许可证表达式被记录在案[在这里][spdx-2.1-license-expressio
 
 > `metadata` 表格 (可选)
 
-默认情况下,Cargo 将对`Cargo.toml`不使用的字段发出警告，协助检测错别字等。就像这个`package.metadata`表格，但是,完全不写了的话， Cargo 将不会被警告。这个表格可在`Cargo.toml`，用于将包配置存储好。 例如:
+默认情况下，Cargo 将对`Cargo.toml`不使用的字段发出警告，协助检测错别字等。就像这个`package.metadata`表格，但是，完全不写了的话， Cargo 将不会被警告。这个表格可在`Cargo.toml`，用于将包配置存储好。 例如:
 
 ```toml
 [package]
@@ -286,7 +286,7 @@ assets = "path/to/static"
 
 > 依赖 部分
 
-见[指定依赖-那页](./specifying-dependencies.zh.md)有关`[dependencies]`,`[dev-dependencies]`,`[build-dependencies]`和特定目标的`[target.*.dependencies]`部分的信息。
+见[指定依赖-那页](./specifying-dependencies.zh.md)有关`[dependencies]`，`[dev-dependencies]`，`[build-dependencies]`和特定目标的`[target.*.dependencies]`部分的信息。
 
 ### The `[profile.*]` sections
 
@@ -294,7 +294,7 @@ assets = "path/to/static"
 
 Cargo 支持了，可通过顶层 配置文件(profile) 调用 rustc 的自定义配置。任何清单都可以声明一个配置文件，但是实际上只读取顶级包的配置文件。所有依赖项的配置文件都将被重写，这样做是为了让顶级包能够控制，其依赖项如何编译的。
 
-目前有四个受支持的配置文件名称,它们都具有相同的配置。下面列出了可用的配置,以及每个配置文件的默认设置.
+目前有四个受支持的配置文件名称，它们都具有相同的配置。下面列出了可用的配置，以及每个配置文件的默认设置.
 
 ```toml
 # 此为 开发配置文件, 给 `cargo build` 所使用.
@@ -371,7 +371,7 @@ Cargo 支持特性，允许表达:
 - 可选的依赖项，增强了包，但不是必需的;还有
 - 可选依赖项的簇，如`postgres`，其中就包括`postgres`包`postgres-macros`包，以及可能的其他包(如开发时的模拟库、调试工具等)。
 
-包的特性也可以是可选的依赖项,也可以是一组其他特性。指定特性的格式是:
+包的特性也可以是可选的依赖项，也可以是一组其他特性。指定特性的格式是:
 
 ```toml
 [package]
@@ -439,9 +439,9 @@ features = ["secure-password", "civet"]
 
 > 生产终点的用法
 
-该特性的一个主要用例是在最终产品中，指定可选特性。例如,Servo 包可能希望包含可选特性,人们可以在构建时，启用或禁用它。
+该特性的一个主要用例是在最终产品中，指定可选特性。例如，Servo 包可能希望包含可选特性，人们可以在构建时，启用或禁用它。
 
-在这种情况下,Servo 将在`Cargo.toml`描述特性，且用命令行标志来启用这些特性:
+在这种情况下，Servo 将在`Cargo.toml`描述特性，且用命令行标志来启用这些特性:
 
 ```console
 $ cargo build --release --features "shumway pdf"
@@ -455,13 +455,13 @@ $ cargo build --release --features "shumway pdf"
 
 在大多数情况下，在库中*可选依赖*的概念，最好将其表示为顶级应用程序所依赖的单独包。
 
-然而,像 Iron 或 Piston 这样的高级软件包会需要排布多个软件包以便于安装。当前的 Cargo 系统允许它们将一些强制依赖项，整合到一个包中,以便于安装。
+然而，像 Iron 或 Piston 这样的高级软件包会需要排布多个软件包以便于安装。当前的 Cargo 系统允许它们将一些强制依赖项，整合到一个包中，以便于安装。
 
-在某些情况下,包可能希望为可选依赖项，提供额外的管理:
+在某些情况下，包可能希望为可选依赖项，提供额外的管理:
 
 - 将多个低层可选依赖项，组合到一个单独的高级特性中;
 - 由包用户指定推荐(或建议)要包括的包;
-- 包括特性(类似`secure-password`在激励示例中)，这只在可选的依赖项可用时才能工作，并且很难实现为单独的包(例如,设计一个与 OpenSSL 完全解耦的 IO 包可能过于困难，那这时，就可通过包含单独的包来选择相关特性)。
+- 包括特性(类似`secure-password`在激励示例中)，这只在可选的依赖项可用时才能工作，并且很难实现为单独的包(例如，设计一个与 OpenSSL 完全解耦的 IO 包可能过于困难，那这时，就可通过包含单独的包来选择相关特性)。
 
 在几乎所有情况下，在设计牢固的高级包之外，使用这些特性都是反模式的。如果某个特性是可选的，那么它几乎可以肯定地表示为单独的包。
 
@@ -469,7 +469,7 @@ $ cargo build --release --features "shumway pdf"
 
 > `[workspace]` 部分
 
-包可以定义一个工作区,它是一组箱，所有箱将共享相同`Cargo.lock`和输出目录。这个`[workspace]`表格可以定义为:
+包可以定义一个工作区，它是一组箱，所有箱将共享相同`Cargo.lock`和输出目录。这个`[workspace]`表格可以定义为:
 
 ```toml
 [workspace]
@@ -485,11 +485,11 @@ exclude = ["path1", "path/to/dir2"]
 
 工作区作为 Cargo 的[RFC 1525]一部分被添加到 Cargo 中，并具有许多属性:
 
-- 工作区可以包含多个箱,其中一个是*根箱*.
+- 工作区可以包含多个箱，其中一个是*根箱*.
 - 这个*根箱*的`Cargo.toml`包含`[workspace]`表格，但不要求必有其他配置.
 - 每当编译工作区中的任何箱时，输出被放置在*工作区根*。 即紧挨着*根箱*的`Cargo.toml`.
 - 工作区中所有箱的那个锁定文件驻留在*工作区根*.
-- 在`Cargo.toml`的`[patch]`,`[replace]`和`[profile.*]`部分，只认*根箱*的清单，而忽略成员箱的。
+- 在`Cargo.toml`的`[patch]`，`[replace]`和`[profile.*]`部分，只认*根箱*的清单，而忽略成员箱的。
 
 [rfc 1525]: https://github.com/rust-lang/rfcs/blob/master/text/1525-cargo-workspace.md
 
@@ -500,7 +500,7 @@ exclude = ["path1", "path/to/dir2"]
 
 这个`package.workspace`清单字段(如上所述)用于成员箱中，以指向工作区的根箱。如果省略此字段，则推断它是文件系统(向上的父目录)中，清单包含`[workspace]`的第一个箱。
 
-箱可以指定`package.workspace`或指定`[workspace]`。 也就是说,箱不能同时作为工作区中的根箱(包含`[workspace]`)，和另一个工作区的成员箱(包含`package.workspace`)
+箱可以指定`package.workspace`或指定`[workspace]`。 也就是说，箱不能同时作为工作区中的根箱(包含`[workspace]`)，和另一个工作区的成员箱(包含`package.workspace`)
 
 大多数时间工作区都不需要处理。因`cargo new`和`cargo init`将自动处理工作区配置。
 
@@ -508,13 +508,13 @@ exclude = ["path1", "path/to/dir2"]
 
 > 虚拟清单
 
-在工作区清单中,如果`package`表格存在,则工作区根箱将被视为普通包和工作区。如果`package`表格不存在工作区清单中,那它被称为*虚拟清单*。
+在工作区清单中，如果`package`表格存在，则工作区根箱将被视为普通包和工作区。如果`package`表格不存在工作区清单中，那它被称为*虚拟清单*。
 
 #### Package selection
 
 > Package 部分
 
-在工作区中,与包相关的 Cargo 命令，如`cargo build`，会应用`-p` / `--package`或`--all`命令行参数选定的包。当未指定时,可选`default-members`配置被使用:
+在工作区中，与包相关的 Cargo 命令，如`cargo build`，会应用`-p` / `--package`或`--all`命令行参数选定的包。当未指定时，可选`default-members`配置被使用:
 
 ```toml
 [workspace]
@@ -524,7 +524,7 @@ default-members = ["path/to/member2", "path/to/member3/foo"]
 
 `default-members`指定时，必会扩展到子集的`members`中.
 
-若是`default-members`未指定，如果它是包,则默认为根清单，或者若是虚拟工作区，就为每个成员的清单(如同`--all`在命令行上).
+若是`default-members`未指定，如果它是包，则默认为根清单，或者若是虚拟工作区，就为每个成员的清单(如同`--all`在命令行上).
 
 ### The project layout
 
@@ -532,11 +532,11 @@ default-members = ["path/to/member2", "path/to/member3/foo"]
 
 如果包是可执行文件，则将主源文件命名为`src/main.rs`。 如果它是一个库，请命名主源文件`src/lib.rs`。
 
-Cargo 也将处理位于`src/bin/*.rs`任何文件作为可执行文件。如果可执行文件包含不止一个源文件，则可以使用`src/bin`目录下，又一个包含`main.rs`文件的目录，而该目录将被视为具有父目录名称的可执行文件。但是，一旦添加了`[[bin]]`部分[见下文](#configuring-a-target)，Cargo 将不再自动建立`src/bin/*.rs`文件。 相反,你必须创建一个`[[bin]]`部分，给出你想要生成的每个文件。
+Cargo 也将处理位于`src/bin/*.rs`任何文件作为可执行文件。如果可执行文件包含不止一个源文件，则可以使用`src/bin`目录下，又一个包含`main.rs`文件的目录，而该目录将被视为具有父目录名称的可执行文件。但是，一旦添加了`[[bin]]`部分[见下文](#configuring-a-target)，Cargo 将不再自动建立`src/bin/*.rs`文件。 相反，你必须创建一个`[[bin]]`部分，给出你想要生成的每个文件。
 
 <!-- HERE -->
 
-您的包可以(可选地)包含命名为`examples`,`tests`和`benches`文件夹,Cargo 将分别将其视为包含示例、集成测试和基准。类似于`bin`目标，它们可以由单个文件或拥有`main.rs`文件的目录组成。
+您的包可以(可选地)包含命名为`examples`，`tests`和`benches`文件夹，Cargo 将分别将其视为包含示例、集成测试和基准。类似于`bin`目标，它们可以由单个文件或拥有`main.rs`文件的目录组成。
 
 ```
 ▾ src/           # 包含源文件的目录
@@ -568,9 +568,9 @@ Cargo 也将处理位于`src/bin/*.rs`任何文件作为可执行文件。如果
 
 > 示例
 
-位于`examples`下方的文件，是库提供的功能示例用法。编译时,它们被放置在`target/examples`目录。
+位于`examples`下方的文件，是库提供的功能示例用法。编译时，它们被放置在`target/examples`目录。
 
-它们可以编译为可执行文件(用`main()`函数)或，库。和可通过使用`extern crate <library-name>`导入库。 当您运行测试以保护它们免遭篡改时,它们会被编译。
+它们可以编译为可执行文件(用`main()`函数)或，库。和可通过使用`extern crate <library-name>`导入库。 当您运行测试以保护它们免遭篡改时，它们会被编译。
 
 可以使用命令`cargo run --example <example-name>`运行单个可执行示例.
 
@@ -590,7 +590,7 @@ crate-type = ["staticlib"]
 
 当你运行`cargo test`，Cargo 会:
 
-- 编译并运行库的单元测试，这些测试位于`lib.rs`(当然,任何标记为`#[cfg(test)]`部分将考虑为同个阶段);
+- 编译并运行库的单元测试，这些测试位于`lib.rs`(当然，任何标记为`#[cfg(test)]`部分将考虑为同个阶段);
 - 编译并运行嵌入到文档区块内部的库的文档测试;
 - 编译并运行您库的[集成测试](#integration-tests)和
 - 编译你库的例子.
@@ -601,15 +601,15 @@ crate-type = ["staticlib"]
 
 在`tests/*.rs`的每个文件是一个集成测试。当你运行`cargo test`，Cargo 将编译每个文件作为一个单独的箱子。箱可以通过使用`extern crate <library-name>`链接(导入)您的库，就像其他导入项一样。
 
-Cargo 不会自动编译`tests`子目录内的文件，但是，集成测试可以像往常一样从这些目录导入模块。例如,如果希望多个集成测试共享一些代码，可以将共享代码放入`tests/common/mod.rs`，然后为每个测试文件添加`mod common;`。
+Cargo 不会自动编译`tests`子目录内的文件，但是，集成测试可以像往常一样从这些目录导入模块。例如，如果希望多个集成测试共享一些代码，可以将共享代码放入`tests/common/mod.rs`，然后为每个测试文件添加`mod common;`。
 
 ### Configuring a target
 
 > 配置为一个目标
 
-所有的`[[bin]]`,`[lib]`,`[[bench]]`,`[[test]]`和`[[example]]`部分都支持类似的配置，用于指定应该如何构建目标。双括号`[[bin]]`部分，是[TOML](https://github.com/toml-lang/toml#array-of-tables)格式的数组。这意味着你可以在您的箱中写多个`[[bin]]`，这样就会生成几个可执行文件。
+所有的`[[bin]]`，`[lib]`，`[[bench]]`，`[[test]]`和`[[example]]`部分都支持类似的配置，用于指定应该如何构建目标。双括号`[[bin]]`部分，是[TOML](https://github.com/toml-lang/toml#array-of-tables)格式的数组。这意味着你可以在您的箱中写多个`[[bin]]`，这样就会生成几个可执行文件。
 
-下面的例子使用`[lib]`，但它也适用于所有其他部分。除非另有说明,下面所有列出的值都是对应选项的**默认值**。
+下面的例子使用`[lib]`，但它也适用于所有其他部分。除非另有说明，下面所有列出的值都是对应选项的**默认值**。
 
 ```toml
 [package]
@@ -664,7 +664,7 @@ edition = '2015'
 
 > `required-features` 字段 (可选)
 
-这个`required-features`字段指定目标需要构建的特性。如果未选择任何所需的特性,则将跳过目标。这只与`[[bin]]`,`[[bench]]`,`[[test]]`和`[[example]]`部分有影响，它没有影响`[lib]`。
+这个`required-features`字段指定目标需要构建的特性。如果未选择任何所需的特性，则将跳过目标。这只与`[[bin]]`，`[[bench]]`，`[[test]]`和`[[example]]`部分有影响，它没有影响`[lib]`。
 
 ```toml
 [features]
@@ -682,7 +682,7 @@ required-features = ["postgres", "tools"]
 
 > 构建 动态 或 静态 库
 
-如果您的包生成一个库,则可以通过在`Cargo.toml`显式地指明构建的库类型:
+如果您的包生成一个库，则可以通过在`Cargo.toml`显式地指明构建的库类型:
 
 ```toml
 # ...
@@ -692,7 +692,7 @@ name = "..."
 crate-type = ["dylib"] # 也能是 `staticlib`
 ```
 
-可用的选项是`dylib`,`rlib`,`staticlib`,`cdylib`和`proc-macro`。 您应该只在包中使用一次此选项。Cargo 总是根据(包括的)包的要求来编译包(依赖项)。
+可用的选项是`dylib`，`rlib`，`staticlib`，`cdylib`和`proc-macro`。 您应该只在包中使用一次此选项。Cargo 总是根据(包括的)包的要求来编译包(依赖项)。
 
 您可以阅读[Rust 参考手册](https://doc.rust-lang.org/reference/linkage.html)中更多关于不同的箱类型
 
@@ -737,7 +737,7 @@ baz = { git = 'https://github.com/example/patched-baz', branch = 'my-branch' }
 "bar:1.0.2" = { path = 'my/local/bar' }
 ```
 
-`[replace]`表格的每个字段都是[包标识规范](./pkgid-spec.zh.md)，它任意选择依赖图中的节点来重写。每个字段值与`[dependencies]指定依赖关系的语法是一样，除了不能指定特性。注意,当覆盖一个箱时,覆盖它的副本必须具有相同的名称和版本，但它可以来自不同的源(例如,git 或本地路径).
+`[replace]`表格的每个字段都是[包标识规范](./pkgid-spec.zh.md)，它任意选择依赖图中的节点来重写。每个字段值与`[dependencies]指定依赖关系的语法是一样，除了不能指定特性。注意，当覆盖一个箱时，覆盖它的副本必须具有相同的名称和版本，但它可以来自不同的源(例如，git 或本地路径).
 
 有关重写依赖关系的更多信息，可阅读本文档的[重写依赖项][replace]章节。
 

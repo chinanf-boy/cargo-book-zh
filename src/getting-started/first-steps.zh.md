@@ -1,6 +1,6 @@
 ## Cargo 的第一步
 
-要使用 Cargo 启动新项目,请使用`cargo new`:
+要使用 Cargo 启动新项目，请使用`cargo new`:
 
 ```shell
 $ cargo new hello_world --bin
@@ -21,7 +21,7 @@ $ tree .
 1 directory, 2 files
 ```
 
-这就是我们开始所需要的一切。首先,让我们看看`Cargo.toml`:
+这就是我们开始所需要的一切。首先，让我们看看`Cargo.toml`:
 
 ```toml
 [package]
@@ -57,7 +57,7 @@ $ ./target/debug/hello_world
 Hello, world!
 ```
 
-我们也可以直接使用`cargo run`，它会自行编译，然后运行它, 一步到位:
+我们也可以直接使用`cargo run`，它会自行编译，然后运行它， 一步到位:
 
 ```shell
 $ cargo run
@@ -68,4 +68,4 @@ Hello, world!
 
 ## 走得更远
 
-有关使用 Cargo 的更多详细信息,请查看[Cargo 指南](../guide/index.zh.md)
+有关使用 Cargo 的更多详细信息，请查看[Cargo 指南](../guide/index.zh.md)
