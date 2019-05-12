@@ -157,11 +157,11 @@
 
             <div id="content" class="content">
                 <main>
-                    <a class="header" href="#a创建一个新项目" id="a创建一个新项目"><h2>创建一个新项目</h2></a>
-<p>要使用 Cargo 启动新项目,请使用<code>cargo new</code>:</p>
+                    <a class="header" href="#创建一个新项目" id="创建一个新项目"><h2>创建一个新项目</h2></a>
+<p>要使用 Cargo 启动新项目，请使用<code>cargo new</code>:</p>
 <pre><code class="language-shell">$ cargo new hello_world --bin
 </code></pre>
-<p>我们传递<code>--bin</code>，是因为我们正在制作一个二进制程序(默认): 如果我们正在创建一个库(lib),我们就会把传递<code>--lib</code>。默认情况下，这个目录会初始化为一个新的<code>git</code>存储库，如果您不希望它这样做,请传递<code>--vcs none</code>。</p>
+<p>我们传递<code>--bin</code>，是因为我们正在制作一个二进制程序(默认): 如果我们正在创建一个库(lib)，我们就会把传递<code>--lib</code>。默认情况下，这个目录会初始化为一个新的<code>git</code>存储库，如果您不希望它这样做，请传递<code>--vcs none</code>。</p>
 <p>让我们来看看 Cargo 为我们带来了什么:</p>
 <pre><code class="language-shell">$ cd hello_world
 $ tree .
@@ -172,7 +172,7 @@ $ tree .
 
 1 directory, 2 files
 </code></pre>
-<p>这就是我们开始所需要的一切首。先,让我们看看<code>Cargo.toml</code>:</p>
+<p>这就是我们开始所需要的一切首。先让我们看看<code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -230,12 +230,12 @@ Hello, world!
 
 15 directories, 19 files
 </code></pre>
-<p>这个<code>Cargo.lock</code>文件啊，是包含我们的依赖项的有关信息(即便还没有依赖)，其内容看起来可不是很有趣啊。再有就是<code>target</code>目录包含所有构建产品(二进制文件..)，并且，可以看出,Cargo 默认生成调试(debug)版本。您可以使用<code>cargo build --release</code>，这会在开启优化的情况下，编译文件:</p>
+<p>这个<code>Cargo.lock</code>文件啊，是包含我们的依赖项的有关信息(即便还没有依赖)，其内容看起来可不是很有趣啊。再有就是<code>target</code>目录包含所有构建产品(二进制文件..)，并且，可以看出，Cargo 默认生成调试(debug)版本。您可以使用<code>cargo build --release</code>，这会在开启优化的情况下，编译文件:</p>
 <pre><code class="language-shell">$ cargo build --release
    Compiling hello_world v0.1.0 (file:///path/to/project/hello_world)
 </code></pre>
 <p><code>cargo build --release</code>将结果二进制文件放入<code>target/release</code>，而不再是<code>target/debug</code>目录.</p>
-<p>调试模式的编译是开发的默认设置 - 编译时间较短,因为编译器不进行优化,但代码运行速度较慢。发布(release)模式编译需要更长时间,但代码运行速度更快.</p>
+<p>调试模式的编译是开发的默认设置 - 编译时间较短，因为编译器不进行优化，但代码运行速度较慢。发布(release)模式编译需要更长时间，但代码运行速度更快.</p>
 
                 </main>
 

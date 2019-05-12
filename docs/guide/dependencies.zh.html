@@ -157,11 +157,11 @@
 
             <div id="content" class="content">
                 <main>
-                    <a class="header" href="#a从-cratesio-添加依赖项" id="a从-cratesio-添加依赖项"><h2>从 crates.io 添加依赖项</h2></a>
+                    <a class="header" href="#从-cratesio-添加依赖项" id="从-cratesio-添加依赖项"><h2>从 crates.io 添加依赖项</h2></a>
 <p><a href="https://crates.io/">crates.io</a>是 Rust 社区的中央存储库，用作发现和下载包的位置。<code>cargo</code>默认配置为，使用它来查找请求的包.</p>
 <p>获取托管在<a href="https://crates.io/">crates.io</a>的依赖’库’，将它添加到您的<code>Cargo.toml</code>.</p>
-<a class="header" href="#a添加依赖项" id="a添加依赖项"><h3>添加依赖项</h3></a>
-<p>如果你的<code>Cargo.toml</code>，还没有<code>[dependencies]</code>部分,添加它，然后列出您要使用的包名称和版本。这个例子增加了一个<code>time</code>箱(crate)依赖:</p>
+<a class="header" href="#添加依赖项" id="添加依赖项"><h3>添加依赖项</h3></a>
+<p>如果你的<code>Cargo.toml</code>，还没有<code>[dependencies]</code>部分，添加它，然后列出您要使用的包名称和版本。这个例子增加了一个<code>time</code>箱(crate)依赖:</p>
 <pre><code class="language-toml">[dependencies]
 time = &quot;0.1.12&quot;
 </code></pre>
@@ -176,7 +176,7 @@ authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
 time = &quot;0.1.12&quot;
 regex = &quot;0.1.41&quot;
 </code></pre>
-<p>重新运行<code>cargo build</code>，Cargo 将获取新的依赖项及其所有依赖项,将它们全部编译,然后更新<code>Cargo.lock</code>:</p>
+<p>重新运行<code>cargo build</code>，Cargo 将获取新的依赖项及其所有依赖项，将它们全部编译，然后更新<code>Cargo.lock</code>:</p>
 <pre><code class="language-shell">$ cargo build
       Updating registry `https://github.com/rust-lang/crates.io-index`
    Downloading memchr v0.1.5

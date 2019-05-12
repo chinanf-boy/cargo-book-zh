@@ -158,7 +158,7 @@
             <div id="content" class="content">
                 <main>
                     <a class="header" href="#cargo-的第一步" id="cargo-的第一步"><h2>Cargo 的第一步</h2></a>
-<p>要使用 Cargo 启动新项目,请使用<code>cargo new</code>:</p>
+<p>要使用 Cargo 启动新项目，请使用<code>cargo new</code>:</p>
 <pre><code class="language-shell">$ cargo new hello_world --bin
 </code></pre>
 <p>我们传递<code>--bin</code>，是因为我们正在制作一个二进制程序(默认): 如果我们正在创建一个库(lib)，我们就会把传递<code>--lib</code>.</p>
@@ -172,7 +172,7 @@ $ tree .
 
 1 directory, 2 files
 </code></pre>
-<p>这就是我们开始所需要的一切。首先,让我们看看<code>Cargo.toml</code>:</p>
+<p>这就是我们开始所需要的一切。首先，让我们看看<code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -195,14 +195,14 @@ edition = &quot;2018&quot;
 <pre><code class="language-shell">$ ./target/debug/hello_world
 Hello, world!
 </code></pre>
-<p>我们也可以直接使用<code>cargo run</code>，它会自行编译，然后运行它, 一步到位:</p>
+<p>我们也可以直接使用<code>cargo run</code>，它会自行编译，然后运行它， 一步到位:</p>
 <pre><code class="language-shell">$ cargo run
      Fresh hello_world v0.1.0 (file:///path/to/project/hello_world)
    Running `target/hello_world`
 Hello, world!
 </code></pre>
-<a class="header" href="#a走得更远" id="a走得更远"><h2>走得更远</h2></a>
-<p>有关使用 Cargo 的更多详细信息,请查看<a href="../guide/index.zh.html">Cargo 指南</a></p>
+<a class="header" href="#走得更远" id="走得更远"><h2>走得更远</h2></a>
+<p>有关使用 Cargo 的更多详细信息，请查看<a href="../guide/index.zh.html">Cargo 指南</a></p>
 
                 </main>
 

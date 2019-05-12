@@ -157,9 +157,9 @@
 
             <div id="content" class="content">
                 <main>
-                    <a class="header" href="#a测试" id="a测试"><h2>测试</h2></a>
-<p>Cargo 可以使用<code>cargo test</code>命令运行您的测试。Cargo 寻找在两个地方运行的测试 :在你<code>src</code>中的每个文件，和<code>tests/</code>中的任何测试。测试你的<code>src</code>文件应该是单元测试,并在<code>tests/</code>中的应该是整合式测试。因此,您需要将包装箱导入到<code>tests</code>的文件中.</p>
-<p>这是在我们的项目中，运行<code>cargo test</code>的一个例子,目前没有测试:</p>
+                    <a class="header" href="#测试" id="测试"><h2>测试</h2></a>
+<p>Cargo 可以使用<code>cargo test</code>命令运行您的测试。Cargo 寻找在两个地方运行的测试 :在你<code>src</code>中的每个文件，和<code>tests/</code>中的任何测试。测试你的<code>src</code>文件应该是单元测试，并在<code>tests/</code>中的应该是整合式测试。因此，您需要将包装箱导入到<code>tests</code>的文件中.</p>
+<p>这是在我们的项目中，运行<code>cargo test</code>的一个例子，目前没有测试:</p>
 <pre><code class="language-shell">$ cargo test
    Compiling rand v0.1.0 (https://github.com/rust-lang-nursery/rand.git#9f35b8e)
    Compiling hello_world v0.1.0 (file:///path/to/project/hello_world)
@@ -169,12 +169,12 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
 </code></pre>
-<p>如果我们的项目有测试,我们会看到更多的输出与正确的测试数量.</p>
+<p>如果我们的项目有测试，我们会看到更多的输出与正确的测试数量.</p>
 <p>您还可以通过传递过滤器，来运行特定测试:</p>
 <pre><code class="language-shell">$ cargo test foo
 </code></pre>
 <p>这将运行任何匹配的<code>foo</code>测试.</p>
-<p><code>cargo test</code>还运行其他检查。例如,它将编译您包含的任何示例(examples),并且还将测试文档中的示例。请看在 Rust 文档中的<a href="https://doc.rust-lang.org/book/testing.md">测试指南</a>，了解更多详细信息.</p>
+<p><code>cargo test</code>还运行其他检查。例如，它将编译您包含的任何示例(examples)，并且还将测试文档中的示例。请看在 Rust 文档中的<a href="https://doc.rust-lang.org/book/testing.md">测试指南</a>，了解更多详细信息.</p>
 
                 </main>
 

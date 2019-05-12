@@ -180,7 +180,7 @@
 <ul>
 <li>特性/特征/功能</li>
 </ul>
-<p>一个<a href="../reference/manifest.zh.html#the-features-section"><em>特征</em></a>是一个允许条件编译的命名标志参数。一个特性可以引用可选的依赖项,或者在 一个<code>Cargo.toml</code> 中定义的任意名称，可以键入(使用到)源代码中。</p>
+<p>一个<a href="../reference/manifest.zh.html#the-features-section"><em>特征</em></a>是一个允许条件编译的命名标志参数。一个特性可以引用可选的依赖项，或者在 一个<code>Cargo.toml</code> 中定义的任意名称，可以键入(使用到)源代码中。</p>
 <p>Cargo 有<a href="https://doc.rust-lang.org/nightly/cargo/reference/unstable.zh.md"><em>不稳定的特征标志</em></a>，这可以用来实现 Cargo 本身的实验行为。Rust 编译器和 Rustdoc 也有自己的不稳定特征标志(参见<a href="https://doc.rust-lang.org/nightly/unstable-book/index.zh.md">不稳定的书</a>和<a href="https://doc.rust-lang.org/nightly/rustdoc/unstable-features.zh.md">Rustdoc 书</a>).</p>
 <a class="header" href="#index" id="index"><h3>Index</h3></a>
 <ul>
@@ -190,13 +190,13 @@
 <ul>
 <li>(锁定/锁) 文件</li>
 </ul>
-<p><code>Cargo.lock</code>,名:<em>锁定文件</em>，是一个文件,用于捕获工作空间或包中使用的每个依赖项的确切版本，它由 Cargo 自动生成。看到<a href="../cargo-toml-vs-cargo-lock.zh.html">Cargo.toml 与 Cargo.lock</a>.</p>
+<p><code>Cargo.lock</code>，名:<em>锁定文件</em>，是一个文件，用于捕获工作空间或包中使用的每个依赖项的确切版本，它由 Cargo 自动生成。看到<a href="../cargo-toml-vs-cargo-lock.zh.html">Cargo.toml 与 Cargo.lock</a>.</p>
 <a class="header" href="#manifest" id="manifest"><h3>Manifest</h3></a>
 <ul>
 <li>清单/元信息</li>
 </ul>
 <p>一个<a href="../reference/manifest.zh.html"><em>清单</em></a>是对包或工作空间的描述，名为<code>Cargo.toml</code>.</p>
-<p>一个<a href="../reference/manifest.zh.html#virtual-manifest"><em>虚拟清单</em></a>是一个<code>Cargo.toml</code>，仅描述工作空间的文件,不包含包。</p>
+<p>一个<a href="../reference/manifest.zh.html#virtual-manifest"><em>虚拟清单</em></a>是一个<code>Cargo.toml</code>，仅描述工作空间的文件，不包含包。</p>
 <a class="header" href="#member" id="member"><h3>Member</h3></a>
 <ul>
 <li>会员/成员</li>
@@ -208,7 +208,7 @@
 </ul>
 <p>一个<em>包</em>是源文件和描述包的清单<code>Cargo.toml</code>的集合。包具有名称和版本，用于指定包之间的依赖关系。包中包含多个目标，这些目标是库或可执行二进制文件。</p>
 <p>该<em>包根</em>是<code>Cargo.toml</code>清单位于的包的目录。</p>
-<p>该<a href="../reference/pkgid-spec.zh.html"><em>包 ID 规范</em></a>, 要么<em>SPEC</em>,是一个字符串,用于辨识从特定源，引用特定版本的包唯一性。</p>
+<p>该<a href="../reference/pkgid-spec.zh.html"><em>包 ID 规范</em></a>， 要么<em>SPEC</em>，是一个字符串，用于辨识从特定源，引用特定版本的包唯一性。</p>
 <a class="header" href="#project" id="project"><h3>Project</h3></a>
 <ul>
 <li>包/项目</li>
@@ -218,7 +218,7 @@
 <ul>
 <li>注册表</li>
 </ul>
-<p>一个<em>注册处</em>是一种服务,包含可下载的包,可以安装或用作包的依赖项.默认注册表是<a href="https://crates.io">crates.io</a>。注册表有一个<em>索引</em>，其中包含所有包装箱的清单,并告诉 Cargo 如何下载所需的箱。</p>
+<p>一个<em>注册处</em>是一种服务，包含可下载的包，可以安装或用作包的依赖项.默认注册表是<a href="https://crates.io">crates.io</a>。注册表有一个<em>索引</em>，其中包含所有包装箱的清单，并告诉 Cargo 如何下载所需的箱。</p>
 <a class="header" href="#source" id="source"><h3>Source</h3></a>
 <ul>
 <li>源/资源</li>
@@ -242,27 +242,27 @@
 </ul>
 <p><em>Target</em>这个词的意思，取决于具体情况:</p>
 <ul>
-<li><strong>Cargo 目标</strong> - Cargo 项目会有<em>target</em>，其具有对应将要生成的工件。项目可以包含库,二进制,示例,测试和基准目标。该<a href="../reference/manifest.zh.html#configuring-a-target">目标列表</a>配置在<code>Cargo.toml</code>清单,通常由源文件的<a href="../reference/manifest.zh.html#the-project-layout">目录布局</a>自动推断的。</li>
+<li><strong>Cargo 目标</strong> - Cargo 项目会有<em>target</em>，其具有对应将要生成的工件。项目可以包含库，二进制，示例，测试和基准目标。该<a href="../reference/manifest.zh.html#configuring-a-target">目标列表</a>配置在<code>Cargo.toml</code>清单，通常由源文件的<a href="../reference/manifest.zh.html#the-project-layout">目录布局</a>自动推断的。</li>
 <li><strong>目标架构</strong>- 构建工件的 OS 和机器体系结构，通常称为一个<em>目标</em>。</li>
 <li><strong>目标 三元(Triple)</strong>- 三元组是用于指定目标体系结构的特定格式。见<a href="http://clang.llvm.org/docs/CrossCompilation.zh.md#target-triple">clang 文档</a> 了解详情。三元组可以称为 一个<em>目标三元</em>，此为产生的工件的架构，以及<em>主机三元</em>，此为编译器运行的体系结构。可以使用<code>--target</code>命令行选项或<code>build.target</code> [配置选项]指定目标三元组。</li>
-<li><strong>目标目录</strong>- Cargo 将所有构建的工件和中间文件放入<em>target</em>目录。默认情况下,这是一个名为<code>target</code>的目录会在工作区根目录，或者包根(如果不使用工作空间)。目录随着<code>--target-dir</code>命令行选项,<code>CARGO_TARGET_DIR</code> <a href="../reference/environment-variables.zh.html">环境变量</a>, 或者<code>build.target-dir</code>
+<li><strong>目标目录</strong>- Cargo 将所有构建的工件和中间文件放入<em>target</em>目录。默认情况下，这是一个名为<code>target</code>的目录会在工作区根目录，或者包根(如果不使用工作空间)。目录随着<code>--target-dir</code>命令行选项，<code>CARGO_TARGET_DIR</code> <a href="../reference/environment-variables.zh.html">环境变量</a>， 或者<code>build.target-dir</code>
 <a href="../reference/config.zh.html">配置选项</a>改变而改变.</li>
 </ul>
 <blockquote>
 <p>“target-triple (目标 三元)” 是 编译器的 专用术语，用 “ cpu- vendor- os” 来标识 交叉编译时的 系统类型</p>
 </blockquote>
 <a class="header" href="#test-targets" id="test-targets"><h3>Test Targets</h3></a>
-<p>Cargo<em>测试目标</em>生成二进制文件,帮助验证代码的正确操作和正确性。有两种类型的测试工件:</p>
+<p>Cargo<em>测试目标</em>生成二进制文件，帮助验证代码的正确操作和正确性。有两种类型的测试工件:</p>
 <ul>
-<li><strong>单元测试</strong>- 一个<em>单元测试</em>是直接从库或二进制目标编译的可执行二进制文件。它包含库或二进制代码的全部内容,并运行<code>#[test]</code>注释函数,用于验证各个代码单元。</li>
-<li><strong>集成测试目标</strong>- 一个<a href="../reference/manifest.zh.html#integration-tests"><em>集成测试目标</em></a>是一个来自<em>测试目标</em>的可执行的二进制文件，这是一个独特的箱子,其来源位于<code>tests</code>目录或由在<code>Cargo.toml</code>清单里面的<a href="../reference/manifest.zh.html#configuring-a-target"><code>[[test]]</code>表</a>指定。它旨在仅测试库的公共 API,或执行二进制文件以验证其操作。</li>
+<li><strong>单元测试</strong>- 一个<em>单元测试</em>是直接从库或二进制目标编译的可执行二进制文件。它包含库或二进制代码的全部内容，并运行<code>#[test]</code>注释函数，用于验证各个代码单元。</li>
+<li><strong>集成测试目标</strong>- 一个<a href="../reference/manifest.zh.html#integration-tests"><em>集成测试目标</em></a>是一个来自<em>测试目标</em>的可执行的二进制文件，这是一个独特的箱子，其来源位于<code>tests</code>目录或由在<code>Cargo.toml</code>清单里面的<a href="../reference/manifest.zh.html#configuring-a-target"><code>[[test]]</code>表</a>指定。它旨在仅测试库的公共 API，或执行二进制文件以验证其操作。</li>
 </ul>
 <a class="header" href="#workspace" id="workspace"><h3>Workspace</h3></a>
 <ul>
 <li>工作区</li>
 </ul>
-<p>一个<a href="../reference/manifest.zh.html#the-workspace-section"><em>工作区</em></a>是一个共享公共依赖项解析(具有共享<code>Cargo.lock</code>),输出目录和各种设置,如配置文件，的一个或多个包的集合。</p>
-<p>一个<a href="../reference/manifest.zh.html#virtual-manifest"><em>虚拟工作区</em></a>是<code>Cargo.toml</code>清单根目录的工作空间， 没有定义包,只列出工作区成员。</p>
+<p>一个<a href="../reference/manifest.zh.html#the-workspace-section"><em>工作区</em></a>是一个共享公共依赖项解析(具有共享<code>Cargo.lock</code>)，输出目录和各种设置，如配置文件，的一个或多个包的集合。</p>
+<p>一个<a href="../reference/manifest.zh.html#virtual-manifest"><em>虚拟工作区</em></a>是<code>Cargo.toml</code>清单根目录的工作空间， 没有定义包，只列出工作区成员。</p>
 <p>该<em>工作区根</em>是工作区的<code>Cargo.toml</code>清单位于的目录.</p>
 
                 </main>

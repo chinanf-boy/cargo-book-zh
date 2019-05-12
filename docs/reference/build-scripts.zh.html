@@ -161,7 +161,7 @@
 <blockquote>
 <p>构建脚本</p>
 </blockquote>
-<p>一些包需要编译第三方非 Rust 代码，例如 C 库。其他的包需要链接到 C 库，当然这些库既可以位于系统上，也可以从源代码构建。其他人或许还需要功能工具,比如构建之前的代码生成(想想解析生成器)。</p>
+<p>一些包需要编译第三方非 Rust 代码，例如 C 库。其他的包需要链接到 C 库，当然这些库既可以位于系统上，也可以从源代码构建。其他人或许还需要功能工具，比如构建之前的代码生成(想想解析生成器)。</p>
 <p>Cargo 并不打算替换为这些能良好优化任务的其他工具，但是它与<code>build</code>配置选项.</p>
 <pre><code class="language-toml">[package]
 # ...
@@ -180,7 +180,7 @@ build = &quot;build.rs&quot;
 <blockquote>
 <p>输入到构建脚本</p>
 </blockquote>
-<p>当运行构建脚本时,存在许多构建脚本用到的输入,所有输入都以<a href="./environment-variables.zh.html">环境变量</a>传入。</p>
+<p>当运行构建脚本时，存在许多构建脚本用到的输入，所有输入都以<a href="./environment-variables.zh.html">环境变量</a>传入。</p>
 <p>除了环境变量之外，构建脚本的当前目录是构建脚本包的源目录.</p>
 <a class="header" href="#outputs-of-the-build-script" id="outputs-of-the-build-script"><h3>Outputs of the Build Script</h3></a>
 <blockquote>
@@ -197,14 +197,14 @@ cargo:root=/path/to/foo
 cargo:libdir=/path/to/foo/lib
 cargo:include=/path/to/foo/include
 </code></pre>
-<p>另一方面，打印到 stderr 的行被写入像<code>target/debug/build/&lt;pkg&gt;/stderr</code>这样的文件,但不被 Cargo 解释。</p>
-<p>Cargo 识别一些特殊的 key,其中一些影响箱的构造:</p>
+<p>另一方面，打印到 stderr 的行被写入像<code>target/debug/build/&lt;pkg&gt;/stderr</code>这样的文件，但不被 Cargo 解释。</p>
+<p>Cargo 识别一些特殊的 key，其中一些影响箱的构造:</p>
 <ul>
 <li>
-<p><code>rustc-link-lib=[KIND=]NAME</code>说明了，指定值是库名，且会作为<code>-l</code>标志传递给编译器。<code>KIND</code>可选为<code>static</code>,<code>dylib</code>(默认值),或<code>framework</code>的其中之一，用<code>rustc --help</code>见更多细节。</p>
+<p><code>rustc-link-lib=[KIND=]NAME</code>说明了，指定值是库名，且会作为<code>-l</code>标志传递给编译器。<code>KIND</code>可选为<code>static</code>，<code>dylib</code>(默认值)，或<code>framework</code>的其中之一，用<code>rustc --help</code>见更多细节。</p>
 </li>
 <li>
-<p><code>rustc-link-search=[KIND=]PATH</code>说明了，指定值是库搜索路径,且会作为<code>-L</code>标志传递给编译器。<code>KIND</code>可选为<code>dependency</code>,<code>crate</code>,<code>native</code>,<code>framework</code>或<code>all</code>(默认值)的其中之一，使用<code>rustc --help</code>见更多细节.</p>
+<p><code>rustc-link-search=[KIND=]PATH</code>说明了，指定值是库搜索路径，且会作为<code>-L</code>标志传递给编译器。<code>KIND</code>可选为<code>dependency</code>，<code>crate</code>，<code>native</code>，<code>framework</code>或<code>all</code>(默认值)的其中之一，使用<code>rustc --help</code>见更多细节.</p>
 </li>
 <li>
 <p><code>rustc-flags=FLAGS</code>是传递给编译器的一组标志，仅支持<code>-l</code>和<code>-L</code>标志。</p>
@@ -213,16 +213,16 @@ cargo:include=/path/to/foo/include
 <p><code>rustc-cfg=FEATURE</code>说明了，指定的特性，且会作为<code>--cfg</code>标志传递给编译器。这通常对检测，执行各种特征的编译时间，是有用的。</p>
 </li>
 <li>
-<p><code>rustc-env=VAR=VALUE</code>说明了，指定的环境变量，且会被添加到编译器所在的环境中。然后,可以通过编译箱中的<code>env!</code>宏检索该值。这对于在箱的代码中嵌入额外的元数据很有用，比如 Git HEAD 的散列，或持续集成服务器的唯一标识符。</p>
+<p><code>rustc-env=VAR=VALUE</code>说明了，指定的环境变量，且会被添加到编译器所在的环境中。然后，可以通过编译箱中的<code>env!</code>宏检索该值。这对于在箱的代码中嵌入额外的元数据很有用，比如 Git HEAD 的散列，或持续集成服务器的唯一标识符。</p>
 </li>
 <li>
-<p><code>rerun-if-changed=PATH</code>是文件或目录的路径，说明了如果构建脚本发生更改(由文件上最近修改的时间戳检测到)，则应重新运行构建脚本。通常,如果箱根目录中的任何文件发生更改，则重新运行构建脚本，但这可用于将更改范围扩展到仅一小组文件。(如果这个路径指向一个目录，则不会遍历整个目录以进行更改——只对目录本身的时间戳进行更改(该时间戳对应于目录中的某些类型的更改，取决于平台)，将触发重新构建。要请求重新运行整个目录中的任何更改，请递归地为该目录打印一行，为该目录内的所有内容打印另一行。)请注意，如果构建脚本本身(或其依赖项之一)更改，则无条件地重新构建和重新运行该脚本，因此，<code>cargo:rerun-if-changed=build.rs</code>几乎总是冗余(除非您想要忽略除了<code>build.rs</code>，所有其他文件的变化)</p>
+<p><code>rerun-if-changed=PATH</code>是文件或目录的路径，说明了如果构建脚本发生更改(由文件上最近修改的时间戳检测到)，则应重新运行构建脚本。通常，如果箱根目录中的任何文件发生更改，则重新运行构建脚本，但这可用于将更改范围扩展到仅一小组文件。(如果这个路径指向一个目录，则不会遍历整个目录以进行更改——只对目录本身的时间戳进行更改(该时间戳对应于目录中的某些类型的更改，取决于平台)，将触发重新构建。要请求重新运行整个目录中的任何更改，请递归地为该目录打印一行，为该目录内的所有内容打印另一行。)请注意，如果构建脚本本身(或其依赖项之一)更改，则无条件地重新构建和重新运行该脚本，因此，<code>cargo:rerun-if-changed=build.rs</code>几乎总是冗余(除非您想要忽略除了<code>build.rs</code>，所有其他文件的变化)</p>
 </li>
 <li>
-<p><code>rerun-if-env-changed=VAR</code>是环境变量的名称，说明了它指示如果环境变量的值发生变化，则应重新运行构建脚本。这基本上与<code>rerun-if-changed</code>是一样的，除了它与环境变量一起工作。注意,这里的环境变量用于全局环境变量，如<code>CC</code>这样的，对于 Cargo 所设的像<code>TARGET</code>，就不必使用它。还要注意，如果<code>rerun-if-env-changed</code>打印出来，然后 Cargo 将<em>只</em>在，那些环境变量发生变化，或者打印出<code>rerun-if-changed</code>改变的文件的情况下，才重新运行构建脚本。</p>
+<p><code>rerun-if-env-changed=VAR</code>是环境变量的名称，说明了它指示如果环境变量的值发生变化，则应重新运行构建脚本。这基本上与<code>rerun-if-changed</code>是一样的，除了它与环境变量一起工作。注意，这里的环境变量用于全局环境变量，如<code>CC</code>这样的，对于 Cargo 所设的像<code>TARGET</code>，就不必使用它。还要注意，如果<code>rerun-if-env-changed</code>打印出来，然后 Cargo 将<em>只</em>在，那些环境变量发生变化，或者打印出<code>rerun-if-changed</code>改变的文件的情况下，才重新运行构建脚本。</p>
 </li>
 <li>
-<p><code>warning=MESSAGE</code>是构建脚本运行完毕后，打印到主控制台的消息/警告只针对路径依赖项(即,您在本地工作的那些依赖项)显示，因此如， crates.io 的箱在默认情况下不会打印警告。</p>
+<p><code>warning=MESSAGE</code>是构建脚本运行完毕后，打印到主控制台的消息/警告只针对路径依赖项(即，您在本地工作的那些依赖项)显示，因此如， crates.io 的箱在默认情况下不会打印警告。</p>
 </li>
 </ul>
 <p>其他哪些元素都是用户定义的元数据，这些元数据传递给了依赖的。关于这个的更多信息可以在<a href="#the-links-manifest-key"><code>links</code></a>部分查看.</p>
@@ -247,7 +247,7 @@ build = &quot;build.rs&quot;
 </code></pre>
 <p>此清单说明了包会链接到本机库<code>libfoo</code>，并且它还具有定位和/或构建该本机库的构建脚本。Cargo 要求<code>build</code>如果有值，那<code>links</code>也要有值。</p>
 <p>这个清单键的目的是，让 Cargo 了解包所具有的本地依赖项集合，并提供在包构建脚本之间，传递元数据的合适的系统.</p>
-<p>首先,Cargo 要求一个包最多只有一个<code>links</code>值。换句话说,禁止两个包链接到同一个本机库。然而，这里也有<a href="#a-sys-packages">约定位置</a>的方式，用来缓解这个问题。</p>
+<p>首先，Cargo 要求一个包最多只有一个<code>links</code>值。换句话说，禁止两个包链接到同一个本机库。然而，这里也有<a href="#a-sys-packages">约定位置</a>的方式，用来缓解这个问题。</p>
 <p>如上面在输出格式中提到的，每个构建脚本可以以键-值对的形式生成一组任意的元数据。此元数据传递给<strong>依赖的</strong>包。例如，如果<code>libbar</code>依赖<code>libfoo</code>，当<code>libfoo</code>生成<code>key=value</code>作为其元数据的一部分，那<code>libbar</code>的构建脚本会有<code>DEP_FOO_KEY=value</code>环境变量。</p>
 <p>注意，元数据只传递给直接依赖项，而不是把依赖项串起来。此元数据传递的动机，会在接下来，关联到系统库案例研究中概述。</p>
 <a class="header" href="#overriding-build-scripts" id="overriding-build-scripts"><h3>Overriding Build Scripts</h3></a>
@@ -255,21 +255,21 @@ build = &quot;build.rs&quot;
 <p>覆盖 构建脚本</p>
 </blockquote>
 <p>如果一个清单包含<code>links</code>关键字，那 Cargo 支持重写用自定义库指定的构建脚本。此功能的目的是防止完全运行有问题的构建脚本，而是提前提供下元数据。</p>
-<p>要覆盖构建脚本,请将下列配置放在任何可接受的 Cargo 的<a href="./config.zh.html">配置位置</a>中。</p>
+<p>要覆盖构建脚本，请将下列配置放在任何可接受的 Cargo 的<a href="./config.zh.html">配置位置</a>中。</p>
 <pre><code class="language-toml">[target.x86_64-unknown-linux-gnu.foo]
 rustc-link-search = [&quot;/path/to/foo&quot;]
 rustc-link-lib = [&quot;foo&quot;]
 root = &quot;/path/to/foo&quot;
 key = &quot;value&quot;
 </code></pre>
-<p>本节说明目标<code>x86_64-unknown-linux-gnu</code>，命名为<code>foo</code>的库，具有指定的元数据。此元数据与构建脚本时生成的元数据相同，提供了许多键/值对,其中<code>rustc-flags</code>,<code>rustc-link-search</code>和<code>rustc-link-lib</code>有点特殊.</p>
+<p>本节说明目标<code>x86_64-unknown-linux-gnu</code>，命名为<code>foo</code>的库，具有指定的元数据。此元数据与构建脚本时生成的元数据相同，提供了许多键/值对，其中<code>rustc-flags</code>，<code>rustc-link-search</code>和<code>rustc-link-lib</code>有点特殊.</p>
 <p>使用此配置，如果一个包声明它链接到此<code>foo</code>，那构建脚本将<strong>不</strong>编译或运行，而会使用指定的元数据。</p>
 <a class="header" href="#case-study-code-generation" id="case-study-code-generation"><h3>Case study: Code generation</h3></a>
 <blockquote>
 <p>案例学习: 代码生成</p>
 </blockquote>
-<p>由于各种原因,一些 Cargo 包在编译之前需要生成代码。这里我们将介绍一个简单的示例，该示例把，’生成库调用’作为构建脚本的一部分.</p>
-<p>首先,让我们看一下这个包的目录结构:</p>
+<p>由于各种原因，一些 Cargo 包在编译之前需要生成代码。这里我们将介绍一个简单的示例，该示例把，’生成库调用’作为构建脚本的一部分.</p>
+<p>首先，让我们看一下这个包的目录结构:</p>
 <pre><code>.
 ├── Cargo.toml
 ├── build.rs
@@ -278,7 +278,7 @@ key = &quot;value&quot;
 
 1 directory, 3 files
 </code></pre>
-<p>在这里我们可以看到我们有一个<code>build.rs</code>构建脚本，和二进制文件<code>main.rs</code>。 接下来,让我们看一下清单:</p>
+<p>在这里我们可以看到我们有一个<code>build.rs</code>构建脚本，和二进制文件<code>main.rs</code>。 接下来，让我们看一下清单:</p>
 <pre><code class="language-toml"># Cargo.toml
 
 [package]
@@ -309,11 +309,11 @@ fn main() {
 </code></pre></pre>
 <p>这里有两点值得注意的地方:</p>
 <ul>
-<li>脚本使用<code>OUT_DIR</code>环境变量，以知道输出文件到哪里。它可以使用进程的当前工作目录，来查找输入文件应该到哪里，但是在这种情况下,我们是没有任何输入文件的。</li>
+<li>脚本使用<code>OUT_DIR</code>环境变量，以知道输出文件到哪里。它可以使用进程的当前工作目录，来查找输入文件应该到哪里，但是在这种情况下，我们是没有任何输入文件的。</li>
 <li>一般来说，构建脚本不应该修改<code>OUT_DIR</code>目录外的任何文件。 乍看之下，似乎不错，但当您使用这种箱子作为依赖项时，它确会带来问题，因为<code>.cargo/registry</code>源中的<em>隐性的</em>常量应该是不变的。<code>cargo</code>在打包时不会允许这样的脚本。</li>
 <li>这个脚本相对简单，只是写出一个小生成的文件。可以想象，其他更奇特的操作也可能发生，例如从 C 头文件或其他定义的语言生成 Rust 模块。</li>
 </ul>
-<p>接下来,我们来看看库本身:</p>
+<p>接下来，我们来看看库本身:</p>
 <pre><code class="language-rust ignore">// src/main.rs
 
 include!(concat!(env!(&quot;OUT_DIR&quot;), &quot;/hello.rs&quot;));
@@ -328,8 +328,8 @@ fn main() {
 <blockquote>
 <p>案例学习: 构建一些原生代码</p>
 </blockquote>
-<p>有时需要建立一些本地 C 或 C++代码作为包的一部分。这是在用构建脚本到 Rust 箱本身之前，构建本机库的另一个极好用例。作为一个例子,我们将创建一个 Rust 库，它调用 C 来打印”Hello,World!”.</p>
-<p>和上面一样,让我们先来看看包的布局:</p>
+<p>有时需要建立一些本地 C 或 C++代码作为包的一部分。这是在用构建脚本到 Rust 箱本身之前，构建本机库的另一个极好用例。作为一个例子，我们将创建一个 Rust 库，它调用 C 来打印”Hello,World!”.</p>
+<p>和上面一样，让我们先来看看包的布局:</p>
 <pre><code>.
 ├── Cargo.toml
 ├── build.rs
@@ -339,7 +339,7 @@ fn main() {
 
 1 directory, 4 files
 </code></pre>
-<p>很像之前的吧! 下一步,清单如下:</p>
+<p>很像之前的吧! 下一步，清单如下:</p>
 <pre><code class="language-toml"># Cargo.toml
 
 [package]
@@ -348,7 +348,7 @@ version = &quot;0.1.0&quot;
 authors = [&quot;you@example.com&quot;]
 build = &quot;build.rs&quot;
 </code></pre>
-<p>现在,我们不打算使用任何-构建的依赖项,所以现在让我们看一下构建脚本:</p>
+<p>现在，我们不打算使用任何-构建的依赖项，所以现在让我们看一下构建脚本:</p>
 <pre><pre class="playpen"><code class="language-rust no_run">// build.rs
 
 use std::process::Command;
@@ -371,10 +371,10 @@ fn main() {
     println!(&quot;cargo:rustc-link-lib=static=hello&quot;);
 }
 </code></pre></pre>
-<p>此构建脚本首先将 C 文件编译为对象文件(通过调用<code>gcc</code>)，然后将这个对象文件转换为静态库(通过调用<code>ar</code>)，最后一步是反馈给 Cargo ,以表示我们的输出在<code>out_dir</code>和通过<code>-l static=hello</code>标志，编译器应该将箱静态链接到<code>libhello.a</code>。</p>
-<p>请注意,这种硬编码方法有许多缺点:</p>
+<p>此构建脚本首先将 C 文件编译为对象文件(通过调用<code>gcc</code>)，然后将这个对象文件转换为静态库(通过调用<code>ar</code>)，最后一步是反馈给 Cargo ，以表示我们的输出在<code>out_dir</code>和通过<code>-l static=hello</code>标志，编译器应该将箱静态链接到<code>libhello.a</code>。</p>
+<p>请注意，这种硬编码方法有许多缺点:</p>
 <ul>
-<li>这个<code>gcc</code>命令本身不是跨平台可移植的。如, 在 Windows 平台不太可能<code>gcc</code>,甚至不是所有 UNIX 平台都可能有<code>gcc</code>。 这个<code>ar</code>命令也处于类似的情况。</li>
+<li>这个<code>gcc</code>命令本身不是跨平台可移植的。如，在 Windows 平台不太可能<code>gcc</code>，甚至不是所有 UNIX 平台都可能有<code>gcc</code>。 这个<code>ar</code>命令也处于类似的情况。</li>
 <li>这些命令不考虑跨编译。如果我们为 Android 这样的平台进行跨编译，<code>gcc</code>就不太可能产生一个可执行的 ARM.</li>
 </ul>
 <p>但不要害怕，这里<code>build-dependencies</code>就帮到你! Cargo 生态系统有许多包，为了使此类任务更加容易、可移植和标准化。构建脚本可以写成:</p>
@@ -396,13 +396,13 @@ cc = &quot;1.0&quot;
 </code></pre>
 <p>这个<a href="https://crates.io/crates/cc"><code>cc</code>箱</a>抽象了 C 代码构建，主要用于脚本需求范围:</p>
 <ul>
-<li>它调用适当的编译器(Windows 的 MSVC,<code>gcc</code>对 MinGW ,<code>cc</code>对 UNIX 平台等等).</li>
+<li>它调用适当的编译器(Windows 的 MSVC，<code>gcc</code>对 MinGW ，<code>cc</code>对 UNIX 平台等等).</li>
 <li>通过向正在使用的编译器传递适当的标志，获取<code>TARGET</code>变量.</li>
-<li>其他环境变量,如<code>OPT_LEVEL</code>,<code>DEBUG</code>等等,都是自动处理的.</li>
+<li>其他环境变量，如<code>OPT_LEVEL</code>，<code>DEBUG</code>等等，都是自动处理的.</li>
 <li>stdout 输出和<code>OUT_DIR</code>位置也由<code>cc</code>库控制.</li>
 </ul>
-<p>在这里,我们可以开始看到，将尽可能多的功能移植到公共构建依赖项，而不是在所有构建脚本之间复制来复制去，的一些主要好处!</p>
-<p>回到案例研究,让我们快速浏览一下<code>src</code>目录中的内容:</p>
+<p>在这里，我们可以开始看到，将尽可能多的功能移植到公共构建依赖项，而不是在所有构建脚本之间复制来复制去，的一些主要好处!</p>
+<p>回到案例研究，让我们快速浏览一下<code>src</code>目录中的内容:</p>
 <pre><code class="language-c">// src/hello.c
 
 #include &lt;stdio.h&gt;
@@ -428,16 +428,16 @@ fn main() {
 <blockquote>
 <p>案例学习: 链接到系统库</p>
 </blockquote>
-<p>这里的最后一个案例研究，将研究 Cargo 库如何链接到系统库,以及构建脚本如何支持这个用例。</p>
-<p>通常,Rust 箱希望链接到系统上经常提供的本地库，以绑定其功能，或者只是将其用作实现细节的一部分。想以不管平台的方式执行这个操作，而这却是一个相当微妙的问题，再次说明下，构建脚本的目的是尽可能多地分配这些(微妙)内容，以便让消费者尽可能容易地使用它.</p>
-<p>作为一个例子,让我们来看一个<a href="https://github.com/alexcrichton/git2-rs/tree/master/libgit2-sys">Cargo 本身的依赖</a>,<a href="https://github.com/libgit2/libgit2">libgit2</a>。这个 C 库其实有许多约束条件:</p>
+<p>这里的最后一个案例研究，将研究 Cargo 库如何链接到系统库，以及构建脚本如何支持这个用例。</p>
+<p>通常，Rust 箱希望链接到系统上经常提供的本地库，以绑定其功能，或者只是将其用作实现细节的一部分。想以不管平台的方式执行这个操作，而这却是一个相当微妙的问题，再次说明下，构建脚本的目的是尽可能多地分配这些(微妙)内容，以便让消费者尽可能容易地使用它.</p>
+<p>作为一个例子，让我们来看一个<a href="https://github.com/alexcrichton/git2-rs/tree/master/libgit2-sys">Cargo 本身的依赖</a>，<a href="https://github.com/libgit2/libgit2">libgit2</a>。这个 C 库其实有许多约束条件:</p>
 <ul>
 <li>它可选为依赖 Unix 上的 OpenSSL ，来实现 https 传输.</li>
 <li>它可选为依赖所有平台上的 libssh2 ，来实现 ssh 传输.</li>
-<li>默认情况下,它通常不安装在所有系统上.</li>
+<li>默认情况下，它通常不安装在所有系统上.</li>
 <li>它可以从源代码使用<code>cmake</code>构建.</li>
 </ul>
-<p>为了可视化这里发生的事情,让我们看一下，链接本机 C 库的相关 Cargo 包的清单。</p>
+<p>为了可视化这里发生的事情，让我们看一下，链接本机 C 库的相关 Cargo 包的清单。</p>
 <pre><code class="language-toml">[package]
 name = &quot;libgit2-sys&quot;
 version = &quot;0.1.0&quot;
@@ -454,8 +454,8 @@ openssl-sys = { git = &quot;https://github.com/alexcrichton/openssl-sys&quot; }
 # ...
 </code></pre>
 <p>正如上面的清单所显示的，我们指定了一个<code>build</code>脚本，但值得注意的是，该示例具有<code>links</code>项，说明该箱(<code>libgit2-sys</code>)链接到了这个本地库<code>git2</code>。</p>
-<p>在这里，我们还看到,我们选择让 Rust 箱有一个无条件的，通过<code>libssh2-sys</code>箱依赖<code>libssh2</code>(ssh2-rs)，以及(有条件的)特定于平 unix 台的<code>openssl-sys</code>依赖(其他平台现在被漠视)。这似乎有点违反在 <em>Cargo 清单</em> 的 <em>C 依赖</em> 的明确性，但这实际上是这’地方’中使用 Cargo 的一种约定.</p>
-<a class="header" href="#a-sys-packages" id="a-sys-packages"><h3><code>*-sys</code> Packages</h3></a>
+<p>在这里，我们还看到，我们选择让 Rust 箱有一个无条件的，通过<code>libssh2-sys</code>箱依赖<code>libssh2</code>(ssh2-rs)，以及(有条件的)特定于平 unix 台的<code>openssl-sys</code>依赖(其他平台现在被漠视)。这似乎有点违反在 <em>Cargo 清单</em> 的 <em>C 依赖</em> 的明确性，但这实际上是这’地方’中使用 Cargo 的一种约定.</p>
+<a class="header" href="#-sys-packages" id="-sys-packages"><h3><code>*-sys</code> Packages</h3></a>
 <blockquote>
 <p><code>*-sys</code> 包们</p>
 </blockquote>
@@ -476,19 +476,19 @@ openssl-sys = { git = &quot;https://github.com/alexcrichton/openssl-sys&quot; }
 </blockquote>
 <p>现在我们已经整理了 libgit2 的依赖，我们需要实际编写下构建脚本。我们这里不讨论特定的代码片段，而只研究<code>libgit2-sys</code>构建脚本的高层细节。这并不是建议所有包都遵循这个策略，而仅概述一个特定的策略。</p>
 <p>构建脚本应该做的第一步是查询 libgit2 是否已经安装在主机系统上。要做到这一点，我们将利用现有的工具<code>pkg-config</code>(当它可用时)。我们也会使用<code>build-dependencies</code>部分重构成<code>pkg-config</code>相关的所有代码(或者有人已经这样做了!)。</p>
-<p>如果<code>pkg-config</code>找不到 libgit2，或者如果<code>pkg-config</code>只是没有安装，下一步就要从捆绑源代码构建 libgit2 (捆绑源码作为<code>libgit2-sys</code>本身的一部分)。然而，在这样做时有一些细微差别,我们需要加以考虑:</p>
+<p>如果<code>pkg-config</code>找不到 libgit2，或者如果<code>pkg-config</code>只是没有安装，下一步就要从捆绑源代码构建 libgit2 (捆绑源码作为<code>libgit2-sys</code>本身的一部分)。然而，在这样做时有一些细微差别，我们需要加以考虑:</p>
 <ul>
 <li>
-<p>libgit2 的构建系统，<code>cmake</code>需要能够找到 libgit2 可选依赖 libssh2 。而我们确信我们已经构建了它(因它是一个 Cargo 依赖项),我们只需要传递这个信息。为此,我们利用元数据格式，在构建脚本之间传递信息。在这个例子中，打印出的 libssh2 包信息是<code>cargo:root=...</code>，它来告诉我们 libssh2 安装在哪里，然后我们可以通过<code>CMAKE_PREFIX_PATH</code>环境变量让 cmkae 知道。</p>
+<p>libgit2 的构建系统，<code>cmake</code>需要能够找到 libgit2 可选依赖 libssh2 。而我们确信我们已经构建了它(因它是一个 Cargo 依赖项)，我们只需要传递这个信息。为此，我们利用元数据格式，在构建脚本之间传递信息。在这个例子中，打印出的 libssh2 包信息是<code>cargo:root=...</code>，它来告诉我们 libssh2 安装在哪里，然后我们可以通过<code>CMAKE_PREFIX_PATH</code>环境变量让 cmkae 知道。</p>
 </li>
 <li>
 <p>我们需要处理下，编译 C 代码时的一些<code>CFLAGS</code>值(也要告诉<code>cmake</code>关于这个信息)。我们想传递的一些标志是 64 位的<code>-m64</code>，32 位的<code>-m32</code>，或<code>-fPIC</code>也适用于 64 位。</p>
 </li>
 <li>
-<p>最后,我们调用<code>cmake</code>将所有输出放入环境变量<code>OUT_DIR</code>目录，然后打印必要的元数据，以指导 rustc 如何链接到 libgit2。</p>
+<p>最后，我们调用<code>cmake</code>将所有输出放入环境变量<code>OUT_DIR</code>目录，然后打印必要的元数据，以指导 rustc 如何链接到 libgit2。</p>
 </li>
 </ul>
-<p>这个构建脚本的大部分功能，很容易就重构为常见的依赖项，因此我们的构建脚本不像这个描述那样长烦! 实际上,通过构建依赖项,构建脚本应该非常简单。</p>
+<p>这个构建脚本的大部分功能，很容易就重构为常见的依赖项，因此我们的构建脚本不像这个描述那样长烦! 实际上，通过构建依赖项，构建脚本应该非常简单。</p>
 
                 </main>
 

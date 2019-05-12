@@ -157,9 +157,9 @@
 
             <div id="content" class="content">
                 <main>
-                    <a class="header" href="#a持续集成" id="a持续集成"><h2>持续集成</h2></a>
+                    <a class="header" href="#持续集成" id="持续集成"><h2>持续集成</h2></a>
 <a class="header" href="#travis-ci" id="travis-ci"><h3>Travis CI</h3></a>
-<p>要在 Travis CI 上测试您的项目,这里有一个<code>.travis.yml</code>文件示例:</p>
+<p>要在 Travis CI 上测试您的项目，这里有一个<code>.travis.yml</code>文件示例:</p>
 <pre><code class="language-yaml">language: rust
 rust:
   - stable
@@ -171,7 +171,7 @@ matrix:
 </code></pre>
 <p>这将在所有三个 rust 版本下，进行测试，但 nightly 的任何破坏，都不会使整体构建失败。请看看<a href="https://docs.travis-ci.com/user/languages/rust/">Travis CI Rust 文档</a>了解更多信息.</p>
 <a class="header" href="#gitlab-ci" id="gitlab-ci"><h3>GitLab CI</h3></a>
-<p>要在 GitLab CI 上测试您的包,这里有一个<code>.gitlab-ci.yml</code>文件示例:</p>
+<p>要在 GitLab CI 上测试您的包，这里有一个<code>.gitlab-ci.yml</code>文件示例:</p>
 <pre><code class="language-yaml">stages:
   - build
 
@@ -190,7 +190,7 @@ rust-nightly:
     - cargo test --verbose
   allow_failure: true
 </code></pre>
-<p>这将测试 stable 的通道和 nightly 通道,但 nightly 的任何破损,都不会使整体构建失败。欲获得更多信息，请看<a href="https://docs.gitlab.com/ce/ci/yaml/README.md">GitLab CI</a>.</p>
+<p>这将测试 stable 版本和 nightly 版本，但 nightly 的任何破损，都不会使整体构建失败。欲获得更多信息，请看<a href="https://docs.gitlab.com/ce/ci/yaml/README.md">GitLab CI</a>.</p>
 
                 </main>
 

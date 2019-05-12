@@ -160,7 +160,7 @@
                     <a class="header" href="#package-id-specifications" id="package-id-specifications"><h2>Package ID Specifications</h2></a>
 <a class="header" href="#package-id-specifications-1" id="package-id-specifications-1"><h3>Package ID specifications</h3></a>
 <p>包 ID 规范</p>
-<p>Cargo 的子命令经常需要引用依赖关系图中的特定包来进行各种操作,例如更新,清理,构建等。为了解决这个问题,Cargo 支持包 ID 规范。规范是一个字符串,用于唯一地引用依赖关系图中的一个包.</p>
+<p>Cargo 的子命令经常需要引用依赖关系图中的特定包来进行各种操作，例如更新，清理，构建等。为了解决这个问题，Cargo 支持包 ID 规范。规范是一个字符串，用于唯一地引用依赖关系图中的一个包.</p>
 <a class="header" href="#specification-grammar" id="specification-grammar"><h4>Specification grammar</h4></a>
 <p>规范语法</p>
 <p>包 ID 规范的形式语法是:</p>
@@ -170,7 +170,7 @@ pkgname := name [ &quot;:&quot; semver ]
 
 proto := &quot;http&quot; | &quot;git&quot; | ...
 </code></pre>
-<p>这里,括号表示内容是可选的.</p>
+<p>这里，括号表示内容是可选的.</p>
 <a class="header" href="#example-specifications" id="example-specifications"><h4>Example specifications</h4></a>
 <p>规范示例</p>
 <p>这些都可以是对<code>foo</code>包的引用，版本<code>1.2.3</code>，来自注册表<code>crates.io</code></p>

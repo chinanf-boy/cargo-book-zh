@@ -159,13 +159,13 @@
                 <main>
                     <a class="header" href="#external-tools" id="external-tools"><h2>External tools</h2></a>
 <p>外部工具</p>
-<p>Cargo 的目标之一是与第三方工具(如 IDE 和其他构建系统)的简单集成。为了简化集成,Cargo 有几个设施:</p>
+<p>Cargo 的目标之一是与第三方工具(如 IDE 和其他构建系统)的简单集成。为了简化集成，Cargo 有几个设施:</p>
 <ul>
 <li>
-<p>一个<code>cargo metadata</code>命令,以 JSON 格式输出包结构和依赖关系信息,</p>
+<p>一个<code>cargo metadata</code>命令，以 JSON 格式输出包结构和依赖关系信息，</p>
 </li>
 <li>
-<p>一个<code>--message-format</code>标志,输出有关特定构建的信息,以及</p>
+<p>一个<code>--message-format</code>标志，输出有关特定构建的信息，以及</p>
 </li>
 <li>
 <p>支持自定义子命令.</p>
@@ -214,19 +214,19 @@
 }
 </code></pre>
 <p>格式稳定且有版本化。调用<code>cargo metadata</code>时，你应该通过<code>--format-version</code>明确标记，以避免向前不兼容的危险。</p>
-<p>如果你正在使用 Rust,这有个<a href="https://crates.io/crates/cargo_metadata">cargo_metadata</a>箱.</p>
+<p>如果你正在使用 Rust，这有个<a href="https://crates.io/crates/cargo_metadata">cargo_metadata</a>箱.</p>
 <a class="header" href="#information-about-build" id="information-about-build"><h3>Information about build</h3></a>
 <p>关于构建的资料</p>
 <p>传递<code>--message-format=json</code>给，Cargo， 将在构建期间输出以下信息:</p>
 <ul>
 <li>
-<p>编译器错误和警告,</p>
+<p>编译器错误和警告，</p>
 </li>
 <li>
-<p>制作的工件,</p>
+<p>制作的工件，</p>
 </li>
 <li>
-<p>构建脚本的结果(例如,本机依赖项).</p>
+<p>构建脚本的结果(例如，本机依赖项).</p>
 </li>
 </ul>
 <p>输出以每行格式的 JSON 对象转到 stdout。<code>reason</code>字段区分不同类型的消息.</p>
@@ -234,9 +234,9 @@
 <a class="header" href="#custom-subcommands" id="custom-subcommands"><h3>Custom subcommands</h3></a>
 <p>自定义的子命令</p>
 <p>Cargo 设计为，可以使用新的子命令进行扩展，而无需修改 Cargo 本身。这是通过转化一个 cargo <code>(?&lt;command&gt;[^ ]+)</code>的命令调用，变化为调用外部工具<code>cargo-${command}</code>来实现的。外部工具必须存在于用户其中一个<code>$PATH</code>目录中.</p>
-<p>当 Cargo 调用自定义子命令时，子命令的第一个参数将像往常一样是自定义子命令的文件名。第二个参数将是子命令名称本身。例如,在调用<code>cargo-${command}</code>时，第二个参数是<code>${command}</code>。命令行上的其他所有参数将保持不变.</p>
-<p>Cargo 还可以用<code>cargo help ${command}</code>显示自定义子命令的帮助输出。Cargo 假定子命令将在第三个参数出现时，打印帮助消息<code>--help</code>.所以,<code>cargo help ${command}</code>会调用<code>cargo-${command} ${command} --help</code>.</p>
-<p>自定义子命令可以使用<code>CARGO</code>环境变量回调 Cargo。或者,它可以链接到作为一个库的<code>cargo</code>箱,但这种方法有缺点:</p>
+<p>当 Cargo 调用自定义子命令时，子命令的第一个参数将像往常一样是自定义子命令的文件名。第二个参数将是子命令名称本身。例如，在调用<code>cargo-${command}</code>时，第二个参数是<code>${command}</code>。命令行上的其他所有参数将保持不变.</p>
+<p>Cargo 还可以用<code>cargo help ${command}</code>显示自定义子命令的帮助输出。Cargo 假定子命令将在第三个参数出现时，打印帮助消息<code>--help</code>.所以，<code>cargo help ${command}</code>会调用<code>cargo-${command} ${command} --help</code>.</p>
+<p>自定义子命令可以使用<code>CARGO</code>环境变量回调 Cargo。或者，它可以链接到作为一个库的<code>cargo</code>箱，但这种方法有缺点:</p>
 <ul>
 <li>
 <p>Cargo 作为库是不稳定的:API 可能会更改，但不会弃用</p>

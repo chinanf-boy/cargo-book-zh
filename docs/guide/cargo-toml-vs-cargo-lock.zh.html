@@ -158,14 +158,14 @@
             <div id="content" class="content">
                 <main>
                     <a class="header" href="#cargotoml-与-cargolock" id="cargotoml-与-cargolock"><h2>Cargo.toml 与 Cargo.lock</h2></a>
-<p><code>Cargo.toml</code>和<code>Cargo.lock</code>各有其目的。在我们谈论它们之前,这是一个总结:</p>
+<p><code>Cargo.toml</code>和<code>Cargo.lock</code>各有其目的。在我们谈论它们之前，这是一个总结:</p>
 <ul>
-<li><code>Cargo.toml</code>是从广义上描述你的依赖,并由你编写.</li>
-<li><code>Cargo.lock</code>包含有关您的依赖项的确切信息。它由 Cargo 维护,不应手动编辑.</li>
+<li><code>Cargo.toml</code>是从广义上描述你的依赖，并由你编写.</li>
+<li><code>Cargo.lock</code>包含有关您的依赖项的确切信息。它由 Cargo 维护，不应手动编辑.</li>
 </ul>
-<p>如果您正在构建，其他项目要依赖的库，请将<code>Cargo.lock</code>放置在你的<code>.gitignore</code>。如果您正在构建可执行文件，如命令行工具或应用程序,请检查<code>Cargo.lock</code>位于<code>git</code>管理下。如果你对这是为什么感到好奇,请参阅<a href="../faq.zh.html#why-do-binaries-have-cargolock-in-version-control-but-not-libraries">“为什么二进制文件在版本控制系统中有<code>Cargo.lock</code>,而库没有?” - FAQ </a>.</p>
+<p>如果您正在构建，其他项目要依赖的库，请将<code>Cargo.lock</code>放置在你的<code>.gitignore</code>。如果您正在构建可执行文件，如命令行工具或应用程序，请检查<code>Cargo.lock</code>位于<code>git</code>管理下。如果你对这是为什么感到好奇，请参阅<a href="../faq.zh.html#why-do-binaries-have-cargolock-in-version-control-but-not-libraries">“为什么二进制文件在版本控制系统中有<code>Cargo.lock</code>，而库没有?” - FAQ </a>.</p>
 <p>让我们再挖掘一下.</p>
-<p><code>Cargo.toml</code>是一个<strong>manifest(清单)</strong>，我们可以在其中指定一系列关于我们项目的不同元数据的文件。例如,我们可以说我们依赖于另一个项目:</p>
+<p><code>Cargo.toml</code>是一个<strong>manifest(清单)</strong>，我们可以在其中指定一系列关于我们项目的不同元数据的文件。例如，我们可以说我们依赖于另一个项目:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -174,14 +174,14 @@ authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
 [dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand.git&quot; }
 </code></pre>
-<p>这个项目有一个依赖关系<code>rand</code>箱。在这种情况下,我们已经说过,我们依赖于 GitHub 上的特定 Git 存储库。由于我们尚未指定任何其他信息,因此 Cargo 假定我们打算使用最新提交的<code>master</code>分支构建我们的项目。</p>
-<p>听起来不错? 嗯,但有一个问题: 如果你今天构建这个项目,然后你发送一份副本给我,我明天构建这个项目,可能会发生一些不好的事情。因在此期间，可能会有更多的<code>rand</code>提交，我的构建将包括新的提交，而你的不会。因此,我们会得到不同的构建.这很糟糕,因为我们需要可重复的构建.</p>
+<p>这个项目有一个依赖关系<code>rand</code>箱。在这种情况下，我们已经说过，我们依赖于 GitHub 上的特定 Git 存储库。由于我们尚未指定任何其他信息，因此 Cargo 假定我们打算使用最新提交的<code>master</code>分支构建我们的项目。</p>
+<p>听起来不错? 嗯，但有一个问题: 如果你今天构建这个项目，然后你发送一份副本给我，我明天构建这个项目，可能会发生一些不好的事情。因在此期间，可能会有更多的<code>rand</code>提交，我的构建将包括新的提交，而你的不会。因此，我们会得到不同的构建。这很糟糕，因为我们需要可重复的构建.</p>
 <p>我们可以通过放置一个<code>rev</code>来解决这个问题，写入我们<code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand.git&quot;, rev = &quot;9f35b8e&quot; }
 </code></pre>
 <p>现在我们的构建将是相同的。但是有一个很大的缺点:现在我们每次想要更新库时，都必须手动考虑 SHA-1。这既乏味又容易出错.</p>
-<p>那现在<code>Cargo.lock</code>登场了。由于它的存在,我们不需要手动跟踪确切的修订版本: Cargo 将为我们做。当我们有这样的清单时:</p>
+<p>那现在<code>Cargo.lock</code>登场了。由于它的存在，我们不需要手动跟踪确切的修订版本: Cargo 将为我们做。当我们有这样的清单时:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -195,7 +195,7 @@ rand = { git = &quot;https://github.com/rust-lang-nursery/rand.git&quot; }
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
 dependencies = [
- &quot;rand 0.1.0 (git+https://github.com/rust-lang-nursery/rand.git#9f35b8e439eeedd60b9414c58f389bdc6a3284f9)&quot;,
+ &quot;rand 0.1.0 (git+https://github.com/rust-lang-nursery/rand.git#9f35b8e439eeedd60b9414c58f389bdc6a3284f9)&quot;，
 ]
 
 [[package]]
@@ -203,8 +203,8 @@ name = &quot;rand&quot;
 version = &quot;0.1.0&quot;
 source = &quot;git+https://github.com/rust-lang-nursery/rand.git#9f35b8e439eeedd60b9414c58f389bdc6a3284f9&quot;
 </code></pre>
-<p>你可以看到这里有更多的信息,包括我们用来构建的确切修订版本。现在,当您将项目交给其他人时，他们将使用完全相同的 SHA,即使我们没有在我们的项目<code>Cargo.toml</code>中指定它.</p>
-<p>当我们准备选择，更新库的版本时,Cargo 会自动重新计算依赖关系，并为我们更新内容:</p>
+<p>你可以看到这里有更多的信息，包括我们用来构建的确切修订版本。现在，当您将项目交给其他人时，他们将使用完全相同的 SHA，即使我们没有在我们的项目<code>Cargo.toml</code>中指定它.</p>
+<p>当我们准备选择，更新库的版本时，Cargo 会自动重新计算依赖关系，并为我们更新内容:</p>
 <pre><code class="language-shell">$ cargo update           # updates all dependencies
 $ cargo update -p rand   # updates just “rand”
 </code></pre>

@@ -159,37 +159,37 @@
                 <main>
                     <a class="header" href="#the-cargo-book" id="the-cargo-book"><h1>The Cargo Book</h1></a>
 <p><img src="images/Cargo-Logo-Small.png" alt="Cargo Logo" /></p>
-<p>Cargo 是<a href="https://www.rust-lang.org/">Rust</a>的 <em>包经理</em>。Cargo 会下载您 Rust 的包依赖项,编译您的包,生成可分发的包,并将它们上传到<a href="https://crates.io/">crates.io</a> - Rust 社区的<em>包注册表</em>。你可以为这本书做出贡献在<a href="https://github.com/rust-lang/cargo/tree/master/src/doc/src">GitHub</a>.</p>
-<a class="header" href="#a章节" id="a章节"><h3>章节</h3></a>
+<p>Cargo 是<a href="https://www.rust-lang.org/">Rust</a>的 <em>包经理</em>。Cargo 会下载您 Rust 的包依赖项，编译您的包，生成可分发的包，并将它们上传到<a href="https://crates.io/">crates.io</a> - Rust 社区的<em>包注册表</em>。你可以为这本书做出贡献在<a href="https://github.com/rust-lang/cargo/tree/master/src/doc/src">GitHub</a>.</p>
+<a class="header" href="#章节" id="章节"><h3>章节</h3></a>
 <p><strong><a href="getting-started/index.zh.html">入门</a></strong></p>
-<p>要开始使用 Cargo,请安装 Cargo(和 Rust)并设置您的第一个箱子.</p>
+<p>要开始使用 Cargo，请安装 Cargo(和 Rust)并设置您的第一个箱子.</p>
 <p><strong><a href="guide/index.zh.html">Cargo 指南</a></strong></p>
 <p>该指南将为您提供，有关如何使用 Cargo 开发 Rust 包的所有信息.</p>
 <p><strong><a href="reference/index.zh.html">Cargo 参考</a></strong></p>
 <p>该参考文献涵盖了 Cargo 各个领域的细节.</p>
 <p><strong><a href="faq.zh.html">常见问题</a></strong></p>
 <a class="header" href="#getting-started" id="getting-started"><h2>Getting Started</h2></a>
-<p>要开始使用 Cargo,请安装 Cargo(和 Rust)，并设置您的第一个箱子.</p>
+<p>要开始使用 Cargo，请安装 Cargo(和 Rust)，并设置您的第一个箱子.</p>
 <ul>
-<li><a href="./installation.zh.html">安装</a></li>
-<li><a href="./first-steps.zh.html">Cargo 的第一步</a></li>
+<li><a href="getting-started/./installation.zh.html">安装</a></li>
+<li><a href="getting-started/./first-steps.zh.html">Cargo 的第一步</a></li>
 </ul>
-<a class="header" href="#a安装" id="a安装"><h2>安装</h2></a>
-<a class="header" href="#a安装-rust-和-cargo" id="a安装-rust-和-cargo"><h3>安装 Rust 和 Cargo</h3></a>
+<a class="header" href="#安装" id="安装"><h2>安装</h2></a>
+<a class="header" href="#安装-rust-和-cargo" id="安装-rust-和-cargo"><h3>安装 Rust 和 Cargo</h3></a>
 <p>获得 Cargo 的最简单方法是使用<code>rustup</code>脚本，获取当前稳定版本的 <a href="https://www.rust-lang.org/">Rust</a>:</p>
-<p>在 Linux 和 macOS 系统上,这可以通过以下方式完成:</p>
+<p>在 Linux 和 macOS 系统上，这可以通过以下方式完成:</p>
 <pre><code class="language-console">$ curl -sSf https://static.rust-lang.org/rustup.sh | sh
 </code></pre>
-<p>它将下载一个脚本,然后开始安装。如果一切顺利,您会看到:</p>
+<p>它将下载一个脚本，然后开始安装。如果一切顺利，您会看到:</p>
 <pre><code class="language-console">Rust is installed now. Great!
 </code></pre>
-<p>在 Windows 上,下载并运行<a href="https://win.rustup.rs/">rustup-init.exe</a>。它将在控制台中启动安装,并在成功时显示上述消息.</p>
-<p>在此之后,你可以使用<code>rustup</code>命令，安装<code>beta</code>或者<code>nightly</code>版本的 Rust 和 Cargo。</p>
-<p>有关其他安装选项和信息,请访问 Rust 网站的<a href="https://www.rust-lang.org/install.md">安装</a>页面.</p>
-<a class="header" href="#a从源头构建-cargo" id="a从源头构建-cargo"><h3>从源头构建 Cargo</h3></a>
-<p>或者,你可以<a href="https://github.com/rust-lang/cargo#compiling-from-source">从源头构建 Cargo</a>.</p>
+<p>在 Windows 上，下载并运行<a href="https://win.rustup.rs/">rustup-init.exe</a>。它将在控制台中启动安装，并在成功时显示上述消息.</p>
+<p>在此之后，你可以使用<code>rustup</code>命令，安装<code>beta</code>或者<code>nightly</code>版本的 Rust 和 Cargo。</p>
+<p>有关其他安装选项和信息，请访问 Rust 网站的<a href="https://www.rust-lang.org/install.md">安装</a>页面.</p>
+<a class="header" href="#从源头构建-cargo" id="从源头构建-cargo"><h3>从源头构建 Cargo</h3></a>
+<p>或者，你可以<a href="https://github.com/rust-lang/cargo#compiling-from-source">从源头构建 Cargo</a>.</p>
 <a class="header" href="#cargo-的第一步" id="cargo-的第一步"><h2>Cargo 的第一步</h2></a>
-<p>要使用 Cargo 启动新项目,请使用<code>cargo new</code>:</p>
+<p>要使用 Cargo 启动新项目，请使用<code>cargo new</code>:</p>
 <pre><code class="language-shell">$ cargo new hello_world --bin
 </code></pre>
 <p>我们传递<code>--bin</code>，是因为我们正在制作一个二进制程序(默认): 如果我们正在创建一个库(lib)，我们就会把传递<code>--lib</code>.</p>
@@ -203,7 +203,7 @@ $ tree .
 
 1 directory, 2 files
 </code></pre>
-<p>这就是我们开始所需要的一切。首先,让我们看看<code>Cargo.toml</code>:</p>
+<p>这就是我们开始所需要的一切。首先，让我们看看<code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -226,28 +226,28 @@ edition = &quot;2018&quot;
 <pre><code class="language-shell">$ ./target/debug/hello_world
 Hello, world!
 </code></pre>
-<p>我们也可以直接使用<code>cargo run</code>，它会自行编译，然后运行它, 一步到位:</p>
+<p>我们也可以直接使用<code>cargo run</code>，它会自行编译，然后运行它， 一步到位:</p>
 <pre><code class="language-shell">$ cargo run
      Fresh hello_world v0.1.0 (file:///path/to/project/hello_world)
    Running `target/hello_world`
 Hello, world!
 </code></pre>
-<a class="header" href="#a走得更远" id="a走得更远"><h2>走得更远</h2></a>
-<p>有关使用 Cargo 的更多详细信息,请查看<a href="../guide/index.zh.html">Cargo 指南</a></p>
+<a class="header" href="#走得更远" id="走得更远"><h2>走得更远</h2></a>
+<p>有关使用 Cargo 的更多详细信息，请查看<a href="getting-started/../guide/index.zh.html">Cargo 指南</a></p>
 <a class="header" href="#cargo-guide" id="cargo-guide"><h2>Cargo Guide</h2></a>
 <p>本指南将为您提供有关如何使用 Cargo 开发 Rust 包的所有信息.</p>
 <ul>
-<li><a href="./why-cargo-exists.zh.html">为什么 Cargo 存在</a></li>
-<li><a href="./creating-a-new-project.zh.html">创建一个新包</a></li>
-<li><a href="./working-on-an-existing-project.zh.html">使用现有的 Cargo 包装</a></li>
-<li><a href="./dependencies.zh.html">依赖</a></li>
-<li><a href="./project-layout.zh.html">包装布局</a></li>
-<li><a href="./cargo-toml-vs-cargo-lock.zh.html">Cargo.toml 与 Cargo.lock</a></li>
-<li><a href="./tests.zh.html">测试</a></li>
-<li><a href="./continuous-integration.zh.html">持续集成</a></li>
-<li><a href="./build-cache.zh.html">构建缓存</a></li>
+<li><a href="guide/./why-cargo-exists.zh.html">为什么 Cargo 存在</a></li>
+<li><a href="guide/./creating-a-new-project.zh.html">创建一个新包</a></li>
+<li><a href="guide/./working-on-an-existing-project.zh.html">使用现有的 Cargo 包装</a></li>
+<li><a href="guide/./dependencies.zh.html">依赖</a></li>
+<li><a href="guide/./project-layout.zh.html">包装布局</a></li>
+<li><a href="guide/./cargo-toml-vs-cargo-lock.zh.html">Cargo.toml 与 Cargo.lock</a></li>
+<li><a href="guide/./tests.zh.html">测试</a></li>
+<li><a href="guide/./continuous-integration.zh.html">持续集成</a></li>
+<li><a href="guide/./build-cache.zh.html">构建缓存</a></li>
 </ul>
-<a class="header" href="#a为什么-cargo-存在" id="a为什么-cargo-存在"><h2>为什么 Cargo 存在</h2></a>
+<a class="header" href="#为什么-cargo-存在" id="为什么-cargo-存在"><h2>为什么 Cargo 存在</h2></a>
 <p>Cargo 是一个工具,允许 Rust 项目声明其各种依赖项，并确保您始终获得可重复的构建。</p>
 <p>为了实现这一目标,Cargo 做了四件事:</p>
 <ul>
@@ -256,11 +256,11 @@ Hello, world!
 <li>正确使用参数，以调用<code>rustc</code>或其他构建工具，构建你的项目。</li>
 <li>介绍，更容易使用 Rust 项目的约定(规范/风格)。</li>
 </ul>
-<a class="header" href="#a创建一个新项目" id="a创建一个新项目"><h2>创建一个新项目</h2></a>
-<p>要使用 Cargo 启动新项目,请使用<code>cargo new</code>:</p>
+<a class="header" href="#创建一个新项目" id="创建一个新项目"><h2>创建一个新项目</h2></a>
+<p>要使用 Cargo 启动新项目，请使用<code>cargo new</code>:</p>
 <pre><code class="language-shell">$ cargo new hello_world --bin
 </code></pre>
-<p>我们传递<code>--bin</code>，是因为我们正在制作一个二进制程序(默认): 如果我们正在创建一个库(lib),我们就会把传递<code>--lib</code>。默认情况下，这个目录会初始化为一个新的<code>git</code>存储库，如果您不希望它这样做,请传递<code>--vcs none</code>。</p>
+<p>我们传递<code>--bin</code>，是因为我们正在制作一个二进制程序(默认): 如果我们正在创建一个库(lib)，我们就会把传递<code>--lib</code>。默认情况下，这个目录会初始化为一个新的<code>git</code>存储库，如果您不希望它这样做，请传递<code>--vcs none</code>。</p>
 <p>让我们来看看 Cargo 为我们带来了什么:</p>
 <pre><code class="language-shell">$ cd hello_world
 $ tree .
@@ -271,7 +271,7 @@ $ tree .
 
 1 directory, 2 files
 </code></pre>
-<p>这就是我们开始所需要的一切首。先,让我们看看<code>Cargo.toml</code>:</p>
+<p>这就是我们开始所需要的一切首。先让我们看看<code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -329,32 +329,32 @@ Hello, world!
 
 15 directories, 19 files
 </code></pre>
-<p>这个<code>Cargo.lock</code>文件啊，是包含我们的依赖项的有关信息(即便还没有依赖)，其内容看起来可不是很有趣啊。再有就是<code>target</code>目录包含所有构建产品(二进制文件..)，并且，可以看出,Cargo 默认生成调试(debug)版本。您可以使用<code>cargo build --release</code>，这会在开启优化的情况下，编译文件:</p>
+<p>这个<code>Cargo.lock</code>文件啊，是包含我们的依赖项的有关信息(即便还没有依赖)，其内容看起来可不是很有趣啊。再有就是<code>target</code>目录包含所有构建产品(二进制文件..)，并且，可以看出，Cargo 默认生成调试(debug)版本。您可以使用<code>cargo build --release</code>，这会在开启优化的情况下，编译文件:</p>
 <pre><code class="language-shell">$ cargo build --release
    Compiling hello_world v0.1.0 (file:///path/to/project/hello_world)
 </code></pre>
 <p><code>cargo build --release</code>将结果二进制文件放入<code>target/release</code>，而不再是<code>target/debug</code>目录.</p>
-<p>调试模式的编译是开发的默认设置 - 编译时间较短,因为编译器不进行优化,但代码运行速度较慢。发布(release)模式编译需要更长时间,但代码运行速度更快.</p>
-<a class="header" href="#a在现有的-carog-项目上工作" id="a在现有的-carog-项目上工作"><h2>在现有的 Carog 项目上工作</h2></a>
-<p>如果您下载使用 Cargo 的现有项目,那么它很容易上手.</p>
-<p>首先,从某个地方获取项目.在这个例子中,我们将使用<code>rand</code>项目，其从 GitHub 上的存储库克隆而来:</p>
+<p>调试模式的编译是开发的默认设置 - 编译时间较短，因为编译器不进行优化，但代码运行速度较慢。发布(release)模式编译需要更长时间，但代码运行速度更快.</p>
+<a class="header" href="#在现有的-carog-项目上工作" id="在现有的-carog-项目上工作"><h2>在现有的 Carog 项目上工作</h2></a>
+<p>如果您下载使用 Cargo 的现有项目，那么它很容易上手.</p>
+<p>首先，从某个地方获取项目.在这个例子中，我们将使用<code>rand</code>项目，其从 GitHub 上的存储库克隆而来:</p>
 <pre><code class="language-shell">$ git clone https://github.com/rust-lang-nursery/rand.git
 $ cd rand
 </code></pre>
-<p>要建立,使用<code>cargo build</code>:</p>
+<p>要建立，使用<code>cargo build</code>:</p>
 <pre><code class="language-shell">$ cargo build
    Compiling rand v0.1.0 (file:///path/to/project/rand)
 </code></pre>
-<p>这将获取所有依赖项,然后与项目一起构建它们.</p>
-<a class="header" href="#a从-cratesio-添加依赖项" id="a从-cratesio-添加依赖项"><h2>从 crates.io 添加依赖项</h2></a>
+<p>这将获取所有依赖项，然后与项目一起构建它们.</p>
+<a class="header" href="#从-cratesio-添加依赖项" id="从-cratesio-添加依赖项"><h2>从 crates.io 添加依赖项</h2></a>
 <p><a href="https://crates.io/">crates.io</a>是 Rust 社区的中央存储库，用作发现和下载包的位置。<code>cargo</code>默认配置为，使用它来查找请求的包.</p>
 <p>获取托管在<a href="https://crates.io/">crates.io</a>的依赖’库’，将它添加到您的<code>Cargo.toml</code>.</p>
-<a class="header" href="#a添加依赖项" id="a添加依赖项"><h3>添加依赖项</h3></a>
-<p>如果你的<code>Cargo.toml</code>，还没有<code>[dependencies]</code>部分,添加它，然后列出您要使用的包名称和版本。这个例子增加了一个<code>time</code>箱(crate)依赖:</p>
+<a class="header" href="#添加依赖项" id="添加依赖项"><h3>添加依赖项</h3></a>
+<p>如果你的<code>Cargo.toml</code>，还没有<code>[dependencies]</code>部分，添加它，然后列出您要使用的包名称和版本。这个例子增加了一个<code>time</code>箱(crate)依赖:</p>
 <pre><code class="language-toml">[dependencies]
 time = &quot;0.1.12&quot;
 </code></pre>
-<p>版本字符串是<a href="https://github.com/steveklabnik/semver#requirements">semver</a>版本要求。该<a href="03-01-specifying-dependencies.zh.html">指定依赖项</a>文档 提供了有关此处选项的更多信息.</p>
+<p>版本字符串是<a href="https://github.com/steveklabnik/semver#requirements">semver</a>版本要求。该<a href="guide/03-01-specifying-dependencies.zh.html">指定依赖项</a>文档 提供了有关此处选项的更多信息.</p>
 <p>如果我们还想添加一个<code>regex</code>箱子依赖，我们不需要为每个箱子都添加<code>[dependencies]</code>。下面就是你的<code>Cargo.toml</code>文件整体，看起来像依赖于<code>time</code>和<code>regex</code>箱:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
@@ -365,7 +365,7 @@ authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
 time = &quot;0.1.12&quot;
 regex = &quot;0.1.41&quot;
 </code></pre>
-<p>重新运行<code>cargo build</code>，Cargo 将获取新的依赖项及其所有依赖项,将它们全部编译,然后更新<code>Cargo.lock</code>:</p>
+<p>重新运行<code>cargo build</code>，Cargo 将获取新的依赖项及其所有依赖项，将它们全部编译，然后更新<code>Cargo.lock</code>:</p>
 <pre><code class="language-shell">$ cargo build
       Updating registry `https://github.com/rust-lang/crates.io-index`
    Downloading memchr v0.1.5
@@ -399,8 +399,8 @@ fn main() {
    Running `target/hello_world`
 Did our date match? true
 </code></pre>
-<a class="header" href="#a项目布局" id="a项目布局"><h2>项目布局</h2></a>
-<p>Cargo 使用文件放置惯例,以便轻松进入新的 Cargo 项目:</p>
+<a class="header" href="#项目布局" id="项目布局"><h2>项目布局</h2></a>
+<p>Cargo 使用文件放置惯例，以便轻松进入新的 Cargo 项目:</p>
 <pre><code class="language-shell">.
 ├── Cargo.lock
 ├── Cargo.toml
@@ -426,16 +426,16 @@ Did our date match? true
 <li>示例进入<code>examples</code>目录.</li>
 <li>基准进入<code>benches</code>目录.</li>
 </ul>
-<p>这些将在更详细的<a href="../reference/manifest.html#the-project-layout">清单描述</a>说明中解释.</p>
+<p>这些将在更详细的<a href="guide/../reference/manifest.html#the-project-layout">清单描述</a>说明中解释.</p>
 <a class="header" href="#cargotoml-与-cargolock" id="cargotoml-与-cargolock"><h2>Cargo.toml 与 Cargo.lock</h2></a>
-<p><code>Cargo.toml</code>和<code>Cargo.lock</code>各有其目的。在我们谈论它们之前,这是一个总结:</p>
+<p><code>Cargo.toml</code>和<code>Cargo.lock</code>各有其目的。在我们谈论它们之前，这是一个总结:</p>
 <ul>
-<li><code>Cargo.toml</code>是从广义上描述你的依赖,并由你编写.</li>
-<li><code>Cargo.lock</code>包含有关您的依赖项的确切信息。它由 Cargo 维护,不应手动编辑.</li>
+<li><code>Cargo.toml</code>是从广义上描述你的依赖，并由你编写.</li>
+<li><code>Cargo.lock</code>包含有关您的依赖项的确切信息。它由 Cargo 维护，不应手动编辑.</li>
 </ul>
-<p>如果您正在构建，其他项目要依赖的库，请将<code>Cargo.lock</code>放置在你的<code>.gitignore</code>。如果您正在构建可执行文件，如命令行工具或应用程序,请检查<code>Cargo.lock</code>位于<code>git</code>管理下。如果你对这是为什么感到好奇,请参阅<a href="../faq.zh.html#why-do-binaries-have-cargolock-in-version-control-but-not-libraries">“为什么二进制文件在版本控制系统中有<code>Cargo.lock</code>,而库没有?” - FAQ </a>.</p>
+<p>如果您正在构建，其他项目要依赖的库，请将<code>Cargo.lock</code>放置在你的<code>.gitignore</code>。如果您正在构建可执行文件，如命令行工具或应用程序，请检查<code>Cargo.lock</code>位于<code>git</code>管理下。如果你对这是为什么感到好奇，请参阅<a href="guide/../faq.zh.html#why-do-binaries-have-cargolock-in-version-control-but-not-libraries">“为什么二进制文件在版本控制系统中有<code>Cargo.lock</code>，而库没有?” - FAQ </a>.</p>
 <p>让我们再挖掘一下.</p>
-<p><code>Cargo.toml</code>是一个<strong>manifest(清单)</strong>，我们可以在其中指定一系列关于我们项目的不同元数据的文件。例如,我们可以说我们依赖于另一个项目:</p>
+<p><code>Cargo.toml</code>是一个<strong>manifest(清单)</strong>，我们可以在其中指定一系列关于我们项目的不同元数据的文件。例如，我们可以说我们依赖于另一个项目:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -444,14 +444,14 @@ authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
 [dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand.git&quot; }
 </code></pre>
-<p>这个项目有一个依赖关系<code>rand</code>箱。在这种情况下,我们已经说过,我们依赖于 GitHub 上的特定 Git 存储库。由于我们尚未指定任何其他信息,因此 Cargo 假定我们打算使用最新提交的<code>master</code>分支构建我们的项目。</p>
-<p>听起来不错? 嗯,但有一个问题: 如果你今天构建这个项目,然后你发送一份副本给我,我明天构建这个项目,可能会发生一些不好的事情。因在此期间，可能会有更多的<code>rand</code>提交，我的构建将包括新的提交，而你的不会。因此,我们会得到不同的构建.这很糟糕,因为我们需要可重复的构建.</p>
+<p>这个项目有一个依赖关系<code>rand</code>箱。在这种情况下，我们已经说过，我们依赖于 GitHub 上的特定 Git 存储库。由于我们尚未指定任何其他信息，因此 Cargo 假定我们打算使用最新提交的<code>master</code>分支构建我们的项目。</p>
+<p>听起来不错? 嗯，但有一个问题: 如果你今天构建这个项目，然后你发送一份副本给我，我明天构建这个项目，可能会发生一些不好的事情。因在此期间，可能会有更多的<code>rand</code>提交，我的构建将包括新的提交，而你的不会。因此，我们会得到不同的构建。这很糟糕，因为我们需要可重复的构建.</p>
 <p>我们可以通过放置一个<code>rev</code>来解决这个问题，写入我们<code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">[dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand.git&quot;, rev = &quot;9f35b8e&quot; }
 </code></pre>
 <p>现在我们的构建将是相同的。但是有一个很大的缺点:现在我们每次想要更新库时，都必须手动考虑 SHA-1。这既乏味又容易出错.</p>
-<p>那现在<code>Cargo.lock</code>登场了。由于它的存在,我们不需要手动跟踪确切的修订版本: Cargo 将为我们做。当我们有这样的清单时:</p>
+<p>那现在<code>Cargo.lock</code>登场了。由于它的存在，我们不需要手动跟踪确切的修订版本: Cargo 将为我们做。当我们有这样的清单时:</p>
 <pre><code class="language-toml">[package]
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
@@ -465,7 +465,7 @@ rand = { git = &quot;https://github.com/rust-lang-nursery/rand.git&quot; }
 name = &quot;hello_world&quot;
 version = &quot;0.1.0&quot;
 dependencies = [
- &quot;rand 0.1.0 (git+https://github.com/rust-lang-nursery/rand.git#9f35b8e439eeedd60b9414c58f389bdc6a3284f9)&quot;,
+ &quot;rand 0.1.0 (git+https://github.com/rust-lang-nursery/rand.git#9f35b8e439eeedd60b9414c58f389bdc6a3284f9)&quot;，
 ]
 
 [[package]]
@@ -473,15 +473,15 @@ name = &quot;rand&quot;
 version = &quot;0.1.0&quot;
 source = &quot;git+https://github.com/rust-lang-nursery/rand.git#9f35b8e439eeedd60b9414c58f389bdc6a3284f9&quot;
 </code></pre>
-<p>你可以看到这里有更多的信息,包括我们用来构建的确切修订版本。现在,当您将项目交给其他人时，他们将使用完全相同的 SHA,即使我们没有在我们的项目<code>Cargo.toml</code>中指定它.</p>
-<p>当我们准备选择，更新库的版本时,Cargo 会自动重新计算依赖关系，并为我们更新内容:</p>
+<p>你可以看到这里有更多的信息，包括我们用来构建的确切修订版本。现在，当您将项目交给其他人时，他们将使用完全相同的 SHA，即使我们没有在我们的项目<code>Cargo.toml</code>中指定它.</p>
+<p>当我们准备选择，更新库的版本时，Cargo 会自动重新计算依赖关系，并为我们更新内容:</p>
 <pre><code class="language-shell">$ cargo update           # updates all dependencies
 $ cargo update -p rand   # updates just “rand”
 </code></pre>
-<p>这将写出一个新的<code>Cargo.lock</code>与新版本信息。请注意<code>cargo update</code>参数，实际上会是是一个<a href="../reference/pkgid-spec.zh.html">包 ID 规范</a>，和<code>rand</code>只是一个简短的规范.</p>
-<a class="header" href="#a测试" id="a测试"><h2>测试</h2></a>
-<p>Cargo 可以使用<code>cargo test</code>命令运行您的测试。Cargo 寻找在两个地方运行的测试 :在你<code>src</code>中的每个文件，和<code>tests/</code>中的任何测试。测试你的<code>src</code>文件应该是单元测试,并在<code>tests/</code>中的应该是整合式测试。因此,您需要将包装箱导入到<code>tests</code>的文件中.</p>
-<p>这是在我们的项目中，运行<code>cargo test</code>的一个例子,目前没有测试:</p>
+<p>这将写出一个新的<code>Cargo.lock</code>与新版本信息。请注意<code>cargo update</code>参数，实际上会是是一个<a href="guide/../reference/pkgid-spec.zh.html">包 ID 规范</a>，和<code>rand</code>只是一个简短的规范.</p>
+<a class="header" href="#测试" id="测试"><h2>测试</h2></a>
+<p>Cargo 可以使用<code>cargo test</code>命令运行您的测试。Cargo 寻找在两个地方运行的测试 :在你<code>src</code>中的每个文件，和<code>tests/</code>中的任何测试。测试你的<code>src</code>文件应该是单元测试，并在<code>tests/</code>中的应该是整合式测试。因此，您需要将包装箱导入到<code>tests</code>的文件中.</p>
+<p>这是在我们的项目中，运行<code>cargo test</code>的一个例子，目前没有测试:</p>
 <pre><code class="language-shell">$ cargo test
    Compiling rand v0.1.0 (https://github.com/rust-lang-nursery/rand.git#9f35b8e)
    Compiling hello_world v0.1.0 (file:///path/to/project/hello_world)
@@ -491,15 +491,15 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
 </code></pre>
-<p>如果我们的项目有测试,我们会看到更多的输出与正确的测试数量.</p>
+<p>如果我们的项目有测试，我们会看到更多的输出与正确的测试数量.</p>
 <p>您还可以通过传递过滤器，来运行特定测试:</p>
 <pre><code class="language-shell">$ cargo test foo
 </code></pre>
 <p>这将运行任何匹配的<code>foo</code>测试.</p>
-<p><code>cargo test</code>还运行其他检查。例如,它将编译您包含的任何示例(examples),并且还将测试文档中的示例。请看在 Rust 文档中的<a href="https://doc.rust-lang.org/book/testing.md">测试指南</a>，了解更多详细信息.</p>
-<a class="header" href="#a持续集成" id="a持续集成"><h2>持续集成</h2></a>
+<p><code>cargo test</code>还运行其他检查。例如，它将编译您包含的任何示例(examples)，并且还将测试文档中的示例。请看在 Rust 文档中的<a href="https://doc.rust-lang.org/book/testing.md">测试指南</a>，了解更多详细信息.</p>
+<a class="header" href="#持续集成" id="持续集成"><h2>持续集成</h2></a>
 <a class="header" href="#travis-ci" id="travis-ci"><h3>Travis CI</h3></a>
-<p>要在 Travis CI 上测试您的项目,这里有一个<code>.travis.yml</code>文件示例:</p>
+<p>要在 Travis CI 上测试您的项目，这里有一个<code>.travis.yml</code>文件示例:</p>
 <pre><code class="language-yaml">language: rust
 rust:
   - stable
@@ -511,7 +511,7 @@ matrix:
 </code></pre>
 <p>这将在所有三个 rust 版本下，进行测试，但 nightly 的任何破坏，都不会使整体构建失败。请看看<a href="https://docs.travis-ci.com/user/languages/rust/">Travis CI Rust 文档</a>了解更多信息.</p>
 <a class="header" href="#gitlab-ci" id="gitlab-ci"><h3>GitLab CI</h3></a>
-<p>要在 GitLab CI 上测试您的包,这里有一个<code>.gitlab-ci.yml</code>文件示例:</p>
+<p>要在 GitLab CI 上测试您的包，这里有一个<code>.gitlab-ci.yml</code>文件示例:</p>
 <pre><code class="language-yaml">stages:
   - build
 
@@ -530,34 +530,34 @@ rust-nightly:
     - cargo test --verbose
   allow_failure: true
 </code></pre>
-<p>这将测试 stable 的通道和 nightly 通道,但 nightly 的任何破损,都不会使整体构建失败。欲获得更多信息，请看<a href="https://docs.gitlab.com/ce/ci/yaml/README.md">GitLab CI</a>.</p>
-<a class="header" href="#a构建-缓存" id="a构建-缓存"><h2>构建 缓存</h2></a>
-<p>Cargo 在单个工作区，共享其中所有包的构建工件。今天,Cargo 不会在不同的工作区共享构建结果，但使用第三方工具可以实现类似的结果,<a href="https://github.com/mozilla/sccache">sccache</a>。</p>
-<p>装置<code>sccache</code>,用<code>cargo install sccache</code>安装它，并在调用 Cargo 之前，设置<code>RUSTC_WRAPPER</code>环境变量成<code>sccache</code>。如果你使用 bash，更好是田间<code>export RUSTC_WRAPPER=sccache</code>到<code>.bashrc</code>文件。有关更多详细信息,请参阅 sccache 文档.</p>
+<p>这将测试 stable 版本和 nightly 版本，但 nightly 的任何破损，都不会使整体构建失败。欲获得更多信息，请看<a href="https://docs.gitlab.com/ce/ci/yaml/README.md">GitLab CI</a>.</p>
+<a class="header" href="#构建-缓存" id="构建-缓存"><h2>构建 缓存</h2></a>
+<p>Cargo 在单个工作区，共享其中所有包的构建工件。今天，Cargo 不会在不同的工作区共享构建结果，但使用第三方工具可以实现类似的结果，<a href="https://github.com/mozilla/sccache">sccache</a>。</p>
+<p>装置<code>sccache</code>，用<code>cargo install sccache</code>安装它，并在调用 Cargo 之前，设置<code>RUSTC_WRAPPER</code>环境变量成<code>sccache</code>。如果你使用 bash，更好是田间<code>export RUSTC_WRAPPER=sccache</code>到<code>.bashrc</code>文件。有关更多详细信息，请参阅 sccache 文档.</p>
 <a class="header" href="#cargo-参考" id="cargo-参考"><h2>Cargo 参考</h2></a>
 <p>该参考文献涵盖了 Cargo 各个领域的细节.</p>
 <ul>
-<li><a href="./specifying-dependencies.zh.html">指定依赖项</a></li>
-<li><a href="./manifest.zh.html">清单格式</a></li>
-<li><a href="./config.zh.html">配置</a></li>
-<li><a href="./environment-variables.zh.html">环境变量</a></li>
-<li><a href="./build-scripts.zh.html">构建脚本</a></li>
-<li><a href="./publishing.zh.html">在 crates.io 上发布</a></li>
-<li><a href="./pkgid-spec.zh.html">包 ID 规格</a></li>
-<li><a href="./source-replacement.zh.html">来源更换</a></li>
-<li><a href="./external-tools.zh.html">外部工具</a></li>
-<li><a href="./unstable.zh.html">不稳定的功能</a></li>
+<li><a href="reference/./specifying-dependencies.zh.html">指定依赖项</a></li>
+<li><a href="reference/./manifest.zh.html">清单格式</a></li>
+<li><a href="reference/./config.zh.html">配置</a></li>
+<li><a href="reference/./environment-variables.zh.html">环境变量</a></li>
+<li><a href="reference/./build-scripts.zh.html">构建脚本</a></li>
+<li><a href="reference/./publishing.zh.html">在 crates.io 上发布</a></li>
+<li><a href="reference/./pkgid-spec.zh.html">包 ID 规格</a></li>
+<li><a href="reference/./source-replacement.zh.html">来源更换</a></li>
+<li><a href="reference/./external-tools.zh.html">外部工具</a></li>
+<li><a href="reference/./unstable.zh.html">不稳定的功能</a></li>
 </ul>
-<a class="header" href="#a依赖指定" id="a依赖指定"><h2>依赖指定</h2></a>
-<p>您的箱子，可以依赖多个来源的库，如<a href="https://crates.io/">crates.io</a>,<code>git</code>的存储库或本地文件系统上的子目录。您还可以临时覆盖依赖项的位置 - 例如, 便于能够测试您在本地工作的依赖项中的错误修复。您可以为不同的平台，和或仅在开发期间使用不同的依赖项。我们来看看如何做到这些.</p>
-<a class="header" href="#a指定依赖来自-cratesio" id="a指定依赖来自-cratesio"><h3>指定依赖，来自 crates.io</h3></a>
-<p>默认情况下，Cargo 是准备好，在<a href="https://crates.io/">crates.io</a>上查找依赖项。在这种情况下,只需要名称和版本字符串。在<a href="../guide/index.zh.html">Cargo 指南</a>,我们选择了一个依赖项-<code>time</code>箱:</p>
+<a class="header" href="#依赖指定" id="依赖指定"><h2>依赖指定</h2></a>
+<p>您的箱子，可以依赖多个来源的库，如<a href="https://crates.io/">crates.io</a>，<code>git</code>的存储库或本地文件系统上的子目录。您还可以临时覆盖依赖项的位置 - 例如， 便于能够测试您在本地工作的依赖项中的错误修复。您可以为不同的平台，和或仅在开发期间使用不同的依赖项。我们来看看如何做到这些.</p>
+<a class="header" href="#指定依赖来自-cratesio" id="指定依赖来自-cratesio"><h3>指定依赖，来自 crates.io</h3></a>
+<p>默认情况下，Cargo 是准备好，在<a href="https://crates.io/">crates.io</a>上查找依赖项。在这种情况下，只需要名称和版本字符串。在<a href="reference/../guide/index.zh.html">Cargo 指南</a>，我们选择了一个依赖项-<code>time</code>箱:</p>
 <pre><code class="language-toml">[dependencies]
 time = &quot;0.1.12&quot;
 </code></pre>
-<p>字符串<code>&quot;0.1.12&quot;</code>是一个<a href="https://github.com/steveklabnik/semver#requirements">semver</a>版本格式字符串。由于此字符串中没有任何运算符,因此它的解释方式与我们指定的<code>&quot;^0.1.12&quot;</code>方式相同，而<code>^</code>被称为跳脱条件.</p>
+<p>字符串<code>&quot;0.1.12&quot;</code>是一个<a href="https://github.com/steveklabnik/semver#requirements">semver</a>版本格式字符串。由于此字符串中没有任何运算符，因此它的解释方式与我们指定的<code>&quot;^0.1.12&quot;</code>方式相同，而<code>^</code>被称为跳脱条件.</p>
 <a class="header" href="#caret-requirements跳脱条件" id="caret-requirements跳脱条件"><h3>Caret requirements(跳脱条件)</h3></a>
-<p><strong>跳脱条件</strong>: 允许 SemVer 兼容更新指定版本。新的版本允许更新的条件是，不修改最左边的非零数字(无论<code>major,minor,patch</code>)。在这种情况下，如果我们执行了<code>cargo update -p time</code>，Cargo 应该更新我们的<code>0.1.13</code>版本(如果是最新的<code>0.1.z</code>发布)，但不会更新为<code>0.2.0</code>。相反,我们若将版本字符串指定为<code>^1.0</code>，Cargo 应更新至<code>1.1</code>，如果是最新的<code>1.y</code>发布，但不是<code>2.0</code>版本。<code>0.0.x</code>并不与任何其他版本兼容.</p>
+<p><strong>跳脱条件</strong>: 允许 SemVer 兼容更新指定版本。新的版本允许更新的条件是，不修改最左边的非零数字(无论<code>major，minor，patch</code>)。在这种情况下，如果我们执行了<code>cargo update -p time</code>，Cargo 应该更新我们的<code>0.1.13</code>版本(如果是最新的<code>0.1.z</code>发布)，但不会更新为<code>0.2.0</code>。相反，我们若将版本字符串指定为<code>^1.0</code>，Cargo 应更新至<code>1.1</code>，如果是最新的<code>1.y</code>发布，但不是<code>2.0</code>版本。<code>0.0.x</code>并不与任何其他版本兼容.</p>
 <p>以下是一些跳脱条件的例子以及它们允许的版本:</p>
 <pre><code class="language-notrust">^1.2.3 := &gt;=1.2.3 &lt;2.0.0
 ^1.2 := &gt;=1.2.0 &lt;2.0.0
@@ -568,17 +568,17 @@ time = &quot;0.1.12&quot;
 ^0.0 := &gt;=0.0.0 &lt;0.1.0
 ^0 := &gt;=0.0.0 &lt;1.0.0
 </code></pre>
-<p>此兼容性约定与 SemVer ，在处理 1.0.0 之前的版本方面有所不同。虽然 SemVer 说在 1.0.0 之前没有兼容性，但 Cargo 认为<code>0.x.y</code>是兼容<code>0.x.z</code>,这里<code>y ≥ z</code>和<code>x &gt; 0</code>.</p>
+<p>此兼容性约定与 SemVer ，在处理 1.0.0 之前的版本方面有所不同。虽然 SemVer 说在 1.0.0 之前没有兼容性，但 Cargo 认为<code>0.x.y</code>是兼容<code>0.x.z</code>，这里<code>y ≥ z</code>和<code>x &gt; 0</code>.</p>
 <a class="header" href="#tilde-条件" id="tilde-条件"><h3>Tilde 条件</h3></a>
-<p><strong>Tilde 条件</strong>指定具有更新最小版本的一定能力。如果指定 major 版本,minor 版本和 patch 程序版本，或仅指定 major 版本和 minor 版本,则仅允许 patch 程序级别更改。如果仅指定 major 版本,则允许进行 minor 和 patch 级别更改.</p>
+<p><strong>Tilde 条件</strong>指定具有更新最小版本的一定能力。如果指定 major 版本，minor 版本和 patch 程序版本，或仅指定 major 版本和 minor 版本，则仅允许 patch 程序级别更改。如果仅指定 major 版本，则允许进行 minor 和 patch 级别更改.</p>
 <p><code>~1.2.3</code>是 Tilde 条件的一个例子.</p>
 <pre><code class="language-notrust">~1.2.3 := &gt;=1.2.3 &lt;1.3.0
 ~1.2 := &gt;=1.2.0 &lt;1.3.0
 ~1 := &gt;=1.0.0 &lt;2.0.0
 </code></pre>
-<a class="header" href="#a通配符要求" id="a通配符要求"><h3>通配符要求</h3></a>
+<a class="header" href="#通配符要求" id="通配符要求"><h3>通配符要求</h3></a>
 <p><strong>通配符条件</strong>允许任何通配符所在的版本.</p>
-<p><code>*</code>,<code>1.*</code>和<code>1.2.*</code>是通配符条件的示例.</p>
+<p><code>*</code>，<code>1.*</code>和<code>1.2.*</code>是通配符条件的示例.</p>
 <pre><code class="language-notrust">* := &gt;=0.0.0
 1.* := &gt;=1.0.0 &lt;2.0.0
 1.2.* := &gt;=1.2.0 &lt;1.3.0
@@ -591,24 +591,24 @@ time = &quot;0.1.12&quot;
 &lt; 2
 = 1.2.3
 </code></pre>
-<a class="header" href="#a多版本条件" id="a多版本条件"><h3>多版本条件</h3></a>
-<p>多个版本，要求用逗号分隔,例如<code>&gt;= 1.2, &lt; 1.5</code>.</p>
-<a class="header" href="#a依赖指定来自-git-存储库" id="a依赖指定来自-git-存储库"><h3>依赖指定，来自 <code>git</code> 存储库</h3></a>
+<a class="header" href="#多版本条件" id="多版本条件"><h3>多版本条件</h3></a>
+<p>多个版本，要求用逗号分隔，例如<code>&gt;= 1.2， &lt; 1.5</code>.</p>
+<a class="header" href="#依赖指定来自-git-存储库" id="依赖指定来自-git-存储库"><h3>依赖指定，来自 <code>git</code> 存储库</h3></a>
 <p>依赖于位于<code>git</code>存储库的库，您需要指定的最小信息，为一个<code>git</code>字段，其是存储库的<code>github</code>位置:</p>
 <pre><code class="language-toml">[dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand&quot; }
 </code></pre>
-<p>Cargo 将取得<code>git</code>，然后在这个位置找到一个存储库的请求箱子的<code>Cargo.toml</code>。方式是对<code>git</code>存储库里面的任何地方(不一定在根目录) - 例如,指定工作区中的成员包名称，和设置<code>git</code>到包含工作区的存储库).</p>
-<p>由于我们尚未指定任何其他信息，因此 Cargo 假定我们打算使用最新的提交<code>master</code>分支，来构建我们的包。你可以将<code>git</code>字段和<code>rev</code>,<code>tag</code>, 还有<code>branch</code>，这些用于指定其他内容的字段组合起来。这是一个指定您希望在名为<code>next</code>分支上，使用最新提交的示例:</p>
+<p>Cargo 将取得<code>git</code>，然后在这个位置找到一个存储库的请求箱子的<code>Cargo.toml</code>。方式是对<code>git</code>存储库里面的任何地方(不一定在根目录) - 例如，指定工作区中的成员包名称，和设置<code>git</code>到包含工作区的存储库).</p>
+<p>由于我们尚未指定任何其他信息，因此 Cargo 假定我们打算使用最新的提交<code>master</code>分支，来构建我们的包。你可以将<code>git</code>字段和<code>rev</code>，<code>tag</code>， 还有<code>branch</code>，这些用于指定其他内容的字段组合起来。这是一个指定您希望在名为<code>next</code>分支上，使用最新提交的示例:</p>
 <pre><code class="language-toml">[dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand&quot;, branch = &quot;next&quot; }
 </code></pre>
-<a class="header" href="#a路径依赖指定" id="a路径依赖指定"><h3>路径，依赖指定</h3></a>
-<p>随着时间的推移,我们来自<a href="../guide/index.zh.html">指南</a>的<code>hello_world</code>示例已大幅增长! 它已经到了我们可能想分出一个单独的箱子供其他人使用的地步。为此,Cargo 支持<strong>路径依赖</strong>通常是位于一个存储库中的子箱。让我们开始在<code>hello_world</code>包的内部制作一个新的箱子:</p>
+<a class="header" href="#路径依赖指定" id="路径依赖指定"><h3>路径，依赖指定</h3></a>
+<p>随着时间的推移，我们来自<a href="reference/../guide/index.zh.html">指南</a>的<code>hello_world</code>示例已大幅增长! 它已经到了我们可能想分出一个单独的箱子供其他人使用的地步。为此，Cargo 支持<strong>路径依赖</strong>通常是位于一个存储库中的子箱。让我们开始在<code>hello_world</code>包的内部制作一个新的箱子:</p>
 <pre><code class="language-console"># inside of hello_world/
 $ cargo new hello_utils
 </code></pre>
-<p>这将创建一个新文件夹<code>hello_utils</code>，里面有一个<code>Cargo.toml</code>和<code>src</code>文件夹已准备好进行配置。为了告诉 Cargo,请打开<code>hello_world/Cargo.toml</code>，并添加你的<code>hello_utils</code>依赖:</p>
+<p>这将创建一个新文件夹<code>hello_utils</code>，里面有一个<code>Cargo.toml</code>和<code>src</code>文件夹已准备好进行配置。为了告诉 Cargo，请打开<code>hello_world/Cargo.toml</code>，并添加你的<code>hello_utils</code>依赖:</p>
 <pre><code class="language-toml">[dependencies]
 hello_utils = { path = &quot;hello_utils&quot; }
 </code></pre>
@@ -617,18 +617,18 @@ hello_utils = { path = &quot;hello_utils&quot; }
 <pre><code class="language-toml">[dependencies]
 hello_utils = { path = &quot;hello_utils&quot;, version = &quot;0.1.0&quot; }
 </code></pre>
-<a class="header" href="#a依赖覆盖" id="a依赖覆盖"><h3>依赖覆盖</h3></a>
-<p>Cargo 中有许多方法支持，覆盖依赖关系以及控制依赖关系图。但是，这些选项通常仅在工作区级别可用，并且不通过依赖项传播。换句话说，”应用程序”具有覆盖依赖关系的能力,但”库”却没有。</p>
-<p>许多场景，会产生想，覆盖依赖性或以其他方式改变某些依赖关系的愿望。然而,他们中的大多数都可以归结为，将箱子发布到 crates.io 之前使用箱子(覆盖依赖)的能力。例如:</p>
+<a class="header" href="#依赖覆盖" id="依赖覆盖"><h3>依赖覆盖</h3></a>
+<p>Cargo 中有许多方法支持，覆盖依赖关系以及控制依赖关系图。但是，这些选项通常仅在工作区级别可用，并且不通过依赖项传播。换句话说，”应用程序”具有覆盖依赖关系的能力，但”库”却没有。</p>
+<p>许多场景，会产生想，覆盖依赖性或以其他方式改变某些依赖关系的愿望。然而，他们中的大多数都可以归结为，将箱子发布到 crates.io 之前使用箱子(覆盖依赖)的能力。例如:</p>
 <ul>
 <li>您编写的 <code>crate</code> ，也用于您编写的更大应用程序中，并且您希望测试在更大应用程序内，<code>crate</code>的错误修复情况。</li>
 <li>不是你编写的上游包，现在其 git 存储库的主分支上，有一个新功能或错误修复，您要测试它。</li>
-<li>您即将发布新版本的 major 版本，但您希望在整个软件包中进行集成测试,以确保新的主要版本能够正常运行.</li>
+<li>您即将发布新版本的 major 版本，但您希望在整个软件包中进行集成测试，以确保新的主要版本能够正常运行.</li>
 <li>您已经为上游的软件包提交了一个针对您找到的错误的修复程序，但是您希望立即让您的应用程序依赖，此程序包的固定修复版本，以避免错误修复程序被拒绝合并.</li>
 </ul>
-<p>这些场景目前都是通过<a href="./manifest.html#the-patch-section"><code>[patch]</code> 清单部分 </a>解决的，从历史上看,其中一些方案是<a href="./manifest.html#the-replace-section">该<code>[replace]</code>部分</a>解决的，但我们在这里会记录<code>[patch]</code>解决的部分。</p>
-<a class="header" href="#a测试一个错误修复" id="a测试一个错误修复"><h3>测试一个错误修复</h3></a>
-<p>假设你正在使用<a href="https://crates.io/crates/uuid"><code>uuid</code> crate</a>，但是当你正在研究它时,你会发现一个错误.但是,你很有进取心,所以你决定尝试修复这个 bug! 最初你的清单看起来像:</p>
+<p>这些场景目前都是通过<a href="reference/./manifest.html#the-patch-section"><code>[patch]</code> 清单部分 </a>解决的，从历史上看，其中一些方案是<a href="reference/./manifest.html#the-replace-section">该<code>[replace]</code>部分</a>解决的，但我们在这里会记录<code>[patch]</code>解决的部分。</p>
+<a class="header" href="#测试一个错误修复" id="测试一个错误修复"><h3>测试一个错误修复</h3></a>
+<p>假设你正在使用<a href="https://crates.io/crates/uuid"><code>uuid</code> crate</a>，但是当你正在研究它时，你会发现一个错误.但是，你很有进取心，所以你决定尝试修复这个 bug! 最初你的清单看起来像:</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-library&quot;
 version = &quot;0.1.0&quot;
@@ -637,24 +637,24 @@ authors = [&quot;...&quot;]
 [dependencies]
 uuid = &quot;1.0&quot;
 </code></pre>
-<p>我们要做的第一件事是克隆<a href="https://github.com/rust-lang-nursery/uuid"><code>uuid</code>存储库</a>,到本地:</p>
+<p>我们要做的第一件事是克隆<a href="https://github.com/rust-lang-nursery/uuid"><code>uuid</code>存储库</a>，到本地:</p>
 <pre><code class="language-console">$ git clone https://github.com/rust-lang-nursery/uuid
 </code></pre>
 <p>接下来我们将编辑<code>my-library</code>-Cargo.toml，为:</p>
 <pre><code class="language-toml">[patch.crates-io]
 uuid = { path = &quot;../path/to/uuid&quot; }
 </code></pre>
-<p>在这里,我们宣布我们是*修补(patch)*来源<code>crates-io</code>，其有一个新的依赖，这将有效地添加本地(签出 checkout)版本<code>uuid</code>到 crates.io 注册表，指向本地包。</p>
+<p>在这里，我们宣布我们是*修补(patch)*来源<code>crates-io</code>，其有一个新的依赖，这将有效地添加本地(签出 checkout)版本<code>uuid</code>到 crates.io 注册表，指向本地包。</p>
 <p>接下来我们需要确保我们的锁(lock)文件已更新为，使用此新版本<code>uuid</code>，所以我们的包使用本地签出的副本，而不是 crates.io 中的副本。<code>[patch]</code>工作方式是它将从<code>../path/to/uuid</code>加载依赖，然后每当 crates.io 查询<code>uuid</code>的版本时，它<em>也</em>会返回本地版本.</p>
-<p>这意味着本地签出的版本号很重要，会影响是否使用该补丁。我们的清单宣布<code>uuid = &quot;1.0&quot;</code>，这意味着我们只会解析<code>&gt;= 1.0.0, &lt; 2.0.0</code>，和 Cargo 的贪婪解析算法，也意味着我们将解析到该范围内的最大版本。通常情况下这并不重要，因为 git 存储库的版本已经更大，或与 crates.io 上发布的最大版本相匹配，但重要的是要记住这一点!</p>
-<p>无论如何,通常您现在需要做的就是:</p>
+<p>这意味着本地签出的版本号很重要，会影响是否使用该补丁。我们的清单宣布<code>uuid = &quot;1.0&quot;</code>，这意味着我们只会解析<code>&gt;= 1.0.0， &lt; 2.0.0</code>，和 Cargo 的贪婪解析算法，也意味着我们将解析到该范围内的最大版本。通常情况下这并不重要，因为 git 存储库的版本已经更大，或与 crates.io 上发布的最大版本相匹配，但重要的是要记住这一点!</p>
+<p>无论如何，通常您现在需要做的就是:</p>
 <pre><code class="language-console">$ cargo build
    Compiling uuid v1.0.0 (.../uuid)
    Compiling my-library v0.1.0 (.../my-library)
     Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
 </code></pre>
 <p>就是这样! 您现在正在使用本地版本<code>uuid</code>构建(注意构建输出中括号中的路径)。如果您没有看到构建本地路径版本，那么您可能需要运行<code>cargo update -p uuid --precise $version</code>，这里<code>$version</code>是本地签出版本的<code>uuid</code>副本。</p>
-<p>一旦你修复了你最初发现的错误，你要做的下一件事就是将其作为拉取请求提交给<code>uuid</code>箱子本身。一旦你完成了这个,你也可以更新下<code>[patch]</code>部分。<code>[patch]</code>里面的内容列表就像是<code>[dependencies]</code>部分，所以一旦你的拉动请求合并，你就可以改变你的<code>path</code>依赖:</p>
+<p>一旦你修复了你最初发现的错误，你要做的下一件事就是将其作为拉取请求提交给<code>uuid</code>箱子本身。一旦你完成了这个，你也可以更新下<code>[patch]</code>部分。<code>[patch]</code>里面的内容列表就像是<code>[dependencies]</code>部分，所以一旦你的拉动请求合并，你就可以改变你的<code>path</code>依赖:</p>
 <pre><code class="language-toml">[patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 </code></pre>
@@ -663,7 +663,7 @@ uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 <p>与 一个未发布的次要版本，一起工作</p>
 </blockquote>
 <p>现在让我们稍微改变一下，从错误修复，变成要添加功能。在努力<code>my-library</code>的同时，你发现需要<code>uuid</code>箱的一个全新的功能。而您已实现<code>uuid</code>此功能，并在<code>[patch]</code>上面进行本地测试，并提交了拉取请求。让我们来看看在实际发布之前，你如何继续使用和测试它。</p>
-<p>我们也说当前版本的<code>uuid</code>，在 crates.io 上是<code>1.0.0</code>版本，但从提交那时起,git 存储库的主分支已更新为<code>1.0.1</code>。此分支包含您之前提交的新功能。要使用此存储库,我们将编辑我们的<code>Cargo.toml</code>，看起来像</p>
+<p>我们也说当前版本的<code>uuid</code>，在 crates.io 上是<code>1.0.0</code>版本，但从提交那时起，git 存储库的主分支已更新为<code>1.0.1</code>。此分支包含您之前提交的新功能。要使用此存储库，我们将编辑我们的<code>Cargo.toml</code>，看起来像</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-library&quot;
 version = &quot;0.1.0&quot;
@@ -675,9 +675,9 @@ uuid = &quot;1.0.1&quot;
 [patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 </code></pre>
-<p>注意我们对本地<code>uuid</code>的依赖已更新为<code>1.0.1</code>，因为这是我们在箱子发布后实际需要的东西。但是,这个版本在 crates.io 上不存在,所以我们提供给它清单的<code>[patch]</code>部分.</p>
-<p>现在,当我们的库被构建时,它将<code>uuid</code>从 git 存储库取出，并解析到存储库中的 1.0.1 ，而不是尝试从 crates.io 下载版本。一旦 1.0.1 发布在 crates.io 上，那<code>[patch]</code>部分就可以删除了。</p>
-<p>值得注意的是，<code>[patch]</code>是<em>连带关系</em>。假设您在更大的包中使用<code>my-library</code>,例如:</p>
+<p>注意我们对本地<code>uuid</code>的依赖已更新为<code>1.0.1</code>，因为这是我们在箱子发布后实际需要的东西。但是，这个版本在 crates.io 上不存在，所以我们提供给它清单的<code>[patch]</code>部分.</p>
+<p>现在，当我们的库被构建时，它将<code>uuid</code>从 git 存储库取出，并解析到存储库中的 1.0.1 ，而不是尝试从 crates.io 下载版本。一旦 1.0.1 发布在 crates.io 上，那<code>[patch]</code>部分就可以删除了。</p>
+<p>值得注意的是，<code>[patch]</code>是<em>连带关系</em>。假设您在更大的包中使用<code>my-library</code>，例如:</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-binary&quot;
 version = &quot;0.1.0&quot;
@@ -690,7 +690,7 @@ uuid = &quot;1.0&quot;
 [patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 </code></pre>
-<p>记住这<code>[patch]</code>是<em>连带关系</em>，但只能在<em>顶层</em>，所以我们的<code>my-library</code>消费者不得不重写<code>[patch]</code>部分(如有必要的话)。不过,在这里，新的<code>uuid</code>箱子会适用对<code>uuid</code>的依赖和<code>my-library -&gt; uuid</code>的依赖，两个依赖<strong>都</strong>指定了。该<code>uuid</code>箱 将被解析为整个 crate 关系图 的 1.0.1 版本，并且它是将从 git 存储库中提取。</p>
+<p>记住这<code>[patch]</code>是<em>连带关系</em>，但只能在<em>顶层</em>，所以我们的<code>my-library</code>消费者不得不重写<code>[patch]</code>部分(如有必要的话)。不过，在这里，新的<code>uuid</code>箱子会适用对<code>uuid</code>的依赖和<code>my-library -&gt; uuid</code>的依赖，两个依赖<strong>都</strong>指定了。该<code>uuid</code>箱 将被解析为整个 crate 关系图 的 1.0.1 版本，并且它是将从 git 存储库中提取。</p>
 <a class="header" href="#overriding-repository-url" id="overriding-repository-url"><h4>Overriding repository URL</h4></a>
 <blockquote>
 <p>覆盖 注册表 URL</p>
@@ -711,7 +711,7 @@ uuid = &quot;2.0&quot;
 [patch.crates-io]
 uuid = { git = &quot;https://github.com/rust-lang-nursery/uuid&quot;, branch = &quot;2.0.0&quot; }
 </code></pre>
-<p>就是这样!与前面的示例一样,2.0.0 版本实际上，并不存在于 crates.io 上,但我们仍然可以通过<code>[patch]</code>部分使用。作为一个思考练习，让我们再看看<code>my-binary</code>(被使用)的再次表现:</p>
+<p>就是这样!与前面的示例一样，2.0.0 版本实际上，并不存在于 crates.io 上，但我们仍然可以通过<code>[patch]</code>部分使用。作为一个思考练习，让我们再看看<code>my-binary</code>(被使用)的再次表现:</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-binary&quot;
 version = &quot;0.1.0&quot;
@@ -724,23 +724,23 @@ uuid = &quot;1.0&quot;
 [patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid', branch = '2.0.0' }
 </code></pre>
-<p>请注意,这实际上将解析为两个版本的<code>uuid</code>箱。该<code>my-binary</code>箱子将继续使用 1.x.y 系列的<code>uuid</code>箱子，但是<code>my-library</code>箱 会使用 2.0.0 版本<code>uuid</code>。这将允许您通过依赖关系图逐步推出对包的更改,而无需一次性更新所有内容。</p>
+<p>请注意，这实际上将解析为两个版本的<code>uuid</code>箱。该<code>my-binary</code>箱子将继续使用 1.x.y 系列的<code>uuid</code>箱子，但是<code>my-library</code>箱 会使用 2.0.0 版本<code>uuid</code>。这将允许您通过依赖关系图逐步推出对包的更改，而无需一次性更新所有内容。</p>
 <a class="header" href="#overriding-with-local-dependencies" id="overriding-with-local-dependencies"><h3>Overriding with local dependencies</h3></a>
 <blockquote>
 <p>覆盖 本地依赖项</p>
 </blockquote>
 <p>有时你只是暂时在一个箱子上工作，而你不想修改<code>Cargo.toml</code>中像上诉的<code>[patch]</code>部分。对于这个用例，Cargo 提供了更为有限的覆盖版本<strong>路径覆盖</strong>.</p>
-<p>路径覆盖是通过<code>.cargo/config</code>指定，而不是<code>Cargo.toml</code>，你可以寻找<a href="./config.zh.html">有关此配置的更多文档</a>。在<code>.cargo/config</code>内，你要指定的是一个名为<code>paths</code>字段:</p>
+<p>路径覆盖是通过<code>.cargo/config</code>指定，而不是<code>Cargo.toml</code>，你可以寻找<a href="reference/./config.zh.html">有关此配置的更多文档</a>。在<code>.cargo/config</code>内，你要指定的是一个名为<code>paths</code>字段:</p>
 <pre><code class="language-toml">paths = [&quot;/path/to/uuid&quot;]
 </code></pre>
-<p>该数组应填充包含<code>Cargo.toml</code>的目录。在这种情况下,我们只是添加<code>uuid</code>，所以它将是唯一一个被覆盖的。此路径可以是包含该路径的绝对路径或相对<code>.cargo</code>文件夹的路径.</p>
+<p>该数组应填充包含<code>Cargo.toml</code>的目录。在这种情况下，我们只是添加<code>uuid</code>，所以它将是唯一一个被覆盖的。此路径可以是包含该路径的绝对路径或相对<code>.cargo</code>文件夹的路径.</p>
 <p>路径覆盖，比<code>[patch]</code>部分的限制更严格，但是，路径覆盖不能改变依赖图的结构。而当使用路径替换时，前一组依赖项必须完全匹配新的<code>Cargo.toml</code>规格。如此，就意味着路径覆盖不能用于向箱添加依赖项的测试，而换成<code>[patch]</code>在该种情况下使用。因此，路径覆盖的使用，通常会与快速错误修复分隔开来，而不是大更新分开。</p>
 <p>注意:使用本地配置覆盖路径，仅适用于已发布到<a href="https://crates.io/">crates.io</a>的包。您无法使用此功能告诉 Cargo 如何查找本地未发布的箱。</p>
 <a class="header" href="#platform-specific-dependencies" id="platform-specific-dependencies"><h3>Platform specific dependencies</h3></a>
 <blockquote>
 <p>平台决定依赖</p>
 </blockquote>
-<p>特定于平台的依赖项采用相同的格式,但在<code>target</code>下列出。像正常 Rust 一样的<code>#[cfg]</code>语法，将用于定义这些部分:</p>
+<p>特定于平台的依赖项采用相同的格式，但在<code>target</code>下列出。像正常 Rust 一样的<code>#[cfg]</code>语法，将用于定义这些部分:</p>
 <pre><code class="language-toml">[target.'cfg(windows)'.dependencies]
 winhttp = &quot;0.4.0&quot;
 
@@ -753,7 +753,7 @@ native = { path = &quot;native/i686&quot; }
 [target.'cfg(target_arch = &quot;x86_64&quot;)'.dependencies]
 native = { path = &quot;native/x86_64&quot; }
 </code></pre>
-<p>与 Rust 一样，这里的语法支持<code>not</code>,<code>any</code>,和<code>all</code>运算符组合各种 cfg 名称/值对。请注意<code>cfg</code>语法仅在 Cargo 0.9.0(Rust 1.8.0)之后可用.</p>
+<p>与 Rust 一样，这里的语法支持<code>not</code>，<code>any</code>，和<code>all</code>运算符组合各种 cfg 名称/值对。请注意<code>cfg</code>语法仅在 Cargo 0.9.0(Rust 1.8.0)之后可用.</p>
 <p>除了<code>#[cfg]</code>语法，Cargo 还支持列出依赖关系适用的完整目标:</p>
 <pre><code class="language-toml">[target.x86_64-pc-windows-gnu.dependencies]
 winhttp = &quot;0.4.0&quot;
@@ -781,7 +781,7 @@ native = { path = &quot;native/x86_64&quot; }
 <pre><code class="language-toml">[dev-dependencies]
 tempdir = &quot;0.3&quot;
 </code></pre>
-<p>编译用于构建的包时，不会使用 Dev 依赖,但用于编译测试,示例和基准。</p>
+<p>编译用于构建的包时，不会使用 Dev 依赖，但用于编译测试，示例和基准。</p>
 <p>这些依赖关系是<em>不会</em>传播到依赖于此包的其他包.</p>
 <p>您还可以让<code>dev-dependencies</code>具有特定目标的开发依赖项，而不是<code>dependencies</code>标题。例如:</p>
 <pre><code class="language-toml">[target.'cfg(unix)'.dev-dependencies]
@@ -803,11 +803,11 @@ cc = &quot;1.0.3&quot;
 <p>如果您依赖的包提供条件特性，您可以指定使用哪个:</p>
 <pre><code class="language-toml">[dependencies.awesome]
 version = &quot;1.3.5&quot;
-default-features = false # 不会包括默认特性, 和 任君选
+default-features = false # 不会包括默认特性， 和 任君选
                          # 单特性
 features = [&quot;secure-password&quot;, &quot;civet&quot;]
 </code></pre>
-<p>有关 features 的更多信息,请参阅<a href="./manifest.zh.html#the-features-section">清单文档</a>.</p>
+<p>有关 features 的更多信息，请参阅<a href="reference/./manifest.zh.html#the-features-section">清单文档</a>.</p>
 <a class="header" href="#renaming-dependencies-in-cargotoml" id="renaming-dependencies-in-cargotoml"><h3>Renaming dependencies in <code>Cargo.toml</code></h3></a>
 <blockquote>
 <p>在<code>Cargo.toml</code>中的重命名依赖项</p>
@@ -828,7 +828,7 @@ foo = &quot;0.1&quot;
 bar = { git = &quot;https://github.com/example/project&quot;, package = &quot;foo&quot; }
 baz = { version = &quot;0.1&quot;, registry = &quot;custom&quot;, package = &quot;foo&quot; }
 </code></pre>
-<p>在此示例中,Rust 代码中现在提供了三个包:</p>
+<p>在此示例中，Rust 代码中现在提供了三个包:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
 #fn main() {
@@ -837,12 +837,12 @@ extern crate bar; // git repository
 extern crate baz; // registry `custom`
 #}</code></pre></pre>
 <p>所有这三个箱的包名称在他们自己<code>Cargo.toml</code>，都是<code>foo</code>，所以我们明确地告知 Cargo ，使用的是我们想要的<code>package</code>字段(如 package = “foo”包名，即我们在本地调用其他东西)。如果没有指定<code>package</code>，则默认为所请求的依赖项的名称。</p>
-<p>请注意,如果您有一个可选的(optional)依赖项,例如:</p>
+<p>请注意，如果您有一个可选的(optional)依赖项，例如:</p>
 <pre><code class="language-toml">[dependencies]
 foo = { version = &quot;0.1&quot;, package = 'bar', optional = true }
 </code></pre>
-<p>你依赖于一个<code>bar</code>箱子，其来自 crates.io，但你箱子有一个<code>foo</code>特性，取代了一个<code>bar</code>特性。也就是说,在重命名时,特性的名称拿掉了依赖项的名称,而不是包名称。</p>
-<p>启用传递依赖项的工作方式类似,例如我们可以将以下内容，添加到上面的清单中:</p>
+<p>你依赖于一个<code>bar</code>箱子，其来自 crates.io，但你箱子有一个<code>foo</code>特性，取代了一个<code>bar</code>特性。也就是说，在重命名时，特性的名称拿掉了依赖项的名称，而不是包名称。</p>
+<p>启用传递依赖项的工作方式类似，例如我们可以将以下内容，添加到上面的清单中:</p>
 <pre><code class="language-toml">[features]
 log-debug = ['foo/log-debug'] # 使用 'bar/log-debug' 就会出现一个错误!
 </code></pre>
@@ -884,10 +884,10 @@ authors = [&quot;Alice &lt;a@example.com&gt;&quot;, &quot;Bob &lt;b@example.com&
 </blockquote>
 <p>Cargo 烘烤的概念是<a href="http://semver.org/">语义版本控制</a>，所以确保你遵循一些基本规则:</p>
 <ul>
-<li>在您达到 1.0.0 之前,任何事情都会发生,但是如果您进行了重大变化的更新,则增加次要(minor)版本。在 Rust 语言中,重大变化包括，向结构添加字段，或增加变量到枚举。</li>
-<li>在 1.0.0 之后,只在增加主要(major)版本时进行重大变化。不要破坏建筑.</li>
-<li>在 1.0.0 之后,不要在补丁级别(patch)的版本添加任何新的公共 API(没有任何新的<code>pub</code>)。如果添加<code>pub</code>结构、特性、字段、类型、函数、方法或其他任何东东，则总是增加次要版本。</li>
-<li>使用具有三个数字部分的版本号,如 1.0.0，而不是 1.0。</li>
+<li>在您达到 1.0.0 之前，任何事情都会发生，但是如果您进行了重大变化的更新，则增加次要(minor)版本。在 Rust 语言中，重大变化包括，向结构添加字段，或增加变量到枚举。</li>
+<li>在 1.0.0 之后，只在增加主要(major)版本时进行重大变化。不要破坏建筑.</li>
+<li>在 1.0.0 之后，不要在补丁级别(patch)的版本添加任何新的公共 API(没有任何新的<code>pub</code>)。如果添加<code>pub</code>结构、特性、字段、类型、函数、方法或其他任何东东，则总是增加次要版本。</li>
+<li>使用具有三个数字部分的版本号，如 1.0.0，而不是 1.0。</li>
 </ul>
 <a class="header" href="#the-edition-field-optional" id="the-edition-field-optional"><h4>The <code>edition</code> field (optional)</h4></a>
 <blockquote>
@@ -903,7 +903,7 @@ edition = '2018'
 <blockquote>
 <p><code>build</code> 字段 (可选)</p>
 </blockquote>
-<p>此字段指定包根目录中的文件,该文件是<a href="./build-scripts.zh.html">构建脚本</a>，用于生成本机代码。可以在构建脚本<a href="./build-scripts.zh.html">指导</a>中找到更多信息..</p>
+<p>此字段指定包根目录中的文件，该文件是<a href="reference/./build-scripts.zh.html">构建脚本</a>，用于生成本机代码。可以在构建脚本<a href="reference/./build-scripts.zh.html">指导</a>中找到更多信息..</p>
 <pre><code class="language-toml">[package]
 # ...
 build = &quot;build.rs&quot;
@@ -912,7 +912,7 @@ build = &quot;build.rs&quot;
 <blockquote>
 <p><code>links</code> 字段 (可选)</p>
 </blockquote>
-<p>此字段指定，要链接到的本机库名，更多信息可以在构建脚本指南的<a href="./build-scripts.zh.html#the-links-manifest-key"><code>links</code></a>部分.</p>
+<p>此字段指定，要链接到的本机库名，更多信息可以在构建脚本指南的<a href="reference/./build-scripts.zh.html#the-links-manifest-key"><code>links</code></a>部分.</p>
 <pre><code class="language-toml">[package]
 # ...
 links = &quot;foo&quot;
@@ -923,7 +923,7 @@ build = &quot;build.rs&quot;
 <p><code>documentation</code> 字段 (可选)</p>
 </blockquote>
 <p>此字段指定托管箱(crate)文档的网站的 URL。如果清单文件中没有指定 URL，<a href="https://crates.io/">crates.io</a>自动将你的箱子连接到相应的箱子的<a href="https://docs.rs/">docs.rs</a>页.</p>
-<p>来自特定主机的文档链接被列入黑名单。如果已知主机不承载文档，并且可能具有恶意意图,例如广告跟踪网络，则主机被添加到黑名单中。下列主机的 URL 就被列入黑名单:</p>
+<p>来自特定主机的文档链接被列入黑名单。如果已知主机不承载文档，并且可能具有恶意意图，例如广告跟踪网络，则主机被添加到黑名单中。下列主机的 URL 就被列入黑名单:</p>
 <ul>
 <li>rust-ci.org</li>
 </ul>
@@ -932,8 +932,8 @@ build = &quot;build.rs&quot;
 <blockquote>
 <p><code>exclude</code> 和 <code>include</code> 字段 (可选)</p>
 </blockquote>
-<p>出于打包和重建包的目的，您可以显式地指定一组<a href="https://docs.rs/glob/0.2.11/glob/struct.Pattern.md">globs</a>模式,匹配项应被忽略或包含。如<code>exclude</code>字段标识了在发布包时，不包括的一组文件，以及检测何时重建包时，应该忽略的文件，而<code>include</code>就是显式指定一定包含的文件。</p>
-<p>如果一个 VCS 被用于一个包,则<code>exclude</code>字段将被植入 VCS 的忽略设置(例如 Git 的<code>.gitignore</code>)。</p>
+<p>出于打包和重建包的目的，您可以显式地指定一组<a href="https://docs.rs/glob/0.2.11/glob/struct.Pattern.md">globs</a>模式，匹配项应被忽略或包含。如<code>exclude</code>字段标识了在发布包时，不包括的一组文件，以及检测何时重建包时，应该忽略的文件，而<code>include</code>就是显式指定一定包含的文件。</p>
+<p>如果一个 VCS 被用于一个包，则<code>exclude</code>字段将被植入 VCS 的忽略设置(例如 Git 的<code>.gitignore</code>)。</p>
 <pre><code class="language-toml">[package]
 # ...
 exclude = [&quot;build/**/*.o&quot;, &quot;doc/**/*.md&quot;]
@@ -942,12 +942,12 @@ exclude = [&quot;build/**/*.o&quot;, &quot;doc/**/*.md&quot;]
 # ...
 include = [&quot;src/**/*&quot;, &quot;Cargo.toml&quot;]
 </code></pre>
-<p>选项是相互排斥的: <code>include</code>设置覆盖<code>exclude</code>。 注意<code>include</code>必须是文件的详尽列表,否则可能不包括必要的源文件。</p>
+<p>选项是相互排斥的: <code>include</code>设置覆盖<code>exclude</code>。 注意<code>include</code>必须是文件的详尽列表，否则可能不包括必要的源文件。</p>
 <a class="header" href="#migrating-to-gitignore-like-pattern-matching" id="migrating-to-gitignore-like-pattern-matching"><h4>Migrating to <code>gitignore</code>-like pattern matching</h4></a>
 <blockquote>
 <p>转移成 类<code>gitignore</code> 模式匹配</p>
 </blockquote>
-<p>这些配置的当前解释实现都基于 UNIX Globs，如<a href="https://crates.io/crates/glob"><code>glob</code>箱</a>。 若是我们想要 Cargo 的<code>include</code>和<code>exclude</code>尽可能配置为类似于<code>gitignore</code>。可看看<a href="https://git-scm.com/docs/gitignore">这个<code>gitignore</code>规范</a>，其也是基于 Globs 的，但是还有许多其他的特性,这些特性使模式编写更容易,控制也更多。因此,我们正在迁移这些配置规则的解释实现,以使用<a href="https://crates.io/crates/ignore"><code>ignore</code>箱</a>，并认真对待<code>gitignore</code>文件的每一条行规则。见<a href="https://github.com/rust-lang/cargo/issues/4268">跟踪问题</a>有关迁移的更多细节。</p>
+<p>这些配置的当前解释实现都基于 UNIX Globs，如<a href="https://crates.io/crates/glob"><code>glob</code>箱</a>。 若是我们想要 Cargo 的<code>include</code>和<code>exclude</code>尽可能配置为类似于<code>gitignore</code>。可看看<a href="https://git-scm.com/docs/gitignore">这个<code>gitignore</code>规范</a>，其也是基于 Globs 的，但是还有许多其他的特性，这些特性使模式编写更容易，控制也更多。因此，我们正在迁移这些配置规则的解释实现，以使用<a href="https://crates.io/crates/ignore"><code>ignore</code>箱</a>，并认真对待<code>gitignore</code>文件的每一条行规则。见<a href="https://github.com/rust-lang/cargo/issues/4268">跟踪问题</a>有关迁移的更多细节。</p>
 <a class="header" href="#the-publish-field-optional" id="the-publish-field-optional"><h4>The <code>publish</code> field (optional)</h4></a>
 <blockquote>
 <p><code>publish</code> 字段 (可选)</p>
@@ -961,12 +961,12 @@ publish = false
 <blockquote>
 <p><code>workspace</code> 字段 (可选)</p>
 </blockquote>
-<p>这个<code>workspace</code>字段可用于配置此包将属于的工作区。如果没有指定,这将被推断为文件系统中第一个 Cargo.toml 的<code>[workspace]</code>。</p>
+<p>这个<code>workspace</code>字段可用于配置此包将属于的工作区。如果没有指定，这将被推断为文件系统中第一个 Cargo.toml 的<code>[workspace]</code>。</p>
 <pre><code class="language-toml">[package]
 # ...
 workspace = &quot;path/to/workspace/root&quot;
 </code></pre>
-<p>有关更多信息,请参见下面的工作区(workspace)表格的文档.</p>
+<p>有关更多信息，请参见下面的工作区(workspace)表格的文档.</p>
 <a class="header" href="#package-metadata" id="package-metadata"><h4>Package metadata</h4></a>
 <blockquote>
 <p>包 元信息</p>
@@ -980,7 +980,7 @@ workspace = &quot;path/to/workspace/root&quot;
 description = &quot;...&quot;
 
 # 这些URL指向有关包的更多信息 这些是
-# 旨在成为相关数据的网页入口, 不一定兼容
+# 旨在成为相关数据的网页入口， 不一定兼容
 # VCS工具(类似的)等.
 documentation = &quot;...&quot;
 homepage = &quot;...&quot;
@@ -1070,7 +1070,7 @@ maintenance = { status = &quot;...&quot; }
 <blockquote>
 <p><code>metadata</code> 表格 (可选)</p>
 </blockquote>
-<p>默认情况下,Cargo 将对<code>Cargo.toml</code>不使用的字段发出警告，协助检测错别字等。就像这个<code>package.metadata</code>表格，但是,完全不写了的话， Cargo 将不会被警告。这个表格可在<code>Cargo.toml</code>，用于将包配置存储好。 例如:</p>
+<p>默认情况下，Cargo 将对<code>Cargo.toml</code>不使用的字段发出警告，协助检测错别字等。就像这个<code>package.metadata</code>表格，但是，完全不写了的话， Cargo 将不会被警告。这个表格可在<code>Cargo.toml</code>，用于将包配置存储好。 例如:</p>
 <pre><code class="language-toml">[package]
 name = &quot;...&quot;
 # ...
@@ -1084,13 +1084,13 @@ assets = &quot;path/to/static&quot;
 <blockquote>
 <p>依赖 部分</p>
 </blockquote>
-<p>见<a href="./specifying-dependencies.zh.html">指定依赖-那页</a>有关<code>[dependencies]</code>,<code>[dev-dependencies]</code>,<code>[build-dependencies]</code>和特定目标的<code>[target.*.dependencies]</code>部分的信息。</p>
+<p>见<a href="reference/./specifying-dependencies.zh.html">指定依赖-那页</a>有关<code>[dependencies]</code>，<code>[dev-dependencies]</code>，<code>[build-dependencies]</code>和特定目标的<code>[target.*.dependencies]</code>部分的信息。</p>
 <a class="header" href="#the-profile-sections" id="the-profile-sections"><h3>The <code>[profile.*]</code> sections</h3></a>
 <blockquote>
 <p><code>[profile.*]</code> 部分</p>
 </blockquote>
 <p>Cargo 支持了，可通过顶层 配置文件(profile) 调用 rustc 的自定义配置。任何清单都可以声明一个配置文件，但是实际上只读取顶级包的配置文件。所有依赖项的配置文件都将被重写，这样做是为了让顶级包能够控制，其依赖项如何编译的。</p>
-<p>目前有四个受支持的配置文件名称,它们都具有相同的配置。下面列出了可用的配置,以及每个配置文件的默认设置.</p>
+<p>目前有四个受支持的配置文件名称，它们都具有相同的配置。下面列出了可用的配置，以及每个配置文件的默认设置.</p>
 <pre><code class="language-toml"># 此为 开发配置文件, 给 `cargo build` 所使用.
 [profile.dev]
 opt-level = 0      # 控制编译器构建的`--opt-level`。
@@ -1164,7 +1164,7 @@ overflow-checks = false
 <li>可选的依赖项，增强了包，但不是必需的;还有</li>
 <li>可选依赖项的簇，如<code>postgres</code>，其中就包括<code>postgres</code>包<code>postgres-macros</code>包，以及可能的其他包(如开发时的模拟库、调试工具等)。</li>
 </ul>
-<p>包的特性也可以是可选的依赖项,也可以是一组其他特性。指定特性的格式是:</p>
+<p>包的特性也可以是可选的依赖项，也可以是一组其他特性。指定特性的格式是:</p>
 <pre><code class="language-toml">[package]
 name = &quot;awesome&quot;
 
@@ -1225,8 +1225,8 @@ features = [&quot;secure-password&quot;, &quot;civet&quot;]
 <blockquote>
 <p>生产终点的用法</p>
 </blockquote>
-<p>该特性的一个主要用例是在最终产品中，指定可选特性。例如,Servo 包可能希望包含可选特性,人们可以在构建时，启用或禁用它。</p>
-<p>在这种情况下,Servo 将在<code>Cargo.toml</code>描述特性，且用命令行标志来启用这些特性:</p>
+<p>该特性的一个主要用例是在最终产品中，指定可选特性。例如，Servo 包可能希望包含可选特性，人们可以在构建时，启用或禁用它。</p>
+<p>在这种情况下，Servo 将在<code>Cargo.toml</code>描述特性，且用命令行标志来启用这些特性:</p>
 <pre><code class="language-console">$ cargo build --release --features &quot;shumway pdf&quot;
 </code></pre>
 <p>可以使用<code>--no-default-features</code>，排除默认特性。</p>
@@ -1235,19 +1235,19 @@ features = [&quot;secure-password&quot;, &quot;civet&quot;]
 <p>包(库)的用法</p>
 </blockquote>
 <p>在大多数情况下，在库中<em>可选依赖</em>的概念，最好将其表示为顶级应用程序所依赖的单独包。</p>
-<p>然而,像 Iron 或 Piston 这样的高级软件包会需要排布多个软件包以便于安装。当前的 Cargo 系统允许它们将一些强制依赖项，整合到一个包中,以便于安装。</p>
-<p>在某些情况下,包可能希望为可选依赖项，提供额外的管理:</p>
+<p>然而，像 Iron 或 Piston 这样的高级软件包会需要排布多个软件包以便于安装。当前的 Cargo 系统允许它们将一些强制依赖项，整合到一个包中，以便于安装。</p>
+<p>在某些情况下，包可能希望为可选依赖项，提供额外的管理:</p>
 <ul>
 <li>将多个低层可选依赖项，组合到一个单独的高级特性中;</li>
 <li>由包用户指定推荐(或建议)要包括的包;</li>
-<li>包括特性(类似<code>secure-password</code>在激励示例中)，这只在可选的依赖项可用时才能工作，并且很难实现为单独的包(例如,设计一个与 OpenSSL 完全解耦的 IO 包可能过于困难，那这时，就可通过包含单独的包来选择相关特性)。</li>
+<li>包括特性(类似<code>secure-password</code>在激励示例中)，这只在可选的依赖项可用时才能工作，并且很难实现为单独的包(例如，设计一个与 OpenSSL 完全解耦的 IO 包可能过于困难，那这时，就可通过包含单独的包来选择相关特性)。</li>
 </ul>
 <p>在几乎所有情况下，在设计牢固的高级包之外，使用这些特性都是反模式的。如果某个特性是可选的，那么它几乎可以肯定地表示为单独的包。</p>
 <a class="header" href="#the-workspace-section" id="the-workspace-section"><h3>The <code>[workspace]</code> section</h3></a>
 <blockquote>
 <p><code>[workspace]</code> 部分</p>
 </blockquote>
-<p>包可以定义一个工作区,它是一组箱，所有箱将共享相同<code>Cargo.lock</code>和输出目录。这个<code>[workspace]</code>表格可以定义为:</p>
+<p>包可以定义一个工作区，它是一组箱，所有箱将共享相同<code>Cargo.lock</code>和输出目录。这个<code>[workspace]</code>表格可以定义为:</p>
 <pre><code class="language-toml">[workspace]
 
 # 可选字段，从路径依赖推断（如果不存在）。
@@ -1260,42 +1260,42 @@ exclude = [&quot;path1&quot;, &quot;path/to/dir2&quot;]
 </code></pre>
 <p>工作区作为 Cargo 的<a href="https://github.com/rust-lang/rfcs/blob/master/text/1525-cargo-workspace.md">RFC 1525</a>一部分被添加到 Cargo 中，并具有许多属性:</p>
 <ul>
-<li>工作区可以包含多个箱,其中一个是<em>根箱</em>.</li>
+<li>工作区可以包含多个箱，其中一个是<em>根箱</em>.</li>
 <li>这个<em>根箱</em>的<code>Cargo.toml</code>包含<code>[workspace]</code>表格，但不要求必有其他配置.</li>
 <li>每当编译工作区中的任何箱时，输出被放置在<em>工作区根</em>。 即紧挨着<em>根箱</em>的<code>Cargo.toml</code>.</li>
 <li>工作区中所有箱的那个锁定文件驻留在<em>工作区根</em>.</li>
-<li>在<code>Cargo.toml</code>的<code>[patch]</code>,<code>[replace]</code>和<code>[profile.*]</code>部分，只认<em>根箱</em>的清单，而忽略成员箱的。</li>
+<li>在<code>Cargo.toml</code>的<code>[patch]</code>，<code>[replace]</code>和<code>[profile.*]</code>部分，只认<em>根箱</em>的清单，而忽略成员箱的。</li>
 </ul>
 <p>这个工作区的<em>根箱</em>，由其清单中存在的<code>[workspace]</code>指定，并负责定义整个工作区。所有驻留在工作区目录中的<code>path</code>依赖项都变成成员。您可以通过<code>members</code>字段将附加包添加到工作区中。请注意，显式列出的工作区成员，也在工作区中包含了它们的路径依赖项。有时候，一个包可能有很多工作区成员，并且都保持最新会很麻烦。</p>
 <p>路径依赖也可以使用<a href="https://docs.rs/glob/0.2.11/glob/struct.Pattern.md">globs</a>匹配多个路径。
 最后，<code>exclude</code>字段 可以用于将工作路径中的路径列入黑名单。如果根本不希望某些路径依赖项存在于工作区中，那么这非常有用.</p>
 <p>这个<code>package.workspace</code>清单字段(如上所述)用于成员箱中，以指向工作区的根箱。如果省略此字段，则推断它是文件系统(向上的父目录)中，清单包含<code>[workspace]</code>的第一个箱。</p>
-<p>箱可以指定<code>package.workspace</code>或指定<code>[workspace]</code>。 也就是说,箱不能同时作为工作区中的根箱(包含<code>[workspace]</code>)，和另一个工作区的成员箱(包含<code>package.workspace</code>)</p>
+<p>箱可以指定<code>package.workspace</code>或指定<code>[workspace]</code>。 也就是说，箱不能同时作为工作区中的根箱(包含<code>[workspace]</code>)，和另一个工作区的成员箱(包含<code>package.workspace</code>)</p>
 <p>大多数时间工作区都不需要处理。因<code>cargo new</code>和<code>cargo init</code>将自动处理工作区配置。</p>
 <a class="header" href="#virtual-manifest" id="virtual-manifest"><h4>Virtual Manifest</h4></a>
 <blockquote>
 <p>虚拟清单</p>
 </blockquote>
-<p>在工作区清单中,如果<code>package</code>表格存在,则工作区根箱将被视为普通包和工作区。如果<code>package</code>表格不存在工作区清单中,那它被称为<em>虚拟清单</em>。</p>
+<p>在工作区清单中，如果<code>package</code>表格存在，则工作区根箱将被视为普通包和工作区。如果<code>package</code>表格不存在工作区清单中，那它被称为<em>虚拟清单</em>。</p>
 <a class="header" href="#package-selection" id="package-selection"><h4>Package selection</h4></a>
 <blockquote>
 <p>Package 部分</p>
 </blockquote>
-<p>在工作区中,与包相关的 Cargo 命令，如<code>cargo build</code>，会应用<code>-p</code> / <code>--package</code>或<code>--all</code>命令行参数选定的包。当未指定时,可选<code>default-members</code>配置被使用:</p>
+<p>在工作区中，与包相关的 Cargo 命令，如<code>cargo build</code>，会应用<code>-p</code> / <code>--package</code>或<code>--all</code>命令行参数选定的包。当未指定时，可选<code>default-members</code>配置被使用:</p>
 <pre><code class="language-toml">[workspace]
 members = [&quot;path/to/member1&quot;, &quot;path/to/member2&quot;, &quot;path/to/member3/*&quot;]
 default-members = [&quot;path/to/member2&quot;, &quot;path/to/member3/foo&quot;]
 </code></pre>
 <p><code>default-members</code>指定时，必会扩展到子集的<code>members</code>中.</p>
-<p>若是<code>default-members</code>未指定，如果它是包,则默认为根清单，或者若是虚拟工作区，就为每个成员的清单(如同<code>--all</code>在命令行上).</p>
+<p>若是<code>default-members</code>未指定，如果它是包，则默认为根清单，或者若是虚拟工作区，就为每个成员的清单(如同<code>--all</code>在命令行上).</p>
 <a class="header" href="#the-project-layout" id="the-project-layout"><h3>The project layout</h3></a>
 <blockquote>
 <p>项目布局</p>
 </blockquote>
 <p>如果包是可执行文件，则将主源文件命名为<code>src/main.rs</code>。 如果它是一个库，请命名主源文件<code>src/lib.rs</code>。</p>
-<p>Cargo 也将处理位于<code>src/bin/*.rs</code>任何文件作为可执行文件。如果可执行文件包含不止一个源文件，则可以使用<code>src/bin</code>目录下，又一个包含<code>main.rs</code>文件的目录，而该目录将被视为具有父目录名称的可执行文件。但是，一旦添加了<code>[[bin]]</code>部分<a href="#configuring-a-target">见下文</a>，Cargo 将不再自动建立<code>src/bin/*.rs</code>文件。 相反,你必须创建一个<code>[[bin]]</code>部分，给出你想要生成的每个文件。</p>
+<p>Cargo 也将处理位于<code>src/bin/*.rs</code>任何文件作为可执行文件。如果可执行文件包含不止一个源文件，则可以使用<code>src/bin</code>目录下，又一个包含<code>main.rs</code>文件的目录，而该目录将被视为具有父目录名称的可执行文件。但是，一旦添加了<code>[[bin]]</code>部分<a href="#configuring-a-target">见下文</a>，Cargo 将不再自动建立<code>src/bin/*.rs</code>文件。 相反，你必须创建一个<code>[[bin]]</code>部分，给出你想要生成的每个文件。</p>
 <!-- HERE -->
-<p>您的包可以(可选地)包含命名为<code>examples</code>,<code>tests</code>和<code>benches</code>文件夹,Cargo 将分别将其视为包含示例、集成测试和基准。类似于<code>bin</code>目标，它们可以由单个文件或拥有<code>main.rs</code>文件的目录组成。</p>
+<p>您的包可以(可选地)包含命名为<code>examples</code>，<code>tests</code>和<code>benches</code>文件夹，Cargo 将分别将其视为包含示例、集成测试和基准。类似于<code>bin</code>目标，它们可以由单个文件或拥有<code>main.rs</code>文件的目录组成。</p>
 <pre><code>▾ src/           # 包含源文件的目录
   lib.rs         # 库和包的主要入口点
   main.rs        # 包生成可执行文件的主要入口点
@@ -1324,8 +1324,8 @@ default-members = [&quot;path/to/member2&quot;, &quot;path/to/member3/foo&quot;]
 <blockquote>
 <p>示例</p>
 </blockquote>
-<p>位于<code>examples</code>下方的文件，是库提供的功能示例用法。编译时,它们被放置在<code>target/examples</code>目录。</p>
-<p>它们可以编译为可执行文件(用<code>main()</code>函数)或，库。和可通过使用<code>extern crate &lt;library-name&gt;</code>导入库。 当您运行测试以保护它们免遭篡改时,它们会被编译。</p>
+<p>位于<code>examples</code>下方的文件，是库提供的功能示例用法。编译时，它们被放置在<code>target/examples</code>目录。</p>
+<p>它们可以编译为可执行文件(用<code>main()</code>函数)或，库。和可通过使用<code>extern crate &lt;library-name&gt;</code>导入库。 当您运行测试以保护它们免遭篡改时，它们会被编译。</p>
 <p>可以使用命令<code>cargo run --example &lt;example-name&gt;</code>运行单个可执行示例.</p>
 <p>指定<code>crate-type</code>将示例编译为库(有关箱类型的附加信息可在<a href="https://doc.rust-lang.org/reference/linkage.html">Rust 参考</a>找到):</p>
 <pre><code class="language-toml">[[example]]
@@ -1339,7 +1339,7 @@ crate-type = [&quot;staticlib&quot;]
 </blockquote>
 <p>当你运行<code>cargo test</code>，Cargo 会:</p>
 <ul>
-<li>编译并运行库的单元测试，这些测试位于<code>lib.rs</code>(当然,任何标记为<code>#[cfg(test)]</code>部分将考虑为同个阶段);</li>
+<li>编译并运行库的单元测试，这些测试位于<code>lib.rs</code>(当然，任何标记为<code>#[cfg(test)]</code>部分将考虑为同个阶段);</li>
 <li>编译并运行嵌入到文档区块内部的库的文档测试;</li>
 <li>编译并运行您库的<a href="#integration-tests">集成测试</a>和</li>
 <li>编译你库的例子.</li>
@@ -1349,13 +1349,13 @@ crate-type = [&quot;staticlib&quot;]
 <p>集成测试</p>
 </blockquote>
 <p>在<code>tests/*.rs</code>的每个文件是一个集成测试。当你运行<code>cargo test</code>，Cargo 将编译每个文件作为一个单独的箱子。箱可以通过使用<code>extern crate &lt;library-name&gt;</code>链接(导入)您的库，就像其他导入项一样。</p>
-<p>Cargo 不会自动编译<code>tests</code>子目录内的文件，但是，集成测试可以像往常一样从这些目录导入模块。例如,如果希望多个集成测试共享一些代码，可以将共享代码放入<code>tests/common/mod.rs</code>，然后为每个测试文件添加<code>mod common;</code>。</p>
+<p>Cargo 不会自动编译<code>tests</code>子目录内的文件，但是，集成测试可以像往常一样从这些目录导入模块。例如，如果希望多个集成测试共享一些代码，可以将共享代码放入<code>tests/common/mod.rs</code>，然后为每个测试文件添加<code>mod common;</code>。</p>
 <a class="header" href="#configuring-a-target" id="configuring-a-target"><h3>Configuring a target</h3></a>
 <blockquote>
 <p>配置为一个目标</p>
 </blockquote>
-<p>所有的<code>[[bin]]</code>,<code>[lib]</code>,<code>[[bench]]</code>,<code>[[test]]</code>和<code>[[example]]</code>部分都支持类似的配置，用于指定应该如何构建目标。双括号<code>[[bin]]</code>部分，是<a href="https://github.com/toml-lang/toml#array-of-tables">TOML</a>格式的数组。这意味着你可以在您的箱中写多个<code>[[bin]]</code>，这样就会生成几个可执行文件。</p>
-<p>下面的例子使用<code>[lib]</code>，但它也适用于所有其他部分。除非另有说明,下面所有列出的值都是对应选项的<strong>默认值</strong>。</p>
+<p>所有的<code>[[bin]]</code>，<code>[lib]</code>，<code>[[bench]]</code>，<code>[[test]]</code>和<code>[[example]]</code>部分都支持类似的配置，用于指定应该如何构建目标。双括号<code>[[bin]]</code>部分，是<a href="https://github.com/toml-lang/toml#array-of-tables">TOML</a>格式的数组。这意味着你可以在您的箱中写多个<code>[[bin]]</code>，这样就会生成几个可执行文件。</p>
+<p>下面的例子使用<code>[lib]</code>，但它也适用于所有其他部分。除非另有说明，下面所有列出的值都是对应选项的<strong>默认值</strong>。</p>
 <pre><code class="language-toml">[package]
 # ...
 
@@ -1406,7 +1406,7 @@ edition = '2015'
 <blockquote>
 <p><code>required-features</code> 字段 (可选)</p>
 </blockquote>
-<p>这个<code>required-features</code>字段指定目标需要构建的特性。如果未选择任何所需的特性,则将跳过目标。这只与<code>[[bin]]</code>,<code>[[bench]]</code>,<code>[[test]]</code>和<code>[[example]]</code>部分有影响，它没有影响<code>[lib]</code>。</p>
+<p>这个<code>required-features</code>字段指定目标需要构建的特性。如果未选择任何所需的特性，则将跳过目标。这只与<code>[[bin]]</code>，<code>[[bench]]</code>，<code>[[test]]</code>和<code>[[example]]</code>部分有影响，它没有影响<code>[lib]</code>。</p>
 <pre><code class="language-toml">[features]
 # ...
 postgres = []
@@ -1421,20 +1421,20 @@ required-features = [&quot;postgres&quot;, &quot;tools&quot;]
 <blockquote>
 <p>构建 动态 或 静态 库</p>
 </blockquote>
-<p>如果您的包生成一个库,则可以通过在<code>Cargo.toml</code>显式地指明构建的库类型:</p>
+<p>如果您的包生成一个库，则可以通过在<code>Cargo.toml</code>显式地指明构建的库类型:</p>
 <pre><code class="language-toml"># ...
 
 [lib]
 name = &quot;...&quot;
 crate-type = [&quot;dylib&quot;] # 也能是 `staticlib`
 </code></pre>
-<p>可用的选项是<code>dylib</code>,<code>rlib</code>,<code>staticlib</code>,<code>cdylib</code>和<code>proc-macro</code>。 您应该只在包中使用一次此选项。Cargo 总是根据(包括的)包的要求来编译包(依赖项)。</p>
+<p>可用的选项是<code>dylib</code>，<code>rlib</code>，<code>staticlib</code>，<code>cdylib</code>和<code>proc-macro</code>。 您应该只在包中使用一次此选项。Cargo 总是根据(包括的)包的要求来编译包(依赖项)。</p>
 <p>您可以阅读<a href="https://doc.rust-lang.org/reference/linkage.html">Rust 参考手册</a>中更多关于不同的箱类型</p>
 <a class="header" href="#the-patch-section" id="the-patch-section"><h3>The <code>[patch]</code> Section</h3></a>
 <blockquote>
 <p><code>[patch]</code> 部分</p>
 </blockquote>
-<p>这部分可以用来<a href="./specifying-dependencies.zh.html#overriding-dependencies">重写其他副本的依赖项</a>。语法类似于<code>[dependencies]</code>部分:</p>
+<p>这部分可以用来<a href="reference/./specifying-dependencies.zh.html#overriding-dependencies">重写其他副本的依赖项</a>。语法类似于<code>[dependencies]</code>部分:</p>
 <pre><code class="language-toml">[patch.crates-io]
 foo = { git = 'https://github.com/example/foo' }
 bar = { path = 'my/local/bar' }
@@ -1448,23 +1448,23 @@ baz = { git = 'https://github.com/example/patched-baz', branch = 'my-branch' }
 <p>这个<code>[patch]</code>表格由，类似依赖表格的子表组成。<code>[patch]</code>后的每个字段是正在修补的源 URL，或者<code>crates-io</code>(如果你正在修改<a href="https://crates.io">HTTPS://CRATESIO</a>注册表)。在上面的例子中，<code>crates-io</code>可以用 Git URL 替换，例如<code>https://github.com/rust-lang-nursery/log</code>；第二个示例中的<code>[patch]</code>部分使用此来指定一个名为<code>baz</code>的源。</p>
 <p>这些表格中的每个项都是一个正常的依赖关系规范，与<code>[dependencies]</code>清单的部分一样。<code>[patch]</code>部分中列出的依赖项，被解析并用于在指定的 URL 上对源进行补丁。上面的清单片段补丁<code>crates-io</code>源(例如 crates.io 本身)的<code>foo</code>箱和<code>bar</code>箱。它也用一个来自其他地方的<code>my-branch</code>分支修补了<code>https://github.com/example/baz</code>源。</p>
 <p>可以用不存在的箱版本来修补源，也可以用已经存在的箱版本来修补源。如果用源中已经存在的箱版本对源进行修补，则会替换源的原始箱。</p>
-<p>有关重写依赖关系的更多信息，可阅读本文档的<a href="./specifying-dependencies.zh.html#overriding-dependencies">重写依赖项</a>章节和对于这一特性的<a href="https://github.com/rust-lang/rfcs/pull/1969">RFC 1969</a>技术规范说明。</p>
+<p>有关重写依赖关系的更多信息，可阅读本文档的<a href="reference/./specifying-dependencies.zh.html#overriding-dependencies">重写依赖项</a>章节和对于这一特性的<a href="https://github.com/rust-lang/rfcs/pull/1969">RFC 1969</a>技术规范说明。</p>
 <a class="header" href="#the-replace-section" id="the-replace-section"><h3>The <code>[replace]</code> Section</h3></a>
 <blockquote>
 <p><code>[replace]</code> 部分</p>
 </blockquote>
-<p>这部分可以用来<a href="./specifying-dependencies.zh.html#overriding-dependencies">重写其他副本的依赖项</a>。语法类似于<code>[dependencies]</code>部分:</p>
+<p>这部分可以用来<a href="reference/./specifying-dependencies.zh.html#overriding-dependencies">重写其他副本的依赖项</a>。语法类似于<code>[dependencies]</code>部分:</p>
 <pre><code class="language-toml">[replace]
 &quot;foo:0.1.0&quot; = { git = 'https://github.com/example/foo' }
 &quot;bar:1.0.2&quot; = { path = 'my/local/bar' }
 </code></pre>
-<p><code>[replace]</code>表格的每个字段都是<a href="./pkgid-spec.zh.html">包标识规范</a>，它任意选择依赖图中的节点来重写。每个字段值与`[dependencies]指定依赖关系的语法是一样，除了不能指定特性。注意,当覆盖一个箱时,覆盖它的副本必须具有相同的名称和版本，但它可以来自不同的源(例如,git 或本地路径).</p>
-<p>有关重写依赖关系的更多信息，可阅读本文档的<a href="./specifying-dependencies.zh.html#overriding-dependencies">重写依赖项</a>章节。</p>
-<a class="header" href="#a配置" id="a配置"><h2>配置</h2></a>
-<p>本文档将解释 Cargo 的配置系统如何工作,以及可用的字段或配置。有关通过其清单，来配置程序包的信息,请参阅<a href="./manifest.zh.html">清单格式</a>.</p>
+<p><code>[replace]</code>表格的每个字段都是<a href="reference/./pkgid-spec.zh.html">包标识规范</a>，它任意选择依赖图中的节点来重写。每个字段值与`[dependencies]指定依赖关系的语法是一样，除了不能指定特性。注意，当覆盖一个箱时，覆盖它的副本必须具有相同的名称和版本，但它可以来自不同的源(例如，git 或本地路径).</p>
+<p>有关重写依赖关系的更多信息，可阅读本文档的<a href="reference/./specifying-dependencies.zh.html#overriding-dependencies">重写依赖项</a>章节。</p>
+<a class="header" href="#配置" id="配置"><h2>配置</h2></a>
+<p>本文档将解释 Cargo 的配置系统如何工作，以及可用的字段或配置。有关通过其清单，来配置程序包的信息，请参阅<a href="reference/./manifest.zh.html">清单格式</a>.</p>
 <a class="header" href="#hierarchical-structure" id="hierarchical-structure"><h3>Hierarchical structure</h3></a>
 <p>分层策略</p>
-<p>Cargo 允许特定包，具有本地配置以及全局配置，就像 git 一样。Cargo 将其扩展为分层策略。例如,如果在<code>/projects/foo/bar/baz</code>调用 Cargo,然后将按以下顺序，探测和统一配置文件:</p>
+<p>Cargo 允许特定包，具有本地配置以及全局配置，就像 git 一样。Cargo 将其扩展为分层策略。例如，如果在<code>/projects/foo/bar/baz</code>调用 Cargo，然后将按以下顺序，探测和统一配置文件:</p>
 <ul>
 <li><code>/projects/foo/bar/baz/.cargo/config</code></li>
 <li><code>/projects/foo/bar/.cargo/config</code></li>
@@ -1473,13 +1473,13 @@ baz = { git = 'https://github.com/example/patched-baz', branch = 'my-branch' }
 <li><code>/.cargo/config</code></li>
 <li><code>$HOME/.cargo/config</code></li>
 </ul>
-<p>使用此结构,您可以为每个包指定配置，甚至可以将其检入版本控制。您还可以在主目录中，使用指定默认值的配置文件。</p>
+<p>使用此结构，您可以为每个包指定配置，甚至可以将其检入版本控制。您还可以在主目录中，使用指定默认值的配置文件。</p>
 <a class="header" href="#configuration-format" id="configuration-format"><h3>Configuration format</h3></a>
 <p>配置格式</p>
-<p>所有配置目前都在<a href="https://github.com/toml-lang/toml">TOML 格式</a>(与 Cargo.toml 清单一样),在字段(表格)内部使用简单的键值对，它们都被合并在一起。</p>
+<p>所有配置目前都在<a href="https://github.com/toml-lang/toml">TOML 格式</a>(与 Cargo.toml 清单一样)，在字段(表格)内部使用简单的键值对，它们都被合并在一起。</p>
 <a class="header" href="#configuration-keys" id="configuration-keys"><h3>Configuration keys</h3></a>
 <p>配置字段</p>
-<p>以下所有字段都是可选的，除非另有说明,否则它们的默认值将作为其值。</p>
+<p>以下所有字段都是可选的，除非另有说明，否则它们的默认值将作为其值。</p>
 <p>指定工具的键值可以给出，一个‘绝对路径，相对路径或无路径工具名称’。给定的绝对路径和无路径工具名称直接使用。相对路径，则解析相对于<code>.cargo</code>目录的父目录，配置文件就居住在里面。</p>
 <pre><code class="language-bash"># 路径数组，指向本地将要覆盖依赖项的存储库.
 # 更多信息，请看 指定 依赖项 指南.
@@ -1487,15 +1487,15 @@ paths = [&quot;/path/to/override&quot;]
 
 [cargo-new]
 # 这是你 放 name/email 的地方， 在一个新Cargo.toml中的
-#`authors` 表格就会生成。若不存在, 那 `git` 会去调查, 若还是不
+#`authors` 表格就会生成。若不存在， 那 `git` 会去调查， 若还是不
 # 存在，那 `$USER` 和 `$EMAIL` 会被使用.
 name = &quot;...&quot;
 email = &quot;...&quot;
 
-# 默认来说， `cargo new` 会初始化一个新的  Git repository. 该字段若设为 `hg` ，就是新建一个 Mercurial repository, 或 `none` 禁用此行为.
+# 默认来说， `cargo new` 会初始化一个新的  Git repository. 该字段若设为 `hg` ，就是新建一个 Mercurial repository， 或 `none` 禁用此行为.
 vcs = &quot;none&quot;
 
-# 接下来的 部分, $triple 是 一些有效目标 triple的引用, 而不是一个字面量&quot;$triple&quot;的意思, 这个引用是无论何时都能应用编译的。
+# 接下来的 部分， $triple 是 一些有效目标 triple的引用， 而不是一个字面量&quot;$triple&quot;的意思， 这个引用是无论何时都能应用编译的。
 # 'cfg(...)' 是参考 类Rust `#[cfg]` 语法 (条件语句)
 [target.$triple]
 #  linker 可传递参数给 rustc (通过 `-C linker=`) 当 `$triple`
@@ -1503,8 +1503,8 @@ vcs = &quot;none&quot;
 linker = &quot;..&quot;
 # 一样，但这是传递给 rustc 关于 库压缩的参数 ，通过 `-C ar=`.
 ar = &quot;..&quot;
-# 若 提供了 一个 runner , 编译`$triple`目标 会通过 执行 runner 执行文件来完成， 它会将真正的目标 作为第一参数.
-# 这可运行 `cargo run`, `cargo test` 和 `cargo bench` 命令.
+# 若 提供了 一个 runner ， 编译`$triple`目标 会通过 执行 runner 执行文件来完成， 它会将真正的目标 作为第一参数.
+# 这可运行 `cargo run`， `cargo test` 和 `cargo bench` 命令.
 # 默认，编译目标是 直接执行的.
 runner = &quot;..&quot;
 # 自定义 全编译器，目标为 $triple
@@ -1512,14 +1512,14 @@ runner = &quot;..&quot;
 rustflags = [&quot;..&quot;, &quot;..&quot;]
 
 [target.'cfg(...)']
-# 与 $triple 配置类似, 但使用的是 `cfg` 语法.
-# 若有几个 `cfg` 和 $triple 目标作为备用, 那 rustflags
-# 会被串联起来. 该 `cfg` 语法仅能应用到 rustflags, 而不能是
+# 与 $triple 配置类似， 但使用的是 `cfg` 语法.
+# 若有几个 `cfg` 和 $triple 目标作为备用， 那 rustflags
+# 会被串联起来. 该 `cfg` 语法仅能应用到 rustflags， 而不能是
 # linker.
 rustflags = [&quot;..&quot;, &quot;..&quot;]
-# 与 $triple 配置类似 , 但使用的是 `cfg` 语法.
-# 若 一个或多个 `cfg`s, 和一个 a $triple 目标作为备用，那 该$triple将会被使用
-# 若有几个 `cfg` 和 备用的, 那构建会 error
+# 与 $triple 配置类似 ， 但使用的是 `cfg` 语法.
+# 若 一个或多个 `cfg`s， 和一个 a $triple 目标作为备用，那 该$triple将会被使用
+# 若有几个 `cfg` 和 备用的， 那构建会 error
 runner = &quot;..&quot;
 
 # 关联到 注册表 的配置字段
@@ -1576,29 +1576,29 @@ space_example = [&quot;run&quot;, &quot;--release&quot;, &quot;--&quot;, &quot;\
 </code></pre>
 <a class="header" href="#environment-variables" id="environment-variables"><h3>Environment variables</h3></a>
 <p>环境变量</p>
-<p>除了上面的 TOML 语法之外,还可以通过环境变量配置 Cargo。对于上方的<code>foo.bar</code>表格的每个配置字段，也可以用环境变量<code>CARGO_FOO_BAR</code>来定义值。比如说<code>build.jobs</code>字段，也可以通过<code>CARGO_BUILD_JOBS</code>定义。</p>
-<p>环境变量将优先于 TOML 配置，并且当前仅支持由环境变量定义的整数,布尔和字符串字段，这意味着<a href="./source-replacement.zh.html">来源更换</a>,能由表格表示，却不能通过环境变量配置。</p>
-<p>除上述系统外,Cargo 还认可其他一些特定的<a href="./environment-variables.zh.html">环境变量</a>.</p>
+<p>除了上面的 TOML 语法之外，还可以通过环境变量配置 Cargo。对于上方的<code>foo.bar</code>表格的每个配置字段，也可以用环境变量<code>CARGO_FOO_BAR</code>来定义值。比如说<code>build.jobs</code>字段，也可以通过<code>CARGO_BUILD_JOBS</code>定义。</p>
+<p>环境变量将优先于 TOML 配置，并且当前仅支持由环境变量定义的整数，布尔和字符串字段，这意味着<a href="reference/./source-replacement.zh.html">来源更换</a>，能由表格表示，却不能通过环境变量配置。</p>
+<p>除上述系统外，Cargo 还认可其他一些特定的<a href="reference/./environment-variables.zh.html">环境变量</a>.</p>
 <a class="header" href="#environment-variables-1" id="environment-variables-1"><h2>Environment Variables</h2></a>
-<p>Cargo 设置,并读取许多环境变量,代码可以检测或覆盖这些环境变量。以下是 Cargo 与它们交互时，组织的变量列表:</p>
+<p>Cargo 设置，并读取许多环境变量，代码可以检测或覆盖这些环境变量。以下是 Cargo 与它们交互时，组织的变量列表:</p>
 <a class="header" href="#environment-variables-cargo-reads" id="environment-variables-cargo-reads"><h3>Environment variables Cargo reads</h3></a>
 <p>Cargo 会读取的环境变量</p>
 <p>您可以重写这些环境变量来更改 Cargo 在系统中的行为:</p>
 <table><thead><tr><th> 名(ENV)                  </th><th> 曰                                                                                                                                                        </th></tr></thead><tbody>
-<tr><td> <code>CARGO_HOME</code>             </td><td> Cargo 在本地缓存注册表索引和箱子的 git 版本。默认情况下,这些存储在<code>$HOME/.cargo</code>，但是这个变量重写了这个目录的位置。一旦箱被缓存,它就不会被清除命令删除。 </td></tr>
-<tr><td> <code>CARGO_TARGET_DIR</code>       </td><td> 相对于当前工作目录,放置所有生成的工件的位置.                                                                                                              </td></tr>
+<tr><td> <code>CARGO_HOME</code>             </td><td> Cargo 在本地缓存注册表索引和箱子的 git 版本。默认情况下，这些存储在<code>$HOME/.cargo</code>，但是这个变量重写了这个目录的位置。一旦箱被缓存，它就不会被清除命令删除。 </td></tr>
+<tr><td> <code>CARGO_TARGET_DIR</code>       </td><td> 相对于当前工作目录，放置所有生成的工件的位置.                                                                                                              </td></tr>
 <tr><td> <code>RUSTC</code>                  </td><td> Cargo 不运行<code>rustc</code>，而执行指定的编译器。                                                                                                                 </td></tr>
 <tr><td> <code>RUSTC_WRAPPER</code>          </td><td> Cargo 将执行这个指定的包装器，而不是简单地运行<code>rustc</code>。将 rustc 调用 作为其命令行参数传递，第一个参数是 rustc.                                            </td></tr>
 <tr><td> <code>RUSTDOC</code>                </td><td> Cargo 将执行此指定的<code>rustdoc</code>实例，而不是<code>rustdoc</code>.                                                                                                       </td></tr>
 <tr><td> <code>RUSTDOCFLAGS</code>           </td><td> 空格分隔的自定义标志列表，用来传递给 Cargo 执行的所有<code>rustdoc</code>调用 。与<code>cargo rustdoc</code>不同，这对于传递一个参数给 <em>全部的</em> <code>rustdoc</code>实例是有用的。         </td></tr>
 <tr><td> <code>RUSTFLAGS</code>              </td><td> 自定义参数的空格分隔列表，用来传递给 Cargo 执行的所有编译器调用。与<code>cargo rustc</code>不同，这对于传递一个标志 <em>全部的</em> 编译实例是有用的。                      </td></tr>
-<tr><td> <code>CARGO_INCREMENTAL</code>      </td><td> 如果设置为 1,则 Cargo 将强制在当前编译中启用增量编译,而当设置为 0,则强制禁用增量编译。如果这个 ENV 不存在,否则将使用 Cargo 默认值。                       </td></tr>
-<tr><td> <code>CARGO_CACHE_RUSTC_INFO</code> </td><td> 如果这个设置为 0,那么 Cargo 将不尝试缓存编译器版本信息.                                                                                                   </td></tr>
+<tr><td> <code>CARGO_INCREMENTAL</code>      </td><td> 如果设置为 1，则 Cargo 将强制在当前编译中启用增量编译，而当设置为 0，则强制禁用增量编译。如果这个 ENV 不存在，否则将使用 Cargo 默认值。                       </td></tr>
+<tr><td> <code>CARGO_CACHE_RUSTC_INFO</code> </td><td> 如果这个设置为 0，那么 Cargo 将不尝试缓存编译器版本信息.                                                                                                   </td></tr>
 </tbody></table>
-<p>注意,Cargo 也会在<code>.cargo/config</code>配置中读取环境变量，如<a href="./config.zh.html#environment-variables">那份文件</a></p>
+<p>注意，Cargo 也会在<code>.cargo/config</code>配置中读取环境变量，如<a href="reference/./config.zh.html#environment-variables">那份文件</a></p>
 <a class="header" href="#environment-variables-cargo-sets-for-crates" id="environment-variables-cargo-sets-for-crates"><h3>Environment variables Cargo sets for crates</h3></a>
 <p>Cargo 为 crates 设置的环境变量</p>
-<p>Cargo 在编译时，会将这些环境变量暴露在箱子中。请注意,这也适用于测试二进制文件。要在 RIST 程序中获得这些变量中的任何一个变量的值,请执行以下操作:</p>
+<p>Cargo 在编译时，会将这些环境变量暴露在箱子中。请注意，这也适用于测试二进制文件。要在 RIST 程序中获得这些变量中的任何一个变量的值，请执行以下操作:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
 #fn main() {
@@ -1618,11 +1618,11 @@ let version = env!(&quot;CARGO_PKG_VERSION&quot;);
 <tr><td> <code>CARGO_PKG_DESCRIPTION</code>   </td><td> 从包的清单中描述.                                                                      </td></tr>
 <tr><td> <code>CARGO_PKG_HOMEPAGE</code>      </td><td> 从包的清单中的主页.                                                                    </td></tr>
 <tr><td> <code>CARGO_PKG_REPOSITORY</code>    </td><td> 从包的清单中存储库.                                                                    </td></tr>
-<tr><td> <code>OUT_DIR</code>                 </td><td> 如果包具有构建脚本,则将其设置为，构建脚本应该在其中放置其输出的文件夹。更多信息见下文. </td></tr>
+<tr><td> <code>OUT_DIR</code>                 </td><td> 如果包具有构建脚本，则将其设置为，构建脚本应该在其中放置其输出的文件夹。更多信息见下文. </td></tr>
 </tbody></table>
 <a class="header" href="#environment-variables-cargo-sets-for-build-scripts" id="environment-variables-cargo-sets-for-build-scripts"><h3>Environment variables Cargo sets for build scripts</h3></a>
 <p>Cargo 为构建脚本设置的环境变量</p>
-<p>当运行构建脚本时,Cargo 设置多个环境变量.因为编译生成脚本时还没有设置这些变量,所以上面的示例使用<code>env!</code>无法工作,而是在运行构建脚本时需要检索值:</p>
+<p>当运行构建脚本时，Cargo 设置多个环境变量.因为编译生成脚本时还没有设置这些变量，所以上面的示例使用<code>env!</code>无法工作，而是在运行构建脚本时需要检索值:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
 #fn main() {
@@ -1632,23 +1632,23 @@ let out_dir = env::var(&quot;OUT_DIR&quot;).unwrap();
 <p><code>out_dir</code>现在将包含的价值<code>OUT_DIR</code>.</p>
 <table><thead><tr><th> 名                     </th><th> 曰                                                                                                                                                                                                                                                                                                                 </th></tr></thead><tbody>
 <tr><td> <code>CARGO</code>                </td><td> 执行构建的二进制<code>cargo</code>路径.                                                                                                                                                                                                                                                                                       </td></tr>
-<tr><td> <code>CARGO_MANIFEST_DIR</code>   </td><td> 包含正在构建的包的清单的目录(包含构建脚本的包)。还要注意,这是生成脚本启动时，当前工作目录的值.                                                                                                                                                                                                                     </td></tr>
+<tr><td> <code>CARGO_MANIFEST_DIR</code>   </td><td> 包含正在构建的包的清单的目录(包含构建脚本的包)。还要注意，这是生成脚本启动时，当前工作目录的值.                                                                                                                                                                                                                     </td></tr>
 <tr><td> <code>CARGO_MANIFEST_LINKS</code> </td><td> 清单<code>links</code>的值.                                                                                                                                                                                                                                                                                                   </td></tr>
 <tr><td> <code>CARGO_FEATURE_&lt;name&gt;</code> </td><td> 对于正在构建的包的每个激活特性，此环境变量会让<code>&lt;name&gt;</code>功能名称存在，名称的<code>-</code>会转换成<code>_</code>.                                                                                                                                                                                                                          </td></tr>
-<tr><td> <code>CARGO_CFG_&lt;cfg&gt;</code>      </td><td> 对正在构建包的每个<a href="https://doc.rust-lang.org/reference/attributes.md#conditional-compilation">配置选项</a>，此环境变量将包含配置的值,其中<code>&lt;cfg&gt;</code>就是配置的名称，并将<code>-</code>翻译成<code>_</code>. 如果设置了布尔配置,则存在布尔配置,否则不存在。具有多个值的配置被连接到单个变量,该变量用<code>,</code>分隔就好。                                                                                            </td></tr>
+<tr><td> <code>CARGO_CFG_&lt;cfg&gt;</code>      </td><td> 对正在构建包的每个<a href="https://doc.rust-lang.org/reference/attributes.md#conditional-compilation">配置选项</a>，此环境变量将包含配置的值，其中<code>&lt;cfg&gt;</code>就是配置的名称，并将<code>-</code>翻译成<code>_</code>. 如果设置了布尔配置，则存在布尔配置，否则不存在。具有多个值的配置被连接到单个变量，该变量用<code>，</code>分隔就好。                                                                                            </td></tr>
 <tr><td> <code>OUT_DIR</code>              </td><td> 所有输出都应该放在这个文件夹。此文件夹位于正在构建的包的构建目录中，并且对于所讨论的包是唯一的。                                                                                                                                                                                                                   </td></tr>
 <tr><td> <code>TARGET</code>               </td><td> 正在编译的目标三元组。该为这个三元组编译本机代码。关于目标三元组的更多信息在<a href="http://clang.llvm.org/docs/CrossCompilation.md#target-triple">clang 自身文档中</a>.                                                                                                                                                                                                             </td></tr>
 <tr><td> <code>HOST</code>                 </td><td> Rust 编译器的主机三元组.                                                                                                                                                                                                                                                                                           </td></tr>
-<tr><td> <code>NUM_JOBS</code>             </td><td> 指定为顶层并行的并行性。这可以传递一个<code>-j</code>参数到系统(像<code>make</code>). 注意,在解释这个环境变量时应该小心。出于历史目的,仍然提供此功能,但是例如,最新版本的 Cargo 不需要运行<code>make -j</code>，因为它会自动。Cargo 自行实现[JooServer]，并且允许构建脚本继承这些信息，因此与 GNU 兼容的程序将使作业服务器已经具有适当配置的并行性。 </td></tr>
+<tr><td> <code>NUM_JOBS</code>             </td><td> 指定为顶层并行的并行性。这可以传递一个<code>-j</code>参数到系统(像<code>make</code>). 注意，在解释这个环境变量时应该小心。出于历史目的，仍然提供此功能，但是例如，最新版本的 Cargo 不需要运行<code>make -j</code>，因为它会自动。Cargo 自行实现[JooServer]，并且允许构建脚本继承这些信息，因此与 GNU 兼容的程序将使作业服务器已经具有适当配置的并行性。 </td></tr>
 <tr><td> <code>OPT_LEVEL</code> ，<code>DEBUG</code>  </td><td> 为了分析，当前正在构建的相应变量值.                                                                                                                                                                                                                                                                                </td></tr>
 <tr><td> <code>PROFILE</code>              </td><td> 发布版本用<code>release</code>，而<code>debug</code>用于其他构建.                                                                                                                                                                                                                                                                        </td></tr>
-<tr><td> <code>DEP_&lt;name&gt;_&lt;key&gt;</code>     </td><td> 有关此组环境变量的更多信息,请参阅<a href="./build-scripts.zh.html#the-links-manifest-key"><code>links</code></a>.                                                                                                                                                                                                                                                                 </td></tr>
-<tr><td> <code>RUSTC</code> ,<code>RUSTDOC</code>     </td><td> Cargo 已经决定使用的编译器和文档生成器，传递给构建脚本,以便构建脚本也可以使用它.                                                                                                                                                                                                                                   </td></tr>
-<tr><td> <code>RUSTC_LINKER</code>         </td><td> 如果指定了，Cargo 为了当前目标，决定使用的链接器(二进制文件)的路径。这个链接器可以通过编辑<code>.cargo/config</code>更改，欲了解更多信息，请参阅有关文档<a href="./config.zh.html">Cargo 配置</a>。                                                                                                                                          </td></tr>
+<tr><td> <code>DEP_&lt;name&gt;_&lt;key&gt;</code>     </td><td> 有关此组环境变量的更多信息，请参阅<a href="reference/./build-scripts.zh.html#the-links-manifest-key"><code>links</code></a>.                                                                                                                                                                                                                                                                 </td></tr>
+<tr><td> <code>RUSTC</code> ，<code>RUSTDOC</code>     </td><td> Cargo 已经决定使用的编译器和文档生成器，传递给构建脚本，以便构建脚本也可以使用它.                                                                                                                                                                                                                                   </td></tr>
+<tr><td> <code>RUSTC_LINKER</code>         </td><td> 如果指定了，Cargo 为了当前目标，决定使用的链接器(二进制文件)的路径。这个链接器可以通过编辑<code>.cargo/config</code>更改，欲了解更多信息，请参阅有关文档<a href="reference/./config.zh.html">Cargo 配置</a>。                                                                                                                                          </td></tr>
 </tbody></table>
 <a class="header" href="#environment-variables-cargo-sets-for-3rd-party-subcommands" id="environment-variables-cargo-sets-for-3rd-party-subcommands"><h3>Environment variables Cargo sets for 3rd party subcommands</h3></a>
 <p>Cargo 为 第三方子命令设置的环境变量</p>
-<p>Cargo 将这个环境变量公开给第三方子命令(即,名为<code>cargo-foobar</code>放置在<code>$PATH</code>):</p>
+<p>Cargo 将这个环境变量公开给第三方子命令(即，名为<code>cargo-foobar</code>放置在<code>$PATH</code>):</p>
 <ul>
 <li><code>CARGO</code> - 执行构建的二进制<code>cargo</code>路径。</li>
 </ul>
@@ -1656,7 +1656,7 @@ let out_dir = env::var(&quot;OUT_DIR&quot;).unwrap();
 <blockquote>
 <p>构建脚本</p>
 </blockquote>
-<p>一些包需要编译第三方非 Rust 代码，例如 C 库。其他的包需要链接到 C 库，当然这些库既可以位于系统上，也可以从源代码构建。其他人或许还需要功能工具,比如构建之前的代码生成(想想解析生成器)。</p>
+<p>一些包需要编译第三方非 Rust 代码，例如 C 库。其他的包需要链接到 C 库，当然这些库既可以位于系统上，也可以从源代码构建。其他人或许还需要功能工具，比如构建之前的代码生成(想想解析生成器)。</p>
 <p>Cargo 并不打算替换为这些能良好优化任务的其他工具，但是它与<code>build</code>配置选项.</p>
 <pre><code class="language-toml">[package]
 # ...
@@ -1675,7 +1675,7 @@ build = &quot;build.rs&quot;
 <blockquote>
 <p>输入到构建脚本</p>
 </blockquote>
-<p>当运行构建脚本时,存在许多构建脚本用到的输入,所有输入都以<a href="./environment-variables.zh.html">环境变量</a>传入。</p>
+<p>当运行构建脚本时，存在许多构建脚本用到的输入，所有输入都以<a href="reference/./environment-variables.zh.html">环境变量</a>传入。</p>
 <p>除了环境变量之外，构建脚本的当前目录是构建脚本包的源目录.</p>
 <a class="header" href="#outputs-of-the-build-script" id="outputs-of-the-build-script"><h3>Outputs of the Build Script</h3></a>
 <blockquote>
@@ -1692,14 +1692,14 @@ cargo:root=/path/to/foo
 cargo:libdir=/path/to/foo/lib
 cargo:include=/path/to/foo/include
 </code></pre>
-<p>另一方面，打印到 stderr 的行被写入像<code>target/debug/build/&lt;pkg&gt;/stderr</code>这样的文件,但不被 Cargo 解释。</p>
-<p>Cargo 识别一些特殊的 key,其中一些影响箱的构造:</p>
+<p>另一方面，打印到 stderr 的行被写入像<code>target/debug/build/&lt;pkg&gt;/stderr</code>这样的文件，但不被 Cargo 解释。</p>
+<p>Cargo 识别一些特殊的 key，其中一些影响箱的构造:</p>
 <ul>
 <li>
-<p><code>rustc-link-lib=[KIND=]NAME</code>说明了，指定值是库名，且会作为<code>-l</code>标志传递给编译器。<code>KIND</code>可选为<code>static</code>,<code>dylib</code>(默认值),或<code>framework</code>的其中之一，用<code>rustc --help</code>见更多细节。</p>
+<p><code>rustc-link-lib=[KIND=]NAME</code>说明了，指定值是库名，且会作为<code>-l</code>标志传递给编译器。<code>KIND</code>可选为<code>static</code>，<code>dylib</code>(默认值)，或<code>framework</code>的其中之一，用<code>rustc --help</code>见更多细节。</p>
 </li>
 <li>
-<p><code>rustc-link-search=[KIND=]PATH</code>说明了，指定值是库搜索路径,且会作为<code>-L</code>标志传递给编译器。<code>KIND</code>可选为<code>dependency</code>,<code>crate</code>,<code>native</code>,<code>framework</code>或<code>all</code>(默认值)的其中之一，使用<code>rustc --help</code>见更多细节.</p>
+<p><code>rustc-link-search=[KIND=]PATH</code>说明了，指定值是库搜索路径，且会作为<code>-L</code>标志传递给编译器。<code>KIND</code>可选为<code>dependency</code>，<code>crate</code>，<code>native</code>，<code>framework</code>或<code>all</code>(默认值)的其中之一，使用<code>rustc --help</code>见更多细节.</p>
 </li>
 <li>
 <p><code>rustc-flags=FLAGS</code>是传递给编译器的一组标志，仅支持<code>-l</code>和<code>-L</code>标志。</p>
@@ -1708,16 +1708,16 @@ cargo:include=/path/to/foo/include
 <p><code>rustc-cfg=FEATURE</code>说明了，指定的特性，且会作为<code>--cfg</code>标志传递给编译器。这通常对检测，执行各种特征的编译时间，是有用的。</p>
 </li>
 <li>
-<p><code>rustc-env=VAR=VALUE</code>说明了，指定的环境变量，且会被添加到编译器所在的环境中。然后,可以通过编译箱中的<code>env!</code>宏检索该值。这对于在箱的代码中嵌入额外的元数据很有用，比如 Git HEAD 的散列，或持续集成服务器的唯一标识符。</p>
+<p><code>rustc-env=VAR=VALUE</code>说明了，指定的环境变量，且会被添加到编译器所在的环境中。然后，可以通过编译箱中的<code>env!</code>宏检索该值。这对于在箱的代码中嵌入额外的元数据很有用，比如 Git HEAD 的散列，或持续集成服务器的唯一标识符。</p>
 </li>
 <li>
-<p><code>rerun-if-changed=PATH</code>是文件或目录的路径，说明了如果构建脚本发生更改(由文件上最近修改的时间戳检测到)，则应重新运行构建脚本。通常,如果箱根目录中的任何文件发生更改，则重新运行构建脚本，但这可用于将更改范围扩展到仅一小组文件。(如果这个路径指向一个目录，则不会遍历整个目录以进行更改——只对目录本身的时间戳进行更改(该时间戳对应于目录中的某些类型的更改，取决于平台)，将触发重新构建。要请求重新运行整个目录中的任何更改，请递归地为该目录打印一行，为该目录内的所有内容打印另一行。)请注意，如果构建脚本本身(或其依赖项之一)更改，则无条件地重新构建和重新运行该脚本，因此，<code>cargo:rerun-if-changed=build.rs</code>几乎总是冗余(除非您想要忽略除了<code>build.rs</code>，所有其他文件的变化)</p>
+<p><code>rerun-if-changed=PATH</code>是文件或目录的路径，说明了如果构建脚本发生更改(由文件上最近修改的时间戳检测到)，则应重新运行构建脚本。通常，如果箱根目录中的任何文件发生更改，则重新运行构建脚本，但这可用于将更改范围扩展到仅一小组文件。(如果这个路径指向一个目录，则不会遍历整个目录以进行更改——只对目录本身的时间戳进行更改(该时间戳对应于目录中的某些类型的更改，取决于平台)，将触发重新构建。要请求重新运行整个目录中的任何更改，请递归地为该目录打印一行，为该目录内的所有内容打印另一行。)请注意，如果构建脚本本身(或其依赖项之一)更改，则无条件地重新构建和重新运行该脚本，因此，<code>cargo:rerun-if-changed=build.rs</code>几乎总是冗余(除非您想要忽略除了<code>build.rs</code>，所有其他文件的变化)</p>
 </li>
 <li>
-<p><code>rerun-if-env-changed=VAR</code>是环境变量的名称，说明了它指示如果环境变量的值发生变化，则应重新运行构建脚本。这基本上与<code>rerun-if-changed</code>是一样的，除了它与环境变量一起工作。注意,这里的环境变量用于全局环境变量，如<code>CC</code>这样的，对于 Cargo 所设的像<code>TARGET</code>，就不必使用它。还要注意，如果<code>rerun-if-env-changed</code>打印出来，然后 Cargo 将<em>只</em>在，那些环境变量发生变化，或者打印出<code>rerun-if-changed</code>改变的文件的情况下，才重新运行构建脚本。</p>
+<p><code>rerun-if-env-changed=VAR</code>是环境变量的名称，说明了它指示如果环境变量的值发生变化，则应重新运行构建脚本。这基本上与<code>rerun-if-changed</code>是一样的，除了它与环境变量一起工作。注意，这里的环境变量用于全局环境变量，如<code>CC</code>这样的，对于 Cargo 所设的像<code>TARGET</code>，就不必使用它。还要注意，如果<code>rerun-if-env-changed</code>打印出来，然后 Cargo 将<em>只</em>在，那些环境变量发生变化，或者打印出<code>rerun-if-changed</code>改变的文件的情况下，才重新运行构建脚本。</p>
 </li>
 <li>
-<p><code>warning=MESSAGE</code>是构建脚本运行完毕后，打印到主控制台的消息/警告只针对路径依赖项(即,您在本地工作的那些依赖项)显示，因此如， crates.io 的箱在默认情况下不会打印警告。</p>
+<p><code>warning=MESSAGE</code>是构建脚本运行完毕后，打印到主控制台的消息/警告只针对路径依赖项(即，您在本地工作的那些依赖项)显示，因此如， crates.io 的箱在默认情况下不会打印警告。</p>
 </li>
 </ul>
 <p>其他哪些元素都是用户定义的元数据，这些元数据传递给了依赖的。关于这个的更多信息可以在<a href="#the-links-manifest-key"><code>links</code></a>部分查看.</p>
@@ -1742,7 +1742,7 @@ build = &quot;build.rs&quot;
 </code></pre>
 <p>此清单说明了包会链接到本机库<code>libfoo</code>，并且它还具有定位和/或构建该本机库的构建脚本。Cargo 要求<code>build</code>如果有值，那<code>links</code>也要有值。</p>
 <p>这个清单键的目的是，让 Cargo 了解包所具有的本地依赖项集合，并提供在包构建脚本之间，传递元数据的合适的系统.</p>
-<p>首先,Cargo 要求一个包最多只有一个<code>links</code>值。换句话说,禁止两个包链接到同一个本机库。然而，这里也有<a href="#a-sys-packages">约定位置</a>的方式，用来缓解这个问题。</p>
+<p>首先，Cargo 要求一个包最多只有一个<code>links</code>值。换句话说，禁止两个包链接到同一个本机库。然而，这里也有<a href="#a-sys-packages">约定位置</a>的方式，用来缓解这个问题。</p>
 <p>如上面在输出格式中提到的，每个构建脚本可以以键-值对的形式生成一组任意的元数据。此元数据传递给<strong>依赖的</strong>包。例如，如果<code>libbar</code>依赖<code>libfoo</code>，当<code>libfoo</code>生成<code>key=value</code>作为其元数据的一部分，那<code>libbar</code>的构建脚本会有<code>DEP_FOO_KEY=value</code>环境变量。</p>
 <p>注意，元数据只传递给直接依赖项，而不是把依赖项串起来。此元数据传递的动机，会在接下来，关联到系统库案例研究中概述。</p>
 <a class="header" href="#overriding-build-scripts" id="overriding-build-scripts"><h3>Overriding Build Scripts</h3></a>
@@ -1750,21 +1750,21 @@ build = &quot;build.rs&quot;
 <p>覆盖 构建脚本</p>
 </blockquote>
 <p>如果一个清单包含<code>links</code>关键字，那 Cargo 支持重写用自定义库指定的构建脚本。此功能的目的是防止完全运行有问题的构建脚本，而是提前提供下元数据。</p>
-<p>要覆盖构建脚本,请将下列配置放在任何可接受的 Cargo 的<a href="./config.zh.html">配置位置</a>中。</p>
+<p>要覆盖构建脚本，请将下列配置放在任何可接受的 Cargo 的<a href="reference/./config.zh.html">配置位置</a>中。</p>
 <pre><code class="language-toml">[target.x86_64-unknown-linux-gnu.foo]
 rustc-link-search = [&quot;/path/to/foo&quot;]
 rustc-link-lib = [&quot;foo&quot;]
 root = &quot;/path/to/foo&quot;
 key = &quot;value&quot;
 </code></pre>
-<p>本节说明目标<code>x86_64-unknown-linux-gnu</code>，命名为<code>foo</code>的库，具有指定的元数据。此元数据与构建脚本时生成的元数据相同，提供了许多键/值对,其中<code>rustc-flags</code>,<code>rustc-link-search</code>和<code>rustc-link-lib</code>有点特殊.</p>
+<p>本节说明目标<code>x86_64-unknown-linux-gnu</code>，命名为<code>foo</code>的库，具有指定的元数据。此元数据与构建脚本时生成的元数据相同，提供了许多键/值对，其中<code>rustc-flags</code>，<code>rustc-link-search</code>和<code>rustc-link-lib</code>有点特殊.</p>
 <p>使用此配置，如果一个包声明它链接到此<code>foo</code>，那构建脚本将<strong>不</strong>编译或运行，而会使用指定的元数据。</p>
 <a class="header" href="#case-study-code-generation" id="case-study-code-generation"><h3>Case study: Code generation</h3></a>
 <blockquote>
 <p>案例学习: 代码生成</p>
 </blockquote>
-<p>由于各种原因,一些 Cargo 包在编译之前需要生成代码。这里我们将介绍一个简单的示例，该示例把，’生成库调用’作为构建脚本的一部分.</p>
-<p>首先,让我们看一下这个包的目录结构:</p>
+<p>由于各种原因，一些 Cargo 包在编译之前需要生成代码。这里我们将介绍一个简单的示例，该示例把，’生成库调用’作为构建脚本的一部分.</p>
+<p>首先，让我们看一下这个包的目录结构:</p>
 <pre><code>.
 ├── Cargo.toml
 ├── build.rs
@@ -1773,7 +1773,7 @@ key = &quot;value&quot;
 
 1 directory, 3 files
 </code></pre>
-<p>在这里我们可以看到我们有一个<code>build.rs</code>构建脚本，和二进制文件<code>main.rs</code>。 接下来,让我们看一下清单:</p>
+<p>在这里我们可以看到我们有一个<code>build.rs</code>构建脚本，和二进制文件<code>main.rs</code>。 接下来，让我们看一下清单:</p>
 <pre><code class="language-toml"># Cargo.toml
 
 [package]
@@ -1804,11 +1804,11 @@ fn main() {
 </code></pre></pre>
 <p>这里有两点值得注意的地方:</p>
 <ul>
-<li>脚本使用<code>OUT_DIR</code>环境变量，以知道输出文件到哪里。它可以使用进程的当前工作目录，来查找输入文件应该到哪里，但是在这种情况下,我们是没有任何输入文件的。</li>
+<li>脚本使用<code>OUT_DIR</code>环境变量，以知道输出文件到哪里。它可以使用进程的当前工作目录，来查找输入文件应该到哪里，但是在这种情况下，我们是没有任何输入文件的。</li>
 <li>一般来说，构建脚本不应该修改<code>OUT_DIR</code>目录外的任何文件。 乍看之下，似乎不错，但当您使用这种箱子作为依赖项时，它确会带来问题，因为<code>.cargo/registry</code>源中的<em>隐性的</em>常量应该是不变的。<code>cargo</code>在打包时不会允许这样的脚本。</li>
 <li>这个脚本相对简单，只是写出一个小生成的文件。可以想象，其他更奇特的操作也可能发生，例如从 C 头文件或其他定义的语言生成 Rust 模块。</li>
 </ul>
-<p>接下来,我们来看看库本身:</p>
+<p>接下来，我们来看看库本身:</p>
 <pre><code class="language-rust ignore">// src/main.rs
 
 include!(concat!(env!(&quot;OUT_DIR&quot;), &quot;/hello.rs&quot;));
@@ -1823,8 +1823,8 @@ fn main() {
 <blockquote>
 <p>案例学习: 构建一些原生代码</p>
 </blockquote>
-<p>有时需要建立一些本地 C 或 C++代码作为包的一部分。这是在用构建脚本到 Rust 箱本身之前，构建本机库的另一个极好用例。作为一个例子,我们将创建一个 Rust 库，它调用 C 来打印”Hello,World!”.</p>
-<p>和上面一样,让我们先来看看包的布局:</p>
+<p>有时需要建立一些本地 C 或 C++代码作为包的一部分。这是在用构建脚本到 Rust 箱本身之前，构建本机库的另一个极好用例。作为一个例子，我们将创建一个 Rust 库，它调用 C 来打印”Hello,World!”.</p>
+<p>和上面一样，让我们先来看看包的布局:</p>
 <pre><code>.
 ├── Cargo.toml
 ├── build.rs
@@ -1834,7 +1834,7 @@ fn main() {
 
 1 directory, 4 files
 </code></pre>
-<p>很像之前的吧! 下一步,清单如下:</p>
+<p>很像之前的吧! 下一步，清单如下:</p>
 <pre><code class="language-toml"># Cargo.toml
 
 [package]
@@ -1843,7 +1843,7 @@ version = &quot;0.1.0&quot;
 authors = [&quot;you@example.com&quot;]
 build = &quot;build.rs&quot;
 </code></pre>
-<p>现在,我们不打算使用任何-构建的依赖项,所以现在让我们看一下构建脚本:</p>
+<p>现在，我们不打算使用任何-构建的依赖项，所以现在让我们看一下构建脚本:</p>
 <pre><pre class="playpen"><code class="language-rust no_run">// build.rs
 
 use std::process::Command;
@@ -1866,10 +1866,10 @@ fn main() {
     println!(&quot;cargo:rustc-link-lib=static=hello&quot;);
 }
 </code></pre></pre>
-<p>此构建脚本首先将 C 文件编译为对象文件(通过调用<code>gcc</code>)，然后将这个对象文件转换为静态库(通过调用<code>ar</code>)，最后一步是反馈给 Cargo ,以表示我们的输出在<code>out_dir</code>和通过<code>-l static=hello</code>标志，编译器应该将箱静态链接到<code>libhello.a</code>。</p>
-<p>请注意,这种硬编码方法有许多缺点:</p>
+<p>此构建脚本首先将 C 文件编译为对象文件(通过调用<code>gcc</code>)，然后将这个对象文件转换为静态库(通过调用<code>ar</code>)，最后一步是反馈给 Cargo ，以表示我们的输出在<code>out_dir</code>和通过<code>-l static=hello</code>标志，编译器应该将箱静态链接到<code>libhello.a</code>。</p>
+<p>请注意，这种硬编码方法有许多缺点:</p>
 <ul>
-<li>这个<code>gcc</code>命令本身不是跨平台可移植的。如, 在 Windows 平台不太可能<code>gcc</code>,甚至不是所有 UNIX 平台都可能有<code>gcc</code>。 这个<code>ar</code>命令也处于类似的情况。</li>
+<li>这个<code>gcc</code>命令本身不是跨平台可移植的。如，在 Windows 平台不太可能<code>gcc</code>，甚至不是所有 UNIX 平台都可能有<code>gcc</code>。 这个<code>ar</code>命令也处于类似的情况。</li>
 <li>这些命令不考虑跨编译。如果我们为 Android 这样的平台进行跨编译，<code>gcc</code>就不太可能产生一个可执行的 ARM.</li>
 </ul>
 <p>但不要害怕，这里<code>build-dependencies</code>就帮到你! Cargo 生态系统有许多包，为了使此类任务更加容易、可移植和标准化。构建脚本可以写成:</p>
@@ -1891,13 +1891,13 @@ cc = &quot;1.0&quot;
 </code></pre>
 <p>这个<a href="https://crates.io/crates/cc"><code>cc</code>箱</a>抽象了 C 代码构建，主要用于脚本需求范围:</p>
 <ul>
-<li>它调用适当的编译器(Windows 的 MSVC,<code>gcc</code>对 MinGW ,<code>cc</code>对 UNIX 平台等等).</li>
+<li>它调用适当的编译器(Windows 的 MSVC，<code>gcc</code>对 MinGW ，<code>cc</code>对 UNIX 平台等等).</li>
 <li>通过向正在使用的编译器传递适当的标志，获取<code>TARGET</code>变量.</li>
-<li>其他环境变量,如<code>OPT_LEVEL</code>,<code>DEBUG</code>等等,都是自动处理的.</li>
+<li>其他环境变量，如<code>OPT_LEVEL</code>，<code>DEBUG</code>等等，都是自动处理的.</li>
 <li>stdout 输出和<code>OUT_DIR</code>位置也由<code>cc</code>库控制.</li>
 </ul>
-<p>在这里,我们可以开始看到，将尽可能多的功能移植到公共构建依赖项，而不是在所有构建脚本之间复制来复制去，的一些主要好处!</p>
-<p>回到案例研究,让我们快速浏览一下<code>src</code>目录中的内容:</p>
+<p>在这里，我们可以开始看到，将尽可能多的功能移植到公共构建依赖项，而不是在所有构建脚本之间复制来复制去，的一些主要好处!</p>
+<p>回到案例研究，让我们快速浏览一下<code>src</code>目录中的内容:</p>
 <pre><code class="language-c">// src/hello.c
 
 #include &lt;stdio.h&gt;
@@ -1923,16 +1923,16 @@ fn main() {
 <blockquote>
 <p>案例学习: 链接到系统库</p>
 </blockquote>
-<p>这里的最后一个案例研究，将研究 Cargo 库如何链接到系统库,以及构建脚本如何支持这个用例。</p>
-<p>通常,Rust 箱希望链接到系统上经常提供的本地库，以绑定其功能，或者只是将其用作实现细节的一部分。想以不管平台的方式执行这个操作，而这却是一个相当微妙的问题，再次说明下，构建脚本的目的是尽可能多地分配这些(微妙)内容，以便让消费者尽可能容易地使用它.</p>
-<p>作为一个例子,让我们来看一个<a href="https://github.com/alexcrichton/git2-rs/tree/master/libgit2-sys">Cargo 本身的依赖</a>,<a href="https://github.com/libgit2/libgit2">libgit2</a>。这个 C 库其实有许多约束条件:</p>
+<p>这里的最后一个案例研究，将研究 Cargo 库如何链接到系统库，以及构建脚本如何支持这个用例。</p>
+<p>通常，Rust 箱希望链接到系统上经常提供的本地库，以绑定其功能，或者只是将其用作实现细节的一部分。想以不管平台的方式执行这个操作，而这却是一个相当微妙的问题，再次说明下，构建脚本的目的是尽可能多地分配这些(微妙)内容，以便让消费者尽可能容易地使用它.</p>
+<p>作为一个例子，让我们来看一个<a href="https://github.com/alexcrichton/git2-rs/tree/master/libgit2-sys">Cargo 本身的依赖</a>，<a href="https://github.com/libgit2/libgit2">libgit2</a>。这个 C 库其实有许多约束条件:</p>
 <ul>
 <li>它可选为依赖 Unix 上的 OpenSSL ，来实现 https 传输.</li>
 <li>它可选为依赖所有平台上的 libssh2 ，来实现 ssh 传输.</li>
-<li>默认情况下,它通常不安装在所有系统上.</li>
+<li>默认情况下，它通常不安装在所有系统上.</li>
 <li>它可以从源代码使用<code>cmake</code>构建.</li>
 </ul>
-<p>为了可视化这里发生的事情,让我们看一下，链接本机 C 库的相关 Cargo 包的清单。</p>
+<p>为了可视化这里发生的事情，让我们看一下，链接本机 C 库的相关 Cargo 包的清单。</p>
 <pre><code class="language-toml">[package]
 name = &quot;libgit2-sys&quot;
 version = &quot;0.1.0&quot;
@@ -1949,8 +1949,8 @@ openssl-sys = { git = &quot;https://github.com/alexcrichton/openssl-sys&quot; }
 # ...
 </code></pre>
 <p>正如上面的清单所显示的，我们指定了一个<code>build</code>脚本，但值得注意的是，该示例具有<code>links</code>项，说明该箱(<code>libgit2-sys</code>)链接到了这个本地库<code>git2</code>。</p>
-<p>在这里，我们还看到,我们选择让 Rust 箱有一个无条件的，通过<code>libssh2-sys</code>箱依赖<code>libssh2</code>(ssh2-rs)，以及(有条件的)特定于平 unix 台的<code>openssl-sys</code>依赖(其他平台现在被漠视)。这似乎有点违反在 <em>Cargo 清单</em> 的 <em>C 依赖</em> 的明确性，但这实际上是这’地方’中使用 Cargo 的一种约定.</p>
-<a class="header" href="#a-sys-packages" id="a-sys-packages"><h3><code>*-sys</code> Packages</h3></a>
+<p>在这里，我们还看到，我们选择让 Rust 箱有一个无条件的，通过<code>libssh2-sys</code>箱依赖<code>libssh2</code>(ssh2-rs)，以及(有条件的)特定于平 unix 台的<code>openssl-sys</code>依赖(其他平台现在被漠视)。这似乎有点违反在 <em>Cargo 清单</em> 的 <em>C 依赖</em> 的明确性，但这实际上是这’地方’中使用 Cargo 的一种约定.</p>
+<a class="header" href="#-sys-packages" id="-sys-packages"><h3><code>*-sys</code> Packages</h3></a>
 <blockquote>
 <p><code>*-sys</code> 包们</p>
 </blockquote>
@@ -1971,36 +1971,36 @@ openssl-sys = { git = &quot;https://github.com/alexcrichton/openssl-sys&quot; }
 </blockquote>
 <p>现在我们已经整理了 libgit2 的依赖，我们需要实际编写下构建脚本。我们这里不讨论特定的代码片段，而只研究<code>libgit2-sys</code>构建脚本的高层细节。这并不是建议所有包都遵循这个策略，而仅概述一个特定的策略。</p>
 <p>构建脚本应该做的第一步是查询 libgit2 是否已经安装在主机系统上。要做到这一点，我们将利用现有的工具<code>pkg-config</code>(当它可用时)。我们也会使用<code>build-dependencies</code>部分重构成<code>pkg-config</code>相关的所有代码(或者有人已经这样做了!)。</p>
-<p>如果<code>pkg-config</code>找不到 libgit2，或者如果<code>pkg-config</code>只是没有安装，下一步就要从捆绑源代码构建 libgit2 (捆绑源码作为<code>libgit2-sys</code>本身的一部分)。然而，在这样做时有一些细微差别,我们需要加以考虑:</p>
+<p>如果<code>pkg-config</code>找不到 libgit2，或者如果<code>pkg-config</code>只是没有安装，下一步就要从捆绑源代码构建 libgit2 (捆绑源码作为<code>libgit2-sys</code>本身的一部分)。然而，在这样做时有一些细微差别，我们需要加以考虑:</p>
 <ul>
 <li>
-<p>libgit2 的构建系统，<code>cmake</code>需要能够找到 libgit2 可选依赖 libssh2 。而我们确信我们已经构建了它(因它是一个 Cargo 依赖项),我们只需要传递这个信息。为此,我们利用元数据格式，在构建脚本之间传递信息。在这个例子中，打印出的 libssh2 包信息是<code>cargo:root=...</code>，它来告诉我们 libssh2 安装在哪里，然后我们可以通过<code>CMAKE_PREFIX_PATH</code>环境变量让 cmkae 知道。</p>
+<p>libgit2 的构建系统，<code>cmake</code>需要能够找到 libgit2 可选依赖 libssh2 。而我们确信我们已经构建了它(因它是一个 Cargo 依赖项)，我们只需要传递这个信息。为此，我们利用元数据格式，在构建脚本之间传递信息。在这个例子中，打印出的 libssh2 包信息是<code>cargo:root=...</code>，它来告诉我们 libssh2 安装在哪里，然后我们可以通过<code>CMAKE_PREFIX_PATH</code>环境变量让 cmkae 知道。</p>
 </li>
 <li>
 <p>我们需要处理下，编译 C 代码时的一些<code>CFLAGS</code>值(也要告诉<code>cmake</code>关于这个信息)。我们想传递的一些标志是 64 位的<code>-m64</code>，32 位的<code>-m32</code>，或<code>-fPIC</code>也适用于 64 位。</p>
 </li>
 <li>
-<p>最后,我们调用<code>cmake</code>将所有输出放入环境变量<code>OUT_DIR</code>目录，然后打印必要的元数据，以指导 rustc 如何链接到 libgit2。</p>
+<p>最后，我们调用<code>cmake</code>将所有输出放入环境变量<code>OUT_DIR</code>目录，然后打印必要的元数据，以指导 rustc 如何链接到 libgit2。</p>
 </li>
 </ul>
-<p>这个构建脚本的大部分功能，很容易就重构为常见的依赖项，因此我们的构建脚本不像这个描述那样长烦! 实际上,通过构建依赖项,构建脚本应该非常简单。</p>
-<a class="header" href="#a发布到-cratesio" id="a发布到-cratesio"><h2>发布到 crates.io</h2></a>
+<p>这个构建脚本的大部分功能，很容易就重构为常见的依赖项，因此我们的构建脚本不像这个描述那样长烦! 实际上，通过构建依赖项，构建脚本应该非常简单。</p>
+<a class="header" href="#发布到-cratesio" id="发布到-cratesio"><h2>发布到 crates.io</h2></a>
 <p>一旦你有一个你想与世界分享的 crate，就该把它发布到<a href="https://crates.io/">crates.io</a>! 发布是指，上载特定版本的，以让<a href="https://crates.io/">crates.io</a>进行托管.</p>
-<p>发布箱(crate)子时，要小心,因为发布是<strong>常驻</strong>。永远不能覆盖同版本，并且无法删除代码。但是,可以发布的版本数量没有限制。</p>
-<a class="header" href="#a在你开始发布前" id="a在你开始发布前"><h3>在你开始发布前</h3></a>
-<p>首先,你需要一个<a href="https://crates.io/">crates.io</a>帐户，用来获取 API 令牌。为此,<a href="https://crates.io/">访问主页</a>，并通过 GitHub 帐户登录(现在需要)。在此之后,访问你的<a href="https://crates.io/me">帐号设定</a>页面，并运行<code>cargo login</code>命令联通账号。</p>
+<p>发布箱(crate)子时，要小心，因为发布是<strong>常驻</strong>。永远不能覆盖同版本，并且无法删除代码。但是，可以发布的版本数量没有限制。</p>
+<a class="header" href="#在你开始发布前" id="在你开始发布前"><h3>在你开始发布前</h3></a>
+<p>首先，你需要一个<a href="https://crates.io/">crates.io</a>帐户，用来获取 API 令牌。为此，<a href="https://crates.io/">访问主页</a>，并通过 GitHub 帐户登录(现在需要)。在此之后，访问你的<a href="https://crates.io/me">帐号设定</a>页面，并运行<code>cargo login</code>命令联通账号。</p>
 <pre><code class="language-console">$ cargo login abcdefghijklmnopqrstuvwxyz012345
 </code></pre>
-<p>此命令将告诉 Cargo 关于您的 API 令牌，并将其存储在您的本地<code>~/.cargo/credentials</code>(以前是<code>~/.cargo/config</code>)。请注意,此令牌是一个<strong>秘密</strong>，不应与其他任何人分享。如果因任何原因泄漏,您应立即重新生成。</p>
-<a class="header" href="#a在你创建新-crate-前" id="a在你创建新-crate-前"><h3>在你创建新 crate 前</h3></a>
-<p>请记住<a href="https://crates.io/">crates.io</a>上箱子的名字，会采取先到先得的方式分配。一旦获得箱子名称,它就不能用于另一个箱子.</p>
-<a class="header" href="#a打包一个-crate" id="a打包一个-crate"><h4>打包一个 crate</h4></a>
-<p>下一步是，将您的包装箱打包成可供<a href="https://crates.io/">crates.io</a>上传的格式。为此,我们将使用<code>cargo package</code>子命令。这将把我们的整个包装箱全部打包成一个<code>*.crate</code>文件，其在<code>target/package</code>目录中。</p>
+<p>此命令将告诉 Cargo 关于您的 API 令牌，并将其存储在您的本地<code>~/.cargo/credentials</code>(以前是<code>~/.cargo/config</code>)。请注意，此令牌是一个<strong>秘密</strong>，不应与其他任何人分享。如果因任何原因泄漏，您应立即重新生成。</p>
+<a class="header" href="#在你创建新-crate-前" id="在你创建新-crate-前"><h3>在你创建新 crate 前</h3></a>
+<p>请记住<a href="https://crates.io/">crates.io</a>上箱子的名字，会采取先到先得的方式分配。一旦获得箱子名称，它就不能用于另一个箱子.</p>
+<a class="header" href="#打包一个-crate" id="打包一个-crate"><h4>打包一个 crate</h4></a>
+<p>下一步是，将您的包装箱打包成可供<a href="https://crates.io/">crates.io</a>上传的格式。为此，我们将使用<code>cargo package</code>子命令。这将把我们的整个包装箱全部打包成一个<code>*.crate</code>文件，其在<code>target/package</code>目录中。</p>
 <pre><code class="language-console">$ cargo package
 </code></pre>
-<p>作为一个额外的功能，<code>*.crate</code>将独立于当前源树进行验证。在<code>*.crate</code>创建之后，会解压到<code>target/package</code>目录，然后从头开始构建,以确保构建成功的所有必要文件。可以使用<code>--no-verify</code>参数禁用此行为。</p>
-<p>现在是时候看看<code>*.crate</code>文件了，为了确保您不会意外地打包 2GB 视频资源，或用于代码生成,集成测试或基准测试的大型数据文件。目前存在 10MB 的<code>*.crate</code>文件上传大小限制。所以,如果<code>tests</code>和<code>benches</code>目录及其依赖项大小，最多只达 几 MB，您仍可以将它们保存在包; 不然的话,最好排除它们。</p>
-<p>在打包时,Cargo 会自动忽略版本控制系统的忽略文件，但是如果要指定要额外的忽略文件集，则可以使用清单中的<code>exclude</code>字段:</p>
+<p>作为一个额外的功能，<code>*.crate</code>将独立于当前源树进行验证。在<code>*.crate</code>创建之后，会解压到<code>target/package</code>目录，然后从头开始构建，以确保构建成功的所有必要文件。可以使用<code>--no-verify</code>参数禁用此行为。</p>
+<p>现在是时候看看<code>*.crate</code>文件了，为了确保您不会意外地打包 2GB 视频资源，或用于代码生成，集成测试或基准测试的大型数据文件。目前存在 10MB 的<code>*.crate</code>文件上传大小限制。所以，如果<code>tests</code>和<code>benches</code>目录及其依赖项大小，最多只达 几 MB，您仍可以将它们保存在包; 不然的话，最好排除它们。</p>
+<p>在打包时，Cargo 会自动忽略版本控制系统的忽略文件，但是如果要指定要额外的忽略文件集，则可以使用清单中的<code>exclude</code>字段:</p>
 <pre><code class="language-toml">[package]
 # ...
 exclude = [
@@ -2016,55 +2016,55 @@ include = [
     &quot;Cargo.toml&quot;,
 ]
 </code></pre>
-<a class="header" href="#a上传该-crate" id="a上传该-crate"><h3>上传该 crate</h3></a>
-<p>现在我们已经有了<code>*.crate</code>文件准备好了,可以上传到<a href="https://crates.io/">crates.io</a>，接着使用<code>cargo publish</code>命令就好。就是这样,你现在已经发布了你的第一个箱子!</p>
+<a class="header" href="#上传该-crate" id="上传该-crate"><h3>上传该 crate</h3></a>
+<p>现在我们已经有了<code>*.crate</code>文件准备好了，可以上传到<a href="https://crates.io/">crates.io</a>，接着使用<code>cargo publish</code>命令就好。就是这样，你现在已经发布了你的第一个箱子!</p>
 <pre><code class="language-console">$ cargo publish
 </code></pre>
-<p>如果你想跳过<code>cargo package</code>那一步,<code>cargo publish</code>如果找不到副本,子命令将自动打包本地包.</p>
-<p>一定要看看<a href="./manifest.zh.html#package-metadata">您可以指定的元数据</a>确保您的箱子更容易被发现!</p>
-<a class="header" href="#a为已存在的-crate发布一个新版本" id="a为已存在的-crate发布一个新版本"><h3>为已存在的 crate，发布一个新版本</h3></a>
-<p>要发布新版本，请在<code>Cargo.toml</code>更改<code>version</code>为您指定的值。记住<a href="./manifest.zh.html#the-version-field">semver 规则</a>。然后可选择运行<code>cargo package</code>，如果你想检查一下<code>*.crate</code>发布前的新版本文件,然后运行<code>cargo publish</code>上传新版本.</p>
-<a class="header" href="#a管理一个-基于-cratesio-的-crate" id="a管理一个-基于-cratesio-的-crate"><h3>管理一个 基于 crates.io 的 crate</h3></a>
-<p>箱的管理主要通过命令行完成<code>cargo</code>工具，而不是<a href="https://crates.io/">crates.io</a>网络界面。为此,有一些子命令来管理包.</p>
+<p>如果你想跳过<code>cargo package</code>那一步，<code>cargo publish</code>如果找不到副本，子命令将自动打包本地包.</p>
+<p>一定要看看<a href="reference/./manifest.zh.html#package-metadata">您可以指定的元数据</a>确保您的箱子更容易被发现!</p>
+<a class="header" href="#为已存在的-crate发布一个新版本" id="为已存在的-crate发布一个新版本"><h3>为已存在的 crate，发布一个新版本</h3></a>
+<p>要发布新版本，请在<code>Cargo.toml</code>更改<code>version</code>为您指定的值。记住<a href="reference/./manifest.zh.html#the-version-field">semver 规则</a>。然后可选择运行<code>cargo package</code>，如果你想检查一下<code>*.crate</code>发布前的新版本文件，然后运行<code>cargo publish</code>上传新版本.</p>
+<a class="header" href="#管理一个-基于-cratesio-的-crate" id="管理一个-基于-cratesio-的-crate"><h3>管理一个 基于 crates.io 的 crate</h3></a>
+<p>箱的管理主要通过命令行完成<code>cargo</code>工具，而不是<a href="https://crates.io/">crates.io</a>网络界面。为此，有一些子命令来管理包.</p>
 <a class="header" href="#cargo-yank" id="cargo-yank"><h4><code>cargo yank</code></h4></a>
-<p>在您发布时，实际上可能会因某种原因，而最终破坏的箱子版本(语法错误,忘记包含文件等)的情况。对于诸如此类的情况，Cargo 支持一个箱子版本的”yank”。</p>
+<p>在您发布时，实际上可能会因某种原因，而最终破坏的箱子版本(语法错误，忘记包含文件等)的情况。对于诸如此类的情况，Cargo 支持一个箱子版本的”yank”。</p>
 <pre><code class="language-console">$ cargo yank --vers 1.0.1
 $ cargo yank --vers 1.0.1 --undo
 </code></pre>
-<p>一个 yank <strong>不是</strong>删除任何代码。例如,此功能不用于删除意外上传的机密。如果发生这种情况,您必须立即重置这些秘密.</p>
+<p>一个 yank <strong>不是</strong>删除任何代码。例如，此功能不用于删除意外上传的机密。如果发生这种情况，您必须立即重置这些秘密.</p>
 <p>一个 yank 版本的语义是，不为该版本创建新的依赖项，但所有现有的依赖项继续有效。<a href="https://crates.io/">crates.io</a>其中一个主要目标是作为永久存档的箱子库，不会随着时间的推移而改变，而允许删除版本将违背这一目标。所以基本上，一个 yank 意味着所有包的<code>Cargo.lock</code>不会被破坏，在任何的未来，<code>Cargo.lock</code>生成的文件不会列出 yank 的版本。(成为了一个孤岛版本)</p>
 <a class="header" href="#cargo-owner" id="cargo-owner"><h4><code>cargo owner</code></h4></a>
-<p>箱子通常由不止一个人开发,或者主要维护者可能会随着时间而改变!箱子的所有者是唯一允许发布新版本箱子的人,但是所有者可以指定其他所有者。</p>
+<p>箱子通常由不止一个人开发，或者主要维护者可能会随着时间而改变!箱子的所有者是唯一允许发布新版本箱子的人，但是所有者可以指定其他所有者。</p>
 <pre><code class="language-console">$ cargo owner --add my-buddy
 $ cargo owner --remove my-buddy
 $ cargo owner --add github:rust-lang:owners
 $ cargo owner --remove github:rust-lang:owners
 </code></pre>
 <p>给这些命令的所有者 ID 必须是 GitHub 用户名或 GitHub 团队.</p>
-<p>如果用<code>--add</code>了一个用户名,那该用户成为”命名”所有者,拥有该箱子的完全权利。除了能够发布或 yank 箱子的版本，他们还能够添加或删除所有者,<em>包含</em>任命<em>他们</em>的所有者。毋庸置疑,你不应该让那些你不完全信任的人，作命名所有者。要成为命名所有者,用户必须之前就已登录<a href="https://crates.io/">crates.io</a>。</p>
-<p>如果用<code>--add</code>了一个团队，那该团队成为”团队”所有者,对箱的权利受到限制。虽然他们有权发布或 yank 箱子的版本,但他们<em>不</em>能够添加或删除所有者。除了更方便管理所有者群体之外,团队还可以更安全地防止恶意所有者。</p>
-<p>团队的目前的语法是<code>github:org:team</code>(见上面的例子)。要将团队添加为所有者,必须是该团队的成员。删除所有者的团队就没有此类限制.</p>
+<p>如果用<code>--add</code>了一个用户名，那该用户成为”命名”所有者，拥有该箱子的完全权利。除了能够发布或 yank 箱子的版本，他们还能够添加或删除所有者，<em>包含</em>任命<em>他们</em>的所有者。毋庸置疑，你不应该让那些你不完全信任的人，作命名所有者。要成为命名所有者，用户必须之前就已登录<a href="https://crates.io/">crates.io</a>。</p>
+<p>如果用<code>--add</code>了一个团队，那该团队成为”团队”所有者，对箱的权利受到限制。虽然他们有权发布或 yank 箱子的版本，但他们<em>不</em>能够添加或删除所有者。除了更方便管理所有者群体之外，团队还可以更安全地防止恶意所有者。</p>
+<p>团队的目前的语法是<code>github:org:team</code>(见上面的例子)。要将团队添加为所有者，必须是该团队的成员。删除所有者的团队就没有此类限制.</p>
 <a class="header" href="#github-权限" id="github-权限"><h3>GitHub 权限</h3></a>
-<p>团队成员资格，不是 GitHub 提供的简单公共访问权限,并且在使用它时可能会遇到以下消息:</p>
+<p>团队成员资格，不是 GitHub 提供的简单公共访问权限，并且在使用它时可能会遇到以下消息:</p>
 <blockquote>
 <p>您似乎无权从 GitHub 查询必要的属性，来完成此请求。您可能需要在<a href="https://crates.io/">crates.io</a>重新进行身份验证，并申请阅读 GitHub 组织成员资格的权限。去<a href="https://crates.io/login">https://crates.io/login</a>看看</p>
 </blockquote>
-<p>这基本上是一个全查询防御，当”你试图查询团队信息,而其中的五级成员访问控制，拒绝了它”。这并不夸张。GitHub 对团队访问控制的支持是企业级.</p>
-<p>最可能的原因是您最后一次登录是在添加此功能之前。我们最初<em>没有</em>要求 GitHub 对用户进行身份验证时的权限，因为我们实际上并没有将用户的令牌用于登录以外的任何其他内容。但是,为了代表您能够查询团队成员资格，我们现在需要<a href="https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/"><code>read:org</code>范围权限</a>。</p>
-<p>您完全可以拒绝我们这个范围，且在团队介绍之前所做的一切，都将继续有效。但是，您永远无法将团队添加为所有者，或者将团队作为团队所有者发布。如果您尝试这样做,您将收到上述错误。如果你试图发布一个你根本不拥有的箱子，但恰好有一个团队，你可能也会看到这个错误。</p>
-<p>如果你改变主意,或者只是不确定是否<a href="https://crates.io/">crates.io</a>有足够的许可，你可以随时去<a href="https://crates.io/login">https://crates.io/login</a>查看，<a href="https://crates.io/">crates.io</a>会提示您，它没有获得它想要的所有范围许可。</p>
-<p>查询 GitHub 的另一个障碍，是组织可能会主动拒绝第三方访问。要检查这一点,您可以访问:</p>
+<p>这基本上是一个全查询防御，当”你试图查询团队信息，而其中的五级成员访问控制，拒绝了它”。这并不夸张。GitHub 对团队访问控制的支持是企业级.</p>
+<p>最可能的原因是您最后一次登录是在添加此功能之前。我们最初<em>没有</em>要求 GitHub 对用户进行身份验证时的权限，因为我们实际上并没有将用户的令牌用于登录以外的任何其他内容。但是，为了代表您能够查询团队成员资格，我们现在需要<a href="https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/"><code>read:org</code>范围权限</a>。</p>
+<p>您完全可以拒绝我们这个范围，且在团队介绍之前所做的一切，都将继续有效。但是，您永远无法将团队添加为所有者，或者将团队作为团队所有者发布。如果您尝试这样做，您将收到上述错误。如果你试图发布一个你根本不拥有的箱子，但恰好有一个团队，你可能也会看到这个错误。</p>
+<p>如果你改变主意，或者只是不确定是否<a href="https://crates.io/">crates.io</a>有足够的许可，你可以随时去<a href="https://crates.io/login">https://crates.io/login</a>查看，<a href="https://crates.io/">crates.io</a>会提示您，它没有获得它想要的所有范围许可。</p>
+<p>查询 GitHub 的另一个障碍，是组织可能会主动拒绝第三方访问。要检查这一点，您可以访问:</p>
 <pre><code>https://github.com/organizations/:org/settings/oauth_application_policy
 </code></pre>
 <p>这里的<code>:org</code>是组织的名称(例如 rust-lang)。你可能会看到类似的东西:</p>
 <p><img src="../images/org-level-acl.png" alt="Organization Access Control" /></p>
 <p>你可以选择，从您组织的黑名单中，明确删除<a href="https://crates.io/">crates.io</a>，或只需按”删除限制(Remove Restrictions)”按钮，允许所有第三方应用程序访问此数据。</p>
-<p>或者,当<a href="https://crates.io/">crates.io</a>请求了<code>read:org</code>范围，您可以明确进入白名单的<a href="https://crates.io/">crates.io</a>，能查询组织的问题，通过按其名称旁边的”授予访问权限(Grant Access)”按钮:</p>
+<p>或者，当<a href="https://crates.io/">crates.io</a>请求了<code>read:org</code>范围，您可以明确进入白名单的<a href="https://crates.io/">crates.io</a>，能查询组织的问题，通过按其名称旁边的”授予访问权限(Grant Access)”按钮:</p>
 <p><img src="../images/auth-level-acl.png" alt="Authentication Access Control" /></p>
 <a class="header" href="#package-id-specifications" id="package-id-specifications"><h2>Package ID Specifications</h2></a>
 <a class="header" href="#package-id-specifications-1" id="package-id-specifications-1"><h3>Package ID specifications</h3></a>
 <p>包 ID 规范</p>
-<p>Cargo 的子命令经常需要引用依赖关系图中的特定包来进行各种操作,例如更新,清理,构建等。为了解决这个问题,Cargo 支持包 ID 规范。规范是一个字符串,用于唯一地引用依赖关系图中的一个包.</p>
+<p>Cargo 的子命令经常需要引用依赖关系图中的特定包来进行各种操作，例如更新，清理，构建等。为了解决这个问题，Cargo 支持包 ID 规范。规范是一个字符串，用于唯一地引用依赖关系图中的一个包.</p>
 <a class="header" href="#specification-grammar" id="specification-grammar"><h4>Specification grammar</h4></a>
 <p>规范语法</p>
 <p>包 ID 规范的形式语法是:</p>
@@ -2074,7 +2074,7 @@ pkgname := name [ &quot;:&quot; semver ]
 
 proto := &quot;http&quot; | &quot;git&quot; | ...
 </code></pre>
-<p>这里,括号表示内容是可选的.</p>
+<p>这里，括号表示内容是可选的.</p>
 <a class="header" href="#example-specifications" id="example-specifications"><h4>Example specifications</h4></a>
 <p>规范示例</p>
 <p>这些都可以是对<code>foo</code>包的引用，版本<code>1.2.3</code>，来自注册表<code>crates.io</code></p>
@@ -2089,13 +2089,13 @@ proto := &quot;http&quot; | &quot;git&quot; | ...
 <a class="header" href="#brevity-of-specifications" id="brevity-of-specifications"><h4>Brevity of specifications</h4></a>
 <p>规范的简洁</p>
 <p>这样做的目的是用简洁和详尽的语法来引用依赖图中的包。而不明确的引用可以指代一个或多个包。若使用相同的规范会引用多个包，那大多数命令都会生成错误。</p>
-<a class="header" href="#a来源-更换" id="a来源-更换"><h2>来源 更换</h2></a>
-<p>本文档是关于更换 crate 索引(注册表)。您可以阅读有关重写依赖项的信息，它在本文档的<a href="reference/specifying-dependencies.html#overriding-dependencies">重写依赖关系</a>部分。</p>
-<p>Cargo 支持<strong>用另一个来源更换一个来源</strong>的能力，可根据镜像或 vendoring 依赖关系来表达倾向。要配置这些，目前通过<a href="reference/config.html"><code>.cargo/config</code>配置</a>机制完成,像这样:</p>
+<a class="header" href="#来源-更换" id="来源-更换"><h2>来源 更换</h2></a>
+<p>本文档是关于更换 crate 索引(注册表)。您可以阅读有关重写依赖项的信息，它在本文档的<a href="reference/reference/specifying-dependencies.html#overriding-dependencies">重写依赖关系</a>部分。</p>
+<p>Cargo 支持<strong>用另一个来源更换一个来源</strong>的能力，可根据镜像或 vendoring 依赖关系来表达倾向。要配置这些，目前通过<a href="reference/reference/config.html"><code>.cargo/config</code>配置</a>机制完成，像这样:</p>
 <pre><code class="language-toml"># `source` 表下，就是存储有关要更换的来源名称
 [source]
 
-# 在`source` 表格之下的，可为一定数量的有关来源名称. 示例下面就# 定义了一个新源, 叫 `my-awesome-source`, 其内容来自本地 # `vendor`目录 ，其相对于包含`.cargo/config`文件的目录
+# 在`source` 表格之下的，可为一定数量的有关来源名称. 示例下面就# 定义了一个新源， 叫 `my-awesome-source`， 其内容来自本地 # `vendor`目录 ，其相对于包含`.cargo/config`文件的目录
 [source.my-awesome-source]
 directory = &quot;vendor&quot;
 
@@ -2105,11 +2105,11 @@ git = &quot;https://example.com/path/to/repo&quot;
 # tag = &quot;v1.0.1&quot;
 # rev = &quot;313f44e8&quot;
 
-# The crates.io 默认源 在&quot;crates-io&quot;名称下, 且在这里我们使用 `replace-with` 字段指明 默认源更换成&quot;my-awesome-source&quot;源
+# The crates.io 默认源 在&quot;crates-io&quot;名称下， 且在这里我们使用 `replace-with` 字段指明 默认源更换成&quot;my-awesome-source&quot;源
 [source.crates-io]
 replace-with = &quot;my-awesome-source&quot;
 </code></pre>
-<p>使用此配置,Cargo 会尝试在”vendor”目录中，查找所有包，而不是 查询在线注册表 crates.io 。Cargo 有两种来源更换的表达 :</p>
+<p>使用此配置，Cargo 会尝试在”vendor”目录中，查找所有包，而不是 查询在线注册表 crates.io 。Cargo 有两种来源更换的表达 :</p>
 <ul>
 <li>
 <p>供应(Vendoring) - 可以定义自定义源，它们表示本地文件系统上的包。这些源是它们正在更换的源的子集，并在需要时可以检入包中。</p>
@@ -2119,9 +2119,9 @@ replace-with = &quot;my-awesome-source&quot;
 </li>
 </ul>
 <p>Cargo 有一个关于来源更换的核心假设，源代码从两个完全相同的源而来。在上面的例子中，Cargo 假设所有的箱子都来自<code>my-awesome-source</code>，与<code>crates-io</code>副本完全相同。请注意，这也意味着<code>my-awesome-source</code>，不允许有<code>crates-io</code>源不存在的箱。</p>
-<p>因此，来源更换不适用于依赖项补丁(fix bug)，或私有注册表等情况。Cargo 是通过使用<a href="reference/manifest.html#the-replace-section"><code>[replace]</code>字段</a>支持依赖项补丁，计划为未来版本的 Cargo 提供私人注册表的支持。</p>
-<a class="header" href="#a配置-1" id="a配置-1"><h3>配置</h3></a>
-<p>更换源的配置通过完成<a href="reference/config.html"><code>.cargo/config</code></a>，下面为全套可用字段是:</p>
+<p>因此，来源更换不适用于依赖项补丁(fix bug)，或私有注册表等情况。Cargo 是通过使用<a href="reference/reference/manifest.html#the-replace-section"><code>[replace]</code>字段</a>支持依赖项补丁，计划为未来版本的 Cargo 提供私人注册表的支持。</p>
+<a class="header" href="#配置-1" id="配置-1"><h3>配置</h3></a>
+<p>更换源的配置通过完成<a href="reference/reference/config.html"><code>.cargo/config</code></a>，下面为全套可用字段是:</p>
 <pre><code class="language-toml"># 每个源都有自己的表格，名称即是表名
 [source.the-source-name]
 
@@ -2133,33 +2133,33 @@ registry = &quot;https://example.com/path/to/index&quot;
 local-registry = &quot;path/to/registry&quot;
 directory = &quot;path/to/vendor&quot;
 </code></pre>
-<p><code>crates-io</code>代表 crates.io 在线注册表(箱的默认来源),可以更换为:</p>
+<p><code>crates-io</code>代表 crates.io 在线注册表(箱的默认来源)，可以更换为:</p>
 <pre><code class="language-toml">[source.crates-io]
 replace-with = 'another-source'
 </code></pre>
-<a class="header" href="#a注册表源" id="a注册表源"><h3>注册表源</h3></a>
-<p>“注册表源”与 crates.io 本身相同。也就是说,它也有一个在 git 存储库中提供的索引，该存储库匹配<a href="https://github.com/rust-lang/crates.io-index">crates.io index</a>的格式。然后该存储库具有指示从哪里下载包的配置。</p>
+<a class="header" href="#注册表源" id="注册表源"><h3>注册表源</h3></a>
+<p>“注册表源”与 crates.io 本身相同。也就是说，它也有一个在 git 存储库中提供的索引，该存储库匹配<a href="https://github.com/rust-lang/crates.io-index">crates.io index</a>的格式。然后该存储库具有指示从哪里下载包的配置。</p>
 <p>目前还没有一个已经设置 crates.io 的镜像的可用项目。请继续关注!</p>
 <blockquote>
 <p>中国用户，可搜索 ‘rust 换 中科大 源’</p>
 </blockquote>
-<a class="header" href="#a本地-注册表源" id="a本地-注册表源"><h3>本地 注册表源</h3></a>
+<a class="header" href="#本地-注册表源" id="本地-注册表源"><h3>本地 注册表源</h3></a>
 <p>“本地注册表源”旨在成为另一个注册表源的子集，但可在本地文件系统(也称为 vendoring)上使用。本地注册表是提前下载，通常与一个 <code>Cargo.lock</code>同步，并由一组<code>*.crate</code>文件和像普通注册表一样的索引组成。</p>
 <p>管理和创建本地注册表源的主要方法是通过<a href="https://crates.io/crates/cargo-local-registry"><code>cargo-local-registry</code></a>子命令，可在 crates.io 上找到，并用<code>cargo install cargo-local-registry</code>安装。</p>
 <p>本地注册表包含在一个目录，其中包含许多从 crates.io 下载的<code>*.crate</code>文件，以及<code>index</code>目录，它与 crates.io-index 项目目录具有相同格式(仅填充有存在的 crates).</p>
-<a class="header" href="#a目录-源" id="a目录-源"><h3>目录 源</h3></a>
-<p>“目录源”类似于本地注册表源，其中包含本地文件系统上许多的可用包，适用于 vendoring 依赖项。与本地注册表一样,目录源主要由外部子命令管理<a href="https://crates.io/crates/cargo-vendor"><code>cargo-vendor</code></a>，可用<code>cargo install cargo-vendor</code>安装。</p>
-<p>目录源与本地注册表不同，但它们包含<code>*.crate</code>文件的解压缩版本，使其在某些情况下，更适合检查所有内容到源代码控制工具。目录源只是一个包含许多其他目录的目录，其中包含 crates 的源代码(解压缩版本的<code>*.crate</code>文件)。目前,对每个目录的名称没有限制。</p>
-<p>目录源中的每个包也有一个关联的元数据文件，指示包中每个文件的校验和,以防止意外修改。</p>
+<a class="header" href="#目录-源" id="目录-源"><h3>目录 源</h3></a>
+<p>“目录源”类似于本地注册表源，其中包含本地文件系统上许多的可用包，适用于 vendoring 依赖项。与本地注册表一样，目录源主要由外部子命令管理<a href="https://crates.io/crates/cargo-vendor"><code>cargo-vendor</code></a>，可用<code>cargo install cargo-vendor</code>安装。</p>
+<p>目录源与本地注册表不同，但它们包含<code>*.crate</code>文件的解压缩版本，使其在某些情况下，更适合检查所有内容到源代码控制工具。目录源只是一个包含许多其他目录的目录，其中包含 crates 的源代码(解压缩版本的<code>*.crate</code>文件)。目前，对每个目录的名称没有限制。</p>
+<p>目录源中的每个包也有一个关联的元数据文件，指示包中每个文件的校验和，以防止意外修改。</p>
 <a class="header" href="#external-tools" id="external-tools"><h2>External tools</h2></a>
 <p>外部工具</p>
-<p>Cargo 的目标之一是与第三方工具(如 IDE 和其他构建系统)的简单集成。为了简化集成,Cargo 有几个设施:</p>
+<p>Cargo 的目标之一是与第三方工具(如 IDE 和其他构建系统)的简单集成。为了简化集成，Cargo 有几个设施:</p>
 <ul>
 <li>
-<p>一个<code>cargo metadata</code>命令,以 JSON 格式输出包结构和依赖关系信息,</p>
+<p>一个<code>cargo metadata</code>命令，以 JSON 格式输出包结构和依赖关系信息，</p>
 </li>
 <li>
-<p>一个<code>--message-format</code>标志,输出有关特定构建的信息,以及</p>
+<p>一个<code>--message-format</code>标志，输出有关特定构建的信息，以及</p>
 </li>
 <li>
 <p>支持自定义子命令.</p>
@@ -2208,19 +2208,19 @@ replace-with = 'another-source'
 }
 </code></pre>
 <p>格式稳定且有版本化。调用<code>cargo metadata</code>时，你应该通过<code>--format-version</code>明确标记，以避免向前不兼容的危险。</p>
-<p>如果你正在使用 Rust,这有个<a href="https://crates.io/crates/cargo_metadata">cargo_metadata</a>箱.</p>
+<p>如果你正在使用 Rust，这有个<a href="https://crates.io/crates/cargo_metadata">cargo_metadata</a>箱.</p>
 <a class="header" href="#information-about-build" id="information-about-build"><h3>Information about build</h3></a>
 <p>关于构建的资料</p>
 <p>传递<code>--message-format=json</code>给，Cargo， 将在构建期间输出以下信息:</p>
 <ul>
 <li>
-<p>编译器错误和警告,</p>
+<p>编译器错误和警告，</p>
 </li>
 <li>
-<p>制作的工件,</p>
+<p>制作的工件，</p>
 </li>
 <li>
-<p>构建脚本的结果(例如,本机依赖项).</p>
+<p>构建脚本的结果(例如，本机依赖项).</p>
 </li>
 </ul>
 <p>输出以每行格式的 JSON 对象转到 stdout。<code>reason</code>字段区分不同类型的消息.</p>
@@ -2228,9 +2228,9 @@ replace-with = 'another-source'
 <a class="header" href="#custom-subcommands" id="custom-subcommands"><h3>Custom subcommands</h3></a>
 <p>自定义的子命令</p>
 <p>Cargo 设计为，可以使用新的子命令进行扩展，而无需修改 Cargo 本身。这是通过转化一个 cargo <code>(?&lt;command&gt;[^ ]+)</code>的命令调用，变化为调用外部工具<code>cargo-${command}</code>来实现的。外部工具必须存在于用户其中一个<code>$PATH</code>目录中.</p>
-<p>当 Cargo 调用自定义子命令时，子命令的第一个参数将像往常一样是自定义子命令的文件名。第二个参数将是子命令名称本身。例如,在调用<code>cargo-${command}</code>时，第二个参数是<code>${command}</code>。命令行上的其他所有参数将保持不变.</p>
-<p>Cargo 还可以用<code>cargo help ${command}</code>显示自定义子命令的帮助输出。Cargo 假定子命令将在第三个参数出现时，打印帮助消息<code>--help</code>.所以,<code>cargo help ${command}</code>会调用<code>cargo-${command} ${command} --help</code>.</p>
-<p>自定义子命令可以使用<code>CARGO</code>环境变量回调 Cargo。或者,它可以链接到作为一个库的<code>cargo</code>箱,但这种方法有缺点:</p>
+<p>当 Cargo 调用自定义子命令时，子命令的第一个参数将像往常一样是自定义子命令的文件名。第二个参数将是子命令名称本身。例如，在调用<code>cargo-${command}</code>时，第二个参数是<code>${command}</code>。命令行上的其他所有参数将保持不变.</p>
+<p>Cargo 还可以用<code>cargo help ${command}</code>显示自定义子命令的帮助输出。Cargo 假定子命令将在第三个参数出现时，打印帮助消息<code>--help</code>.所以，<code>cargo help ${command}</code>会调用<code>cargo-${command} ${command} --help</code>.</p>
+<p>自定义子命令可以使用<code>CARGO</code>环境变量回调 Cargo。或者，它可以链接到作为一个库的<code>cargo</code>箱，但这种方法有缺点:</p>
 <ul>
 <li>
 <p>Cargo 作为库是不稳定的:API 可能会更改，但不会弃用</p>
@@ -2263,7 +2263,7 @@ my-registry = { index = &quot;https://my-intranet:8080/git/index&quot; }
 <pre><code class="language-toml">[registries.my-registry]
 token = &quot;api-token&quot;
 </code></pre>
-<p>在<code>Cargo.toml</code>里面，您可以使用指定<code>registry</code>字段，让某个依赖项来自哪个注册表。但首先,您需要在文件的顶部包含适当的<code>cargo-features</code>:</p>
+<p>在<code>Cargo.toml</code>里面，您可以使用指定<code>registry</code>字段，让某个依赖项来自哪个注册表。但首先，您需要在文件的顶部包含适当的<code>cargo-features</code>:</p>
 <pre><code class="language-toml">cargo-features = [&quot;alternative-registries&quot;]
 
 [package]
@@ -2272,7 +2272,7 @@ token = &quot;api-token&quot;
 [dependencies]
 other-create = { version = &quot;1.0&quot;, registry = &quot;my-registry&quot;}
 </code></pre>
-<p>一个<code>--registry</code>标志 已添加到与注册表交互的<code>publish</code>,<code>login</code>等命令中。示例:</p>
+<p>一个<code>--registry</code>标志 已添加到与注册表交互的<code>publish</code>，<code>login</code>等命令中。示例:</p>
 <pre><code>cargo +nightly publish -Z unstable-options --registry my-registry
 </code></pre>
 <p>在<code>Cargo.toml</code>的 <code>publish</code> 字段，已被扩展为接受限制为发布到这些注册表的注册表列表。</p>
@@ -2304,8 +2304,8 @@ publish-lockfile = true
 <li>原始问题:<a href="https://github.com/rust-lang/cargo/issues/4686">#4686</a></li>
 <li>跟踪问题:<a href="https://github.com/rust-lang/cargo/issues/5655">#5655</a></li>
 </ul>
-<p><code>-Z offline</code>标志 可防止 Cargo 因任何原因尝试访问网络。通常情况下，如果 Cargo 要访问网络但它不可用,则会因错误而停止。</p>
-<p>请注意,这可能会导致与在线模式不同的依赖项解析。即使可能有索引的较新版本的本地副本，Cargo 也会将自己限制在本地可用的箱(crate)中。</p>
+<p><code>-Z offline</code>标志 可防止 Cargo 因任何原因尝试访问网络。通常情况下，如果 Cargo 要访问网络但它不可用，则会因错误而停止。</p>
+<p>请注意，这可能会导致与在线模式不同的依赖项解析。即使可能有索引的较新版本的本地副本，Cargo 也会将自己限制在本地可用的箱(crate)中。</p>
 <a class="header" href="#no-index-update" id="no-index-update"><h3>no-index-update</h3></a>
 <blockquote>
 <p>无索引更新</p>
@@ -2322,7 +2322,7 @@ publish-lockfile = true
 <li>原始问题:<a href="https://github.com/rust-lang/cargo/issues/4988">#4988</a></li>
 <li>稳定问题:<a href="https://github.com/rust-lang/cargo/issues/5133">#5133</a></li>
 </ul>
-<p>运行命令如<code>cargo install</code>要么<code>cargo build</code>时,Cargo 当前会需要下载 dev 依赖项，即使它们未被使用。而该<code>-Z avoid-dev-deps</code>标志 则让 Cargo 避免在不需要时下载 dev 依赖项。该<code>Cargo.lock</code>如果跳过了 dev-dependencies，将不会生成相关信息。</p>
+<p>运行命令如<code>cargo install</code>要么<code>cargo build</code>时，Cargo 当前会需要下载 dev 依赖项，即使它们未被使用。而该<code>-Z avoid-dev-deps</code>标志 则让 Cargo 避免在不需要时下载 dev 依赖项。该<code>Cargo.lock</code>如果跳过了 dev-dependencies，将不会生成相关信息。</p>
 <a class="header" href="#minimal-versions" id="minimal-versions"><h3>minimal-versions</h3></a>
 <blockquote>
 <p>最小的版本</p>
@@ -2332,7 +2332,7 @@ publish-lockfile = true
 <li>跟踪问题:<a href="https://github.com/rust-lang/cargo/issues/5657">#5657</a></li>
 </ul>
 <p>当一个<code>Cargo.lock</code>文件被生成，<code>-Z minimal-versions</code>标志的使用， 将解析依赖关系为满足要求的最小 semver 版本(而不是最高版本)。</p>
-<p>此标志的预期用例，是在持续集成期间，检查 Cargo.toml 中指定的版本是否是您实际使用的最低版本的正确反映。也就是说,如果 Cargo.toml 有<code>foo = &quot;1.0.0&quot;</code>说明，那您依赖该特性，不会意外地添加<code>foo 1.5.0</code>。</p>
+<p>此标志的预期用例，是在持续集成期间，检查 Cargo.toml 中指定的版本是否是您实际使用的最低版本的正确反映。也就是说，如果 Cargo.toml 有<code>foo = &quot;1.0.0&quot;</code>说明，那您依赖该特性，不会意外地添加<code>foo 1.5.0</code>。</p>
 <a class="header" href="#out-dir" id="out-dir"><h3>out-dir</h3></a>
 <blockquote>
 <p>输出目录</p>
@@ -2340,7 +2340,7 @@ publish-lockfile = true
 <ul>
 <li>原始问题:<a href="https://github.com/rust-lang/cargo/issues/4875">#4875</a></li>
 </ul>
-<p>此功能允许您指定,构建工件后，将复制到的目录。通常,工件只写入<code>target/release</code>要么<code>target/debug</code>目录。但是,确定明确的文件名可能很棘手，因为您需要解析 JSON 输出。而该<code>--out-dir</code>标志 可以更容易地预测访问工件。但是请注意,工件只是被复制,因此原件仍在<code>target</code>目录.例:</p>
+<p>此功能允许您指定，构建工件后，将复制到的目录。通常，工件只写入<code>target/release</code>要么<code>target/debug</code>目录。但是，确定明确的文件名可能很棘手，因为您需要解析 JSON 输出。而该<code>--out-dir</code>标志 可以更容易地预测访问工件。但是请注意，工件只是被复制，因此原件仍在<code>target</code>目录.例:</p>
 <pre><code>cargo +nightly build --out-dir=out -Z unstable-options
 </code></pre>
 <a class="header" href="#profile-overrides" id="profile-overrides"><h3>Profile Overrides</h3></a>
@@ -2371,7 +2371,7 @@ opt-level = 3
 opt-level = 2
 
 # 构建 脚本和他们的 依赖项， 会编译的等级 -Copt-level=3
-# 默认情况, 构建 脚本 对剩下的配置使用相同的选择
+# 默认情况， 构建 脚本 对剩下的配置使用相同的选择
 [profile.dev.build-override]
 opt-level = 3
 </code></pre>
@@ -2385,7 +2385,7 @@ opt-level = 3
 <li>RFC:<a href="https://github.com/rust-lang/rfcs/blob/master/text/2282-profile-dependencies.md">#2282</a></li>
 </ul>
 <!-- HERE -->
-<p>可以在<code>.cargo/config</code>文件中指定配置文件。该<code>-Z config-profile</code>命令行标志是使用此功能所必需的。格式与一个 <code>Cargo.toml</code>清单格式相同。如果在多个文件中找到相同的配置，则通过使用常规设置<a href="./config.html#hierarchical-structure">配置层次结构</a>合并。配置设置优先于清单设置。</p>
+<p>可以在<code>.cargo/config</code>文件中指定配置文件。该<code>-Z config-profile</code>命令行标志是使用此功能所必需的。格式与一个 <code>Cargo.toml</code>清单格式相同。如果在多个文件中找到相同的配置，则通过使用常规设置<a href="reference/./config.html#hierarchical-structure">配置层次结构</a>合并。配置设置优先于清单设置。</p>
 <pre><code class="language-toml">[profile.dev]
 opt-level = 3
 </code></pre>
@@ -2399,7 +2399,7 @@ opt-level = 3
 <li>原始问题:<a href="https://github.com/rust-lang/cargo/issues/1286">#1286</a></li>
 <li>跟踪问题:<a href="https://github.com/rust-lang/cargo/issues/5565">rust-lang/Cargo#5565</a></li>
 </ul>
-<p>目前,不可能在清单中具有相同名称的特性和依赖项。但如果你设置<code>namespaced-features</code>至<code>true</code>,功能和依赖项的命名空间就会是分开的。这样做的结果是,在特性请求中，依赖项必须以<code>crate:</code>为前缀。像这样:</p>
+<p>目前，不可能在清单中具有相同名称的特性和依赖项。但如果你设置<code>namespaced-features</code>至<code>true</code>，功能和依赖项的命名空间就会是分开的。这样做的结果是，在特性请求中，依赖项必须以<code>crate:</code>为前缀。像这样:</p>
 <pre><code class="language-toml">[package]
 namespaced-features = true
 
@@ -2410,7 +2410,7 @@ foo = []
 [dependencies]
 baz = { version = &quot;0.1&quot;, optional = true }
 </code></pre>
-<p>为了防止不必要的，必须为每个可选依赖项显式声明特性的模版，将为任何不是定义为相同名称的特性，的可选依赖项创建隐式特性。但是,如果定义了与依赖项同名的特性，则该特性必须将依赖项作为必需项，正如<code>foo = [&quot;crate:foo&quot;]</code>。</p>
+<p>为了防止不必要的，必须为每个可选依赖项显式声明特性的模版，将为任何不是定义为相同名称的特性，的可选依赖项创建隐式特性。但是，如果定义了与依赖项同名的特性，则该特性必须将依赖项作为必需项，正如<code>foo = [&quot;crate:foo&quot;]</code>。</p>
 <a class="header" href="#build-plan" id="build-plan"><h3>Build-plan</h3></a>
 <blockquote>
 <p>构建计划</p>
@@ -2418,7 +2418,7 @@ baz = { version = &quot;0.1&quot;, optional = true }
 <ul>
 <li>跟踪问题:<a href="https://github.com/rust-lang/cargo/issues/5579">rust-lang/Cargo#5579</a></li>
 </ul>
-<p><code>build</code>命令的<code>--build-plan</code>参数，将输出 JSON，其中包含有关将运行哪些命令，和不实际执行任何操作的信息。与其他构建工具集成时,这可能很有用。例:</p>
+<p><code>build</code>命令的<code>--build-plan</code>参数，将输出 JSON，其中包含有关将运行哪些命令，和不实际执行任何操作的信息。与其他构建工具集成时，这可能很有用。例:</p>
 <pre><code>cargo +nightly build --build-plan -Z unstable-options
 </code></pre>
 <a class="header" href="#default-run" id="default-run"><h3>default-run</h3></a>
@@ -2428,7 +2428,7 @@ baz = { version = &quot;0.1&quot;, optional = true }
 <ul>
 <li>原始问题:<a href="https://github.com/rust-lang/cargo/issues/2200">#2200</a></li>
 </ul>
-<p>清单中<code>[package]</code>部分的该<code>default-run</code>选项，可用于指定<code>cargo run</code>选择的默认二进制文件。例如,当存在<code>src/bin/a.rs</code>和<code>src/bin/b.rs</code>两者时，选择前者:</p>
+<p>清单中<code>[package]</code>部分的该<code>default-run</code>选项，可用于指定<code>cargo run</code>选择的默认二进制文件。例如，当存在<code>src/bin/a.rs</code>和<code>src/bin/b.rs</code>两者时，选择前者:</p>
 <pre><code class="language-toml">[package]
 default-run = &quot;a&quot;
 </code></pre>
@@ -2440,8 +2440,8 @@ default-run = &quot;a&quot;
 <li>跟踪问题:<a href="https://github.com/rust-lang/rust/issues/49803">rust-lang/rust#49803</a></li>
 <li>RFC:<a href="https://github.com/rust-lang/rfcs/blob/master/text/2196-metabuild.md">#2196</a></li>
 </ul>
-<p>Metabuild 是一个具有声明性构建脚本的特性。作为不去写一个<code>build.rs</code>脚本，而是您在<code>Cargo.toml</code>中的<code>metabuild</code>字段，指定构建依赖项列表。其将自动生成一个构建脚本，该脚本按顺序运行每个构建依赖项。然后,Metabuild 包可以从<code>Cargo.toml</code>中读取元数据，执行他们的指定行为。</p>
-<p>需要包括<code>cargo-features</code>在<code>Cargo.toml</code>的顶部, 一个<code>metadata</code>字段在<code>package</code>下，列出<code>build-dependencies</code>依赖项,并添加 metabuild 包所需的任何元数据。例:</p>
+<p>Metabuild 是一个具有声明性构建脚本的特性。作为不去写一个<code>build.rs</code>脚本，而是您在<code>Cargo.toml</code>中的<code>metabuild</code>字段，指定构建依赖项列表。其将自动生成一个构建脚本，该脚本按顺序运行每个构建依赖项。然后，Metabuild 包可以从<code>Cargo.toml</code>中读取元数据，执行他们的指定行为。</p>
+<p>需要包括<code>cargo-features</code>在<code>Cargo.toml</code>的顶部， 一个<code>metadata</code>字段在<code>package</code>下，列出<code>build-dependencies</code>依赖项，并添加 metabuild 包所需的任何元数据。例:</p>
 <pre><code class="language-toml">cargo-features = [&quot;metabuild&quot;]
 
 [package]
@@ -2463,18 +2463,18 @@ extra-info = &quot;qwerty&quot;
 <blockquote>
 <p>是否有计划，使用 Github 作为一个包库 ？</p>
 </blockquote>
-<p>不,Cargo 的计划是使用<a href="https://crates.io/">crates.io</a>，像 NPM 或 RuuGuMes 对应 npmjs.org 和 rubygems.org。</p>
+<p>不，Cargo 的计划是使用<a href="https://crates.io/">crates.io</a>，像 NPM 或 RuuGuMes 对应 npmjs.org 和 rubygems.org。</p>
 <p>我们计划永远（通过些配置）支持 git 存储库作为包的来源，因为它们可以用于早期开发和临时补丁（加了点灵活性），即便人们使用主要使用注册表作为包的来源。</p>
 <a class="header" href="#why-build-cratesio-rather-than-use-github-as-a-registry" id="why-build-cratesio-rather-than-use-github-as-a-registry"><h3>Why build crates.io rather than use GitHub as a registry?</h3></a>
 <blockquote>
 <p>为啥，选 crates.io，而不是使用 Github 作为 注册表 ？</p>
 </blockquote>
-<p>我们认为支持多种下载包的方式非常重要,包括从 GitHub 下载包,并将包复制到包本身.</p>
-<p>也就是说,我们认为<a href="https://crates.io/">crates.io</a>提供了许多重要的好处，并且预计其会成为人们在 Cargo 中，下载包的主要方式。</p>
+<p>我们认为支持多种下载包的方式非常重要，包括从 GitHub 下载包，并将包复制到包本身.</p>
+<p>也就是说，我们认为<a href="https://crates.io/">crates.io</a>提供了许多重要的好处，并且预计其会成为人们在 Cargo 中，下载包的主要方式。</p>
 <p>前车之鉴，Node.js 的<a href="https://www.npmjs.org">npm</a>和 Ruby 的<a href="https://bundler.io">bundler</a>都支持中央注册中心模式，和基于 Git 的模式，而大多数包都是通过生态系统中的注册中心下载的，其中重要的少数包是使用基于 git 的包。</p>
 <p>使中央注册中心，在其他语言中流行的一些优点包括:</p>
 <ul>
-<li><strong>可发现性</strong>. 中央注册表提供了查找现有包的简单方式。结合标记(版本),这也使得注册中心能够提供生态系统的范围信息，例如最流行或最依赖的包的列表.</li>
+<li><strong>可发现性</strong>. 中央注册表提供了查找现有包的简单方式。结合标记(版本)，这也使得注册中心能够提供生态系统的范围信息，例如最流行或最依赖的包的列表.</li>
 <li><strong>速度</strong>. 中心注册中心使得可以快速有效地只获取包的元数据，然后只高效地下载已发布的包，而不会出现在存储库中的其他膨胀。这大大提高了依赖性解析和获取的速度。要知道随着依赖关系图的扩展，下载所有的 git 存储库会陷入困境。还要记住的是，并不是每个人都有高速、低延迟的互联网连接.</li>
 </ul>
 <a class="header" href="#will-cargo-work-with-c-code-or-other-languages" id="will-cargo-work-with-c-code-or-other-languages"><h3>Will Cargo work with C code (or other languages)?</h3></a>
@@ -2495,7 +2495,7 @@ extra-info = &quot;qwerty&quot;
 <p>Cargo 是怎么平衡 多平台或跨平台的包的？</p>
 </blockquote>
 <p>Rust 本身提供了基于平台，配置代码段的工具。Cargo 也支持<a href="reference/specifying-dependencies.html#platform-specific-dependencies">特定平台依赖关系</a>，未来，我们计划为每个平台<code>Cargo.toml</code>支持更多的配置.</p>
-<p>从长远来看,我们正在寻找使用 Cargo 方便地跨编译包的方法.</p>
+<p>从长远来看，我们正在寻找使用 Cargo 方便地跨编译包的方法.</p>
 <a class="header" href="#does-cargo-support-environments-like-production-or-test" id="does-cargo-support-environments-like-production-or-test"><h3>Does Cargo support environments, like <code>production</code> or <code>test</code>?</h3></a>
 <blockquote>
 <p>Cargo 有没支持像<code>production</code> 或 <code>test</code>这样的环境？</p>
@@ -2512,37 +2512,37 @@ extra-info = &quot;qwerty&quot;
 <p>Windows 系统 呢，Cargo 能搞吗？</p>
 </blockquote>
 <p>没问题!</p>
-<p>所有提交的 Cargo 都需要通过 Windows 上的本地测试套件。但是,如果你发现一个 Windows 问题，我们认为它就是一个 bug,所以<a href="https://github.com/rust-lang/cargo/issues">请提出一个问题</a>.</p>
+<p>所有提交的 Cargo 都需要通过 Windows 上的本地测试套件。但是，如果你发现一个 Windows 问题，我们认为它就是一个 bug，所以<a href="https://github.com/rust-lang/cargo/issues">请提出一个问题</a>.</p>
 <a class="header" href="#why-do-binaries-have-cargolock-in-version-control-but-not-libraries" id="why-do-binaries-have-cargolock-in-version-control-but-not-libraries"><h3>Why do binaries have <code>Cargo.lock</code> in version control, but not libraries?</h3></a>
 <blockquote>
 <p>为啥，输出二进制的 Cargo 项目具有<code>Cargo.lock</code>，而单输出库的，就没有？</p>
 </blockquote>
 <p>一个<code>Cargo.lock</code>文件的目的，是在于成功构建，能描述’世界’的状态。然后，它就能用来，通过确保编译完全相同的依赖项，就能跨任何机器上构建确定性的包。</p>
 <p>这个属性对于，处在依赖链末端的应用程序和包(二进制文件)是最理想的。因此，建议所有二进制文件都在其<code>Cargo.lock</code>内部进行检查.</p>
-<p>对于单库来说,情况有些不同。库不仅被库开发人员使用,而且被库的任何下游消费者使用。依赖库的用户不会检查库的<code>Cargo.lock</code>(即使它存在)。正是如此，库<strong>不</strong>应该对库的所有用户进行确定性地重新编译。</p>
+<p>对于单库来说，情况有些不同。库不仅被库开发人员使用，而且被库的任何下游消费者使用。依赖库的用户不会检查库的<code>Cargo.lock</code>(即使它存在)。正是如此，库<strong>不</strong>应该对库的所有用户进行确定性地重新编译。</p>
 <p>如果一个库最终被多个依赖项传递使用，那么很可能只需要该库的一个副本(基于 semver 兼容性的版本)。如果 Cargo 使用了所有的 <strong>依赖项的<code>Cargo.lock</code>文件</strong>，那结果就是，使用库的多个副本，甚至可能存在版本冲突。</p>
-<p>换句话说,库为它们的依赖项指定了 semver 版本，但是不用(无法)看到全部内容。只有像二进制文件这样的最终产品才需要有完整的图，来决定应该使用什么版本的依赖。</p>
+<p>换句话说，库为它们的依赖项指定了 semver 版本，但是不用(无法)看到全部内容。只有像二进制文件这样的最终产品才需要有完整的图，来决定应该使用什么版本的依赖。</p>
 <a class="header" href="#can-libraries-use--as-a-version-for-their-dependencies" id="can-libraries-use--as-a-version-for-their-dependencies"><h3>Can libraries use <code>*</code> as a version for their dependencies?</h3></a>
 <blockquote>
 <p>作为库的项目，可以使用<code>*</code>作为它们的依赖的版本号吗?</p>
 </blockquote>
-<p><strong>截至 2016 年 1 月 22 日,<a href="https://crates.io/">crates.io</a>拒绝通配符<code>*</code>依赖约束的所有包(不只是库).</strong></p>
-<p>库是<em>可以</em>，但严格来说，他们不应该这样做。<code>*</code>版本要求，说明了”这将适用于任何版本”，而这永远不会是真的。库应该总是指定它们工作的范围,即使它和”每个 1.x.y 版本”一样。</p>
+<p><strong>截至 2016 年 1 月 22 日，<a href="https://crates.io/">crates.io</a>拒绝通配符<code>*</code>依赖约束的所有包(不只是库).</strong></p>
+<p>库是<em>可以</em>，但严格来说，他们不应该这样做。<code>*</code>版本要求，说明了”这将适用于任何版本”，而这永远不会是真的。库应该总是指定它们工作的范围，即使它和”每个 1.x.y 版本”一样。</p>
 <a class="header" href="#why-cargotoml" id="why-cargotoml"><h3>Why <code>Cargo.toml</code>?</h3></a>
-<p>作为与 Cargo 最频繁的交互之一，为什么要命名配置文件叫<code>Cargo.toml</code>的问题不时出现。选择领先的大写—<code>C</code>，是为了确保清单与目录清单中的其他类似配置文件组合排序。对文件进行排序时,通常将大写字母放在小写字母之前，确保<code>Makefile</code>和<code>Cargo.toml</code>文件会放在一起。选择<code>.toml</code>结尾是强调文件是<a href="https://github.com/toml-lang/toml">特定的配置文件格式</a>.</p>
-<p>Cargo 不允许其他名称(如<code>cargo.toml</code>或<code>Cargofile</code>)，来强调如何如何容易识别 Cargo 仓库。在历史上,许多可能的名称选择都导致了混乱,其中一个选项被选择了，而其他选项就被自然而然地遗忘。</p>
+<p>作为与 Cargo 最频繁的交互之一，为什么要命名配置文件叫<code>Cargo.toml</code>的问题不时出现。选择领先的大写—<code>C</code>，是为了确保清单与目录清单中的其他类似配置文件组合排序。对文件进行排序时，通常将大写字母放在小写字母之前，确保<code>Makefile</code>和<code>Cargo.toml</code>文件会放在一起。选择<code>.toml</code>结尾是强调文件是<a href="https://github.com/toml-lang/toml">特定的配置文件格式</a>.</p>
+<p>Cargo 不允许其他名称(如<code>cargo.toml</code>或<code>Cargofile</code>)，来强调如何如何容易识别 Cargo 仓库。在历史上，许多可能的名称选择都导致了混乱，其中一个选项被选择了，而其他选项就被自然而然地遗忘。</p>
 <a class="header" href="#how-can-cargo-work-offline" id="how-can-cargo-work-offline"><h3>How can Cargo work offline?</h3></a>
 <blockquote>
 <p>Cargo 能 离线 工作吗？</p>
 </blockquote>
-<p>Cargo 通常用于网络访问有限，或没有网络访问的情况,如飞机、CI 环境或嵌入大型生产部署中。当 Cargo 试图从网络获取资源时，用户常常感到惊讶,因频繁出现 Cargo 离线工作的请求。</p>
-<p>Cargo 的核心是不会试图访问网络，除非被告知这样做。也就是说,如果没有来自 crates.io、git 存储库或其他网络位置的箱，则 Cargo 永远不会尝试进行网络连接。因此,如果 Cargo 试图接触网络,那是因为它需要获取所需的资源。</p>
-<p>Cargo 还非常积极地缓存信息,保持最小化的网络活动量。例如,它将保证<code>cargo build</code>(或类似的)运行到完成，那下一次<code>cargo build</code>保证不接触网络，只要<code>Cargo.toml</code>在此期间还没有被修改。网络的这种回避归结为，已存在<code>Cargo.lock</code>，和在 lock 文件中反映了，箱子的充分缓存。如果这些组件中的任何一个丢失,那么构建的成功就需要它们,并且必须远程获取它们。</p>
-<p>对 Rust 1.11.0 打后的 Cargo ，可以看到新的(标志)参数<code>--frozen</code>，这是它不应该接触网络的断言。当传递给 Cargo，如果 Cargo 试图进行网络请求,它将立即返回一个错误。错误应该包括关于为什么进行网络请求(第一个地方），以帮助调试的上下文信息。注意这个标志是<em>不改变 Cargo 的行为</em>，它只是断言 Cargo 不应该触摸网络，这作为上一个命令已完成的保证，可以相同的网络活动是不必的。</p>
+<p>Cargo 通常用于网络访问有限，或没有网络访问的情况，如飞机、CI 环境或嵌入大型生产部署中。当 Cargo 试图从网络获取资源时，用户常常感到惊讶，因频繁出现 Cargo 离线工作的请求。</p>
+<p>Cargo 的核心是不会试图访问网络，除非被告知这样做。也就是说，如果没有来自 crates.io、git 存储库或其他网络位置的箱，则 Cargo 永远不会尝试进行网络连接。因此，如果 Cargo 试图接触网络，那是因为它需要获取所需的资源。</p>
+<p>Cargo 还非常积极地缓存信息，保持最小化的网络活动量。例如，它将保证<code>cargo build</code>(或类似的)运行到完成，那下一次<code>cargo build</code>保证不接触网络，只要<code>Cargo.toml</code>在此期间还没有被修改。网络的这种回避归结为，已存在<code>Cargo.lock</code>，和在 lock 文件中反映了，箱子的充分缓存。如果这些组件中的任何一个丢失，那么构建的成功就需要它们，并且必须远程获取它们。</p>
+<p>对 Rust 1.11.0 打后的 Cargo ，可以看到新的(标志)参数<code>--frozen</code>，这是它不应该接触网络的断言。当传递给 Cargo，如果 Cargo 试图进行网络请求，它将立即返回一个错误。错误应该包括关于为什么进行网络请求(第一个地方），以帮助调试的上下文信息。注意这个标志是<em>不改变 Cargo 的行为</em>，它只是断言 Cargo 不应该触摸网络，这作为上一个命令已完成的保证，可以相同的网络活动是不必的。</p>
 <blockquote>
 <p>上一个命令，如<code>cargo build</code></p>
 </blockquote>
-<p>有关版本管理的详细信息,请参阅文档<a href="./source-replacement.zh.html">来源更换</a>.</p>
+<p>有关版本管理的详细信息，请参阅文档<a href="./source-replacement.zh.html">来源更换</a>.</p>
 <a class="header" href="#glossary" id="glossary"><h1>Glossary</h1></a>
 <ul>
 <li>词汇表</li>
@@ -2561,12 +2561,12 @@ extra-info = &quot;qwerty&quot;
 <ul>
 <li>版本</li>
 </ul>
-<p>一个<em>Rust Edition</em>是 Rust 语言的开发里程碑。该<a href="../reference/manifest.zh.html#the-edition-field-optional">一个包的版本</a>在<code>Cargo.toml</code>清单中指定，各个目标可以指定它们使用的版本。见<a href="https://rust-lang-nursery.github.io/edition-guide/">版本指南</a>欲获得更多信息.</p>
+<p>一个<em>Rust Edition</em>是 Rust 语言的开发里程碑。该<a href="appendix/../reference/manifest.zh.html#the-edition-field-optional">一个包的版本</a>在<code>Cargo.toml</code>清单中指定，各个目标可以指定它们使用的版本。见<a href="https://rust-lang-nursery.github.io/edition-guide/">版本指南</a>欲获得更多信息.</p>
 <a class="header" href="#feature" id="feature"><h3>Feature</h3></a>
 <ul>
 <li>特性/特征/功能</li>
 </ul>
-<p>一个<a href="../reference/manifest.zh.html#the-features-section"><em>特征</em></a>是一个允许条件编译的命名标志参数。一个特性可以引用可选的依赖项,或者在 一个<code>Cargo.toml</code> 中定义的任意名称，可以键入(使用到)源代码中。</p>
+<p>一个<a href="appendix/../reference/manifest.zh.html#the-features-section"><em>特征</em></a>是一个允许条件编译的命名标志参数。一个特性可以引用可选的依赖项，或者在 一个<code>Cargo.toml</code> 中定义的任意名称，可以键入(使用到)源代码中。</p>
 <p>Cargo 有<a href="https://doc.rust-lang.org/nightly/cargo/reference/unstable.zh.md"><em>不稳定的特征标志</em></a>，这可以用来实现 Cargo 本身的实验行为。Rust 编译器和 Rustdoc 也有自己的不稳定特征标志(参见<a href="https://doc.rust-lang.org/nightly/unstable-book/index.zh.md">不稳定的书</a>和<a href="https://doc.rust-lang.org/nightly/rustdoc/unstable-features.zh.md">Rustdoc 书</a>).</p>
 <a class="header" href="#index" id="index"><h3>Index</h3></a>
 <ul>
@@ -2576,13 +2576,13 @@ extra-info = &quot;qwerty&quot;
 <ul>
 <li>(锁定/锁) 文件</li>
 </ul>
-<p><code>Cargo.lock</code>,名:<em>锁定文件</em>，是一个文件,用于捕获工作空间或包中使用的每个依赖项的确切版本，它由 Cargo 自动生成。看到<a href="../cargo-toml-vs-cargo-lock.zh.html">Cargo.toml 与 Cargo.lock</a>.</p>
+<p><code>Cargo.lock</code>，名:<em>锁定文件</em>，是一个文件，用于捕获工作空间或包中使用的每个依赖项的确切版本，它由 Cargo 自动生成。看到<a href="appendix/../cargo-toml-vs-cargo-lock.zh.html">Cargo.toml 与 Cargo.lock</a>.</p>
 <a class="header" href="#manifest" id="manifest"><h3>Manifest</h3></a>
 <ul>
 <li>清单/元信息</li>
 </ul>
-<p>一个<a href="../reference/manifest.zh.html"><em>清单</em></a>是对包或工作空间的描述，名为<code>Cargo.toml</code>.</p>
-<p>一个<a href="../reference/manifest.zh.html#virtual-manifest"><em>虚拟清单</em></a>是一个<code>Cargo.toml</code>，仅描述工作空间的文件,不包含包。</p>
+<p>一个<a href="appendix/../reference/manifest.zh.html"><em>清单</em></a>是对包或工作空间的描述，名为<code>Cargo.toml</code>.</p>
+<p>一个<a href="appendix/../reference/manifest.zh.html#virtual-manifest"><em>虚拟清单</em></a>是一个<code>Cargo.toml</code>，仅描述工作空间的文件，不包含包。</p>
 <a class="header" href="#member" id="member"><h3>Member</h3></a>
 <ul>
 <li>会员/成员</li>
@@ -2594,7 +2594,7 @@ extra-info = &quot;qwerty&quot;
 </ul>
 <p>一个<em>包</em>是源文件和描述包的清单<code>Cargo.toml</code>的集合。包具有名称和版本，用于指定包之间的依赖关系。包中包含多个目标，这些目标是库或可执行二进制文件。</p>
 <p>该<em>包根</em>是<code>Cargo.toml</code>清单位于的包的目录。</p>
-<p>该<a href="../reference/pkgid-spec.zh.html"><em>包 ID 规范</em></a>, 要么<em>SPEC</em>,是一个字符串,用于辨识从特定源，引用特定版本的包唯一性。</p>
+<p>该<a href="appendix/../reference/pkgid-spec.zh.html"><em>包 ID 规范</em></a>， 要么<em>SPEC</em>，是一个字符串，用于辨识从特定源，引用特定版本的包唯一性。</p>
 <a class="header" href="#project" id="project"><h3>Project</h3></a>
 <ul>
 <li>包/项目</li>
@@ -2604,7 +2604,7 @@ extra-info = &quot;qwerty&quot;
 <ul>
 <li>注册表</li>
 </ul>
-<p>一个<em>注册处</em>是一种服务,包含可下载的包,可以安装或用作包的依赖项.默认注册表是<a href="https://crates.io">crates.io</a>。注册表有一个<em>索引</em>，其中包含所有包装箱的清单,并告诉 Cargo 如何下载所需的箱。</p>
+<p>一个<em>注册处</em>是一种服务，包含可下载的包，可以安装或用作包的依赖项.默认注册表是<a href="https://crates.io">crates.io</a>。注册表有一个<em>索引</em>，其中包含所有包装箱的清单，并告诉 Cargo 如何下载所需的箱。</p>
 <a class="header" href="#source" id="source"><h3>Source</h3></a>
 <ul>
 <li>源/资源</li>
@@ -2612,12 +2612,12 @@ extra-info = &quot;qwerty&quot;
 <p>一个<em>源</em>是一个提供程序，包含箱子，这些箱子可当依赖项的包。有几种源:</p>
 <ul>
 <li><strong>注册表来源</strong>- 见<a href="#registry">注册表</a>.</li>
-<li><strong>本地注册表源</strong>- 在文件系统上存储为压缩文件的一组包。看到<a href="../reference/source-replacement.zh.html#local-registry-sources">本地注册表来源</a>.</li>
-<li><strong>目录来源</strong>- 在文件系统上存储为未压缩文件的一组包.看到<a href="../reference/source-replacement.zh.html#directory-sources">目录来源</a>.</li>
-<li><strong>路径来源</strong>- 位于文件系统上的单个包(例如<a href="../reference/specifying-dependencies.zh.html#specifying-path-dependencies">路径依赖</a>)或一组多个包(如<a href="../reference/specifying-dependencies.zh.html#overriding-with-local-dependencies">路径覆盖</a>).</li>
-<li><strong>Git 来源</strong>- 位于 git 存储库中的包(例如<a href="../reference/specifying-dependencies.zh.html#specifying-dependencies-from-git-repositories">git 依赖</a>要么<a href="../reference/source-replacement.zh.html">git 来源</a>).</li>
+<li><strong>本地注册表源</strong>- 在文件系统上存储为压缩文件的一组包。看到<a href="appendix/../reference/source-replacement.zh.html#local-registry-sources">本地注册表来源</a>.</li>
+<li><strong>目录来源</strong>- 在文件系统上存储为未压缩文件的一组包.看到<a href="appendix/../reference/source-replacement.zh.html#directory-sources">目录来源</a>.</li>
+<li><strong>路径来源</strong>- 位于文件系统上的单个包(例如<a href="appendix/../reference/specifying-dependencies.zh.html#specifying-path-dependencies">路径依赖</a>)或一组多个包(如<a href="appendix/../reference/specifying-dependencies.zh.html#overriding-with-local-dependencies">路径覆盖</a>).</li>
+<li><strong>Git 来源</strong>- 位于 git 存储库中的包(例如<a href="appendix/../reference/specifying-dependencies.zh.html#specifying-dependencies-from-git-repositories">git 依赖</a>要么<a href="appendix/../reference/source-replacement.zh.html">git 来源</a>).</li>
 </ul>
-<p>看到<a href="../reference/source-replacement.zh.html">来源更换</a>欲获得更多信息.</p>
+<p>看到<a href="appendix/../reference/source-replacement.zh.html">来源更换</a>欲获得更多信息.</p>
 <a class="header" href="#spec" id="spec"><h3>Spec</h3></a>
 <ul>
 <li>看到<a href="#package">包 ID 规范</a>.</li>
@@ -2628,27 +2628,27 @@ extra-info = &quot;qwerty&quot;
 </ul>
 <p><em>Target</em>这个词的意思，取决于具体情况:</p>
 <ul>
-<li><strong>Cargo 目标</strong> - Cargo 项目会有<em>target</em>，其具有对应将要生成的工件。项目可以包含库,二进制,示例,测试和基准目标。该<a href="../reference/manifest.zh.html#configuring-a-target">目标列表</a>配置在<code>Cargo.toml</code>清单,通常由源文件的<a href="../reference/manifest.zh.html#the-project-layout">目录布局</a>自动推断的。</li>
+<li><strong>Cargo 目标</strong> - Cargo 项目会有<em>target</em>，其具有对应将要生成的工件。项目可以包含库，二进制，示例，测试和基准目标。该<a href="appendix/../reference/manifest.zh.html#configuring-a-target">目标列表</a>配置在<code>Cargo.toml</code>清单，通常由源文件的<a href="appendix/../reference/manifest.zh.html#the-project-layout">目录布局</a>自动推断的。</li>
 <li><strong>目标架构</strong>- 构建工件的 OS 和机器体系结构，通常称为一个<em>目标</em>。</li>
 <li><strong>目标 三元(Triple)</strong>- 三元组是用于指定目标体系结构的特定格式。见<a href="http://clang.llvm.org/docs/CrossCompilation.zh.md#target-triple">clang 文档</a> 了解详情。三元组可以称为 一个<em>目标三元</em>，此为产生的工件的架构，以及<em>主机三元</em>，此为编译器运行的体系结构。可以使用<code>--target</code>命令行选项或<code>build.target</code> [配置选项]指定目标三元组。</li>
-<li><strong>目标目录</strong>- Cargo 将所有构建的工件和中间文件放入<em>target</em>目录。默认情况下,这是一个名为<code>target</code>的目录会在工作区根目录，或者包根(如果不使用工作空间)。目录随着<code>--target-dir</code>命令行选项,<code>CARGO_TARGET_DIR</code> <a href="../reference/environment-variables.zh.html">环境变量</a>, 或者<code>build.target-dir</code>
-<a href="../reference/config.zh.html">配置选项</a>改变而改变.</li>
+<li><strong>目标目录</strong>- Cargo 将所有构建的工件和中间文件放入<em>target</em>目录。默认情况下，这是一个名为<code>target</code>的目录会在工作区根目录，或者包根(如果不使用工作空间)。目录随着<code>--target-dir</code>命令行选项，<code>CARGO_TARGET_DIR</code> <a href="appendix/../reference/environment-variables.zh.html">环境变量</a>， 或者<code>build.target-dir</code>
+<a href="appendix/../reference/config.zh.html">配置选项</a>改变而改变.</li>
 </ul>
 <blockquote>
 <p>“target-triple (目标 三元)” 是 编译器的 专用术语，用 “ cpu- vendor- os” 来标识 交叉编译时的 系统类型</p>
 </blockquote>
 <a class="header" href="#test-targets" id="test-targets"><h3>Test Targets</h3></a>
-<p>Cargo<em>测试目标</em>生成二进制文件,帮助验证代码的正确操作和正确性。有两种类型的测试工件:</p>
+<p>Cargo<em>测试目标</em>生成二进制文件，帮助验证代码的正确操作和正确性。有两种类型的测试工件:</p>
 <ul>
-<li><strong>单元测试</strong>- 一个<em>单元测试</em>是直接从库或二进制目标编译的可执行二进制文件。它包含库或二进制代码的全部内容,并运行<code>#[test]</code>注释函数,用于验证各个代码单元。</li>
-<li><strong>集成测试目标</strong>- 一个<a href="../reference/manifest.zh.html#integration-tests"><em>集成测试目标</em></a>是一个来自<em>测试目标</em>的可执行的二进制文件，这是一个独特的箱子,其来源位于<code>tests</code>目录或由在<code>Cargo.toml</code>清单里面的<a href="../reference/manifest.zh.html#configuring-a-target"><code>[[test]]</code>表</a>指定。它旨在仅测试库的公共 API,或执行二进制文件以验证其操作。</li>
+<li><strong>单元测试</strong>- 一个<em>单元测试</em>是直接从库或二进制目标编译的可执行二进制文件。它包含库或二进制代码的全部内容，并运行<code>#[test]</code>注释函数，用于验证各个代码单元。</li>
+<li><strong>集成测试目标</strong>- 一个<a href="appendix/../reference/manifest.zh.html#integration-tests"><em>集成测试目标</em></a>是一个来自<em>测试目标</em>的可执行的二进制文件，这是一个独特的箱子，其来源位于<code>tests</code>目录或由在<code>Cargo.toml</code>清单里面的<a href="appendix/../reference/manifest.zh.html#configuring-a-target"><code>[[test]]</code>表</a>指定。它旨在仅测试库的公共 API，或执行二进制文件以验证其操作。</li>
 </ul>
 <a class="header" href="#workspace" id="workspace"><h3>Workspace</h3></a>
 <ul>
 <li>工作区</li>
 </ul>
-<p>一个<a href="../reference/manifest.zh.html#the-workspace-section"><em>工作区</em></a>是一个共享公共依赖项解析(具有共享<code>Cargo.lock</code>),输出目录和各种设置,如配置文件，的一个或多个包的集合。</p>
-<p>一个<a href="../reference/manifest.zh.html#virtual-manifest"><em>虚拟工作区</em></a>是<code>Cargo.toml</code>清单根目录的工作空间， 没有定义包,只列出工作区成员。</p>
+<p>一个<a href="appendix/../reference/manifest.zh.html#the-workspace-section"><em>工作区</em></a>是一个共享公共依赖项解析(具有共享<code>Cargo.lock</code>)，输出目录和各种设置，如配置文件，的一个或多个包的集合。</p>
+<p>一个<a href="appendix/../reference/manifest.zh.html#virtual-manifest"><em>虚拟工作区</em></a>是<code>Cargo.toml</code>清单根目录的工作空间， 没有定义包，只列出工作区成员。</p>
 <p>该<em>工作区根</em>是工作区的<code>Cargo.toml</code>清单位于的目录.</p>
 
                 </main>

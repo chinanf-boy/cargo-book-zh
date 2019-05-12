@@ -157,16 +157,16 @@
 
             <div id="content" class="content">
                 <main>
-                    <a class="header" href="#a依赖指定" id="a依赖指定"><h2>依赖指定</h2></a>
-<p>您的箱子，可以依赖多个来源的库，如<a href="https://crates.io/">crates.io</a>,<code>git</code>的存储库或本地文件系统上的子目录。您还可以临时覆盖依赖项的位置 - 例如, 便于能够测试您在本地工作的依赖项中的错误修复。您可以为不同的平台，和或仅在开发期间使用不同的依赖项。我们来看看如何做到这些.</p>
-<a class="header" href="#a指定依赖来自-cratesio" id="a指定依赖来自-cratesio"><h3>指定依赖，来自 crates.io</h3></a>
-<p>默认情况下，Cargo 是准备好，在<a href="https://crates.io/">crates.io</a>上查找依赖项。在这种情况下,只需要名称和版本字符串。在<a href="../guide/index.zh.html">Cargo 指南</a>,我们选择了一个依赖项-<code>time</code>箱:</p>
+                    <a class="header" href="#依赖指定" id="依赖指定"><h2>依赖指定</h2></a>
+<p>您的箱子，可以依赖多个来源的库，如<a href="https://crates.io/">crates.io</a>，<code>git</code>的存储库或本地文件系统上的子目录。您还可以临时覆盖依赖项的位置 - 例如， 便于能够测试您在本地工作的依赖项中的错误修复。您可以为不同的平台，和或仅在开发期间使用不同的依赖项。我们来看看如何做到这些.</p>
+<a class="header" href="#指定依赖来自-cratesio" id="指定依赖来自-cratesio"><h3>指定依赖，来自 crates.io</h3></a>
+<p>默认情况下，Cargo 是准备好，在<a href="https://crates.io/">crates.io</a>上查找依赖项。在这种情况下，只需要名称和版本字符串。在<a href="../guide/index.zh.html">Cargo 指南</a>，我们选择了一个依赖项-<code>time</code>箱:</p>
 <pre><code class="language-toml">[dependencies]
 time = &quot;0.1.12&quot;
 </code></pre>
-<p>字符串<code>&quot;0.1.12&quot;</code>是一个<a href="https://github.com/steveklabnik/semver#requirements">semver</a>版本格式字符串。由于此字符串中没有任何运算符,因此它的解释方式与我们指定的<code>&quot;^0.1.12&quot;</code>方式相同，而<code>^</code>被称为跳脱条件.</p>
+<p>字符串<code>&quot;0.1.12&quot;</code>是一个<a href="https://github.com/steveklabnik/semver#requirements">semver</a>版本格式字符串。由于此字符串中没有任何运算符，因此它的解释方式与我们指定的<code>&quot;^0.1.12&quot;</code>方式相同，而<code>^</code>被称为跳脱条件.</p>
 <a class="header" href="#caret-requirements跳脱条件" id="caret-requirements跳脱条件"><h3>Caret requirements(跳脱条件)</h3></a>
-<p><strong>跳脱条件</strong>: 允许 SemVer 兼容更新指定版本。新的版本允许更新的条件是，不修改最左边的非零数字(无论<code>major,minor,patch</code>)。在这种情况下，如果我们执行了<code>cargo update -p time</code>，Cargo 应该更新我们的<code>0.1.13</code>版本(如果是最新的<code>0.1.z</code>发布)，但不会更新为<code>0.2.0</code>。相反,我们若将版本字符串指定为<code>^1.0</code>，Cargo 应更新至<code>1.1</code>，如果是最新的<code>1.y</code>发布，但不是<code>2.0</code>版本。<code>0.0.x</code>并不与任何其他版本兼容.</p>
+<p><strong>跳脱条件</strong>: 允许 SemVer 兼容更新指定版本。新的版本允许更新的条件是，不修改最左边的非零数字(无论<code>major，minor，patch</code>)。在这种情况下，如果我们执行了<code>cargo update -p time</code>，Cargo 应该更新我们的<code>0.1.13</code>版本(如果是最新的<code>0.1.z</code>发布)，但不会更新为<code>0.2.0</code>。相反，我们若将版本字符串指定为<code>^1.0</code>，Cargo 应更新至<code>1.1</code>，如果是最新的<code>1.y</code>发布，但不是<code>2.0</code>版本。<code>0.0.x</code>并不与任何其他版本兼容.</p>
 <p>以下是一些跳脱条件的例子以及它们允许的版本:</p>
 <pre><code class="language-notrust">^1.2.3 := &gt;=1.2.3 &lt;2.0.0
 ^1.2 := &gt;=1.2.0 &lt;2.0.0
@@ -177,17 +177,17 @@ time = &quot;0.1.12&quot;
 ^0.0 := &gt;=0.0.0 &lt;0.1.0
 ^0 := &gt;=0.0.0 &lt;1.0.0
 </code></pre>
-<p>此兼容性约定与 SemVer ，在处理 1.0.0 之前的版本方面有所不同。虽然 SemVer 说在 1.0.0 之前没有兼容性，但 Cargo 认为<code>0.x.y</code>是兼容<code>0.x.z</code>,这里<code>y ≥ z</code>和<code>x &gt; 0</code>.</p>
+<p>此兼容性约定与 SemVer ，在处理 1.0.0 之前的版本方面有所不同。虽然 SemVer 说在 1.0.0 之前没有兼容性，但 Cargo 认为<code>0.x.y</code>是兼容<code>0.x.z</code>，这里<code>y ≥ z</code>和<code>x &gt; 0</code>.</p>
 <a class="header" href="#tilde-条件" id="tilde-条件"><h3>Tilde 条件</h3></a>
-<p><strong>Tilde 条件</strong>指定具有更新最小版本的一定能力。如果指定 major 版本,minor 版本和 patch 程序版本，或仅指定 major 版本和 minor 版本,则仅允许 patch 程序级别更改。如果仅指定 major 版本,则允许进行 minor 和 patch 级别更改.</p>
+<p><strong>Tilde 条件</strong>指定具有更新最小版本的一定能力。如果指定 major 版本，minor 版本和 patch 程序版本，或仅指定 major 版本和 minor 版本，则仅允许 patch 程序级别更改。如果仅指定 major 版本，则允许进行 minor 和 patch 级别更改.</p>
 <p><code>~1.2.3</code>是 Tilde 条件的一个例子.</p>
 <pre><code class="language-notrust">~1.2.3 := &gt;=1.2.3 &lt;1.3.0
 ~1.2 := &gt;=1.2.0 &lt;1.3.0
 ~1 := &gt;=1.0.0 &lt;2.0.0
 </code></pre>
-<a class="header" href="#a通配符要求" id="a通配符要求"><h3>通配符要求</h3></a>
+<a class="header" href="#通配符要求" id="通配符要求"><h3>通配符要求</h3></a>
 <p><strong>通配符条件</strong>允许任何通配符所在的版本.</p>
-<p><code>*</code>,<code>1.*</code>和<code>1.2.*</code>是通配符条件的示例.</p>
+<p><code>*</code>，<code>1.*</code>和<code>1.2.*</code>是通配符条件的示例.</p>
 <pre><code class="language-notrust">* := &gt;=0.0.0
 1.* := &gt;=1.0.0 &lt;2.0.0
 1.2.* := &gt;=1.2.0 &lt;1.3.0
@@ -200,24 +200,24 @@ time = &quot;0.1.12&quot;
 &lt; 2
 = 1.2.3
 </code></pre>
-<a class="header" href="#a多版本条件" id="a多版本条件"><h3>多版本条件</h3></a>
-<p>多个版本，要求用逗号分隔,例如<code>&gt;= 1.2, &lt; 1.5</code>.</p>
-<a class="header" href="#a依赖指定来自-git-存储库" id="a依赖指定来自-git-存储库"><h3>依赖指定，来自 <code>git</code> 存储库</h3></a>
+<a class="header" href="#多版本条件" id="多版本条件"><h3>多版本条件</h3></a>
+<p>多个版本，要求用逗号分隔，例如<code>&gt;= 1.2， &lt; 1.5</code>.</p>
+<a class="header" href="#依赖指定来自-git-存储库" id="依赖指定来自-git-存储库"><h3>依赖指定，来自 <code>git</code> 存储库</h3></a>
 <p>依赖于位于<code>git</code>存储库的库，您需要指定的最小信息，为一个<code>git</code>字段，其是存储库的<code>github</code>位置:</p>
 <pre><code class="language-toml">[dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand&quot; }
 </code></pre>
-<p>Cargo 将取得<code>git</code>，然后在这个位置找到一个存储库的请求箱子的<code>Cargo.toml</code>。方式是对<code>git</code>存储库里面的任何地方(不一定在根目录) - 例如,指定工作区中的成员包名称，和设置<code>git</code>到包含工作区的存储库).</p>
-<p>由于我们尚未指定任何其他信息，因此 Cargo 假定我们打算使用最新的提交<code>master</code>分支，来构建我们的包。你可以将<code>git</code>字段和<code>rev</code>,<code>tag</code>, 还有<code>branch</code>，这些用于指定其他内容的字段组合起来。这是一个指定您希望在名为<code>next</code>分支上，使用最新提交的示例:</p>
+<p>Cargo 将取得<code>git</code>，然后在这个位置找到一个存储库的请求箱子的<code>Cargo.toml</code>。方式是对<code>git</code>存储库里面的任何地方(不一定在根目录) - 例如，指定工作区中的成员包名称，和设置<code>git</code>到包含工作区的存储库).</p>
+<p>由于我们尚未指定任何其他信息，因此 Cargo 假定我们打算使用最新的提交<code>master</code>分支，来构建我们的包。你可以将<code>git</code>字段和<code>rev</code>，<code>tag</code>， 还有<code>branch</code>，这些用于指定其他内容的字段组合起来。这是一个指定您希望在名为<code>next</code>分支上，使用最新提交的示例:</p>
 <pre><code class="language-toml">[dependencies]
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand&quot;, branch = &quot;next&quot; }
 </code></pre>
-<a class="header" href="#a路径依赖指定" id="a路径依赖指定"><h3>路径，依赖指定</h3></a>
-<p>随着时间的推移,我们来自<a href="../guide/index.zh.html">指南</a>的<code>hello_world</code>示例已大幅增长! 它已经到了我们可能想分出一个单独的箱子供其他人使用的地步。为此,Cargo 支持<strong>路径依赖</strong>通常是位于一个存储库中的子箱。让我们开始在<code>hello_world</code>包的内部制作一个新的箱子:</p>
+<a class="header" href="#路径依赖指定" id="路径依赖指定"><h3>路径，依赖指定</h3></a>
+<p>随着时间的推移，我们来自<a href="../guide/index.zh.html">指南</a>的<code>hello_world</code>示例已大幅增长! 它已经到了我们可能想分出一个单独的箱子供其他人使用的地步。为此，Cargo 支持<strong>路径依赖</strong>通常是位于一个存储库中的子箱。让我们开始在<code>hello_world</code>包的内部制作一个新的箱子:</p>
 <pre><code class="language-console"># inside of hello_world/
 $ cargo new hello_utils
 </code></pre>
-<p>这将创建一个新文件夹<code>hello_utils</code>，里面有一个<code>Cargo.toml</code>和<code>src</code>文件夹已准备好进行配置。为了告诉 Cargo,请打开<code>hello_world/Cargo.toml</code>，并添加你的<code>hello_utils</code>依赖:</p>
+<p>这将创建一个新文件夹<code>hello_utils</code>，里面有一个<code>Cargo.toml</code>和<code>src</code>文件夹已准备好进行配置。为了告诉 Cargo，请打开<code>hello_world/Cargo.toml</code>，并添加你的<code>hello_utils</code>依赖:</p>
 <pre><code class="language-toml">[dependencies]
 hello_utils = { path = &quot;hello_utils&quot; }
 </code></pre>
@@ -226,18 +226,18 @@ hello_utils = { path = &quot;hello_utils&quot; }
 <pre><code class="language-toml">[dependencies]
 hello_utils = { path = &quot;hello_utils&quot;, version = &quot;0.1.0&quot; }
 </code></pre>
-<a class="header" href="#a依赖覆盖" id="a依赖覆盖"><h3>依赖覆盖</h3></a>
-<p>Cargo 中有许多方法支持，覆盖依赖关系以及控制依赖关系图。但是，这些选项通常仅在工作区级别可用，并且不通过依赖项传播。换句话说，”应用程序”具有覆盖依赖关系的能力,但”库”却没有。</p>
-<p>许多场景，会产生想，覆盖依赖性或以其他方式改变某些依赖关系的愿望。然而,他们中的大多数都可以归结为，将箱子发布到 crates.io 之前使用箱子(覆盖依赖)的能力。例如:</p>
+<a class="header" href="#依赖覆盖" id="依赖覆盖"><h3>依赖覆盖</h3></a>
+<p>Cargo 中有许多方法支持，覆盖依赖关系以及控制依赖关系图。但是，这些选项通常仅在工作区级别可用，并且不通过依赖项传播。换句话说，”应用程序”具有覆盖依赖关系的能力，但”库”却没有。</p>
+<p>许多场景，会产生想，覆盖依赖性或以其他方式改变某些依赖关系的愿望。然而，他们中的大多数都可以归结为，将箱子发布到 crates.io 之前使用箱子(覆盖依赖)的能力。例如:</p>
 <ul>
 <li>您编写的 <code>crate</code> ，也用于您编写的更大应用程序中，并且您希望测试在更大应用程序内，<code>crate</code>的错误修复情况。</li>
 <li>不是你编写的上游包，现在其 git 存储库的主分支上，有一个新功能或错误修复，您要测试它。</li>
-<li>您即将发布新版本的 major 版本，但您希望在整个软件包中进行集成测试,以确保新的主要版本能够正常运行.</li>
+<li>您即将发布新版本的 major 版本，但您希望在整个软件包中进行集成测试，以确保新的主要版本能够正常运行.</li>
 <li>您已经为上游的软件包提交了一个针对您找到的错误的修复程序，但是您希望立即让您的应用程序依赖，此程序包的固定修复版本，以避免错误修复程序被拒绝合并.</li>
 </ul>
-<p>这些场景目前都是通过<a href="./manifest.html#the-patch-section"><code>[patch]</code> 清单部分 </a>解决的，从历史上看,其中一些方案是<a href="./manifest.html#the-replace-section">该<code>[replace]</code>部分</a>解决的，但我们在这里会记录<code>[patch]</code>解决的部分。</p>
-<a class="header" href="#a测试一个错误修复" id="a测试一个错误修复"><h3>测试一个错误修复</h3></a>
-<p>假设你正在使用<a href="https://crates.io/crates/uuid"><code>uuid</code> crate</a>，但是当你正在研究它时,你会发现一个错误.但是,你很有进取心,所以你决定尝试修复这个 bug! 最初你的清单看起来像:</p>
+<p>这些场景目前都是通过<a href="./manifest.html#the-patch-section"><code>[patch]</code> 清单部分 </a>解决的，从历史上看，其中一些方案是<a href="./manifest.html#the-replace-section">该<code>[replace]</code>部分</a>解决的，但我们在这里会记录<code>[patch]</code>解决的部分。</p>
+<a class="header" href="#测试一个错误修复" id="测试一个错误修复"><h3>测试一个错误修复</h3></a>
+<p>假设你正在使用<a href="https://crates.io/crates/uuid"><code>uuid</code> crate</a>，但是当你正在研究它时，你会发现一个错误.但是，你很有进取心，所以你决定尝试修复这个 bug! 最初你的清单看起来像:</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-library&quot;
 version = &quot;0.1.0&quot;
@@ -246,24 +246,24 @@ authors = [&quot;...&quot;]
 [dependencies]
 uuid = &quot;1.0&quot;
 </code></pre>
-<p>我们要做的第一件事是克隆<a href="https://github.com/rust-lang-nursery/uuid"><code>uuid</code>存储库</a>,到本地:</p>
+<p>我们要做的第一件事是克隆<a href="https://github.com/rust-lang-nursery/uuid"><code>uuid</code>存储库</a>，到本地:</p>
 <pre><code class="language-console">$ git clone https://github.com/rust-lang-nursery/uuid
 </code></pre>
 <p>接下来我们将编辑<code>my-library</code>-Cargo.toml，为:</p>
 <pre><code class="language-toml">[patch.crates-io]
 uuid = { path = &quot;../path/to/uuid&quot; }
 </code></pre>
-<p>在这里,我们宣布我们是*修补(patch)*来源<code>crates-io</code>，其有一个新的依赖，这将有效地添加本地(签出 checkout)版本<code>uuid</code>到 crates.io 注册表，指向本地包。</p>
+<p>在这里，我们宣布我们是*修补(patch)*来源<code>crates-io</code>，其有一个新的依赖，这将有效地添加本地(签出 checkout)版本<code>uuid</code>到 crates.io 注册表，指向本地包。</p>
 <p>接下来我们需要确保我们的锁(lock)文件已更新为，使用此新版本<code>uuid</code>，所以我们的包使用本地签出的副本，而不是 crates.io 中的副本。<code>[patch]</code>工作方式是它将从<code>../path/to/uuid</code>加载依赖，然后每当 crates.io 查询<code>uuid</code>的版本时，它<em>也</em>会返回本地版本.</p>
-<p>这意味着本地签出的版本号很重要，会影响是否使用该补丁。我们的清单宣布<code>uuid = &quot;1.0&quot;</code>，这意味着我们只会解析<code>&gt;= 1.0.0, &lt; 2.0.0</code>，和 Cargo 的贪婪解析算法，也意味着我们将解析到该范围内的最大版本。通常情况下这并不重要，因为 git 存储库的版本已经更大，或与 crates.io 上发布的最大版本相匹配，但重要的是要记住这一点!</p>
-<p>无论如何,通常您现在需要做的就是:</p>
+<p>这意味着本地签出的版本号很重要，会影响是否使用该补丁。我们的清单宣布<code>uuid = &quot;1.0&quot;</code>，这意味着我们只会解析<code>&gt;= 1.0.0， &lt; 2.0.0</code>，和 Cargo 的贪婪解析算法，也意味着我们将解析到该范围内的最大版本。通常情况下这并不重要，因为 git 存储库的版本已经更大，或与 crates.io 上发布的最大版本相匹配，但重要的是要记住这一点!</p>
+<p>无论如何，通常您现在需要做的就是:</p>
 <pre><code class="language-console">$ cargo build
    Compiling uuid v1.0.0 (.../uuid)
    Compiling my-library v0.1.0 (.../my-library)
     Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
 </code></pre>
 <p>就是这样! 您现在正在使用本地版本<code>uuid</code>构建(注意构建输出中括号中的路径)。如果您没有看到构建本地路径版本，那么您可能需要运行<code>cargo update -p uuid --precise $version</code>，这里<code>$version</code>是本地签出版本的<code>uuid</code>副本。</p>
-<p>一旦你修复了你最初发现的错误，你要做的下一件事就是将其作为拉取请求提交给<code>uuid</code>箱子本身。一旦你完成了这个,你也可以更新下<code>[patch]</code>部分。<code>[patch]</code>里面的内容列表就像是<code>[dependencies]</code>部分，所以一旦你的拉动请求合并，你就可以改变你的<code>path</code>依赖:</p>
+<p>一旦你修复了你最初发现的错误，你要做的下一件事就是将其作为拉取请求提交给<code>uuid</code>箱子本身。一旦你完成了这个，你也可以更新下<code>[patch]</code>部分。<code>[patch]</code>里面的内容列表就像是<code>[dependencies]</code>部分，所以一旦你的拉动请求合并，你就可以改变你的<code>path</code>依赖:</p>
 <pre><code class="language-toml">[patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 </code></pre>
@@ -272,7 +272,7 @@ uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 <p>与 一个未发布的次要版本，一起工作</p>
 </blockquote>
 <p>现在让我们稍微改变一下，从错误修复，变成要添加功能。在努力<code>my-library</code>的同时，你发现需要<code>uuid</code>箱的一个全新的功能。而您已实现<code>uuid</code>此功能，并在<code>[patch]</code>上面进行本地测试，并提交了拉取请求。让我们来看看在实际发布之前，你如何继续使用和测试它。</p>
-<p>我们也说当前版本的<code>uuid</code>，在 crates.io 上是<code>1.0.0</code>版本，但从提交那时起,git 存储库的主分支已更新为<code>1.0.1</code>。此分支包含您之前提交的新功能。要使用此存储库,我们将编辑我们的<code>Cargo.toml</code>，看起来像</p>
+<p>我们也说当前版本的<code>uuid</code>，在 crates.io 上是<code>1.0.0</code>版本，但从提交那时起，git 存储库的主分支已更新为<code>1.0.1</code>。此分支包含您之前提交的新功能。要使用此存储库，我们将编辑我们的<code>Cargo.toml</code>，看起来像</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-library&quot;
 version = &quot;0.1.0&quot;
@@ -284,9 +284,9 @@ uuid = &quot;1.0.1&quot;
 [patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 </code></pre>
-<p>注意我们对本地<code>uuid</code>的依赖已更新为<code>1.0.1</code>，因为这是我们在箱子发布后实际需要的东西。但是,这个版本在 crates.io 上不存在,所以我们提供给它清单的<code>[patch]</code>部分.</p>
-<p>现在,当我们的库被构建时,它将<code>uuid</code>从 git 存储库取出，并解析到存储库中的 1.0.1 ，而不是尝试从 crates.io 下载版本。一旦 1.0.1 发布在 crates.io 上，那<code>[patch]</code>部分就可以删除了。</p>
-<p>值得注意的是，<code>[patch]</code>是<em>连带关系</em>。假设您在更大的包中使用<code>my-library</code>,例如:</p>
+<p>注意我们对本地<code>uuid</code>的依赖已更新为<code>1.0.1</code>，因为这是我们在箱子发布后实际需要的东西。但是，这个版本在 crates.io 上不存在，所以我们提供给它清单的<code>[patch]</code>部分.</p>
+<p>现在，当我们的库被构建时，它将<code>uuid</code>从 git 存储库取出，并解析到存储库中的 1.0.1 ，而不是尝试从 crates.io 下载版本。一旦 1.0.1 发布在 crates.io 上，那<code>[patch]</code>部分就可以删除了。</p>
+<p>值得注意的是，<code>[patch]</code>是<em>连带关系</em>。假设您在更大的包中使用<code>my-library</code>，例如:</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-binary&quot;
 version = &quot;0.1.0&quot;
@@ -299,7 +299,7 @@ uuid = &quot;1.0&quot;
 [patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid' }
 </code></pre>
-<p>记住这<code>[patch]</code>是<em>连带关系</em>，但只能在<em>顶层</em>，所以我们的<code>my-library</code>消费者不得不重写<code>[patch]</code>部分(如有必要的话)。不过,在这里，新的<code>uuid</code>箱子会适用对<code>uuid</code>的依赖和<code>my-library -&gt; uuid</code>的依赖，两个依赖<strong>都</strong>指定了。该<code>uuid</code>箱 将被解析为整个 crate 关系图 的 1.0.1 版本，并且它是将从 git 存储库中提取。</p>
+<p>记住这<code>[patch]</code>是<em>连带关系</em>，但只能在<em>顶层</em>，所以我们的<code>my-library</code>消费者不得不重写<code>[patch]</code>部分(如有必要的话)。不过，在这里，新的<code>uuid</code>箱子会适用对<code>uuid</code>的依赖和<code>my-library -&gt; uuid</code>的依赖，两个依赖<strong>都</strong>指定了。该<code>uuid</code>箱 将被解析为整个 crate 关系图 的 1.0.1 版本，并且它是将从 git 存储库中提取。</p>
 <a class="header" href="#overriding-repository-url" id="overriding-repository-url"><h4>Overriding repository URL</h4></a>
 <blockquote>
 <p>覆盖 注册表 URL</p>
@@ -320,7 +320,7 @@ uuid = &quot;2.0&quot;
 [patch.crates-io]
 uuid = { git = &quot;https://github.com/rust-lang-nursery/uuid&quot;, branch = &quot;2.0.0&quot; }
 </code></pre>
-<p>就是这样!与前面的示例一样,2.0.0 版本实际上，并不存在于 crates.io 上,但我们仍然可以通过<code>[patch]</code>部分使用。作为一个思考练习，让我们再看看<code>my-binary</code>(被使用)的再次表现:</p>
+<p>就是这样!与前面的示例一样，2.0.0 版本实际上，并不存在于 crates.io 上，但我们仍然可以通过<code>[patch]</code>部分使用。作为一个思考练习，让我们再看看<code>my-binary</code>(被使用)的再次表现:</p>
 <pre><code class="language-toml">[package]
 name = &quot;my-binary&quot;
 version = &quot;0.1.0&quot;
@@ -333,7 +333,7 @@ uuid = &quot;1.0&quot;
 [patch.crates-io]
 uuid = { git = 'https://github.com/rust-lang-nursery/uuid', branch = '2.0.0' }
 </code></pre>
-<p>请注意,这实际上将解析为两个版本的<code>uuid</code>箱。该<code>my-binary</code>箱子将继续使用 1.x.y 系列的<code>uuid</code>箱子，但是<code>my-library</code>箱 会使用 2.0.0 版本<code>uuid</code>。这将允许您通过依赖关系图逐步推出对包的更改,而无需一次性更新所有内容。</p>
+<p>请注意，这实际上将解析为两个版本的<code>uuid</code>箱。该<code>my-binary</code>箱子将继续使用 1.x.y 系列的<code>uuid</code>箱子，但是<code>my-library</code>箱 会使用 2.0.0 版本<code>uuid</code>。这将允许您通过依赖关系图逐步推出对包的更改，而无需一次性更新所有内容。</p>
 <a class="header" href="#overriding-with-local-dependencies" id="overriding-with-local-dependencies"><h3>Overriding with local dependencies</h3></a>
 <blockquote>
 <p>覆盖 本地依赖项</p>
@@ -342,14 +342,14 @@ uuid = { git = 'https://github.com/rust-lang-nursery/uuid', branch = '2.0.0' }
 <p>路径覆盖是通过<code>.cargo/config</code>指定，而不是<code>Cargo.toml</code>，你可以寻找<a href="./config.zh.html">有关此配置的更多文档</a>。在<code>.cargo/config</code>内，你要指定的是一个名为<code>paths</code>字段:</p>
 <pre><code class="language-toml">paths = [&quot;/path/to/uuid&quot;]
 </code></pre>
-<p>该数组应填充包含<code>Cargo.toml</code>的目录。在这种情况下,我们只是添加<code>uuid</code>，所以它将是唯一一个被覆盖的。此路径可以是包含该路径的绝对路径或相对<code>.cargo</code>文件夹的路径.</p>
+<p>该数组应填充包含<code>Cargo.toml</code>的目录。在这种情况下，我们只是添加<code>uuid</code>，所以它将是唯一一个被覆盖的。此路径可以是包含该路径的绝对路径或相对<code>.cargo</code>文件夹的路径.</p>
 <p>路径覆盖，比<code>[patch]</code>部分的限制更严格，但是，路径覆盖不能改变依赖图的结构。而当使用路径替换时，前一组依赖项必须完全匹配新的<code>Cargo.toml</code>规格。如此，就意味着路径覆盖不能用于向箱添加依赖项的测试，而换成<code>[patch]</code>在该种情况下使用。因此，路径覆盖的使用，通常会与快速错误修复分隔开来，而不是大更新分开。</p>
 <p>注意:使用本地配置覆盖路径，仅适用于已发布到<a href="https://crates.io/">crates.io</a>的包。您无法使用此功能告诉 Cargo 如何查找本地未发布的箱。</p>
 <a class="header" href="#platform-specific-dependencies" id="platform-specific-dependencies"><h3>Platform specific dependencies</h3></a>
 <blockquote>
 <p>平台决定依赖</p>
 </blockquote>
-<p>特定于平台的依赖项采用相同的格式,但在<code>target</code>下列出。像正常 Rust 一样的<code>#[cfg]</code>语法，将用于定义这些部分:</p>
+<p>特定于平台的依赖项采用相同的格式，但在<code>target</code>下列出。像正常 Rust 一样的<code>#[cfg]</code>语法，将用于定义这些部分:</p>
 <pre><code class="language-toml">[target.'cfg(windows)'.dependencies]
 winhttp = &quot;0.4.0&quot;
 
@@ -362,7 +362,7 @@ native = { path = &quot;native/i686&quot; }
 [target.'cfg(target_arch = &quot;x86_64&quot;)'.dependencies]
 native = { path = &quot;native/x86_64&quot; }
 </code></pre>
-<p>与 Rust 一样，这里的语法支持<code>not</code>,<code>any</code>,和<code>all</code>运算符组合各种 cfg 名称/值对。请注意<code>cfg</code>语法仅在 Cargo 0.9.0(Rust 1.8.0)之后可用.</p>
+<p>与 Rust 一样，这里的语法支持<code>not</code>，<code>any</code>，和<code>all</code>运算符组合各种 cfg 名称/值对。请注意<code>cfg</code>语法仅在 Cargo 0.9.0(Rust 1.8.0)之后可用.</p>
 <p>除了<code>#[cfg]</code>语法，Cargo 还支持列出依赖关系适用的完整目标:</p>
 <pre><code class="language-toml">[target.x86_64-pc-windows-gnu.dependencies]
 winhttp = &quot;0.4.0&quot;
@@ -390,7 +390,7 @@ native = { path = &quot;native/x86_64&quot; }
 <pre><code class="language-toml">[dev-dependencies]
 tempdir = &quot;0.3&quot;
 </code></pre>
-<p>编译用于构建的包时，不会使用 Dev 依赖,但用于编译测试,示例和基准。</p>
+<p>编译用于构建的包时，不会使用 Dev 依赖，但用于编译测试，示例和基准。</p>
 <p>这些依赖关系是<em>不会</em>传播到依赖于此包的其他包.</p>
 <p>您还可以让<code>dev-dependencies</code>具有特定目标的开发依赖项，而不是<code>dependencies</code>标题。例如:</p>
 <pre><code class="language-toml">[target.'cfg(unix)'.dev-dependencies]
@@ -412,11 +412,11 @@ cc = &quot;1.0.3&quot;
 <p>如果您依赖的包提供条件特性，您可以指定使用哪个:</p>
 <pre><code class="language-toml">[dependencies.awesome]
 version = &quot;1.3.5&quot;
-default-features = false # 不会包括默认特性, 和 任君选
+default-features = false # 不会包括默认特性， 和 任君选
                          # 单特性
 features = [&quot;secure-password&quot;, &quot;civet&quot;]
 </code></pre>
-<p>有关 features 的更多信息,请参阅<a href="./manifest.zh.html#the-features-section">清单文档</a>.</p>
+<p>有关 features 的更多信息，请参阅<a href="./manifest.zh.html#the-features-section">清单文档</a>.</p>
 <a class="header" href="#renaming-dependencies-in-cargotoml" id="renaming-dependencies-in-cargotoml"><h3>Renaming dependencies in <code>Cargo.toml</code></h3></a>
 <blockquote>
 <p>在<code>Cargo.toml</code>中的重命名依赖项</p>
@@ -437,7 +437,7 @@ foo = &quot;0.1&quot;
 bar = { git = &quot;https://github.com/example/project&quot;, package = &quot;foo&quot; }
 baz = { version = &quot;0.1&quot;, registry = &quot;custom&quot;, package = &quot;foo&quot; }
 </code></pre>
-<p>在此示例中,Rust 代码中现在提供了三个包:</p>
+<p>在此示例中，Rust 代码中现在提供了三个包:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
 #fn main() {
@@ -446,12 +446,12 @@ extern crate bar; // git repository
 extern crate baz; // registry `custom`
 #}</code></pre></pre>
 <p>所有这三个箱的包名称在他们自己<code>Cargo.toml</code>，都是<code>foo</code>，所以我们明确地告知 Cargo ，使用的是我们想要的<code>package</code>字段(如 package = “foo”包名，即我们在本地调用其他东西)。如果没有指定<code>package</code>，则默认为所请求的依赖项的名称。</p>
-<p>请注意,如果您有一个可选的(optional)依赖项,例如:</p>
+<p>请注意，如果您有一个可选的(optional)依赖项，例如:</p>
 <pre><code class="language-toml">[dependencies]
 foo = { version = &quot;0.1&quot;, package = 'bar', optional = true }
 </code></pre>
-<p>你依赖于一个<code>bar</code>箱子，其来自 crates.io，但你箱子有一个<code>foo</code>特性，取代了一个<code>bar</code>特性。也就是说,在重命名时,特性的名称拿掉了依赖项的名称,而不是包名称。</p>
-<p>启用传递依赖项的工作方式类似,例如我们可以将以下内容，添加到上面的清单中:</p>
+<p>你依赖于一个<code>bar</code>箱子，其来自 crates.io，但你箱子有一个<code>foo</code>特性，取代了一个<code>bar</code>特性。也就是说，在重命名时，特性的名称拿掉了依赖项的名称，而不是包名称。</p>
+<p>启用传递依赖项的工作方式类似，例如我们可以将以下内容，添加到上面的清单中:</p>
 <pre><code class="language-toml">[features]
 log-debug = ['foo/log-debug'] # 使用 'bar/log-debug' 就会出现一个错误!
 </code></pre>

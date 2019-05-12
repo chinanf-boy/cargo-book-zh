@@ -158,25 +158,25 @@
             <div id="content" class="content">
                 <main>
                     <a class="header" href="#environment-variables" id="environment-variables"><h2>Environment Variables</h2></a>
-<p>Cargo 设置,并读取许多环境变量,代码可以检测或覆盖这些环境变量。以下是 Cargo 与它们交互时，组织的变量列表:</p>
+<p>Cargo 设置，并读取许多环境变量，代码可以检测或覆盖这些环境变量。以下是 Cargo 与它们交互时，组织的变量列表:</p>
 <a class="header" href="#environment-variables-cargo-reads" id="environment-variables-cargo-reads"><h3>Environment variables Cargo reads</h3></a>
 <p>Cargo 会读取的环境变量</p>
 <p>您可以重写这些环境变量来更改 Cargo 在系统中的行为:</p>
 <table><thead><tr><th> 名(ENV)                  </th><th> 曰                                                                                                                                                        </th></tr></thead><tbody>
-<tr><td> <code>CARGO_HOME</code>             </td><td> Cargo 在本地缓存注册表索引和箱子的 git 版本。默认情况下,这些存储在<code>$HOME/.cargo</code>，但是这个变量重写了这个目录的位置。一旦箱被缓存,它就不会被清除命令删除。 </td></tr>
-<tr><td> <code>CARGO_TARGET_DIR</code>       </td><td> 相对于当前工作目录,放置所有生成的工件的位置.                                                                                                              </td></tr>
+<tr><td> <code>CARGO_HOME</code>             </td><td> Cargo 在本地缓存注册表索引和箱子的 git 版本。默认情况下，这些存储在<code>$HOME/.cargo</code>，但是这个变量重写了这个目录的位置。一旦箱被缓存，它就不会被清除命令删除。 </td></tr>
+<tr><td> <code>CARGO_TARGET_DIR</code>       </td><td> 相对于当前工作目录，放置所有生成的工件的位置.                                                                                                              </td></tr>
 <tr><td> <code>RUSTC</code>                  </td><td> Cargo 不运行<code>rustc</code>，而执行指定的编译器。                                                                                                                 </td></tr>
 <tr><td> <code>RUSTC_WRAPPER</code>          </td><td> Cargo 将执行这个指定的包装器，而不是简单地运行<code>rustc</code>。将 rustc 调用 作为其命令行参数传递，第一个参数是 rustc.                                            </td></tr>
 <tr><td> <code>RUSTDOC</code>                </td><td> Cargo 将执行此指定的<code>rustdoc</code>实例，而不是<code>rustdoc</code>.                                                                                                       </td></tr>
 <tr><td> <code>RUSTDOCFLAGS</code>           </td><td> 空格分隔的自定义标志列表，用来传递给 Cargo 执行的所有<code>rustdoc</code>调用 。与<code>cargo rustdoc</code>不同，这对于传递一个参数给 <em>全部的</em> <code>rustdoc</code>实例是有用的。         </td></tr>
 <tr><td> <code>RUSTFLAGS</code>              </td><td> 自定义参数的空格分隔列表，用来传递给 Cargo 执行的所有编译器调用。与<code>cargo rustc</code>不同，这对于传递一个标志 <em>全部的</em> 编译实例是有用的。                      </td></tr>
-<tr><td> <code>CARGO_INCREMENTAL</code>      </td><td> 如果设置为 1,则 Cargo 将强制在当前编译中启用增量编译,而当设置为 0,则强制禁用增量编译。如果这个 ENV 不存在,否则将使用 Cargo 默认值。                       </td></tr>
-<tr><td> <code>CARGO_CACHE_RUSTC_INFO</code> </td><td> 如果这个设置为 0,那么 Cargo 将不尝试缓存编译器版本信息.                                                                                                   </td></tr>
+<tr><td> <code>CARGO_INCREMENTAL</code>      </td><td> 如果设置为 1，则 Cargo 将强制在当前编译中启用增量编译，而当设置为 0，则强制禁用增量编译。如果这个 ENV 不存在，否则将使用 Cargo 默认值。                       </td></tr>
+<tr><td> <code>CARGO_CACHE_RUSTC_INFO</code> </td><td> 如果这个设置为 0，那么 Cargo 将不尝试缓存编译器版本信息.                                                                                                   </td></tr>
 </tbody></table>
-<p>注意,Cargo 也会在<code>.cargo/config</code>配置中读取环境变量，如<a href="./config.zh.html#environment-variables">那份文件</a></p>
+<p>注意，Cargo 也会在<code>.cargo/config</code>配置中读取环境变量，如<a href="./config.zh.html#environment-variables">那份文件</a></p>
 <a class="header" href="#environment-variables-cargo-sets-for-crates" id="environment-variables-cargo-sets-for-crates"><h3>Environment variables Cargo sets for crates</h3></a>
 <p>Cargo 为 crates 设置的环境变量</p>
-<p>Cargo 在编译时，会将这些环境变量暴露在箱子中。请注意,这也适用于测试二进制文件。要在 RIST 程序中获得这些变量中的任何一个变量的值,请执行以下操作:</p>
+<p>Cargo 在编译时，会将这些环境变量暴露在箱子中。请注意，这也适用于测试二进制文件。要在 RIST 程序中获得这些变量中的任何一个变量的值，请执行以下操作:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
 #fn main() {
@@ -196,11 +196,11 @@ let version = env!(&quot;CARGO_PKG_VERSION&quot;);
 <tr><td> <code>CARGO_PKG_DESCRIPTION</code>   </td><td> 从包的清单中描述.                                                                      </td></tr>
 <tr><td> <code>CARGO_PKG_HOMEPAGE</code>      </td><td> 从包的清单中的主页.                                                                    </td></tr>
 <tr><td> <code>CARGO_PKG_REPOSITORY</code>    </td><td> 从包的清单中存储库.                                                                    </td></tr>
-<tr><td> <code>OUT_DIR</code>                 </td><td> 如果包具有构建脚本,则将其设置为，构建脚本应该在其中放置其输出的文件夹。更多信息见下文. </td></tr>
+<tr><td> <code>OUT_DIR</code>                 </td><td> 如果包具有构建脚本，则将其设置为，构建脚本应该在其中放置其输出的文件夹。更多信息见下文. </td></tr>
 </tbody></table>
 <a class="header" href="#environment-variables-cargo-sets-for-build-scripts" id="environment-variables-cargo-sets-for-build-scripts"><h3>Environment variables Cargo sets for build scripts</h3></a>
 <p>Cargo 为构建脚本设置的环境变量</p>
-<p>当运行构建脚本时,Cargo 设置多个环境变量.因为编译生成脚本时还没有设置这些变量,所以上面的示例使用<code>env!</code>无法工作,而是在运行构建脚本时需要检索值:</p>
+<p>当运行构建脚本时，Cargo 设置多个环境变量.因为编译生成脚本时还没有设置这些变量，所以上面的示例使用<code>env!</code>无法工作，而是在运行构建脚本时需要检索值:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
 #fn main() {
@@ -210,23 +210,23 @@ let out_dir = env::var(&quot;OUT_DIR&quot;).unwrap();
 <p><code>out_dir</code>现在将包含的价值<code>OUT_DIR</code>.</p>
 <table><thead><tr><th> 名                     </th><th> 曰                                                                                                                                                                                                                                                                                                                 </th></tr></thead><tbody>
 <tr><td> <code>CARGO</code>                </td><td> 执行构建的二进制<code>cargo</code>路径.                                                                                                                                                                                                                                                                                       </td></tr>
-<tr><td> <code>CARGO_MANIFEST_DIR</code>   </td><td> 包含正在构建的包的清单的目录(包含构建脚本的包)。还要注意,这是生成脚本启动时，当前工作目录的值.                                                                                                                                                                                                                     </td></tr>
+<tr><td> <code>CARGO_MANIFEST_DIR</code>   </td><td> 包含正在构建的包的清单的目录(包含构建脚本的包)。还要注意，这是生成脚本启动时，当前工作目录的值.                                                                                                                                                                                                                     </td></tr>
 <tr><td> <code>CARGO_MANIFEST_LINKS</code> </td><td> 清单<code>links</code>的值.                                                                                                                                                                                                                                                                                                   </td></tr>
 <tr><td> <code>CARGO_FEATURE_&lt;name&gt;</code> </td><td> 对于正在构建的包的每个激活特性，此环境变量会让<code>&lt;name&gt;</code>功能名称存在，名称的<code>-</code>会转换成<code>_</code>.                                                                                                                                                                                                                          </td></tr>
-<tr><td> <code>CARGO_CFG_&lt;cfg&gt;</code>      </td><td> 对正在构建包的每个<a href="https://doc.rust-lang.org/reference/attributes.md#conditional-compilation">配置选项</a>，此环境变量将包含配置的值,其中<code>&lt;cfg&gt;</code>就是配置的名称，并将<code>-</code>翻译成<code>_</code>. 如果设置了布尔配置,则存在布尔配置,否则不存在。具有多个值的配置被连接到单个变量,该变量用<code>,</code>分隔就好。                                                                                            </td></tr>
+<tr><td> <code>CARGO_CFG_&lt;cfg&gt;</code>      </td><td> 对正在构建包的每个<a href="https://doc.rust-lang.org/reference/attributes.md#conditional-compilation">配置选项</a>，此环境变量将包含配置的值，其中<code>&lt;cfg&gt;</code>就是配置的名称，并将<code>-</code>翻译成<code>_</code>. 如果设置了布尔配置，则存在布尔配置，否则不存在。具有多个值的配置被连接到单个变量，该变量用<code>，</code>分隔就好。                                                                                            </td></tr>
 <tr><td> <code>OUT_DIR</code>              </td><td> 所有输出都应该放在这个文件夹。此文件夹位于正在构建的包的构建目录中，并且对于所讨论的包是唯一的。                                                                                                                                                                                                                   </td></tr>
 <tr><td> <code>TARGET</code>               </td><td> 正在编译的目标三元组。该为这个三元组编译本机代码。关于目标三元组的更多信息在<a href="http://clang.llvm.org/docs/CrossCompilation.md#target-triple">clang 自身文档中</a>.                                                                                                                                                                                                             </td></tr>
 <tr><td> <code>HOST</code>                 </td><td> Rust 编译器的主机三元组.                                                                                                                                                                                                                                                                                           </td></tr>
-<tr><td> <code>NUM_JOBS</code>             </td><td> 指定为顶层并行的并行性。这可以传递一个<code>-j</code>参数到系统(像<code>make</code>). 注意,在解释这个环境变量时应该小心。出于历史目的,仍然提供此功能,但是例如,最新版本的 Cargo 不需要运行<code>make -j</code>，因为它会自动。Cargo 自行实现[JooServer]，并且允许构建脚本继承这些信息，因此与 GNU 兼容的程序将使作业服务器已经具有适当配置的并行性。 </td></tr>
+<tr><td> <code>NUM_JOBS</code>             </td><td> 指定为顶层并行的并行性。这可以传递一个<code>-j</code>参数到系统(像<code>make</code>). 注意，在解释这个环境变量时应该小心。出于历史目的，仍然提供此功能，但是例如，最新版本的 Cargo 不需要运行<code>make -j</code>，因为它会自动。Cargo 自行实现[JooServer]，并且允许构建脚本继承这些信息，因此与 GNU 兼容的程序将使作业服务器已经具有适当配置的并行性。 </td></tr>
 <tr><td> <code>OPT_LEVEL</code> ，<code>DEBUG</code>  </td><td> 为了分析，当前正在构建的相应变量值.                                                                                                                                                                                                                                                                                </td></tr>
 <tr><td> <code>PROFILE</code>              </td><td> 发布版本用<code>release</code>，而<code>debug</code>用于其他构建.                                                                                                                                                                                                                                                                        </td></tr>
-<tr><td> <code>DEP_&lt;name&gt;_&lt;key&gt;</code>     </td><td> 有关此组环境变量的更多信息,请参阅<a href="./build-scripts.zh.html#the-links-manifest-key"><code>links</code></a>.                                                                                                                                                                                                                                                                 </td></tr>
-<tr><td> <code>RUSTC</code> ,<code>RUSTDOC</code>     </td><td> Cargo 已经决定使用的编译器和文档生成器，传递给构建脚本,以便构建脚本也可以使用它.                                                                                                                                                                                                                                   </td></tr>
+<tr><td> <code>DEP_&lt;name&gt;_&lt;key&gt;</code>     </td><td> 有关此组环境变量的更多信息，请参阅<a href="./build-scripts.zh.html#the-links-manifest-key"><code>links</code></a>.                                                                                                                                                                                                                                                                 </td></tr>
+<tr><td> <code>RUSTC</code> ，<code>RUSTDOC</code>     </td><td> Cargo 已经决定使用的编译器和文档生成器，传递给构建脚本，以便构建脚本也可以使用它.                                                                                                                                                                                                                                   </td></tr>
 <tr><td> <code>RUSTC_LINKER</code>         </td><td> 如果指定了，Cargo 为了当前目标，决定使用的链接器(二进制文件)的路径。这个链接器可以通过编辑<code>.cargo/config</code>更改，欲了解更多信息，请参阅有关文档<a href="./config.zh.html">Cargo 配置</a>。                                                                                                                                          </td></tr>
 </tbody></table>
 <a class="header" href="#environment-variables-cargo-sets-for-3rd-party-subcommands" id="environment-variables-cargo-sets-for-3rd-party-subcommands"><h3>Environment variables Cargo sets for 3rd party subcommands</h3></a>
 <p>Cargo 为 第三方子命令设置的环境变量</p>
-<p>Cargo 将这个环境变量公开给第三方子命令(即,名为<code>cargo-foobar</code>放置在<code>$PATH</code>):</p>
+<p>Cargo 将这个环境变量公开给第三方子命令(即，名为<code>cargo-foobar</code>放置在<code>$PATH</code>):</p>
 <ul>
 <li><code>CARGO</code> - 执行构建的二进制<code>cargo</code>路径。</li>
 </ul>

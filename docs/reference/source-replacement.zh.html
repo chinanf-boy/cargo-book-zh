@@ -157,13 +157,13 @@
 
             <div id="content" class="content">
                 <main>
-                    <a class="header" href="#a来源-更换" id="a来源-更换"><h2>来源 更换</h2></a>
+                    <a class="header" href="#来源-更换" id="来源-更换"><h2>来源 更换</h2></a>
 <p>本文档是关于更换 crate 索引(注册表)。您可以阅读有关重写依赖项的信息，它在本文档的<a href="reference/specifying-dependencies.html#overriding-dependencies">重写依赖关系</a>部分。</p>
-<p>Cargo 支持<strong>用另一个来源更换一个来源</strong>的能力，可根据镜像或 vendoring 依赖关系来表达倾向。要配置这些，目前通过<a href="reference/config.html"><code>.cargo/config</code>配置</a>机制完成,像这样:</p>
+<p>Cargo 支持<strong>用另一个来源更换一个来源</strong>的能力，可根据镜像或 vendoring 依赖关系来表达倾向。要配置这些，目前通过<a href="reference/config.html"><code>.cargo/config</code>配置</a>机制完成，像这样:</p>
 <pre><code class="language-toml"># `source` 表下，就是存储有关要更换的来源名称
 [source]
 
-# 在`source` 表格之下的，可为一定数量的有关来源名称. 示例下面就# 定义了一个新源, 叫 `my-awesome-source`, 其内容来自本地 # `vendor`目录 ，其相对于包含`.cargo/config`文件的目录
+# 在`source` 表格之下的，可为一定数量的有关来源名称. 示例下面就# 定义了一个新源， 叫 `my-awesome-source`， 其内容来自本地 # `vendor`目录 ，其相对于包含`.cargo/config`文件的目录
 [source.my-awesome-source]
 directory = &quot;vendor&quot;
 
@@ -173,11 +173,11 @@ git = &quot;https://example.com/path/to/repo&quot;
 # tag = &quot;v1.0.1&quot;
 # rev = &quot;313f44e8&quot;
 
-# The crates.io 默认源 在&quot;crates-io&quot;名称下, 且在这里我们使用 `replace-with` 字段指明 默认源更换成&quot;my-awesome-source&quot;源
+# The crates.io 默认源 在&quot;crates-io&quot;名称下， 且在这里我们使用 `replace-with` 字段指明 默认源更换成&quot;my-awesome-source&quot;源
 [source.crates-io]
 replace-with = &quot;my-awesome-source&quot;
 </code></pre>
-<p>使用此配置,Cargo 会尝试在”vendor”目录中，查找所有包，而不是 查询在线注册表 crates.io 。Cargo 有两种来源更换的表达 :</p>
+<p>使用此配置，Cargo 会尝试在”vendor”目录中，查找所有包，而不是 查询在线注册表 crates.io 。Cargo 有两种来源更换的表达 :</p>
 <ul>
 <li>
 <p>供应(Vendoring) - 可以定义自定义源，它们表示本地文件系统上的包。这些源是它们正在更换的源的子集，并在需要时可以检入包中。</p>
@@ -188,7 +188,7 @@ replace-with = &quot;my-awesome-source&quot;
 </ul>
 <p>Cargo 有一个关于来源更换的核心假设，源代码从两个完全相同的源而来。在上面的例子中，Cargo 假设所有的箱子都来自<code>my-awesome-source</code>，与<code>crates-io</code>副本完全相同。请注意，这也意味着<code>my-awesome-source</code>，不允许有<code>crates-io</code>源不存在的箱。</p>
 <p>因此，来源更换不适用于依赖项补丁(fix bug)，或私有注册表等情况。Cargo 是通过使用<a href="reference/manifest.html#the-replace-section"><code>[replace]</code>字段</a>支持依赖项补丁，计划为未来版本的 Cargo 提供私人注册表的支持。</p>
-<a class="header" href="#a配置" id="a配置"><h3>配置</h3></a>
+<a class="header" href="#配置" id="配置"><h3>配置</h3></a>
 <p>更换源的配置通过完成<a href="reference/config.html"><code>.cargo/config</code></a>，下面为全套可用字段是:</p>
 <pre><code class="language-toml"># 每个源都有自己的表格，名称即是表名
 [source.the-source-name]
@@ -201,24 +201,24 @@ registry = &quot;https://example.com/path/to/index&quot;
 local-registry = &quot;path/to/registry&quot;
 directory = &quot;path/to/vendor&quot;
 </code></pre>
-<p><code>crates-io</code>代表 crates.io 在线注册表(箱的默认来源),可以更换为:</p>
+<p><code>crates-io</code>代表 crates.io 在线注册表(箱的默认来源)，可以更换为:</p>
 <pre><code class="language-toml">[source.crates-io]
 replace-with = 'another-source'
 </code></pre>
-<a class="header" href="#a注册表源" id="a注册表源"><h3>注册表源</h3></a>
-<p>“注册表源”与 crates.io 本身相同。也就是说,它也有一个在 git 存储库中提供的索引，该存储库匹配<a href="https://github.com/rust-lang/crates.io-index">crates.io index</a>的格式。然后该存储库具有指示从哪里下载包的配置。</p>
+<a class="header" href="#注册表源" id="注册表源"><h3>注册表源</h3></a>
+<p>“注册表源”与 crates.io 本身相同。也就是说，它也有一个在 git 存储库中提供的索引，该存储库匹配<a href="https://github.com/rust-lang/crates.io-index">crates.io index</a>的格式。然后该存储库具有指示从哪里下载包的配置。</p>
 <p>目前还没有一个已经设置 crates.io 的镜像的可用项目。请继续关注!</p>
 <blockquote>
 <p>中国用户，可搜索 ‘rust 换 中科大 源’</p>
 </blockquote>
-<a class="header" href="#a本地-注册表源" id="a本地-注册表源"><h3>本地 注册表源</h3></a>
+<a class="header" href="#本地-注册表源" id="本地-注册表源"><h3>本地 注册表源</h3></a>
 <p>“本地注册表源”旨在成为另一个注册表源的子集，但可在本地文件系统(也称为 vendoring)上使用。本地注册表是提前下载，通常与一个 <code>Cargo.lock</code>同步，并由一组<code>*.crate</code>文件和像普通注册表一样的索引组成。</p>
 <p>管理和创建本地注册表源的主要方法是通过<a href="https://crates.io/crates/cargo-local-registry"><code>cargo-local-registry</code></a>子命令，可在 crates.io 上找到，并用<code>cargo install cargo-local-registry</code>安装。</p>
 <p>本地注册表包含在一个目录，其中包含许多从 crates.io 下载的<code>*.crate</code>文件，以及<code>index</code>目录，它与 crates.io-index 项目目录具有相同格式(仅填充有存在的 crates).</p>
-<a class="header" href="#a目录-源" id="a目录-源"><h3>目录 源</h3></a>
-<p>“目录源”类似于本地注册表源，其中包含本地文件系统上许多的可用包，适用于 vendoring 依赖项。与本地注册表一样,目录源主要由外部子命令管理<a href="https://crates.io/crates/cargo-vendor"><code>cargo-vendor</code></a>，可用<code>cargo install cargo-vendor</code>安装。</p>
-<p>目录源与本地注册表不同，但它们包含<code>*.crate</code>文件的解压缩版本，使其在某些情况下，更适合检查所有内容到源代码控制工具。目录源只是一个包含许多其他目录的目录，其中包含 crates 的源代码(解压缩版本的<code>*.crate</code>文件)。目前,对每个目录的名称没有限制。</p>
-<p>目录源中的每个包也有一个关联的元数据文件，指示包中每个文件的校验和,以防止意外修改。</p>
+<a class="header" href="#目录-源" id="目录-源"><h3>目录 源</h3></a>
+<p>“目录源”类似于本地注册表源，其中包含本地文件系统上许多的可用包，适用于 vendoring 依赖项。与本地注册表一样，目录源主要由外部子命令管理<a href="https://crates.io/crates/cargo-vendor"><code>cargo-vendor</code></a>，可用<code>cargo install cargo-vendor</code>安装。</p>
+<p>目录源与本地注册表不同，但它们包含<code>*.crate</code>文件的解压缩版本，使其在某些情况下，更适合检查所有内容到源代码控制工具。目录源只是一个包含许多其他目录的目录，其中包含 crates 的源代码(解压缩版本的<code>*.crate</code>文件)。目前，对每个目录的名称没有限制。</p>
+<p>目录源中的每个包也有一个关联的元数据文件，指示包中每个文件的校验和，以防止意外修改。</p>
 
                 </main>
 
