@@ -1,6 +1,6 @@
 ## Creating a New Package
 
-To start a new package with Cargo, use `cargo new`:
+To start a new [package][def-package] with Cargo, use `cargo new`:
 
 ```console
 $ cargo new hello_world --bin
@@ -29,11 +29,15 @@ Let’s take a closer look at `Cargo.toml`:
 [package]
 name = "hello_world"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
+edition = "2021"
+
+[dependencies]
+
 ```
 
-This is called a **manifest**, and it contains all of the metadata that Cargo
-needs to compile your package.
+This is called a [***manifest***][def-manifest], and it contains all of the
+metadata that Cargo needs to compile your package. This file is written in the
+[TOML] format (pronounced /tɑməl/).
 
 Here’s what’s in `src/main.rs`:
 
@@ -43,7 +47,8 @@ fn main() {
 }
 ```
 
-Cargo generated a “hello world” for us. Let’s compile it:
+Cargo generated a “hello world” program for us, otherwise known as a
+[*binary crate*][def-crate]. Let’s compile it:
 
 ```console
 $ cargo build
@@ -82,6 +87,11 @@ $ cargo build --release
 `cargo build --release` puts the resulting binary in `target/release` instead of
 `target/debug`.
 
-Compiling in debug mode is the default for development-- compilation time is
+Compiling in debug mode is the default for development. Compilation time is
 shorter since the compiler doesn't do optimizations, but the code will run
 slower. Release mode takes longer to compile, but the code will run faster.
+
+[TOML]: https://toml.io/
+[def-crate]:     ../appendix/glossary.md#crate     '"crate" (glossary entry)'
+[def-manifest]:  ../appendix/glossary.md#manifest  '"manifest" (glossary entry)'
+[def-package]:   ../appendix/glossary.md#package   '"package" (glossary entry)'

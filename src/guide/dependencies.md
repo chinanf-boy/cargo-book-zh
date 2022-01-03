@@ -1,8 +1,9 @@
 ## Dependencies
 
-[crates.io] is the Rust community's central package registry that serves as a
-location to discover and download packages. `cargo` is configured to use it by
-default to find requested packages.
+[crates.io] is the Rust community's central [*package registry*][def-package-registry]
+that serves as a location to discover and download
+[packages][def-package]. `cargo` is configured to use it by default to find
+requested packages.
 
 To depend on a library hosted on [crates.io], add it to your `Cargo.toml`.
 
@@ -10,20 +11,20 @@ To depend on a library hosted on [crates.io], add it to your `Cargo.toml`.
 
 ### Adding a dependency
 
-If your `Cargo.toml` doesn't already have a `[dependencies]` section, add that,
-then list the crate name and version that you would like to use. This example
-adds a dependency of the `time` crate:
+If your `Cargo.toml` doesn't already have a `[dependencies]` section, add
+that, then list the [crate][def-crate] name and version that you would like to
+use. This example adds a dependency of the `time` crate:
 
 ```toml
 [dependencies]
 time = "0.1.12"
 ```
 
-The version string is a [semver] version requirement. The [specifying
-dependencies](reference/specifying-dependencies.html) docs have more information about
+The version string is a [SemVer] version requirement. The [specifying
+dependencies](../reference/specifying-dependencies.md) docs have more information about
 the options you have here.
 
-[semver]: https://github.com/steveklabnik/semver#requirements
+[SemVer]: https://semver.org
 
 If we also wanted to add a dependency on the `regex` crate, we would not need
 to add `[dependencies]` for each crate listed. Here's what your whole
@@ -34,7 +35,7 @@ crates:
 [package]
 name = "hello_world"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
+edition = "2021"
 
 [dependencies]
 time = "0.1.12"
@@ -68,11 +69,9 @@ these dependencies we used.
 Now, if `regex` gets updated, we will still build with the same revision until
 we choose to `cargo update`.
 
-You can now use the `regex` library using `extern crate` in `main.rs`.
+You can now use the `regex` library in `main.rs`.
 
-```rust
-extern crate regex;
-
+```rust,ignore
 use regex::Regex;
 
 fn main() {
@@ -88,3 +87,7 @@ $ cargo run
    Running `target/hello_world`
 Did our date match? true
 ```
+
+[def-crate]:             ../appendix/glossary.md#crate             '"crate" (glossary entry)'
+[def-package]:           ../appendix/glossary.md#package           '"package" (glossary entry)'
+[def-package-registry]:  ../appendix/glossary.md#package-registry  '"package-registry" (glossary entry)'

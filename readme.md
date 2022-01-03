@@ -1,4 +1,4 @@
-# rust-lang/cargo/tree/master/src/doc  [![translate-svg]][translate-list]
+# rust-lang/cargo/tree/master/src/doc [![translate-svg]][translate-list]
 
 <!-- [![explain]][source] -->
 
@@ -9,64 +9,123 @@
 [size-img]: https://packagephobia.now.sh/badge?p=Name
 [size]: https://packagephobia.now.sh/result?p=Name
 
-「 Cargo 官书文档(草稿版) 」
+「 Cargo 官书文档 」
 
 [中文](./readme.md) | [english](https://github.com/istankovic/cargo-docs)
 
 ---
 
-## 校对 ✅
+## 更新 🀄
 
 <!-- doc-templite START generated -->
 <!-- repo = 'rust-lang/cargo' -->
-<!-- commit = 'a472e7c46f6df06f86bc3032181386087a1bb8c7' -->
-<!-- time = '2018-11-27' -->
-翻译的原文 | 与日期 | 最新更新 | 更多
----|---|---|---
-[commit] | ⏰ 2018-11-27 | ![last] | [中文翻译][translate-list]
+<!-- commit = '35e82eb45f10de09e2a4b8e5f15a1c9adbd34680' -->
+<!-- time = '2022-1-2' -->
+
+| 翻译的原文 | 与日期      | 最新更新 | 更多                       |
+| ---------- | ----------- | -------- | -------------------------- |
+| [commit]   | ⏰ 2022-1-2 | ![last]  | [中文翻译][translate-list] |
 
 [last]: https://img.shields.io/github/last-commit/rust-lang/cargo.svg
-[commit]: https://github.com/rust-lang/cargo/tree/a472e7c46f6df06f86bc3032181386087a1bb8c7
+[commit]: https://github.com/rust-lang/cargo/tree/35e82eb45f10de09e2a4b8e5f15a1c9adbd34680
 
 <!-- doc-templite END generated -->
 
-## 切换到 https://github.com/rust-lang/cargo/tree/master/src/doc 文档
+# Summary
 
-- [x] [介绍](./src/index.zh.md)
+- [x] [介绍](src/index.zh.md)
 
-- [x] [入门](./src/getting-started/index.zh.md)
+- [x] [入门](src/getting-started/index.zh.md)
 
-  - [x] [安装](./src/getting-started/installation.zh.md)
-  - [x] [Cargo 的第一步](./src/getting-started/first-steps.zh.md)
+  - [x] [Installation](src/getting-started/installation.md)
+  - [x] [First Steps with Cargo](src/getting-started/first-steps.md)
 
-- [x] [Cargo 指南](./src/guide/index.zh.md)
+- [ ] [Cargo Guide](src/guide/index.md)
 
-  - [x] [为什么 Cargo 存在](./src/guide/why-cargo-exists.zh.md)
-  - [x] [创建一个新包](./src/guide/creating-a-new-project.zh.md)
-  - [x] [处理现有包](./src/guide/working-on-an-existing-project.zh.md)
-  - [x] [依赖](./src/guide/dependencies.zh.md)
-  - [x] [包装布局](./src/guide/project-layout.zh.md)
-  - [x] [Cargo.toml 与 Cargo.lock](./src/guide/cargo-toml-vs-cargo-lock.zh.md)
-  - [x] [测试](./src/guide/tests.zh.md)
-  - [x] [持续集成](./src/guide/continuous-integration.zh.md)
-  - [x] [构建缓存](./src/guide/build-cache.zh.md)
+  - [ ] [Why Cargo Exists](src/guide/why-cargo-exists.md)
+  - [ ] [Creating a New Package](src/guide/creating-a-new-project.md)
+  - [ ] [Working on an Existing Package](src/guide/working-on-an-existing-project.md)
+  - [ ] [Dependencies](src/guide/dependencies.md)
+  - [ ] [Package Layout](src/guide/project-layout.md)
+  - [ ] [Cargo.toml vs Cargo.lock](src/guide/cargo-toml-vs-cargo-lock.md)
+  - [ ] [Tests](src/guide/tests.md)
+  - [ ] [Continuous Integration](src/guide/continuous-integration.md)
+  - [ ] [Cargo Home](src/guide/cargo-home.md)
+  - [ ] [Build Cache](src/guide/build-cache.md)
 
-- [x] [Cargo 参考](./src/reference/index.zh.md)
+- [ ] [Cargo Reference](src/reference/index.md)
 
-  - [x] [指定依赖项](./src/reference/specifying-dependencies.zh.md)
-  - [x] [清单格式](./src/reference/manifest.zh.md)
-  - [x] [配置](./src/reference/config.zh.md)
-  - [x] [环境变量](./src/reference/environment-variables.zh.md)
-  - [x] [构建脚本](./src/reference/build-scripts.zh.md)
-  - [x] [在 crates.io 上发布](./src/reference/publishing.zh.md)
-  - [x] [包 ID 规范](./src/reference/pkgid-spec.zh.md)
-  - [x] [来源更换](./src/reference/source-replacement.zh.md)
-  - [x] [外部工具](./src/reference/external-tools.zh.md)
-  - [x] [不稳定的功能](./src/reference/unstable.zh.md)
+  - [ ] [Specifying Dependencies](src/reference/specifying-dependencies.md)
+    - [ ] [Overriding Dependencies](src/reference/overriding-dependencies.md)
+  - [ ] [The Manifest Format](src/reference/manifest.md)
+    - [ ] [Cargo Targets](src/reference/cargo-targets.md)
+  - [ ] [Workspaces](src/reference/workspaces.md)
+  - [ ] [Features](src/reference/features.md)
+    - [ ] [Features Examples](src/reference/features-examples.md)
+  - [ ] [Profiles](src/reference/profiles.md)
+  - [ ] [Configuration](src/reference/config.md)
+  - [ ] [Environment Variables](src/reference/environment-variables.md)
+  - [ ] [Build Scripts](src/reference/build-scripts.md)
+    - [ ] [Build Script Examples](src/reference/build-script-examples.md)
+  - [ ] [Publishing on crates.io](src/reference/publishing.md)
+  - [ ] [Package ID Specifications](src/reference/pkgid-spec.md)
+  - [ ] [Source Replacement](src/reference/source-replacement.md)
+  - [ ] [External Tools](src/reference/external-tools.md)
+  - [ ] [Registries](src/reference/registries.md)
+  - [ ] [Dependency Resolution](src/reference/resolver.md)
+  - [ ] [SemVer Compatibility](src/reference/semver.md)
+  - [ ] [Future incompat report](src/reference/future-incompat-report.md)
+  - [ ] [Unstable Features](src/reference/unstable.md)
 
-- [x] [常问问题](./src/faq.zh.md)
-- [x] [附录:词汇表](./src/appendix/glossary.zh.md)
+- [ ] [Cargo Commands](src/commands/index.md)
 
+  - [ ] [General Commands](src/commands/general-commands.md)
+    - [ ] [cargo](src/commands/cargo.md)
+    - [ ] [cargo help](src/commands/cargo-help.md)
+    - [ ] [cargo version](src/commands/cargo-version.md)
+  - [ ] [Build Commands](src/commands/build-commands.md)
+    - [ ] [cargo bench](src/commands/cargo-bench.md)
+    - [ ] [cargo build](src/commands/cargo-build.md)
+    - [ ] [cargo check](src/commands/cargo-check.md)
+    - [ ] [cargo clean](src/commands/cargo-clean.md)
+    - [ ] [cargo doc](src/commands/cargo-doc.md)
+    - [ ] [cargo fetch](src/commands/cargo-fetch.md)
+    - [ ] [cargo fix](src/commands/cargo-fix.md)
+    - [ ] [cargo run](src/commands/cargo-run.md)
+    - [ ] [cargo rustc](src/commands/cargo-rustc.md)
+    - [ ] [cargo rustdoc](src/commands/cargo-rustdoc.md)
+    - [ ] [cargo test](src/commands/cargo-test.md)
+    - [ ] [cargo report](src/commands/cargo-report.md)
+  - [ ] [Manifest Commands](src/commands/manifest-commands.md)
+    - [ ] [cargo generate-lockfile](src/commands/cargo-generate-lockfile.md)
+    - [ ] [cargo locate-project](src/commands/cargo-locate-project.md)
+    - [ ] [cargo metadata](src/commands/cargo-metadata.md)
+    - [ ] [cargo pkgid](src/commands/cargo-pkgid.md)
+    - [ ] [cargo tree](src/commands/cargo-tree.md)
+    - [ ] [cargo update](src/commands/cargo-update.md)
+    - [ ] [cargo vendor](src/commands/cargo-vendor.md)
+    - [ ] [cargo verify-project](src/commands/cargo-verify-project.md)
+  - [ ] [Package Commands](src/commands/package-commands.md)
+    - [ ] [cargo init](src/commands/cargo-init.md)
+    - [ ] [cargo install](src/commands/cargo-install.md)
+    - [ ] [cargo new](src/commands/cargo-new.md)
+    - [ ] [cargo search](src/commands/cargo-search.md)
+    - [ ] [cargo uninstall](src/commands/cargo-uninstall.md)
+  - [ ] [Publishing Commands](src/commands/publishing-commands.md)
+    - [ ] [cargo login](src/commands/cargo-login.md)
+    - [ ] [cargo owner](src/commands/cargo-owner.md)
+    - [ ] [cargo package](src/commands/cargo-package.md)
+    - [ ] [cargo publish](src/commands/cargo-publish.md)
+    - [ ] [cargo yank](src/commands/cargo-yank.md)
+
+- [ ] [FAQ](src/faq.md)
+- [ ] [Appendix: Glossary](src/appendix/glossary.md)
+- [ ] [Appendix: Git Authentication](src/appendix/git-authentication.md)
+
+
+### NEW: 还有本 Cargo 贡献指南
+
+- [ ] ./contrib 就缓一缓
 
 ### 贡献
 
@@ -78,46 +137,3 @@
 
 ---
 
-# Cargo docs
-
-### 要求
-
-建立这本书需要[mdBook]。安装它:
-
-[mdBook]: https://github.com/azerupi/mdBook
-
-```bash
-$ cargo install mdBook
-```
-
-### 构建
-
-构建:
-
-```bash
-$ mdbook build
-```
-
-将输出在`docs`子目录。要查看它,可以在 Web 浏览器中打开它.
-
-_Firefox:_
-
-```bash
-$ firefox docs/index.html                       # Linux
-$ open -a "Firefox" docs/index.html             # OS X
-$ Start-Process "firefox.exe" .\docs\index.html # Windows (PowerShell)
-$ start firefox.exe .\docs\index.html           # Windows (Cmd)
-```
-
-_Chrome:_
-
-```bash
-$ google-chrome docs/index.html                 # Linux
-$ open -a "Google Chrome" docs/index.html       # OS X
-$ Start-Process "chrome.exe" .\docs\index.html  # Windows (PowerShell)
-$ start chrome.exe .\docs\index.html            # Windows (Cmd)
-```
-
-## 贡献
-
-鉴于该书仍处于草案状态,我们非常乐意为您提供帮助! 请随时打开有关任何事情的问题,并发送 PR 以了解您想要修复或更改的内容.如果您的变化很大,请先打开一个问题,这样我们就可以确保在您完成 PR 的工作之前，我们会接受这个问题.

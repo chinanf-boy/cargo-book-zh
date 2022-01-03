@@ -2,7 +2,7 @@
 
 ![Cargo Logo](images/Cargo-Logo-Small.png)
 
-Cargo 是[Rust]的 _包经理_。Cargo 会下载您 Rust 的包依赖项，编译您的包，生成可分发的包，并将它们上传到[crates.io] - Rust 社区的*包注册表*。你可以为这本书做出贡献在[GitHub].
+Cargo 是[Rust]的 _箱子经理_。Cargo 会下载所需要的依赖项，还能编译您的代码，生成可分发的箱子，并将它们上传到[crates.io] - Rust 社区的 [_package registry_][def-package-registry] 。你可以为这本书做出贡献在[GitHub].
 
 ### 章节
 
@@ -12,7 +12,7 @@ Cargo 是[Rust]的 _包经理_。Cargo 会下载您 Rust 的包依赖项，编�
 
 **[Cargo 指南](guide/index.zh.md)**
 
-该指南将为您提供，有关如何使用 Cargo 开发 Rust 包的所有信息.
+该指南将为您提供，有关如何使用 Cargo 开发 Rust 箱子的所有信息.
 
 **[Cargo 参考](reference/index.zh.md)**
 
@@ -20,6 +20,22 @@ Cargo 是[Rust]的 _包经理_。Cargo 会下载您 Rust 的包依赖项，编�
 
 **[常见问题](faq.zh.md)**
 
+**附加:**
+
+- [术语](appendix/glossary.zh.md)
+- [Git Authentication](appendix/git-authentication.md)
+
+**其他文档:**
+
+- [Changelog](https://github.com/rust-lang/cargo/blob/master/CHANGELOG.md) —
+  Detailed notes about changes in Cargo in each release.
+- [Rust documentation website](https://doc.rust-lang.org/) — Links to official
+  Rust documentation and tools.
+
+[def-crate]: ./appendix/glossary.zh.md#crate '"crate" (glossary entry)'
+[def-package]: ./appendix/glossary.zh.md#package '"package" (glossary entry)'
+[def-package-manager]: ./appendix/glossary.zh.md#package-manager '"package manager" (glossary entry)'
+[def-package-registry]: ./appendix/glossary.zh.md#package-registry '"package registry" (glossary entry)'
 [rust]: https://www.rust-lang.org/
 [crates.io]: https://crates.io/
-[github]: https://github.com/rust-lang/cargo/tree/master/src/doc/src
+[github]: https://github.com/rust-lang/cargo/tree/master/src/doc

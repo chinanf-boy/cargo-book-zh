@@ -50,7 +50,7 @@ Cargo handles compiling Rust code, but we know that many Rust packages
 link against C code. We also know that there are decades of tooling
 built up around compiling languages other than Rust.
 
-Our solution: Cargo allows a package to [specify a script](reference/build-scripts.html)
+Our solution: Cargo allows a package to [specify a script](reference/build-scripts.md)
 (written in Rust) to run before invoking `rustc`. Rust is leveraged to
 implement platform-specific configuration and refactor out common build
 functionality among packages.
@@ -74,16 +74,16 @@ on the platform. Cargo also supports [platform-specific
 dependencies][target-deps], and we plan to support more per-platform
 configuration in `Cargo.toml` in the future.
 
-[target-deps]: reference/specifying-dependencies.html#platform-specific-dependencies
+[target-deps]: reference/specifying-dependencies.md#platform-specific-dependencies
 
 In the longer-term, we’re looking at ways to conveniently cross-compile
 packages using Cargo.
 
 ### Does Cargo support environments, like `production` or `test`?
 
-We support environments through the use of [profiles][profile] to support:
+We support environments through the use of [profiles] to support:
 
-[profile]: reference/manifest.html#the-profile-sections
+[profiles]: reference/profiles.md
 
 * environment-specific flags (like `-g --opt-level=0` for development
   and `--opt-level=3` for production).
@@ -103,10 +103,11 @@ issue][3].
 
 ### Why do binaries have `Cargo.lock` in version control, but not libraries?
 
-The purpose of a `Cargo.lock` is to describe the state of the world at the time
-of a successful build. It is then used to provide deterministic builds across
-whatever machine is building the package by ensuring that the exact same
-dependencies are being compiled.
+The purpose of a `Cargo.lock` lockfile is to describe the state of the world at
+the time of a successful build. Cargo uses the lockfile to provide
+deterministic builds on different times and different systems, by ensuring that
+the exact same dependencies and versions are used as when the `Cargo.lock` file
+was originally generated.
 
 This property is most desirable from applications and packages which are at the
 very end of the dependency chain (binaries). As a result, it is recommended that
@@ -124,7 +125,7 @@ compatibility). If Cargo used all of the dependencies' `Cargo.lock` files,
 then multiple copies of the library could be used, and perhaps even a version
 conflict.
 
-In other words, libraries specify semver requirements for their dependencies but
+In other words, libraries specify SemVer requirements for their dependencies but
 cannot see the full picture. Only end products like binaries have a full
 picture to decide what versions of dependencies should be used.
 
@@ -147,7 +148,7 @@ similar configuration files in directory listings. Sorting files often puts
 capital letters before lowercase letters, ensuring files like `Makefile` and
 `Cargo.toml` are placed together. The trailing `.toml` was chosen to emphasize
 the fact that the file is in the [TOML configuration
-format](https://github.com/toml-lang/toml).
+format](https://toml.io/).
 
 Cargo does not allow other names such as `cargo.toml` or `Cargofile` to
 emphasize the ease of how a Cargo repository can be identified. An option of
@@ -164,7 +165,7 @@ are often surprised when Cargo attempts to fetch resources from the network, and
 hence the request for Cargo to work offline comes up frequently.
 
 Cargo, at its heart, will not attempt to access the network unless told to do
-so. That is, if no crates comes from crates.io, a git repository, or some other
+so. That is, if no crates come from crates.io, a git repository, or some other
 network location, Cargo will never attempt to make a network connection. As a
 result, if Cargo attempts to touch the network, then it's because it needs to
 fetch a required resource.
@@ -178,7 +179,7 @@ and a populated cache of the crates reflected in the lock file. If either of
 these components are missing, then they're required for the build to succeed and
 must be fetched remotely.
 
-As of Rust 1.11.0 Cargo understands a new flag, `--frozen`, which is an
+As of Rust 1.11.0, Cargo understands a new flag, `--frozen`, which is an
 assertion that it shouldn't touch the network. When passed, Cargo will
 immediately return an error if it would otherwise attempt a network request.
 The error should include contextual information about why the network request is
@@ -187,7 +188,73 @@ not change the behavior of Cargo*, it simply asserts that Cargo shouldn't touch
 the network as a previous command has been run to ensure that network activity
 shouldn't be necessary.
 
+The `--offline` flag was added in Rust 1.36.0. This flag tells Cargo to not
+access the network, and try to proceed with available cached data if possible.
+You can use [`cargo fetch`] in one project to download dependencies before
+going offline, and then use those same dependencies in another project with
+the `--offline` flag (or [configuration value][offline config]).
+
 For more information about vendoring, see documentation on [source
 replacement][replace].
 
-[replace]: reference/source-replacement.html
+[replace]: reference/source-replacement.md
+[`cargo fetch`]: commands/cargo-fetch.md
+[offline config]: reference/config.md#netoffline
+
+### Why is Cargo rebuilding my code?
+
+Cargo is responsible for incrementally compiling crates in your project. This
+means that if you type `cargo build` twice the second one shouldn't rebuild your
+crates.io dependencies, for example. Nevertheless bugs arise and Cargo can
+sometimes rebuild code when you're not expecting it!
+
+We've long [wanted to provide better diagnostics about
+this](https://github.com/rust-lang/cargo/issues/2904) but unfortunately haven't
+been able to make progress on that issue in quite some time. In the meantime,
+however, you can debug a rebuild at least a little by setting the `CARGO_LOG`
+environment variable:
+
+```sh
+$ CARGO_LOG=cargo::core::compiler::fingerprint=info cargo build
+```
+
+This will cause Cargo to print out a lot of information about diagnostics and
+rebuilding. This can often contain clues as to why your project is getting
+rebuilt, although you'll often need to connect some dots yourself since this
+output isn't super easy to read just yet. Note that the `CARGO_LOG` needs to be
+set for the command that rebuilds when you think it should not. Unfortunately
+Cargo has no way right now of after-the-fact debugging "why was that rebuilt?"
+
+Some issues we've seen historically which can cause crates to get rebuilt are:
+
+* A build script prints `cargo:rerun-if-changed=foo` where `foo` is a file that
+  doesn't exist and nothing generates it. In this case Cargo will keep running
+  the build script thinking it will generate the file but nothing ever does. The
+  fix is to avoid printing `rerun-if-changed` in this scenario.
+
+* Two successive Cargo builds may differ in the set of features enabled for some
+  dependencies. For example if the first build command builds the whole
+  workspace and the second command builds only one crate, this may cause a
+  dependency on crates.io to have a different set of features enabled, causing
+  it and everything that depends on it to get rebuilt. There's unfortunately not
+  really a great fix for this, although if possible it's best to have the set of
+  features enabled on a crate constant regardless of what you're building in
+  your workspace.
+
+* Some filesystems exhibit unusual behavior around timestamps. Cargo primarily
+  uses timestamps on files to govern whether rebuilding needs to happen, but if
+  you're using a nonstandard filesystem it may be affecting the timestamps
+  somehow (e.g. truncating them, causing them to drift, etc). In this scenario,
+  feel free to open an issue and we can see if we can accommodate the filesystem
+  somehow.
+
+* A concurrent build process is either deleting artifacts or modifying files.
+  Sometimes you might have a background process that either tries to build or
+  check your project. These background processes might surprisingly delete some
+  build artifacts or touch files (or maybe just by accident), which can cause
+  rebuilds to look spurious! The best fix here would be to wrangle the
+  background process to avoid clashing with your work.
+
+If after trying to debug your issue, however, you're still running into problems
+then feel free to [open an
+issue](https://github.com/rust-lang/cargo/issues/new)!

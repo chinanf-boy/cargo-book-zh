@@ -1,12 +1,18 @@
 ## Cargo 的第一步
 
+本章节提供，cargo 命令的一些常用场景。如：
+
+1. 生成一个新的[**_package_**][def-package]
+2. 在 package 内，编译 [**_crate_**][def-crate]
+3. 以及，运行程序
+
 要使用 Cargo 启动新项目，请使用`cargo new`:
 
 ```shell
-$ cargo new hello_world --bin
+$ cargo new hello_world
 ```
 
-我们传递`--bin`，是因为我们正在制作一个二进制程序(默认): 如果我们正在创建一个库(lib)，我们就会把传递`--lib`.
+默认我们会传递`--bin`参数，表明我们正在制作一个二进制程序: 如果我们正在创建一个库(lib)，我们就会把传递`--lib`参数。
 
 让我们来看看 Cargo 为我们带来了什么:
 
@@ -27,13 +33,12 @@ $ tree .
 [package]
 name = "hello_world"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 ```
 
-这被称为一个**manifest**元清单，它包含了 Cargo 编译项目所需的所有元数据.
+这被称为，**manifest**元清单，它包含了 Cargo 编译项目所需的所有元数据.
 
 那`src/main.rs`有啥:
 
@@ -43,14 +48,14 @@ fn main() {
 }
 ```
 
-Cargo 为我们创造了一个"hello_world".我们来编译它:
+Cargo 为我们创造了一个"hello_world"，也就是一个[**_binary crate_**][def-crate]。让我们来编译它:
 
 ```shell
 $ cargo build
    Compiling hello_world v0.1.0 (file:///path/to/project/hello_world)
 ```
 
-然后运行它:
+然后，运行它:
 
 ```shell
 $ ./target/debug/hello_world
@@ -69,3 +74,7 @@ Hello, world!
 ## 走得更远
 
 有关使用 Cargo 的更多详细信息，请查看[Cargo 指南](../guide/index.zh.md)
+
+[def-crate]: ../appendix/glossary.zh.md#crate '"crate" (glossary entry)'
+[def-manifest]: ../appendix/glossary.zh.md#manifest '"manifest" (glossary entry)'
+[def-package]: ../appendix/glossary.zh.md#package '"package" (glossary entry)'
