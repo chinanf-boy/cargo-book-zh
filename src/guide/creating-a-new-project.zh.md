@@ -1,6 +1,6 @@
 ## 创建一个新项目
 
-要使用 Cargo 启动新项目，请使用`cargo new`:
+要使用 Cargo 启动 新[package][def-package]，请使用`cargo new`:
 
 ```shell
 $ cargo new hello_world --bin
@@ -33,7 +33,8 @@ edition = "2018"
 [dependencies]
 ```
 
-这被称为一个**manifest**元清单，它包含了 Cargo 编译项目所需的所有元数据.
+这被称为一个**manifest**元清单，它包含了 Cargo 编译项目所需的所有元数据，它是
+[TOML] 格式的文件。
 
 那`src/main.rs`有啥:
 
@@ -43,59 +44,27 @@ fn main() {
 }
 ```
 
-Cargo 为我们创造了一个"hello_world".我们来编译它:
+Cargo 为我们创造了一个"hello_world"，一个[*binary crate*][def-crate]。我们来编译它:
 
 ```shell
 $ cargo build
    Compiling hello_world v0.1.0 (file:///path/to/project/hello_world)
 ```
 
-然后运行它:
+然后，运行它:
 
 ```shell
 $ ./target/debug/hello_world
 Hello, world!
 ```
 
-我们也可以直接使用`cargo run`，它会自行编译，然后运行它, 一步到位:
+我们也可以直接使用`cargo run`，它会自行编译，然后运行它, 一步到位(如果，你看不到`Compiling`标识的输出行，说明你并没有更改那些项):
 
 ```shell
 $ cargo run
      Fresh hello_world v0.1.0 (file:///path/to/project/hello_world)
    Running `target/hello_world`
 Hello, world!
-```
-
-您会注意到已创建了几个新文件和目录:
-
-```shell
-$ tree .
-.
-|-- Cargo.lock
-|-- Cargo.toml
-|-- src
-|   `-- main.rs
-`-- target
-    `-- debug
-        |-- build
-        |-- deps
-        |   |-- hello_world-6ad0b2df81336e7f
-        |   |-- hello_world-6ad0b2df81336e7f.d
-        |   `-- hello_world-6ad0b2df81336e7f.dSYM
-        |       `-- Contents
-        |           |-- Info.plist
-        |           `-- Resources
-        |               `-- DWARF
-        |                   `-- hello_world-6ad0b2df81336e7f
-        |-- examples
-        |-- hello_world
-        |-- hello_world.d
-        |-- hello_world.dSYM -> deps/hello_world-6ad0b2df81336e7f.dSYM
-        |-- incremental
-        |   // ...
-        `-- native
-
-15 directories, 19 files
 ```
 
 这个`Cargo.lock`文件啊，是包含我们的依赖项的有关信息(即便还没有依赖)，其内容看起来可不是很有趣啊。再有就是`target`目录包含所有构建产品(二进制文件..)，并且，可以看出，Cargo 默认生成调试(debug)版本。您可以使用`cargo build --release`，这会在开启优化的情况下，编译文件:
@@ -108,3 +77,8 @@ $ cargo build --release
 `cargo build --release`将结果二进制文件放入`target/release`，而不再是`target/debug`目录.
 
 调试模式的编译是开发的默认设置 - 编译时间较短，因为编译器不进行优化，但代码运行速度较慢。发布(release)模式编译需要更长时间，但代码运行速度更快.
+
+[toml]: https://toml.io/
+[def-crate]: ../appendix/glossary.zh.md#crate '"crate" (glossary entry)'
+[def-manifest]: ../appendix/glossary.zh.md#manifest '"manifest" (glossary entry)'
+[def-package]: ../appendix/glossary.zh.md#package '"package" (glossary entry)'

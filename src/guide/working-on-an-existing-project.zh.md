@@ -1,6 +1,6 @@
 ## 在现有的 Carog 项目上工作
 
-如果您下载使用 Cargo 的现有项目，那么它很容易上手.
+如果您下载使用 Cargo 的现有[package][def-package]，那么它很容易上手.
 
 首先，从某个地方获取项目.在这个例子中，我们将使用`rand`项目，其从 GitHub 上的存储库克隆而来:
 
@@ -17,3 +17,5 @@ $ cargo build
 ```
 
 这将获取所有依赖项，然后与项目一起构建它们.
+
+[def-package]:  ../appendix/glossary.md#package  '"package" (glossary entry)'

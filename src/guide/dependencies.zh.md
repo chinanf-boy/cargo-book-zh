@@ -1,6 +1,6 @@
 ## 从 crates.io 添加依赖项
 
-[crates.io]是 Rust 社区的中央存储库，用作发现和下载包的位置。`cargo`默认配置为，使用它来查找请求的包.
+[crates.io]是 Rust 社区的中央[_package registry_][def-package-registry]，用作发现和下载[packages][def-package] 的位置。`cargo`默认配置为，使用它来查找请求的包.
 
 获取托管在[crates.io]的依赖'库'，将它添加到您的`Cargo.toml`.
 
@@ -8,16 +8,16 @@
 
 ### 添加依赖项
 
-如果你的`Cargo.toml`，还没有`[dependencies]`部分，添加它，然后列出您要使用的包名称和版本。这个例子增加了一个`time`箱(crate)依赖:
+如果你的`Cargo.toml`，还没有`[dependencies]`部分，添加它，然后列出您要使用的[crate][def-crate]名称和版本。这个例子增加了一个`time`箱子依赖:
 
 ```toml
 [dependencies]
 time = "0.1.12"
 ```
 
-版本字符串是[semver]版本要求。该[指定依赖项](03-01-specifying-dependencies.zh.md)文档 提供了有关此处选项的更多信息.
+版本字符串是[SemVer]版本要求。该[指定依赖项](../reference/specifying-dependencies.zh.md)文档 提供了有关此处选项的更多信息.
 
-[semver]: https://github.com/steveklabnik/semver#requirements
+[semver]: https://semver.org
 
 如果我们还想添加一个`regex`箱子依赖，我们不需要为每个箱子都添加`[dependencies]`。下面就是你的`Cargo.toml`文件整体，看起来像依赖于`time`和`regex`箱:
 
@@ -25,7 +25,7 @@ time = "0.1.12"
 [package]
 name = "hello_world"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
+edition = "2021"
 
 [dependencies]
 time = "0.1.12"
@@ -56,7 +56,7 @@ $ cargo build
 
 现在，如果`regex`在[crates.io]上更新了，在我们选择`cargo update`之前，我们仍会使用相同的版本进行构建.
 
-你现在可以使用`regex`箱了，通过在`main.rs`使用`extern crate`。
+你现在可以在`main.rs`，使用`regex`箱了。
 
 ```rust
 extern crate regex;
@@ -69,10 +69,14 @@ fn main() {
 }
 ```
 
-运行它将显示:
+运行它，将显示:
 
 ```shell
 $ cargo run
    Running `target/hello_world`
 Did our date match? true
 ```
+
+[def-crate]: ../appendix/glossary.zh.md#crate '"crate" (glossary entry)'
+[def-package]: ../appendix/glossary.zh.md#package '"package" (glossary entry)'
+[def-package-registry]: ../appendix/glossary.zh.md#package-registry '"package-registry" (glossary entry)'
