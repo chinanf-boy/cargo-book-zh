@@ -37,25 +37,11 @@
 
 - [x] [入门](src/getting-started/index.zh.md)
 
-  - [x] [Installation](src/getting-started/installation.md)
-  - [x] [First Steps with Cargo](src/getting-started/first-steps.md)
-
 - [x] [Cargo Guide](src/guide/index.zh.md)
-
-  - [x] [Why Cargo Exists](src/guide/why-cargo-exists.md)
-  - [x] [Creating a New Package](src/guide/creating-a-new-project.md)
-  - [x] [Working on an Existing Package](src/guide/working-on-an-existing-project.md)
-  - [x] [Dependencies](src/guide/dependencies.md)
-  - [x] [Package Layout](src/guide/project-layout.md)
-  - [x] [Cargo.toml vs Cargo.lock](src/guide/cargo-toml-vs-cargo-lock.md)
-  - [x] [Tests](src/guide/tests.md)
-  - [x] [Continuous Integration](src/guide/continuous-integration.md)
-  - [x] [Cargo Home](src/guide/cargo-home.md)
-  - [x] [Build Cache](src/guide/build-cache.md)
 
 - [ ] [Cargo Reference](src/reference/index.md)
 
-  - [ ] [Specifying Dependencies](src/reference/specifying-dependencies.md)
+  - [x] [Specifying Dependencies](src/reference/specifying-dependencies.zh.md)
     - [ ] [Overriding Dependencies](src/reference/overriding-dependencies.md)
   - [ ] [The Manifest Format](src/reference/manifest.md)
     - [ ] [Cargo Targets](src/reference/cargo-targets.md)
