@@ -40,4 +40,4 @@ Displays a report of the given _type_ - currently, only `future-incompat` is sup
 ## SEE ALSO
 [Future incompat report](../reference/future-incompat-report.html)
 
-[cargo(1)](cargo.html)
+[cargo(1)](cargo.zh.md)

@@ -142,4 +142,4 @@ details on environment variables that Cargo reads.
        cargo init
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-new(1)](cargo-new.html)
+[cargo(1)](cargo.zh.md), [cargo-new(1)](cargo-new.html)

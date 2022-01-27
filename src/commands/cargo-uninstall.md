@@ -124,4 +124,4 @@ details on environment variables that Cargo reads.
        cargo uninstall ripgrep
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-install(1)](cargo-install.html)
+[cargo(1)](cargo.zh.md), [cargo-install(1)](cargo-install.html)

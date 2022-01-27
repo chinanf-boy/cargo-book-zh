@@ -387,4 +387,4 @@ details on environment variables that Cargo reads.
        cargo install --list
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-uninstall(1)](cargo-uninstall.html), [cargo-search(1)](cargo-search.html), [cargo-publish(1)](cargo-publish.html)
+[cargo(1)](cargo.zh.md), [cargo-uninstall(1)](cargo-uninstall.html), [cargo-search(1)](cargo-search.html), [cargo-publish(1)](cargo-publish.html)

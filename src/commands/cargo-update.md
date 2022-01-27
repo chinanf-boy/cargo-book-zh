@@ -177,4 +177,4 @@ details on environment variables that Cargo reads.
        cargo update -p foo --precise 1.2.3
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-generate-lockfile(1)](cargo-generate-lockfile.html)
+[cargo(1)](cargo.zh.md), [cargo-generate-lockfile(1)](cargo-generate-lockfile.html)

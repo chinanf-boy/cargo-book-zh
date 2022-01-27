@@ -1,56 +1,57 @@
 ## The Manifest Format
 
-The `Cargo.toml` file for each package is called its *manifest*. It is written
+The `Cargo.toml` file for each package is called its _manifest_. It is written
 in the [TOML] format. Every manifest file consists of the following sections:
 
-* [`cargo-features`](unstable.md) — Unstable, nightly-only features.
-* [`[package]`](#the-package-section) — Defines a package.
-  * [`name`](#the-name-field) — The name of the package.
-  * [`version`](#the-version-field) — The version of the package.
-  * [`authors`](#the-authors-field) — The authors of the package.
-  * [`edition`](#the-edition-field) — The Rust edition.
-  * [`rust-version`](#the-rust-version-field) — The minimal supported Rust version.
-  * [`description`](#the-description-field) — A description of the package.
-  * [`documentation`](#the-documentation-field) — URL of the package documentation.
-  * [`readme`](#the-readme-field) — Path to the package's README file.
-  * [`homepage`](#the-homepage-field) — URL of the package homepage.
-  * [`repository`](#the-repository-field) — URL of the package source repository.
-  * [`license`](#the-license-and-license-file-fields) — The package license.
-  * [`license-file`](#the-license-and-license-file-fields) — Path to the text of the license.
-  * [`keywords`](#the-keywords-field) — Keywords for the package.
-  * [`categories`](#the-categories-field) — Categories of the package.
-  * [`workspace`](#the-workspace-field) — Path to the workspace for the package.
-  * [`build`](#the-build-field) — Path to the package build script.
-  * [`links`](#the-links-field) — Name of the native library the package links with.
-  * [`exclude`](#the-exclude-and-include-fields) — Files to exclude when publishing.
-  * [`include`](#the-exclude-and-include-fields) — Files to include when publishing.
-  * [`publish`](#the-publish-field) — Can be used to prevent publishing the package.
-  * [`metadata`](#the-metadata-table) — Extra settings for external tools.
-  * [`default-run`](#the-default-run-field) — The default binary to run by [`cargo run`].
-  * [`autobins`](cargo-targets.md#target-auto-discovery) — Disables binary auto discovery.
-  * [`autoexamples`](cargo-targets.md#target-auto-discovery) — Disables example auto discovery.
-  * [`autotests`](cargo-targets.md#target-auto-discovery) — Disables test auto discovery.
-  * [`autobenches`](cargo-targets.md#target-auto-discovery) — Disables bench auto discovery.
-  * [`resolver`](resolver.md#resolver-versions) — Sets the dependency resolver to use.
-* Target tables: (see [configuration](cargo-targets.md#configuring-a-target) for settings)
-  * [`[lib]`](cargo-targets.md#library) — Library target settings.
-  * [`[[bin]]`](cargo-targets.md#binaries) — Binary target settings.
-  * [`[[example]]`](cargo-targets.md#examples) — Example target settings.
-  * [`[[test]]`](cargo-targets.md#tests) — Test target settings.
-  * [`[[bench]]`](cargo-targets.md#benchmarks) — Benchmark target settings.
-* Dependency tables:
-  * [`[dependencies]`](specifying-dependencies.md) — Package library dependencies.
-  * [`[dev-dependencies]`](specifying-dependencies.md#development-dependencies) — Dependencies for examples, tests, and benchmarks.
-  * [`[build-dependencies]`](specifying-dependencies.md#build-dependencies) — Dependencies for build scripts.
-  * [`[target]`](specifying-dependencies.md#platform-specific-dependencies) — Platform-specific dependencies.
-* [`[badges]`](#the-badges-section) — Badges to display on a registry.
-* [`[features]`](features.md) — Conditional compilation features.
-* [`[patch]`](overriding-dependencies.md#the-patch-section) — Override dependencies.
-* [`[replace]`](overriding-dependencies.md#the-replace-section) — Override dependencies (deprecated).
-* [`[profile]`](profiles.md) — Compiler settings and optimizations.
-* [`[workspace]`](workspaces.md) — The workspace definition.
+- [`cargo-features`](unstable.md) — Unstable, nightly-only features.
+- [`[package]`](#the-package-section) — Defines a package.
+  - [`name`](#the-name-field) — The name of the package.
+  - [`version`](#the-version-field) — The version of the package.
+  - [`authors`](#the-authors-field) — The authors of the package.
+  - [`edition`](#the-edition-field) — The Rust edition.
+  - [`rust-version`](#the-rust-version-field) — The minimal supported Rust version.
+  - [`description`](#the-description-field) — A description of the package.
+  - [`documentation`](#the-documentation-field) — URL of the package documentation.
+  - [`readme`](#the-readme-field) — Path to the package's README file.
+  - [`homepage`](#the-homepage-field) — URL of the package homepage.
+  - [`repository`](#the-repository-field) — URL of the package source repository.
+  - [`license`](#the-license-and-license-file-fields) — The package license.
+  - [`license-file`](#the-license-and-license-file-fields) — Path to the text of the license.
+  - [`keywords`](#the-keywords-field) — Keywords for the package.
+  - [`categories`](#the-categories-field) — Categories of the package.
+  - [`workspace`](#the-workspace-field) — Path to the workspace for the package.
+  - [`build`](#the-build-field) — Path to the package build script.
+  - [`links`](#the-links-field) — Name of the native library the package links with.
+  - [`exclude`](#the-exclude-and-include-fields) — Files to exclude when publishing.
+  - [`include`](#the-exclude-and-include-fields) — Files to include when publishing.
+  - [`publish`](#the-publish-field) — Can be used to prevent publishing the package.
+  - [`metadata`](#the-metadata-table) — Extra settings for external tools.
+  - [`default-run`](#the-default-run-field) — The default binary to run by [`cargo run`].
+  - [`autobins`](cargo-targets.md#target-auto-discovery) — Disables binary auto discovery.
+  - [`autoexamples`](cargo-targets.md#target-auto-discovery) — Disables example auto discovery.
+  - [`autotests`](cargo-targets.md#target-auto-discovery) — Disables test auto discovery.
+  - [`autobenches`](cargo-targets.md#target-auto-discovery) — Disables bench auto discovery.
+  - [`resolver`](resolver.md#resolver-versions) — Sets the dependency resolver to use.
+- Target tables: (see [configuration](cargo-targets.md#configuring-a-target) for settings)
+  - [`[lib]`](cargo-targets.md#library) — Library target settings.
+  - [`[[bin]]`](cargo-targets.md#binaries) — Binary target settings.
+  - [`[[example]]`](cargo-targets.md#examples) — Example target settings.
+  - [`[[test]]`](cargo-targets.md#tests) — Test target settings.
+  - [`[[bench]]`](cargo-targets.md#benchmarks) — Benchmark target settings.
+- Dependency tables:
+  - [`[dependencies]`](specifying-dependencies.md) — Package library dependencies.
+  - [`[dev-dependencies]`](specifying-dependencies.md#development-dependencies) — Dependencies for examples, tests, and benchmarks.
+  - [`[build-dependencies]`](specifying-dependencies.md#build-dependencies) — Dependencies for build scripts.
+  - [`[target]`](specifying-dependencies.md#platform-specific-dependencies) — Platform-specific dependencies.
+- [`[badges]`](#the-badges-section) — Badges to display on a registry.
+- [`[features]`](features.md) — Conditional compilation features.
+- [`[patch]`](overriding-dependencies.md#the-patch-section) — Override dependencies.
+- [`[replace]`](overriding-dependencies.md#the-replace-section) — Override dependencies (deprecated).
+- [`[profile]`](profiles.md) — Compiler settings and optimizations.
+- [`[workspace]`](workspaces.md) — The workspace definition.
 
 <a id="package-metadata"></a>
+
 ### The `[package]` section
 
 The first section in a `Cargo.toml` is `[package]`.
@@ -87,25 +88,26 @@ name such as "nul", is not too long, etc.
 Cargo bakes in the concept of [Semantic
 Versioning](https://semver.org/), so make sure you follow some basic rules:
 
-* Before you reach 1.0.0, anything goes, but if you make breaking changes,
+- Before you reach 1.0.0, anything goes, but if you make breaking changes,
   increment the minor version. In Rust, breaking changes include adding fields to
   structs or variants to enums.
-* After 1.0.0, only make breaking changes when you increment the major version.
+- After 1.0.0, only make breaking changes when you increment the major version.
   Don’t break the build.
-* After 1.0.0, don’t add any new public API (no new `pub` anything) in patch-level
+- After 1.0.0, don’t add any new public API (no new `pub` anything) in patch-level
   versions. Always increment the minor version if you add any new `pub` structs,
   traits, fields, types, functions, methods or anything else.
-* Use version numbers with three numeric parts such as 1.0.0 rather than 1.0.
+- Use version numbers with three numeric parts such as 1.0.0 rather than 1.0.
 
 See the [Resolver] chapter for more information on how Cargo uses versions to
 resolve dependencies, and for guidelines on setting your own version. See the
 [SemVer compatibility] chapter for more details on exactly what constitutes a
 breaking change.
 
-[Resolver]: resolver.md
-[SemVer compatibility]: semver.md
+[resolver]: resolver.md
+[semver compatibility]: semver.md
 
 <a id="the-authors-field-optional"></a>
+
 #### The `authors` field
 
 The optional `authors` field lists people or organizations that are considered
@@ -123,6 +125,7 @@ user interface.
 > package.
 
 <a id="the-edition-field-optional"></a>
+
 #### The `edition` field
 
 The `edition` key is an optional key that affects which [Rust Edition] your package
@@ -186,6 +189,7 @@ description = "A short description of my package"
 > **Note**: [crates.io] requires the `description` to be set.
 
 <a id="the-documentation-field-optional"></a>
+
 #### The `documentation` field
 
 The `documentation` field specifies a URL to a website hosting the crate's
@@ -263,9 +267,9 @@ Using `OR` indicates the user may choose either license. Using `AND` indicates
 the user must comply with both licenses simultaneously. The `WITH` operator
 indicates a license with a special exception. Some examples:
 
-* `MIT OR Apache-2.0`
-* `LGPL-2.1-only AND MIT AND BSD-2-Clause`
-* `GPL-2.0-or-later WITH Bison-exception-2.2`
+- `MIT OR Apache-2.0`
+- `LGPL-2.1-only AND MIT AND BSD-2-Clause`
+- `GPL-2.0-or-later WITH Bison-exception-2.2`
 
 If a package is using a nonstandard license, then the `license-file` field may
 be specified in lieu of the `license` field.
@@ -278,8 +282,9 @@ license-file = "LICENSE.txt"
 
 > **Note**: [crates.io] requires either `license` or `license-file` to be set.
 
-[^slash]: Previously multiple licenses could be separated with a `/`, but that
-usage is deprecated.
+[^slash]:
+    Previously multiple licenses could be separated with a `/`, but that
+    usage is deprecated.
 
 #### The `keywords` field
 
@@ -311,6 +316,7 @@ categories = ["command-line-utilities", "development-tools::cargo-plugins"]
 > must match exactly.
 
 <a id="the-workspace--field-optional"></a>
+
 #### The `workspace` field
 
 The `workspace` field can be used to configure the workspace that this package
@@ -333,6 +339,7 @@ For more information, see the [workspaces chapter](workspaces.md).
 
 <a id="package-build"></a>
 <a id="the-build-field-optional"></a>
+
 #### The `build` field
 
 The `build` field specifies a file in the package root which is a [build
@@ -353,6 +360,7 @@ specify a path to a different file or `build = false` to disable automatic
 detection of the build script.
 
 <a id="the-links-field-optional"></a>
+
 #### The `links` field
 
 The `links` field specifies the name of a native library that is being linked
@@ -368,6 +376,7 @@ links = "foo"
 ```
 
 <a id="the-exclude-and-include-fields-optional"></a>
+
 #### The `exclude` and `include` fields
 
 The `exclude` and `include` fields can be used to explicitly specify which
@@ -396,26 +405,26 @@ root of the package, except for the exclusions listed below.
 
 If `include` is not specified, then the following files will be excluded:
 
-* If the package is not in a git repository, all "hidden" files starting with
+- If the package is not in a git repository, all "hidden" files starting with
   a dot will be skipped.
-* If the package is in a git repository, any files that are ignored by the
+- If the package is in a git repository, any files that are ignored by the
   [gitignore] rules of the repository and global git configuration will be
   skipped.
 
 Regardless of whether `exclude` or `include` is specified, the following files
 are always excluded:
 
-* Any sub-packages will be skipped (any subdirectory that contains a
+- Any sub-packages will be skipped (any subdirectory that contains a
   `Cargo.toml` file).
-* A directory named `target` in the root of the package will be skipped.
+- A directory named `target` in the root of the package will be skipped.
 
 The following files are always included:
 
-* The `Cargo.toml` file of the package itself is always included, it does not
+- The `Cargo.toml` file of the package itself is always included, it does not
   need to be listed in `include`.
-* A minimized `Cargo.lock` is automatically included if the package contains a
+- A minimized `Cargo.lock` is automatically included if the package contains a
   binary or example target, see [`cargo package`] for more information.
-* If a [`license-file`](#the-license-and-license-file-fields) is specified, it
+- If a [`license-file`](#the-license-and-license-file-fields) is specified, it
   is always included.
 
 The options are mutually exclusive; setting `include` will override an
@@ -428,9 +437,9 @@ The patterns should be [gitignore]-style patterns. Briefly:
   package. This is equivalent to the pattern `**/foo`.
 - `/foo` matches any file or directory with the name `foo` only in the root of
   the package.
-- `foo/` matches any *directory* with the name `foo` anywhere in the package.
+- `foo/` matches any _directory_ with the name `foo` anywhere in the package.
 - Common glob patterns like `*`, `?`, and `[]` are supported:
-  - `*` matches zero or more characters except `/`.  For example, `*.html`
+  - `*` matches zero or more characters except `/`. For example, `*.html`
     matches any file or directory with the `.html` extension anywhere in the
     package.
   - `?` matches any character except `/`. For example, `foo?` matches `food`,
@@ -458,10 +467,11 @@ if any of those files change.
 [gitignore]: https://git-scm.com/docs/gitignore
 
 <a id="the-publish--field-optional"></a>
+
 #### The `publish` field
 
 The `publish` field can be used to prevent a package from being published to a
-package registry (like *crates.io*) by mistake, for instance to keep a package
+package registry (like _crates.io_) by mistake, for instance to keep a package
 private in a company.
 
 ```toml
@@ -483,6 +493,7 @@ If publish array contains a single registry, `cargo publish` command will use
 it when `--registry` flag is not specified.
 
 <a id="the-metadata-table-optional"></a>
+
 #### The `metadata` table
 
 Cargo by default will warn about unused keys in `Cargo.toml` to assist in
@@ -569,8 +580,6 @@ The `[profile]` tables provide a way to customize compiler settings such as
 optimizations and debug settings. See [the Profiles chapter](profiles.md) for
 more detail.
 
-
-
 [`cargo init`]: ../commands/cargo-init.md
 [`cargo new`]: ../commands/cargo-new.md
 [`cargo package`]: ../commands/cargo-package.md
@@ -578,11 +587,11 @@ more detail.
 [crates.io]: https://crates.io/
 [docs.rs]: https://docs.rs/
 [publishing]: publishing.md
-[Rust Edition]: ../../edition-guide/index.html
+[rust edition]: ../../edition-guide/index.html
 [spdx-2.1-license-expressions]: https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60
 [spdx-license-list-3.11]: https://github.com/spdx/license-list-data/tree/v3.11
-[SPDX site]: https://spdx.org/license-list
-[TOML]: https://toml.io/
+[spdx site]: https://spdx.org/license-list
+[toml]: https://toml.io/
 
 <script>
 (function() {

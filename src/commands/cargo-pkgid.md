@@ -170,4 +170,4 @@ details on environment variables that Cargo reads.
        cargo pkgid file:///path/to/local/package#foo
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-generate-lockfile(1)](cargo-generate-lockfile.html), [cargo-metadata(1)](cargo-metadata.html)
+[cargo(1)](cargo.zh.md), [cargo-generate-lockfile(1)](cargo-generate-lockfile.html), [cargo-metadata(1)](cargo-metadata.html)

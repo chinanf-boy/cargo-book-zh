@@ -185,4 +185,4 @@ details on environment variables that Cargo reads.
        cargo clean --release
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-build(1)](cargo-build.html)
+[cargo(1)](cargo.zh.md), [cargo-build(1)](cargo-build.html)

@@ -137,4 +137,4 @@ details on environment variables that Cargo reads.
        cargo new foo
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-init(1)](cargo-init.html)
+[cargo(1)](cargo.zh.md), [cargo-init(1)](cargo-init.html)

@@ -154,4 +154,4 @@ details on environment variables that Cargo reads.
        cargo fetch
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-update(1)](cargo-update.html), [cargo-generate-lockfile(1)](cargo-generate-lockfile.html)
+[cargo(1)](cargo.zh.md), [cargo-update(1)](cargo-update.html), [cargo-generate-lockfile(1)](cargo-generate-lockfile.html)

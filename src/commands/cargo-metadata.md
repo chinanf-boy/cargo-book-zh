@@ -457,4 +457,4 @@ details on environment variables that Cargo reads.
        cargo metadata --format-version=1
 
 ## SEE ALSO
-[cargo(1)](cargo.html)
+[cargo(1)](cargo.zh.md)

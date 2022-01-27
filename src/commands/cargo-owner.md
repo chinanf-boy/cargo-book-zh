@@ -156,4 +156,4 @@ details on environment variables that Cargo reads.
        cargo owner --remove username foo
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-login(1)](cargo-login.html), [cargo-publish(1)](cargo-publish.html)
+[cargo(1)](cargo.zh.md), [cargo-login(1)](cargo-login.html), [cargo-publish(1)](cargo-publish.html)

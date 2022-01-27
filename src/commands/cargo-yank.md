@@ -142,4 +142,4 @@ details on environment variables that Cargo reads.
        cargo yank --vers 1.0.7 foo
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-login(1)](cargo-login.html), [cargo-publish(1)](cargo-publish.html)
+[cargo(1)](cargo.zh.md), [cargo-login(1)](cargo-login.html), [cargo-publish(1)](cargo-publish.html)

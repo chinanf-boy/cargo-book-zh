@@ -398,4 +398,4 @@ details on environment variables that Cargo reads.
    entries, try with the `--no-dedupe` flag to get the full output.
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-metadata(1)](cargo-metadata.html)
+[cargo(1)](cargo.zh.md), [cargo-metadata(1)](cargo-metadata.html)

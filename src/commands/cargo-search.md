@@ -114,4 +114,4 @@ details on environment variables that Cargo reads.
        cargo search serde
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-install(1)](cargo-install.html), [cargo-publish(1)](cargo-publish.html)
+[cargo(1)](cargo.zh.md), [cargo-install(1)](cargo-install.html), [cargo-publish(1)](cargo-publish.html)

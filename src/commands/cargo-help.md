@@ -1,4 +1,4 @@
-# cargo-help(1)
+ # cargo-help(1)
 
 ## NAME
 
@@ -23,4 +23,4 @@ Prints a help message for the given command.
        cargo build --help
 
 ## SEE ALSO
-[cargo(1)](cargo.html)
+[cargo(1)](cargo.zh.md)

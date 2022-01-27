@@ -441,4 +441,4 @@ details on environment variables that Cargo reads.
        cargo bench --bench bench_name -- modname::some_benchmark
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-test(1)](cargo-test.html)
+[cargo(1)](cargo.zh.md), [cargo-test(1)](cargo-test.html)

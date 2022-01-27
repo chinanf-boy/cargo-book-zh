@@ -134,4 +134,4 @@ details on environment variables that Cargo reads.
        cargo verify-project
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-package(1)](cargo-package.html)
+[cargo(1)](cargo.zh.md), [cargo-package(1)](cargo-package.html)

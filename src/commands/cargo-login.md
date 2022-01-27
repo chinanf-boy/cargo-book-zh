@@ -110,4 +110,4 @@ details on environment variables that Cargo reads.
        cargo login
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-publish(1)](cargo-publish.html)
+[cargo(1)](cargo.zh.md), [cargo-publish(1)](cargo-publish.html)

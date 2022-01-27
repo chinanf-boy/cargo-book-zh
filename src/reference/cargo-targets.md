@@ -1,6 +1,6 @@
 ## Cargo Targets
 
-Cargo packages consist of *targets* which correspond to source files which can
+Cargo packages consist of _targets_ which correspond to source files which can
 be compiled into a crate. Packages can have [library](#library),
 [binary](#binaries), [example](#examples), [test](#tests), and
 [benchmark](#benchmarks) targets. The list of targets can be configured in the
@@ -36,8 +36,7 @@ in the `[[bin]]` tables in `Cargo.toml`.
 Binaries can use the public API of the package's library. They are also linked
 with the [`[dependencies]`][dependencies] defined in `Cargo.toml`.
 
-You can run individual binaries with the [`cargo run`] command with the `--bin
-<bin-name>` option. [`cargo install`] can be used to copy the executable to a
+You can run individual binaries with the [`cargo run`] command with the `--bin <bin-name>` option. [`cargo install`] can be used to copy the executable to a
 common location.
 
 ```toml
@@ -85,13 +84,13 @@ example that you want to run with [`cargo test`].
 
 There are two styles of tests within a Cargo project:
 
-* *Unit tests* which are functions marked with the [`#[test]`
+- _Unit tests_ which are functions marked with the [`#[test]`
   attribute][test-attribute] located within your library or binaries (or any
   target enabled with [the `test` field](#the-test-field)). These tests have
   access to private APIs located within the target they are defined in.
-* *Integration tests* which is a separate executable binary, also containing
+- _Integration tests_ which is a separate executable binary, also containing
   `#[test]` functions, which is linked with the project's library and has
-  access to its *public* API.
+  access to its _public_ API.
 
 Tests are run with the [`cargo test`] command. By default, Cargo and `rustc`
 use the [libtest harness] which is responsible for collecting functions
@@ -141,13 +140,13 @@ Benchmarks provide a way to test the performance of your code using the
 with each benchmark function annotated with the `#[bench]` attribute.
 Similarly to tests:
 
-* Benchmarks are placed in the [`benches` directory][package layout].
-* Benchmark functions defined in libraries and binaries have access to the
-  *private* API within the target they are defined in. Benchmarks in the
-  `benches` directory may use the *public* API.
-* [The `bench` field](#the-bench-field) can be used to define which targets
+- Benchmarks are placed in the [`benches` directory][package layout].
+- Benchmark functions defined in libraries and binaries have access to the
+  _private_ API within the target they are defined in. Benchmarks in the
+  `benches` directory may use the _public_ API.
+- [The `bench` field](#the-bench-field) can be used to define which targets
   are benchmarked by default.
-* [The `harness` field](#the-harness-field) can be used to disable the
+- [The `harness` field](#the-harness-field) can be used to disable the
   built-in harness.
 
 > **Note**: The [`#[bench]`
@@ -159,7 +158,7 @@ Similarly to tests:
 
 ### Configuring a target
 
-All of the  `[lib]`, `[[bin]]`, `[[example]]`, `[[test]]`, and `[[bench]]`
+All of the `[lib]`, `[[bin]]`, `[[example]]`, `[[test]]`, and `[[bench]]`
 sections in `Cargo.toml` support similar configuration for specifying how a
 target should be built. The double-bracket sections like `[[bin]]` are
 [array-of-table of TOML](https://toml.io/en/v1.0.0-rc.3#array-of-tables),
@@ -213,8 +212,7 @@ The `test` field indicates whether or not the target is tested by default by
 [`cargo test`]. The default is `true` for lib, bins, and tests.
 
 > **Note**: Examples are built by [`cargo test`] by default to ensure they
-> continue to compile, but they are not *tested* by default. Setting `test =
-> true` for an example will also build it as a test and run any
+> continue to compile, but they are not _tested_ by default. Setting `test = true` for an example will also build it as a test and run any
 > [`#[test]`][test-attribute] functions defined in the example.
 
 #### The `doctest` field
@@ -278,11 +276,11 @@ types for a single target. This can only be specified for libraries and
 examples. Binaries, tests, and benchmarks are always the "bin" crate type. The
 defaults are:
 
-Target | Crate Type
--------|-----------
-Normal library | `"lib"`
-Proc-macro library | `"proc-macro"`
-Example | `"bin"`
+| Target             | Crate Type     |
+| ------------------ | -------------- |
+| Normal library     | `"lib"`        |
+| Proc-macro library | `"proc-macro"` |
+| Example            | `"bin"`        |
 
 The available options are `bin`, `lib`, `rlib`, `dylib`, `cdylib`,
 `staticlib`, and `proc-macro`. You can read more about the different crate
@@ -307,7 +305,6 @@ name = "my-pg-tool"
 required-features = ["postgres", "tools"]
 ```
 
-
 ### Target auto-discovery
 
 By default, Cargo automatically determines the targets to build based on the
@@ -331,7 +328,7 @@ autobenches = false
 ```
 
 Disabling automatic discovery should only be needed for specialized
-situations. For example, if you have a library where you want a *module* named
+situations. For example, if you have a library where you want a _module_ named
 `bin`, this would present a problem because Cargo would usually attempt to
 compile anything in the `bin` directory as an executable. Here is a sample
 layout of this scenario:
@@ -357,9 +354,8 @@ autobins = false
 > is `false` if at least one target is manually defined in `Cargo.toml`.
 > Beginning with the 2018 edition, the default is always `true`.
 
-
-[Build cache]: ../guide/build-cache.md
-[Rust Edition]: ../../edition-guide/index.html
+[build cache]: ../guide/build-cache.md
+[rust edition]: ../../edition-guide/index.html
 [`--test` flag]: ../../rustc/command-line-arguments.html#option-test
 [`cargo bench`]: ../commands/cargo-bench.md
 [`cargo build`]: ../commands/cargo-build.md

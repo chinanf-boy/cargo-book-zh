@@ -118,4 +118,4 @@ details on environment variables that Cargo reads.
        cargo locate-project
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-metadata(1)](cargo-metadata.html)
+[cargo(1)](cargo.zh.md), [cargo-metadata(1)](cargo-metadata.html)

@@ -457,4 +457,4 @@ details on environment variables that Cargo reads.
        cargo fix --edition-idioms
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-check(1)](cargo-check.html)
+[cargo(1)](cargo.zh.md), [cargo-check(1)](cargo-check.html)

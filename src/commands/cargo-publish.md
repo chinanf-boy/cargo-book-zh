@@ -271,4 +271,4 @@ details on environment variables that Cargo reads.
        cargo publish
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-package(1)](cargo-package.html), [cargo-login(1)](cargo-login.html)
+[cargo(1)](cargo.zh.md), [cargo-package(1)](cargo-package.html), [cargo-login(1)](cargo-login.html)

@@ -39,4 +39,4 @@ Displays the version of Cargo.
        cargo -Vv
 
 ## SEE ALSO
-[cargo(1)](cargo.html)
+[cargo(1)](cargo.zh.md)

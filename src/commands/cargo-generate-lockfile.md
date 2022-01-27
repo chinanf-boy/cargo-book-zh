@@ -129,4 +129,4 @@ details on environment variables that Cargo reads.
        cargo generate-lockfile
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-update(1)](cargo-update.html)
+[cargo(1)](cargo.zh.md), [cargo-update(1)](cargo-update.html)

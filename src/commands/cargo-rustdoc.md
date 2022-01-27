@@ -362,4 +362,4 @@ details on environment variables that Cargo reads.
        cargo rustdoc --lib -- --extend-css extra.css
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-doc(1)](cargo-doc.html), [rustdoc(1)](https://doc.rust-lang.org/rustdoc/index.html)
+[cargo(1)](cargo.zh.md), [cargo-doc(1)](cargo-doc.html), [rustdoc(1)](https://doc.rust-lang.org/rustdoc/index.html)

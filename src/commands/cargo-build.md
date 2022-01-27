@@ -388,4 +388,4 @@ details on environment variables that Cargo reads.
        cargo build --release
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-rustc(1)](cargo-rustc.html)
+[cargo(1)](cargo.zh.md), [cargo-rustc(1)](cargo-rustc.html)

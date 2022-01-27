@@ -372,4 +372,4 @@ details on environment variables that Cargo reads.
        cargo rustc --lib -- -Z print-type-sizes
 
 ## SEE ALSO
-[cargo(1)](cargo.html), [cargo-build(1)](cargo-build.html), [rustc(1)](https://doc.rust-lang.org/rustc/index.html)
+[cargo(1)](cargo.zh.md), [cargo-build(1)](cargo-build.html), [rustc(1)](https://doc.rust-lang.org/rustc/index.html)

@@ -173,5 +173,5 @@ details on environment variables that Cargo reads.
        cargo vendor -s ../path/to/Cargo.toml
 
 ## SEE ALSO
-[cargo(1)](cargo.html)
+[cargo(1)](cargo.zh.md)
 
