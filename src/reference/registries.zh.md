@@ -1,6 +1,6 @@
 ## Registries
 
-Cargo安装板条箱并从“注册表”中获取依赖项。默认注册表是[crates.io].注册表包含一个“索引”，其中包含可用板条箱的可搜索列表。注册表还可以提供web API，以支持直接从Cargo发布新板条箱。
+Cargo安装箱子并从“注册表”中获取依赖项。默认注册表是[crates.io].注册表包含一个“索引”，其中包含可用箱子的可搜索列表。注册表还可以提供web API，以支持直接从Cargo发布新箱子。
 
 > 注意：如果您对镜像或出售现有注册表感兴趣，请查看[Source Replacement].
 
@@ -13,7 +13,7 @@ Cargo安装板条箱并从“注册表”中获取依赖项。默认注册表是
 my-registry = { index = "https://my-intranet:8080/git/index" }
 ```
 
-这个`index`键应该是指向带有注册表索引的git存储库的URL。然后，板条箱可以通过指定`registry`键和中该依赖项项中注册表名称的值`Cargo.toml`:
+这个`index`键应该是指向带有注册表索引的git存储库的URL。然后，箱子可以通过指定`registry`键和中该依赖项项中注册表名称的值`Cargo.toml`:
 
 ```toml
 # Sample Cargo.toml
@@ -31,7 +31,7 @@ other-crate = { version = "1.0", registry = "my-registry" }
 CARGO_REGISTRIES_MY_REGISTRY_INDEX=https://my-intranet:8080/git/index
 ```
 
-> 注：[crates.io]不接受依赖其他登记处板条箱的包装。
+> 注：[crates.io]不接受依赖其他登记处箱子的包装。
 
 ### Publishing to an Alternate Registry
 
@@ -68,7 +68,7 @@ token = "854DvwSlUwEHtIo3kWy6x7UCPKHfzCmy"
 
 支持发布的功能齐全的注册表还需要一个符合Cargo使用的API的web API服务。下面介绍了web API。
 
-商业和社区项目可用于建立和运行注册表。看见<https://github.com/rust-lang/cargo/wiki/Third-party-registries>查看可用内容的列表。
+商业和社区项目可用于建立和运行注册表。查看<https://github.com/rust-lang/cargo/wiki/Third-party-registries>查看可用内容的列表。
 
 ### Index Format
 
@@ -85,13 +85,13 @@ token = "854DvwSlUwEHtIo3kWy6x7UCPKHfzCmy"
 
 关键是：
 
--   `dl`：这是下载索引中列出的板条箱的URL。该值可能具有以下标记，这些标记将替换为相应的值：
+-   `dl`：这是下载索引中列出的箱子的URL。该值可能具有以下标记，这些标记将替换为相应的值：
 
-    -   `{crate}`：板条箱的名称。
-    -   `{version}`：板条箱版本。
-    -   `{prefix}`：根据板条箱名称计算的目录前缀。例如，一个名为`cargo`前缀为`ca/rg`.详情见下文。
+    -   `{crate}`：箱子的名称。
+    -   `{version}`：箱子版本。
+    -   `{prefix}`：根据箱子名称计算的目录前缀。例如，一个名为`cargo`前缀为`ca/rg`.详情见下文。
     -   `{lowerprefix}`：的小写变体`{prefix}`.
-    -   `{sha256-checksum}`：板条箱的sha256校验和。
+    -   `{sha256-checksum}`：箱子的sha256校验和。
 
     如果不存在任何标记，则值`/{crate}/{version}/download`被附加到结尾。
 
@@ -209,7 +209,7 @@ Cargo包括`Authorization`需要身份验证的请求的标头。标头值是API
 }
 ```
 
-服务器还可以使用404响应代码进行响应，以指示未找到请求的资源（例如，未知的板条箱名称）。但是，使用200响应和`errors`对象允许注册表在需要时提供更详细的错误消息。
+服务器还可以使用404响应代码进行响应，以指示未找到请求的资源（例如，未知的箱子名称）。但是，使用200响应和`errors`对象允许注册表在需要时提供更详细的错误消息。
 
 为了向后兼容，服务器应该忽略任何意外的查询参数或JSON字段。如果缺少JSON字段，则应假定该字段为空。端点的版本由`v1`路径的组件，Cargo负责处理将来需要的向后兼容性回退。
 
@@ -226,7 +226,7 @@ Cargo为所有请求设置以下标题：
 -   方法：放
 -   授权：包括
 
-发布端点用于发布板条箱的新版本。服务器应验证板条箱，使其可供下载，并将其添加到索引中。
+发布端点用于发布箱子的新版本。服务器应验证箱子，使其可供下载，并将其添加到索引中。
 
 Cargo发送的数据主体是：
 
@@ -351,7 +351,7 @@ Cargo发送的数据主体是：
 -   方法：删除
 -   授权：包括
 
-yank端点将设置`yank`指定板条箱版本的字段`true`在索引中。
+yank端点将设置`yank`指定箱子版本的字段`true`在索引中。
 
 成功的响应包括JSON对象：
 
@@ -368,7 +368,7 @@ yank端点将设置`yank`指定板条箱版本的字段`true`在索引中。
 -   方法：放
 -   授权：包括
 
-unyank端点将设置`yank`指定板条箱版本的字段`false`在索引中。
+unyank端点将设置`yank`指定箱子版本的字段`false`在索引中。
 
 成功的响应包括JSON对象：
 
@@ -381,7 +381,7 @@ unyank端点将设置`yank`指定板条箱版本的字段`false`在索引中。
 
 #### Owners
 
-Cargo没有用户和所有者的固有概念，但它确实提供了`owner`协助管理有权控制板条箱的人员的命令。由注册中心决定用户和所有者的具体处理方式。看到了吗[publishing documentation]想了解一下[crates.io]通过GitHub用户和团队处理所有者。
+Cargo没有用户和所有者的固有概念，但它确实提供了`owner`协助管理有权控制箱子的人员的命令。由注册中心决定用户和所有者的具体处理方式。看到了吗[publishing documentation]想了解一下[crates.io]通过GitHub用户和团队处理所有者。
 
 ##### Owners: List
 
@@ -389,7 +389,7 @@ Cargo没有用户和所有者的固有概念，但它确实提供了`owner`协�
 -   方法：获取
 -   授权：包括
 
-owners端点返回板条箱所有者的列表。
+owners端点返回箱子所有者的列表。
 
 成功的响应包括JSON对象：
 
@@ -416,7 +416,7 @@ owners端点返回板条箱所有者的列表。
 -   方法：放
 -   授权：包括
 
-PUT请求将向注册表发送向板条箱添加新所有者的请求。如何处理请求取决于注册表。例如[crates.io]向用户发送一个邀请，用户在添加之前必须接受该邀请。
+PUT请求将向注册表发送向箱子添加新所有者的请求。如何处理请求取决于注册表。例如[crates.io]向用户发送一个邀请，用户在添加之前必须接受该邀请。
 
 请求应包括以下JSON对象：
 
@@ -444,7 +444,7 @@ PUT请求将向注册表发送向板条箱添加新所有者的请求。如何�
 -   方法：删除
 -   授权：包括
 
-删除请求将从板条箱中删除所有者。请求应包括以下JSON对象：
+删除请求将从箱子中删除所有者。请求应包括以下JSON对象：
 
 ```javascript
 {
@@ -470,7 +470,7 @@ PUT请求将向注册表发送向板条箱添加新所有者的请求。如何�
     -   `q`：搜索查询字符串。
     -   `per_page`：结果数，默认为10，最大为100。
 
-搜索请求将使用服务器上定义的条件搜索板条箱。
+搜索请求将使用服务器上定义的条件搜索箱子。
 
 成功的响应包括JSON对象：
 

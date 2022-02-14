@@ -317,7 +317,7 @@ reproduction of the information within <code>Cargo.toml</code>.</dd>
 
 功能标志允许您控制启用哪些功能。如果未提供任何功能选项，则`default`为每个选定的软件包激活该功能。
 
-看见[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
+查看[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
 
 <dl>
 
@@ -416,7 +416,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

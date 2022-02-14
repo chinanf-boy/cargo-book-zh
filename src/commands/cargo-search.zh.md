@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo搜索——在板条箱中搜索包裹。木卫一
+Cargo搜索——在箱子中搜索包裹。木卫一
 
 ## SYNOPSIS
 
@@ -10,7 +10,7 @@ Cargo搜索——在板条箱中搜索包裹。木卫一
 
 ## DESCRIPTION
 
-这将对机器上的板条箱执行文本搜索<https://crates.io>.匹配的板条箱将以适合复制到文件中的TOML格式显示及其说明`Cargo.toml`显示
+这将对机器上的箱子执行文本搜索<https://crates.io>.匹配的箱子将以适合复制到文件中的TOML格式显示及其说明`Cargo.toml`显示
 
 ## OPTIONS
 
@@ -83,7 +83,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 
@@ -92,7 +92,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## EXAMPLES
 
-1.  从板条箱中寻找包裹。io:
+1.  从箱子中寻找包裹。io:
 
     Cargo搜索服务
 

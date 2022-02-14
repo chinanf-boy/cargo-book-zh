@@ -12,7 +12,7 @@ Cargo新建-创建新的Cargo包
 
 此命令将在给定目录中创建一个新的Cargo包。这包括一个带有`Cargo.toml`清单、样本源文件和VCS忽略文件。如果该目录不在VCS存储库中，则会创建一个新的存储库（请参阅`--vcs`下面）。
 
-看见[cargo-init(1)](cargo-init.html)用于在现有目录中创建新清单的类似命令。
+查看[cargo-init(1)](cargo-init.html)用于在现有目录中创建新清单的类似命令。
 
 ## OPTIONS
 
@@ -102,7 +102,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

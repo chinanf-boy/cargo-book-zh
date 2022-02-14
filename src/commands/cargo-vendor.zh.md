@@ -10,7 +10,7 @@ Cargo供应商-供应商在本地的所有依赖关系
 
 ## DESCRIPTION
 
-该Cargo小组负责所有板条箱的卖方。将项目的io和git依赖项放入`<path>`。此命令完成指定的供应商目录后`<path>`将包含来自指定依赖项的所有远程源。可以使用`-s`选项
+该Cargo小组负责所有箱子的卖方。将项目的io和git依赖项放入`<path>`。此命令完成指定的供应商目录后`<path>`将包含来自指定依赖项的所有远程源。可以使用`-s`选项
 
 这个`cargo vendor`命令还将打印出使用供应商源所需的配置，您需要将其添加到`.cargo/config.toml`.
 
@@ -126,7 +126,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

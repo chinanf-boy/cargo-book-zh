@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo猛拉-从索引中移除一个推动的板条箱
+Cargo猛拉-从索引中移除一个推动的箱子
 
 ## SYNOPSIS
 
@@ -10,13 +10,13 @@ Cargo猛拉-从索引中移除一个推动的板条箱
 
 ## DESCRIPTION
 
-yank命令从服务器索引中删除以前发布的板条箱版本。此命令不会删除任何数据，板条箱仍可通过注册表的下载链接下载。
+yank命令从服务器索引中删除以前发布的箱子版本。此命令不会删除任何数据，箱子仍可通过注册表的下载链接下载。
 
-请注意，锁定到拉扯版本的现有板条箱仍然可以下载拉扯版本以使用它。然而，Cargo将不允许任何新的板条箱被锁定到任何被拉扯的版本。
+请注意，锁定到拉扯版本的现有箱子仍然可以下载拉扯版本以使用它。然而，Cargo将不允许任何新的箱子被锁定到任何被拉扯的版本。
 
 此命令要求您通过`--token`选择或使用[cargo-login(1)](cargo-login.html).
 
-如果未指定板条箱名称，它将使用当前目录中的包名称。
+如果未指定箱子名称，它将使用当前目录中的包名称。
 
 ## OPTIONS
 
@@ -103,7 +103,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 
@@ -112,7 +112,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## EXAMPLES
 
-1.  从索引中拉出一个板条箱：
+1.  从索引中拉出一个箱子：
 
     cargo yank——1.0.7版foo
 

@@ -130,7 +130,7 @@ serde = { version = "1.0.118", features = ["derive"] }
 flate2 = { version = "1.0.3", default-features = false, features = ["zlib"] }
 ```
 
-> **笔记**：这可能无法确保禁用默认功能。如果另一个依赖项包括`flate2`没有具体说明`default-features = false`，则会启用默认功能。看见[feature
+> **笔记**：这可能无法确保禁用默认功能。如果另一个依赖项包括`flate2`没有具体说明`default-features = false`，则会启用默认功能。查看[feature
 > unification](#feature-unification)下面是更多细节。
 
 还可以在中启用依赖项的功能`[features]`桌子语法是`"package-name/feature-name"`.例如：
@@ -249,7 +249,7 @@ resolver = "2"
 在某些情况下，避免统一是必要的。例如，如果生成依赖项启用`std`特性，并且相同的依赖项用作`no_std`环境，使能`std`会破坏建筑。
 
 然而，一个缺点是，这可能会增加构建时间，因为依赖项被构建了多次（每个都有不同的功能）。使用该版本时`"2"`解析器，建议检查多次生成的依赖项，以减少总体生成时间。如果不是*必修的*要构建具有不同特性的复制包，请考虑将特性添加到`features`列表中的[dependency
-declaration](#dependency-features)因此，复制品最终具有相同的特性（因此Cargo只构建一次）。您可以使用[`cargo tree --duplicates`][`cargo tree`]命令它将显示多次构建的包；查找列出的任何具有相同版本的条目。看见[Inspecting resolved
+declaration](#dependency-features)因此，复制品最终具有相同的特性（因此Cargo只构建一次）。您可以使用[`cargo tree --duplicates`][`cargo tree`]命令它将显示多次构建的包；查找列出的任何具有相同版本的条目。查看[Inspecting resolved
 features](#inspecting-resolved-features)获取有关已解析功能的更多信息。对于生成依赖项，如果使用`--target`标记，因为在该场景中，生成依赖项总是与正常依赖项分开生成。
 
 #### Resolver version 2 command-line flags
@@ -330,7 +330,7 @@ targets]如果功能未启用。有关更多详细信息，请参阅链接文档
 
 清楚地记录这些特性可以设定对被认为“不稳定”或不应该使用的特性的期望。例如，如果存在可选依赖项，但不希望用户将该可选依赖项明确列为功能，请将其从文档列表中排除。
 
-发表于[docs.rs]可以在中使用元数据`Cargo.toml`控制在生成文档时启用哪些功能。看见[docs.rs metadata documentation]更多细节。
+发表于[docs.rs]可以在中使用元数据`Cargo.toml`控制在生成文档时启用哪些功能。查看[docs.rs metadata documentation]更多细节。
 
 > **笔记**：Rustdoc实验性地支持注释文档，以指示使用某些API需要哪些功能。看到了吗[`doc_cfg`]有关更多详细信息，请参阅文档。例如[`syn`
 > documentation]，您可以看到彩色框，其中注明了使用它所需的功能。
@@ -355,7 +355,7 @@ targets]如果功能未启用。有关更多详细信息，请参阅链接文档
 
 #### Discovering features
 
-当特性被记录在库API中时，用户可以更容易地发现哪些特性可用以及它们的用途。如果软件包的功能文档不可用，可以查看`Cargo.toml`文件，但有时很难找到它。板条箱页面[crates.io]有到源存储库的链接（如果可用）。像这样的工具[`cargo vendor`]或[cargo-clone-crate]可以用来下载源代码并检查它。
+当特性被记录在库API中时，用户可以更容易地发现哪些特性可用以及它们的用途。如果软件包的功能文档不可用，可以查看`Cargo.toml`文件，但有时很难找到它。箱子页面[crates.io]有到源存储库的链接（如果可用）。像这样的工具[`cargo vendor`]或[cargo-clone-crate]可以用来下载源代码并检查它。
 
 [`cargo vendor`]: ../commands/cargo-vendor.md
 

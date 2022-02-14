@@ -12,7 +12,7 @@ cargo rustdoc——使用指定的自定义标志构建包的文档
 
 当前包（或由指定的包）的指定目标`-p`（如果提供）将以规定的*阿格斯*被传递到最终的rustdoc调用。依赖项不会作为此命令的一部分进行记录。请注意，rustdoc仍将无条件接收参数，例如`-L`, `--extern`和`--crate-type`，以及指定的*阿格斯*将简单地添加到rustdoc调用中。
 
-看见<https://doc.rust-lang.org/rustdoc/index.html>有关rustdoc标志的文档。
+查看<https://doc.rust-lang.org/rustdoc/index.html>有关rustdoc标志的文档。
 
 此命令要求在提供附加参数时只编译一个目标。如果当前包有多个目标可用，则`--lib`, `--bin`等，必须用于选择要编译的目标。
 
@@ -107,7 +107,7 @@ manifest settings for the target.</dd>
 
 功能标志允许您控制启用哪些功能。如果未提供任何功能选项，则`default`为每个选定的软件包激活该功能。
 
-看见[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
+查看[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
 
 <dl>
 
@@ -280,7 +280,7 @@ the number of CPUs.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

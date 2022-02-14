@@ -12,7 +12,7 @@ C-编译当前包，并将额外选项传递给编译器
 
 当前包（或由指定的包）的指定目标`-p`（如果提供）将与其所有依赖项一起编译。指定的*阿格斯*将全部传递给最终的编译器调用，而不是任何依赖项。请注意，编译器仍将无条件地接收参数，例如`-L`, `--extern`和`--crate-type`，以及指定的*阿格斯*将简单地添加到编译器调用中。
 
-看见<https://doc.rust-lang.org/rustc/index.html>有关rustc标志的文档。
+查看<https://doc.rust-lang.org/rustc/index.html>有关rustc标志的文档。
 
 此命令要求在提供附加参数时只编译一个目标。如果当前包有多个目标可用，则`--lib`, `--bin`等，必须用于选择要编译的目标。
 
@@ -96,7 +96,7 @@ manifest settings for the target.</dd>
 
 功能标志允许您控制启用哪些功能。如果未提供任何功能选项，则`default`为每个选定的软件包激活该功能。
 
-看见[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
+查看[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
 
 <dl>
 
@@ -287,7 +287,7 @@ produced during execution of this command</p>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

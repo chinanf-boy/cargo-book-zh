@@ -2,7 +2,7 @@
 
 ## NAME
 
-货主——管理登记处板条箱的货主
+货主——管理登记处箱子的货主
 
 ## SYNOPSIS
 
@@ -10,13 +10,13 @@
 
 ## DESCRIPTION
 
-此命令将修改注册表中板条箱的所有者。板条箱的主人可以上传新版本，也可以拉旧版本。非团队所有者也可以修改所有者集，所以要小心！
+此命令将修改注册表中箱子的所有者。箱子的主人可以上传新版本，也可以拉旧版本。非团队所有者也可以修改所有者集，所以要小心！
 
 此命令要求您通过`--token`选择或使用[cargo-login(1)](cargo-login.html).
 
-如果未指定板条箱名称，它将使用当前目录中的包名称。
+如果未指定箱子名称，它将使用当前目录中的包名称。
 
-看见[the reference](../reference/publishing.html#cargo-owner)有关所有者和发布的更多信息。
+查看[the reference](../reference/publishing.html#cargo-owner)有关所有者和发布的更多信息。
 
 ## OPTIONS
 
@@ -108,7 +108,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

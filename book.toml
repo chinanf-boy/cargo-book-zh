@@ -18,10 +18,11 @@ use-default-preprocessors = false
 mathjax-support = false
 theme = "theme"
 curly-quotes = true
-google-analytics = "UA-128555056-1"
+# google-analytics = "UA-128555056-1"
 # additional-css = ["theme/custom.css"]
 git_repository_url = "https://github.com/chinanf-boy/cargo-book-zh"
 git_repository_icon = "fa-github"
+edit-url-template = "https://github.com/chinanf-boy/cargo-book-zh/edit/master/{path}"
 # additional-js = ["theme/custom.js"]
 
 [output.html.playpen]

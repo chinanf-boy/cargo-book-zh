@@ -17,7 +17,7 @@ section](#the-workspace-section)到`Cargo.toml`。这可以添加到`Cargo.toml`
 
 -   所有包共享一个公共`Cargo.lock`位于*工作区根目录*.
 -   所有包共享一个公共[output directory]，默认为名为`target`在*工作区根目录*.
--   这个[`[patch]`][patch], [`[replace]`][replace]和[`[profile.*]`][profiles]章节`Cargo.toml`只有在*根*而在成员板条箱的清单中被忽略。
+-   这个[`[patch]`][patch], [`[replace]`][replace]和[`[profile.*]`][profiles]章节`Cargo.toml`只有在*根*而在成员箱子的清单中被忽略。
 
 ### The `[workspace]` section
 
@@ -39,7 +39,7 @@ exclude = ["crates/foo", "path/to/other"]
 
 ### Workspace selection
 
-在工作区的子目录中时，Cargo会自动在父目录中搜索`Cargo.toml`向`[workspace]`定义以确定要使用的工作空间。这个[`package.workspace`]可以在成员板条箱中使用清单键指向工作区的根，以覆盖此自动搜索。如果成员不在工作区根目录的子目录中，手动设置可能会很有用。
+在工作区的子目录中时，Cargo会自动在父目录中搜索`Cargo.toml`向`[workspace]`定义以确定要使用的工作空间。这个[`package.workspace`]可以在成员箱子中使用清单键指向工作区的根，以覆盖此自动搜索。如果成员不在工作区根目录的子目录中，手动设置可能会很有用。
 
 ### Package selection
 

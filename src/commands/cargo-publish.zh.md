@@ -15,11 +15,11 @@ Cargo发布-将包裹上载到注册表
 1.  执行一些检查，包括：
     -   检查`package.publish`在清单中输入允许发布到哪些注册表的限制。
 2.  创建一个`.crate`按照中的步骤进行归档[cargo-package(1)](cargo-package.html).
-3.  将板条箱上载到注册表。请注意，服务器将对板条箱执行其他检查。
+3.  将箱子上载到注册表。请注意，服务器将对箱子执行其他检查。
 
 此命令要求您通过`--token`选择或使用[cargo-login(1)](cargo-login.html).
 
-看见[the reference](../reference/publishing.html)有关打包和发布的更多详细信息。
+查看[the reference](../reference/publishing.html)有关打包和发布的更多详细信息。
 
 ## OPTIONS
 
@@ -100,7 +100,7 @@ Defaults to <code>target</code> in the root of the workspace.</dd>
 
 功能标志允许您控制启用哪些功能。如果未提供任何功能选项，则`default`为每个选定的软件包激活该功能。
 
-看见[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
+查看[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
 
 <dl>
 
@@ -211,7 +211,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

@@ -144,7 +144,7 @@ strings will be replaced with the corresponding value:</p>
 
 默认情况下，如果未提供包选择选项，则选择的包取决于选择的清单文件（如果需要，则基于当前工作目录）`--manifest-path`未给出）。如果清单是工作区的根目录，则会选择工作区默认成员，否则只会选择清单定义的包。
 
-可以使用`workspace.default-members`输入根清单。如果未设置，虚拟工作区将包括所有工作区成员（相当于传递）`--workspace`)，非虚拟工作区将只包括根板条箱本身。
+可以使用`workspace.default-members`输入根清单。如果未设置，虚拟工作区将包括所有工作区成员（相当于传递）`--workspace`)，非虚拟工作区将只包括根箱子本身。
 
 <dl>
 
@@ -204,7 +204,7 @@ offline.</p>
 
 功能标志允许您控制启用哪些功能。如果未提供任何功能选项，则`default`为每个选定的软件包激活该功能。
 
-看见[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
+查看[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
 
 <dl>
 
@@ -273,7 +273,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 
@@ -332,7 +332,7 @@ for more information about how toolchain overrides work.</dd>
         └── syn feature "proc-macro" (*)
     ```
 
-    要阅读此图，您可以从根目录中查看每个功能的链，以了解其包含的原因。例如，“完整”功能由`rustversion`板条箱，包括从`myproject`（具有默认功能），以及`myproject`是在命令行上选择的包。所有其他的`syn`功能由“默认”功能添加（“引用”由“打印”和“proc宏”添加，两者都是默认功能）。
+    要阅读此图，您可以从根目录中查看每个功能的链，以了解其包含的原因。例如，“完整”功能由`rustversion`箱子，包括从`myproject`（具有默认功能），以及`myproject`是在命令行上选择的包。所有其他的`syn`功能由“默认”功能添加（“引用”由“打印”和“proc宏”添加，两者都是默认功能）。
 
     如果交叉引用已消除重复的`(*)`输入，用`--no-dedupe`标记以获取完整输出。
 

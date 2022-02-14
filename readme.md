@@ -66,7 +66,7 @@
 - [x] [Cargo Commands](src/commands/index.zh.md)
 
   - [x] [General Commands](src/commands/general-commands.zh.md)
-    - [ ] [cargo](src/commands/cargo.zh.md)
+    - [x] [cargo](src/commands/cargo.zh.md)
     - [x] [cargo help](src/commands/cargo-help.zh.md)
     - [x] [cargo version](src/commands/cargo-version.zh.md)
   - [x] [Build Commands](src/commands/build-commands.zh.md)

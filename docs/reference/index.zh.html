@@ -1,253 +1,216 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cargo Reference - Rust Cargo 官书（非官方翻译)</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Cargo ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
-<head>
-    <!-- Book generated using mdBook -->
-    <meta charset="UTF-8">
-    <title>Cargo 参考 - Rust Cargo 官书（非官方翻译)</title>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="description" content="Cargo ">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
-    <link rel="shortcut icon" href="../favicon.png">
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/chrome.css">
-    <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-        rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
 
-    <!-- Highlight.js Stylesheets -->
-    <link rel="stylesheet" href="../highlight.css">
-    <link rel="stylesheet" href="../tomorrow-night.css">
-    <link rel="stylesheet" href="../ayu-highlight.css">
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
 
-    <!-- Custom theme stylesheets -->
-    
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
 
-    
-</head>
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
 
-<body class="light">
-    <!-- Provide site root to javascript -->
-    <script type="text/javascript">var path_to_root = "../";</script>
-
-    <!-- Work around some values being stored in localStorage wrapped in quotes -->
-    <script type="text/javascript">
-        try {
-            var theme = localStorage.getItem('mdbook-theme');
-            var sidebar = localStorage.getItem('mdbook-sidebar');
-
-            if (theme.startsWith('"') && theme.endsWith('"')) {
-                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
             }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
 
-            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-            }
-        } catch (e) { }
-    </script>
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.zh.html">Introduction</a></li><li class="chapter-item expanded "><a href="../getting-started/index.zh.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting-started/installation.zh.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../getting-started/first-steps.zh.html"><strong aria-hidden="true">1.2.</strong> First Steps with Cargo</a></li></ol></li><li class="chapter-item expanded "><a href="../guide/index.zh.html"><strong aria-hidden="true">2.</strong> Cargo Guide</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../guide/why-cargo-exists.zh.html"><strong aria-hidden="true">2.1.</strong> Why Cargo Exists</a></li><li class="chapter-item expanded "><a href="../guide/creating-a-new-project.zh.html"><strong aria-hidden="true">2.2.</strong> Creating a New Package</a></li><li class="chapter-item expanded "><a href="../guide/working-on-an-existing-project.zh.html"><strong aria-hidden="true">2.3.</strong> Working on an Existing Package</a></li><li class="chapter-item expanded "><a href="../guide/dependencies.zh.html"><strong aria-hidden="true">2.4.</strong> Dependencies</a></li><li class="chapter-item expanded "><a href="../guide/project-layout.zh.html"><strong aria-hidden="true">2.5.</strong> Package Layout</a></li><li class="chapter-item expanded "><a href="../guide/cargo-toml-vs-cargo-lock.zh.html"><strong aria-hidden="true">2.6.</strong> Cargo.toml vs Cargo.lock</a></li><li class="chapter-item expanded "><a href="../guide/tests.zh.html"><strong aria-hidden="true">2.7.</strong> Tests</a></li><li class="chapter-item expanded "><a href="../guide/continuous-integration.zh.html"><strong aria-hidden="true">2.8.</strong> Continuous Integration</a></li><li class="chapter-item expanded "><a href="../guide/cargo-home.zh.html"><strong aria-hidden="true">2.9.</strong> Cargo Home</a></li><li class="chapter-item expanded "><a href="../guide/build-cache.zh.html"><strong aria-hidden="true">2.10.</strong> Build Cache</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/index.zh.html" class="active"><strong aria-hidden="true">3.</strong> Cargo Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/specifying-dependencies.zh.html"><strong aria-hidden="true">3.1.</strong> Specifying Dependencies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/overriding-dependencies.zh.html"><strong aria-hidden="true">3.1.1.</strong> Overriding Dependencies</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/manifest.zh.html"><strong aria-hidden="true">3.2.</strong> The Manifest Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/cargo-targets.zh.html"><strong aria-hidden="true">3.2.1.</strong> Cargo Targets</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/workspaces.zh.html"><strong aria-hidden="true">3.3.</strong> Workspaces</a></li><li class="chapter-item expanded "><a href="../reference/features.zh.html"><strong aria-hidden="true">3.4.</strong> Features</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/features-examples.zh.html"><strong aria-hidden="true">3.4.1.</strong> Features Examples</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/profiles.zh.html"><strong aria-hidden="true">3.5.</strong> Profiles</a></li><li class="chapter-item expanded "><a href="../reference/config.zh.html"><strong aria-hidden="true">3.6.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="../reference/environment-variables.zh.html"><strong aria-hidden="true">3.7.</strong> Environment Variables</a></li><li class="chapter-item expanded "><a href="../reference/build-scripts.zh.html"><strong aria-hidden="true">3.8.</strong> Build Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/build-script-examples.zh.html"><strong aria-hidden="true">3.8.1.</strong> Build Script Examples</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/publishing.zh.html"><strong aria-hidden="true">3.9.</strong> Publishing on crates.io</a></li><li class="chapter-item expanded "><a href="../reference/pkgid-spec.zh.html"><strong aria-hidden="true">3.10.</strong> Package ID Specifications</a></li><li class="chapter-item expanded "><a href="../reference/source-replacement.zh.html"><strong aria-hidden="true">3.11.</strong> Source Replacement</a></li><li class="chapter-item expanded "><a href="../reference/external-tools.zh.html"><strong aria-hidden="true">3.12.</strong> External Tools</a></li><li class="chapter-item expanded "><a href="../reference/registries.zh.html"><strong aria-hidden="true">3.13.</strong> Registries</a></li><li class="chapter-item expanded "><a href="../reference/resolver.zh.html"><strong aria-hidden="true">3.14.</strong> Dependency Resolution</a></li><li class="chapter-item expanded "><a href="../reference/semver.zh.html"><strong aria-hidden="true">3.15.</strong> SemVer Compatibility</a></li><li class="chapter-item expanded "><a href="../reference/future-incompat-report.zh.html"><strong aria-hidden="true">3.16.</strong> Future incompat report</a></li><li class="chapter-item expanded "><a href="../reference/unstable.zh.html"><strong aria-hidden="true">3.17.</strong> Unstable Features</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/index.zh.html"><strong aria-hidden="true">4.</strong> Cargo Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/general-commands.zh.html"><strong aria-hidden="true">4.1.</strong> General Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo.zh.html"><strong aria-hidden="true">4.1.1.</strong> cargo</a></li><li class="chapter-item expanded "><a href="../commands/cargo-help.zh.html"><strong aria-hidden="true">4.1.2.</strong> cargo help</a></li><li class="chapter-item expanded "><a href="../commands/cargo-version.zh.html"><strong aria-hidden="true">4.1.3.</strong> cargo version</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/build-commands.zh.html"><strong aria-hidden="true">4.2.</strong> Build Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-bench.zh.html"><strong aria-hidden="true">4.2.1.</strong> cargo bench</a></li><li class="chapter-item expanded "><a href="../commands/cargo-build.zh.html"><strong aria-hidden="true">4.2.2.</strong> cargo build</a></li><li class="chapter-item expanded "><a href="../commands/cargo-check.zh.html"><strong aria-hidden="true">4.2.3.</strong> cargo check</a></li><li class="chapter-item expanded "><a href="../commands/cargo-clean.zh.html"><strong aria-hidden="true">4.2.4.</strong> cargo clean</a></li><li class="chapter-item expanded "><a href="../commands/cargo-doc.zh.html"><strong aria-hidden="true">4.2.5.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="../commands/cargo-fetch.zh.html"><strong aria-hidden="true">4.2.6.</strong> cargo fetch</a></li><li class="chapter-item expanded "><a href="../commands/cargo-fix.zh.html"><strong aria-hidden="true">4.2.7.</strong> cargo fix</a></li><li class="chapter-item expanded "><a href="../commands/cargo-run.zh.html"><strong aria-hidden="true">4.2.8.</strong> cargo run</a></li><li class="chapter-item expanded "><a href="../commands/cargo-rustc.zh.html"><strong aria-hidden="true">4.2.9.</strong> cargo rustc</a></li><li class="chapter-item expanded "><a href="../commands/cargo-rustdoc.zh.html"><strong aria-hidden="true">4.2.10.</strong> cargo rustdoc</a></li><li class="chapter-item expanded "><a href="../commands/cargo-test.zh.html"><strong aria-hidden="true">4.2.11.</strong> cargo test</a></li><li class="chapter-item expanded "><a href="../commands/cargo-report.zh.html"><strong aria-hidden="true">4.2.12.</strong> cargo report</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/manifest-commands.zh.html"><strong aria-hidden="true">4.3.</strong> Manifest Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-generate-lockfile.zh.html"><strong aria-hidden="true">4.3.1.</strong> cargo generate-lockfile</a></li><li class="chapter-item expanded "><a href="../commands/cargo-locate-project.zh.html"><strong aria-hidden="true">4.3.2.</strong> cargo locate-project</a></li><li class="chapter-item expanded "><a href="../commands/cargo-metadata.zh.html"><strong aria-hidden="true">4.3.3.</strong> cargo metadata</a></li><li class="chapter-item expanded "><a href="../commands/cargo-pkgid.zh.html"><strong aria-hidden="true">4.3.4.</strong> cargo pkgid</a></li><li class="chapter-item expanded "><a href="../commands/cargo-tree.zh.html"><strong aria-hidden="true">4.3.5.</strong> cargo tree</a></li><li class="chapter-item expanded "><a href="../commands/cargo-update.zh.html"><strong aria-hidden="true">4.3.6.</strong> cargo update</a></li><li class="chapter-item expanded "><a href="../commands/cargo-vendor.zh.html"><strong aria-hidden="true">4.3.7.</strong> cargo vendor</a></li><li class="chapter-item expanded "><a href="../commands/cargo-verify-project.zh.html"><strong aria-hidden="true">4.3.8.</strong> cargo verify-project</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/package-commands.zh.html"><strong aria-hidden="true">4.4.</strong> Package Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-init.zh.html"><strong aria-hidden="true">4.4.1.</strong> cargo init</a></li><li class="chapter-item expanded "><a href="../commands/cargo-install.zh.html"><strong aria-hidden="true">4.4.2.</strong> cargo install</a></li><li class="chapter-item expanded "><a href="../commands/cargo-new.zh.html"><strong aria-hidden="true">4.4.3.</strong> cargo new</a></li><li class="chapter-item expanded "><a href="../commands/cargo-search.zh.html"><strong aria-hidden="true">4.4.4.</strong> cargo search</a></li><li class="chapter-item expanded "><a href="../commands/cargo-uninstall.zh.html"><strong aria-hidden="true">4.4.5.</strong> cargo uninstall</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/publishing-commands.zh.html"><strong aria-hidden="true">4.5.</strong> Publishing Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-login.zh.html"><strong aria-hidden="true">4.5.1.</strong> cargo login</a></li><li class="chapter-item expanded "><a href="../commands/cargo-owner.zh.html"><strong aria-hidden="true">4.5.2.</strong> cargo owner</a></li><li class="chapter-item expanded "><a href="../commands/cargo-package.zh.html"><strong aria-hidden="true">4.5.3.</strong> cargo package</a></li><li class="chapter-item expanded "><a href="../commands/cargo-publish.zh.html"><strong aria-hidden="true">4.5.4.</strong> cargo publish</a></li><li class="chapter-item expanded "><a href="../commands/cargo-yank.zh.html"><strong aria-hidden="true">4.5.5.</strong> cargo yank</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../faq.zh.html"><strong aria-hidden="true">5.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="../appendix/glossary.zh.html"><strong aria-hidden="true">6.</strong> Appendix: Glossary</a></li><li class="chapter-item expanded "><a href="../appendix/git-authentication.zh.html"><strong aria-hidden="true">7.</strong> Appendix: Git Authentication</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
 
-    <!-- Set the theme before any content is loaded, prevents flash -->
-    <script type="text/javascript">
-        var theme;
-        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
-        if (theme === null || theme === undefined) { theme = 'light'; }
-        document.body.className = theme;
-        document.querySelector('html').className = theme + ' js';
-    </script>
+        <div id="page-wrapper" class="page-wrapper">
 
-    <!-- Hide / unhide sidebar before it is displayed -->
-    <script type="text/javascript">
-        var html = document.querySelector('html');
-        var sidebar = 'hidden';
-        if (document.body.clientWidth >= 1080) {
-            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
-            sidebar = sidebar || 'visible';
-        }
-        html.classList.remove('sidebar-visible');
-        html.classList.add("sidebar-" + sidebar);
-    </script>
-
-    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-        <ol class="chapter"><li class="affix"><a href="../index.zh.html">介绍</a></li><li><a href="../getting-started/index.zh.html"><strong aria-hidden="true">1.</strong> 入门</a></li><li><ol class="section"><li><a href="../getting-started/installation.zh.html"><strong aria-hidden="true">1.1.</strong> 安装</a></li><li><a href="../getting-started/first-steps.zh.html"><strong aria-hidden="true">1.2.</strong> Cargo 的第一步</a></li></ol></li><li><a href="../guide/index.zh.html"><strong aria-hidden="true">2.</strong> Cargo 指南</a></li><li><ol class="section"><li><a href="../guide/why-cargo-exists.zh.html"><strong aria-hidden="true">2.1.</strong> 为什么 Cargo 存在</a></li><li><a href="../guide/creating-a-new-project.zh.html"><strong aria-hidden="true">2.2.</strong> 创建一个新包</a></li><li><a href="../guide/working-on-an-existing-project.zh.html"><strong aria-hidden="true">2.3.</strong> 处理现有包</a></li><li><a href="../guide/dependencies.zh.html"><strong aria-hidden="true">2.4.</strong> 依赖</a></li><li><a href="../guide/project-layout.zh.html"><strong aria-hidden="true">2.5.</strong> 包装布局</a></li><li><a href="../guide/cargo-toml-vs-cargo-lock.zh.html"><strong aria-hidden="true">2.6.</strong> Cargo.toml 与 Cargo.lock</a></li><li><a href="../guide/tests.zh.html"><strong aria-hidden="true">2.7.</strong> 测试</a></li><li><a href="../guide/continuous-integration.zh.html"><strong aria-hidden="true">2.8.</strong> 持续集成</a></li><li><a href="../guide/build-cache.zh.html"><strong aria-hidden="true">2.9.</strong> 构建缓存</a></li></ol></li><li><a href="../reference/index.zh.html" class="active"><strong aria-hidden="true">3.</strong> Cargo 参考</a></li><li><ol class="section"><li><a href="../reference/specifying-dependencies.zh.html"><strong aria-hidden="true">3.1.</strong> 指定依赖项</a></li><li><a href="../reference/manifest.zh.html"><strong aria-hidden="true">3.2.</strong> 清单格式</a></li><li><a href="../reference/config.zh.html"><strong aria-hidden="true">3.3.</strong> 组态</a></li><li><a href="../reference/environment-variables.zh.html"><strong aria-hidden="true">3.4.</strong> 环境变量</a></li><li><a href="../reference/build-scripts.zh.html"><strong aria-hidden="true">3.5.</strong> 构建脚本</a></li><li><a href="../reference/publishing.zh.html"><strong aria-hidden="true">3.6.</strong> 在 crates.io 上发布</a></li><li><a href="../reference/pkgid-spec.zh.html"><strong aria-hidden="true">3.7.</strong> 包 ID 规格</a></li><li><a href="../reference/source-replacement.zh.html"><strong aria-hidden="true">3.8.</strong> 来源更换</a></li><li><a href="../reference/external-tools.zh.html"><strong aria-hidden="true">3.9.</strong> 外部工具</a></li><li><a href="../reference/unstable.zh.html"><strong aria-hidden="true">3.10.</strong> 不稳定的功能</a></li></ol></li><li><a href="../faq.zh.html"><strong aria-hidden="true">4.</strong> 常问问题</a></li><li><a href="../appendix/glossary.zh.html"><strong aria-hidden="true">5.</strong> 附录:词汇表</a></li></ol>
-    </nav>
-
-    <div id="page-wrapper" class="page-wrapper">
-
-        <div class="page">
-            
-            <div id="menu-bar" class="menu-bar">
-                <div id="menu-bar-sticky-container">
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
-                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <!-- START - Rust Cookbook customization -->
-                        <button id="edit-button" class="icon-button" type="button" title="Fork and edit" aria-label="Fork and edit"
-                            aria-haspopup="true" aria-expanded="false" aria-controls="edit">
-                            <i class="fa fa-edit">Edit</i>
-                        </button>
-                        <!-- END - Rust Cookbook customization -->
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme"
-                            aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
-                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">Rust Cargo 官书（非官方翻译)</h1>
-                    
-                        <div class="right-buttons">
-                            <a href="../print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/chinanf-boy/cargo-book-zh/edit/master/src/reference/index.zh.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
                     </div>
                 </div>
 
-            
-            <div id="search-wrapper" class="hidden">
-                <form id="searchbar-outer" class="searchbar-outer">
-                    <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
-                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                </form>
-                <div id="searchresults-outer" class="searchresults-outer hidden">
-                    <div id="searchresults-header" class="searchresults-header"></div>
-                    <ul id="searchresults">
-                    </ul>
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
 
-            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-            <script type="text/javascript">
-                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
-                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                });
-            </script>
-
-            <!-- // START - Rust Cookbook customization -->
-            <script>
-                document.getElementById("edit-button").addEventListener("click", function () {
-                    var editWindow = window.open("https://github.com/chinanf-boy/cargo-book-zh/edit/master/src/reference/index.zh.md");
-                });</script>
-            <!-- // END - Rust Cookbook customization -->
-
-            <div id="content" class="content">
-                <main>
-                    <a class="header" href="#cargo-参考" id="cargo-参考"><h2>Cargo 参考</h2></a>
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="cargo-参考"><a class="header" href="#cargo-参考">Cargo 参考</a></h2>
 <p>该参考文献涵盖了 Cargo 各个领域的细节.</p>
 <ul>
-<li><a href="./specifying-dependencies.zh.html">指定依赖项</a></li>
-<li><a href="./manifest.zh.html">清单格式</a></li>
+<li><a href="./specifying-dependencies.zh.html">指定依赖项</a>
+<ul>
+<li><a href="overriding-dependencies.zh.html">覆盖依赖项</a></li>
+</ul>
+</li>
+<li><a href="./manifest.zh.html">清单格式</a>
+<ul>
+<li><a href="cargo-targets.zh.html">Cargo Targets</a></li>
+</ul>
+</li>
+<li><a href="workspaces.zh.html">Workspaces</a></li>
+<li><a href="features.zh.html">Features</a>
+<ul>
+<li><a href="features-examples.zh.html">Features 示例</a></li>
+</ul>
+</li>
+<li><a href="profiles.zh.html">Profiles</a></li>
 <li><a href="./config.zh.html">配置</a></li>
 <li><a href="./environment-variables.zh.html">环境变量</a></li>
-<li><a href="./build-scripts.zh.html">构建脚本</a></li>
+<li><a href="./build-scripts.zh.html">构建脚本</a>
+<ul>
+<li><a href="build-script-examples.zh.html">Build Script 示例</a></li>
+</ul>
+</li>
 <li><a href="./publishing.zh.html">在 crates.io 上发布</a></li>
 <li><a href="./pkgid-spec.zh.html">包 ID 规格</a></li>
 <li><a href="./source-replacement.zh.html">来源更换</a></li>
 <li><a href="./external-tools.zh.html">外部工具</a></li>
+<li><a href="registries.zh.html">来源</a></li>
+<li><a href="resolver.zh.html">依赖项 解析</a></li>
+<li><a href="semver.zh.html">SemVer 格式版本的 兼容性</a></li>
+<li><a href="future-incompat-report.zh.html">Future 不兼容报告</a></li>
 <li><a href="./unstable.zh.html">不稳定的功能</a></li>
 </ul>
 
-                </main>
+                    </main>
 
-                <nav class="nav-wrapper" aria-label="Page navigation">
-                    <!-- Mobile navigation buttons -->
-                    
-                    <a rel="prev" href="../guide/build-cache.zh.html" class="mobile-nav-chapters previous" title="Previous chapter"
-                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../guide/build-cache.zh.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../reference/specifying-dependencies.zh.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../guide/build-cache.zh.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    
-
-                    
-                    <a rel="next" href="../reference/specifying-dependencies.zh.html" class="mobile-nav-chapters next" title="Next chapter"
-                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../reference/specifying-dependencies.zh.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                    
+            </nav>
 
-                    <div style="clear: both"></div>
-                </nav>
-            </div>
         </div>
 
-        <nav class="nav-wide-wrapper" aria-label="Page navigation">
-            
-            <a href="../guide/build-cache.zh.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter"
-                aria-keyshortcuts="Left">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
-            
-            <a href="../reference/specifying-dependencies.zh.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
-                aria-keyshortcuts="Right">
-                <i class="fa fa-angle-right"></i>
-            </a>
-            
-        </nav>
-
-    </div>
-
-    
-
-    
-    <!-- Google Analytics Tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128555056-1"></script>
-    
-    <script type="text/javascript">
-        var localAddrs = ["localhost", "127.0.0.1", ""];
-        if (localAddrs.indexOf(document.location.hostname) === -1) {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-
-            gtag('config', 'UA-128555056-1');
-        }
-    </script>
-    
-
-    
-
-    
-    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-    
-
-    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
-
-    <!-- Custom JS scripts -->
-    
-
-    
-
-</body>
-
+        <!-- Custom JS scripts -->
+    </body>
 </html>

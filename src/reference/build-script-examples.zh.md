@@ -3,13 +3,13 @@
 以下部分说明了编写构建脚本的一些示例。
 
 一些常见的构建脚本功能可以通过[crates.io].查看[`build-dependencies`
-keyword](https://crates.io/keywords/build-dependencies)看看有什么可用的。以下是一些流行板条箱的样本[^†]\:
+keyword](https://crates.io/keywords/build-dependencies)看看有什么可用的。以下是一些流行箱子的样本[^†]\:
 
 -   [`bindgen`](https://crates.io/crates/bindgen)-自动生成到C库的Rust FFI绑定。
 -   [`cc`](https://crates.io/crates/cc)-编译C/C++/assembly。
 -   [`pkg-config`](https://crates.io/crates/pkg-config)-使用`pkg-config`公用事业
 -   [`cmake`](https://crates.io/crates/cmake)-运行`cmake`构建工具来构建本机库。
--   [`autocfg`](https://crates.io/crates/autocfg), [`rustc_version`](https://crates.io/crates/rustc_version), [`version_check`](https://crates.io/crates/version_check)-这些板条箱提供了基于当前数据实现条件编译的方法`rustc`例如编译器的版本。
+-   [`autocfg`](https://crates.io/crates/autocfg), [`rustc_version`](https://crates.io/crates/rustc_version), [`version_check`](https://crates.io/crates/version_check)-这些箱子提供了基于当前数据实现条件编译的方法`rustc`例如编译器的版本。
 
 [^†]：此列表不是背书。评估你的依赖关系，看看哪个适合你的项目。
 
@@ -65,7 +65,7 @@ fn main() {
 这里有几点值得注意：
 
 -   脚本使用`OUT_DIR`环境变量来发现输出文件应该位于何处。它可以使用进程的当前工作目录来查找输入文件的位置，但在这种情况下，我们没有任何输入文件。
--   一般来说，构建脚本不应修改外部的任何文件`OUT_DIR`.乍一看似乎没什么问题，但当你把这种板条箱当作依赖物使用时，确实会造成问题，因为有一个*含蓄的*来源于`.cargo/registry`应该是不变的。`cargo`打包时不允许使用此类脚本。
+-   一般来说，构建脚本不应修改外部的任何文件`OUT_DIR`.乍一看似乎没什么问题，但当你把这种箱子当作依赖物使用时，确实会造成问题，因为有一个*含蓄的*来源于`.cargo/registry`应该是不变的。`cargo`打包时不允许使用此类脚本。
 -   这个脚本相对简单，因为它只写出一个生成的小文件。人们可以想象，其他更奇特的操作可能会发生，比如从C头文件或其他语言定义生成一个Rust模块。
 -   这个[`rerun-if-changed` instruction](build-scripts.md#rerun-if-changed)告诉Cargo，只有在生成脚本本身发生更改时，才需要重新运行生成脚本。如果没有这一行，如果包中的任何文件发生更改，Cargo将自动运行构建脚本。如果您的代码生成使用了一些输入文件，您可以在这里打印这些文件的列表。
 
@@ -81,9 +81,9 @@ fn main() {
 }
 ```
 
-这才是真正神奇的地方。库正在使用rustc定义的[`include!` macro][include-macro]结合[`concat!`][concat-macro]和[`env!`][env-macro]宏来包含生成的文件(`hello.rs`)进入板条箱的汇编。
+这才是真正神奇的地方。库正在使用rustc定义的[`include!` macro][include-macro]结合[`concat!`][concat-macro]和[`env!`][env-macro]宏来包含生成的文件(`hello.rs`)进入箱子的汇编。
 
-使用这里显示的结构，板条箱可以包含构建脚本本身生成的任意数量的文件。
+使用这里显示的结构，箱子可以包含构建脚本本身生成的任意数量的文件。
 
 [include-macro]: ../../std/macro.include.html
 
@@ -93,7 +93,7 @@ fn main() {
 
 ### Building a native library
 
-有时需要将一些本地C或C++代码作为包的一部分来构建。这是另一个利用构建脚本在Rust板条箱本身之前构建本机库的优秀用例。例如，我们将创建一个Rust库，它调用C来打印“Hello，World！”。
+有时需要将一些本地C或C++代码作为包的一部分来构建。这是另一个利用构建脚本在Rust箱子本身之前构建本机库的优秀用例。例如，我们将创建一个Rust库，它调用C来打印“Hello，World！”。
 
 像上面一样，让我们先看看包的布局：
 
@@ -146,7 +146,7 @@ fn main() {
 }
 ```
 
-这个构建脚本首先将C文件编译成一个对象文件（通过调用`gcc`)然后将该对象文件转换为静态库（通过调用`ar`).最后一步是向Cargo公司反馈，告知我们的产品处于良好状态`out_dir`编译器应该将板条箱链接到`libhello.a`通过`-l static=hello`选项
+这个构建脚本首先将C文件编译成一个对象文件（通过调用`gcc`)然后将该对象文件转换为静态库（通过调用`ar`).最后一步是向Cargo公司反馈，告知我们的产品处于良好状态`out_dir`编译器应该将箱子链接到`libhello.a`通过`-l static=hello`选项
 
 请注意，这种硬编码方法有许多缺点：
 
@@ -161,7 +161,7 @@ crate](https://crates.io/crates/cc)从…起[crates.io].首先，将其添加到
 cc = "1.0"
 ```
 
-然后重写构建脚本以使用此板条箱：
+然后重写构建脚本以使用此箱子：
 
 ```rust,ignore
 // build.rs
@@ -210,7 +210,7 @@ fn main() {
 
 我们走了！这将完成我们使用构建脚本本身从Cargo包构建一些C代码的示例。这也说明了为什么在许多情况下，使用构建依赖项是至关重要的，甚至更简洁！
 
-我们还看到了一个简单的例子，说明了构建脚本如何将板条箱作为一个依赖项，仅用于构建过程，而不用于运行时的板条箱本身。
+我们还看到了一个简单的例子，说明了构建脚本如何将箱子作为一个依赖项，仅用于构建过程，而不用于运行时的箱子本身。
 
 [`cc` crate]: https://crates.io/crates/cc
 
@@ -218,12 +218,12 @@ fn main() {
 
 此示例演示如何链接系统库，以及如何使用构建脚本来支持此用例。
 
-Rust板条箱经常想要链接到系统上提供的本机库，以绑定其功能，或者只是将其用作实现细节的一部分。以平台无关的方式执行此操作时，这是一个相当微妙的问题。如果可能的话，最好是尽可能多地将其外包出去，让消费者尽可能容易地做到这一点。
+Rust箱子经常想要链接到系统上提供的本机库，以绑定其功能，或者只是将其用作实现细节的一部分。以平台无关的方式执行此操作时，这是一个相当微妙的问题。如果可能的话，最好是尽可能多地将其外包出去，让消费者尽可能容易地做到这一点。
 
 在本例中，我们将创建一个到系统zlib库的绑定。这是一个在大多数提供数据压缩的类Unix系统上常见的库。这已经在[`libz-sys`
 crate]，但对于这个例子，我们将做一个极其简化的版本。退房[the source code][libz-source]举个完整的例子。
 
-为了便于找到图书馆的位置，我们将使用[`pkg-config` crate].这个板条箱使用系统的`pkg-config`用于发现有关库的信息的实用程序。它会自动告诉Cargo连接图书馆需要什么。这可能只适用于具有`pkg-config`安装。让我们从设置清单开始：
+为了便于找到图书馆的位置，我们将使用[`pkg-config` crate].这个箱子使用系统的`pkg-config`用于发现有关库的信息的实用程序。它会自动告诉Cargo连接图书馆需要什么。这可能只适用于具有`pkg-config`安装。让我们从设置清单开始：
 
 ```toml
 # Cargo.toml
@@ -238,7 +238,7 @@ links = "z"
 pkg-config = "0.3.16"
 ```
 
-请注意，我们包括了`links`输入`package`桌子这告诉Cargo我们正在连接到`libz`图书馆看见["Using another sys
+请注意，我们包括了`links`输入`package`桌子这告诉Cargo我们正在连接到`libz`图书馆查看["Using another sys
 crate"](#using-another-sys-crate)举个例子来说明这一点。
 
 构建脚本相当简单：
@@ -293,7 +293,7 @@ source][libz-source]以获取更完整的示例。
 
 ### Using another `sys` crate
 
-当使用`links`关键点，板条箱可以设置元数据，这些元数据可以被依赖于它的其他板条箱读取。这提供了一种在板条箱之间传递信息的机制。在本例中，我们将创建一个C库，该库使用来自真实世界的zlib[`libz-sys` crate].
+当使用`links`关键点，箱子可以设置元数据，这些元数据可以被依赖于它的其他箱子读取。这提供了一种在箱子之间传递信息的机制。在本例中，我们将创建一个C库，该库使用来自真实世界的zlib[`libz-sys` crate].
 
 如果你有一个依赖zlib的C库，你可以利用[`libz-sys`
 crate]自动查找或构建它。这非常适合跨平台支持，例如通常不安装zlib的Windows。`libz-sys` [sets
@@ -352,9 +352,9 @@ this](https://github.com/sfackler/rust-openssl/blob/dc72a8e2c429e46c275e528b61a7
 println!("cargo:version_number={:x}", openssl_version);
 ```
 
-此指令会导致`DEP_OPENSSL_VERSION_NUMBER`环境变量设置在任何板条箱中，直接取决于`openssl-sys`.
+此指令会导致`DEP_OPENSSL_VERSION_NUMBER`环境变量设置在任何箱子中，直接取决于`openssl-sys`.
 
-这个`openssl`提供更高级别接口的板条箱指定`openssl-sys`作为一种依赖。这个`openssl`构建脚本可以读取`openssl-sys`使用`DEP_OPENSSL_VERSION_NUMBER`环境变量。它用这个来产生一些[`cfg`
+这个`openssl`提供更高级别接口的箱子指定`openssl-sys`作为一种依赖。这个`openssl`构建脚本可以读取`openssl-sys`使用`DEP_OPENSSL_VERSION_NUMBER`环境变量。它用这个来产生一些[`cfg`
 values](https://github.com/sfackler/rust-openssl/blob/dc72a8e2c429e46c275e528b61a733a66e7877fc/openssl/build.rs#L18-L36):
 
 ```rust,ignore

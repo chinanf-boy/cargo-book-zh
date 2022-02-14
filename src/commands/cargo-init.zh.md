@@ -16,7 +16,7 @@ cargo init-在现有目录中创建一个新的Cargo包
 
 如果该目录不在VCS存储库中，则会创建一个新的存储库（请参阅`--vcs`下面）。
 
-看见[cargo-new(1)](cargo-new.html)类似的命令将在新目录中创建新包。
+查看[cargo-new(1)](cargo-new.html)类似的命令将在新目录中创建新包。
 
 ## OPTIONS
 
@@ -106,7 +106,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

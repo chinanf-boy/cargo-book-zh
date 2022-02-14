@@ -14,7 +14,7 @@ Cargo登录-从注册表本地保存API令牌
 
 如果*代币*未指定参数，将从stdin读取。
 
-板条箱的API标记。io可以从<https://crates.io/me>.
+箱子的API标记。io可以从<https://crates.io/me>.
 
 注意对代币保密，不得与他人分享。
 
@@ -82,7 +82,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

@@ -6,7 +6,7 @@
 
 有些软件包使用特性，因此如果未启用这些特性，它会减小机箱的大小并缩短编译时间。例如：
 
--   [`syn`]是一种用于解析锈迹代码的流行板条箱。由于它非常流行，因此有助于减少编译时间，因为它会影响很多项目。它有一个[clearly documented list][syn-features]可用于最小化其包含的代码量的功能。
+-   [`syn`]是一种用于解析锈迹代码的流行箱子。由于它非常流行，因此有助于减少编译时间，因为它会影响很多项目。它有一个[clearly documented list][syn-features]可用于最小化其包含的代码量的功能。
 -   [`regex`]有一个[several features][regex-features]那是[well
     documented][regex-docs].删除Unicode支持可以减少生成的文件大小，因为它可以删除一些大型表。
 -   [`winapi`]有[a large number][winapi-features]限制其支持的Windows API绑定的功能。
@@ -71,7 +71,7 @@
 
 ### Re-exporting dependency features
 
-可以方便地从依赖项重新导出功能。这允许依赖于板条箱的用户控制这些特性，而无需直接指定这些依赖项。例如[`regex`][re-exports the features][regex-re-export]从[`regex_syntax`][regex_syntax-features]包裹用户`regex`不需要知道`regex_syntax`但他们仍然可以访问它包含的功能。
+可以方便地从依赖项重新导出功能。这允许依赖于箱子的用户控制这些特性，而无需直接指定这些依赖项。例如[`regex`][re-exports the features][regex-re-export]从[`regex_syntax`][regex_syntax-features]包裹用户`regex`不需要知道`regex_syntax`但他们仍然可以访问它包含的功能。
 
 [regex-re-export]: https://github.com/rust-lang/regex/blob/1.4.2/Cargo.toml#L65-L89
 
@@ -123,7 +123,7 @@ precedence][log-cfg-if]。如果启用了多个功能，则与较低级别相比
 
 有些软件包有一个与之密切相关的proc宏。但是，并非所有用户都需要使用proc宏。通过将proc宏设置为可选依赖项，可以方便地选择是否包含它。这很有帮助，因为有时proc宏版本必须与父包保持同步，并且您不希望强制用户必须指定这两个依赖项并保持它们同步。
 
-例如[`serde`]它有一个[`derive`][serde-derive]使[`serde_derive`]过程宏。这个`serde_derive`板条箱被紧紧地绑在一起`serde`，所以它使用[equals version
+例如[`serde`]它有一个[`derive`][serde-derive]使[`serde_derive`]过程宏。这个`serde_derive`箱子被紧紧地绑在一起`serde`，所以它使用[equals version
 requirement][serde-equals]以确保它们保持同步。
 
 [`serde`]: https://crates.io/crates/serde
@@ -138,7 +138,7 @@ requirement][serde-equals]以确保它们保持同步。
 
 一些软件包想要尝试API或语言功能，这些功能只在Rust上可用[nightly channel].但是，他们可能不想要求用户也使用夜间频道。例如[`wasm-bindgen`]它有一个[`nightly` feature][wasm-bindgen-nightly]这使得[extended API][wasm-bindgen-unsize]使用[`Unsize`]在撰写本文时，只在夜间频道提供的标记特征。
 
-请注意，在它使用的板条箱的底部[`cfg_attr` to enable the nightly
+请注意，在它使用的箱子的底部[`cfg_attr` to enable the nightly
 feature][wasm-bindgen-cfg_attr].记住[`feature` attribute]与Cargo特性无关，用于选择实验性语言特性。
 
 这个[`simd_support` feature][rand-simd_support]关于[`rand`]package是另一个例子，它依赖于只在夜间频道上构建的依赖项。

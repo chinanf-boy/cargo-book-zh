@@ -120,7 +120,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 
@@ -137,7 +137,7 @@ for more information about how toolchain overrides work.</dd>
 
     Cargo包装：1.0.0
 
-3.  检索的包规范`foo`从板条箱里。io:
+3.  检索的包规范`foo`从箱子里。io:
 
     Cargo包装<https://github.com/rust-lang/crates.io-index#foo>
 

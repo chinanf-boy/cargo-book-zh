@@ -17,7 +17,7 @@ fetch`除非锁文件更改。
 
 如果`--target`如果未指定，则将获取所有目标依赖项。
 
-另见[cargo-prefetch](https://crates.io/crates/cargo-prefetch)插件，它添加了一个命令来下载流行的板条箱。如果您计划在没有网络的情况下使用Cargo`--offline`选项
+另见[cargo-prefetch](https://crates.io/crates/cargo-prefetch)插件，它添加了一个命令来下载流行的箱子。如果您计划在没有网络的情况下使用Cargo`--offline`选项
 
 ## OPTIONS
 
@@ -119,7 +119,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo安装-构建并安装生锈的二进制文件
+Cargo安装-构建并安装 Rust 的二进制文件
 
 ## SYNOPSIS
 
@@ -10,7 +10,7 @@ Cargo安装-构建并安装生锈的二进制文件
 
 ## DESCRIPTION
 
-此命令管理Cargo的本地安装的二进制板条箱集。只有包含可执行文件的包`[[bin]]`或`[[example]]`可以安装目标，所有可执行文件都安装到安装根目录中`bin`文件夹
+此命令管理Cargo的本地安装的二进制箱子集。只有包含可执行文件的包`[[bin]]`或`[[example]]`可以安装目标，所有可执行文件都安装到安装根目录中`bin`文件夹
 
 按照优先顺序确定安装根目录：
 
@@ -20,9 +20,9 @@ Cargo安装-构建并安装生锈的二进制文件
 -   `CARGO_HOME`环境变量
 -   `$HOME/.cargo`
 
-有多个来源可以安装板条箱。默认位置是板条箱。但是`--git`, `--path`和`--registry`标志可以更改此源。如果源包含多个包（例如crates.io或带有多个板条箱的git存储库），则*大木箱*参数必须指明应该安装哪个板条箱。
+有多个来源可以安装箱子。默认位置是箱子。但是`--git`, `--path`和`--registry`标志可以更改此源。如果源包含多个包（例如crates.io或带有多个箱子的git存储库），则*大木箱*参数必须指明应该安装哪个箱子。
 
-从板条箱到板条箱。io可以选择通过`--version`来自git存储库的标志和类似的包可以选择性地指定应该安装的分支、标记或修订。如果一个板条箱有多个二进制文件`--bin`参数只能选择性地安装其中一个，如果您愿意安装示例`--example`也可以使用参数。
+从箱子到箱子。io可以选择通过`--version`来自git存储库的标志和类似的包可以选择性地指定应该安装的分支、标记或修订。如果一个箱子有多个二进制文件`--bin`参数只能选择性地安装其中一个，如果您愿意安装示例`--example`也可以使用参数。
 
 如果软件包已经安装，如果安装的版本似乎不是最新的，Cargo将重新安装。如果以下任何值发生变化，Cargo将重新安装包装：
 
@@ -34,7 +34,7 @@ Cargo安装-构建并安装生锈的二进制文件
 
 安装`--path`将始终生成和安装，除非另一个包中存在冲突的二进制文件。这个`--force`标志可用于强制Cargo始终重新安装包装。
 
-如果来源是板条箱。io或`--git`然后默认情况下，板条箱将构建在临时目标目录中。为了避免这种情况，可以通过设置`CARGO_TARGET_DIR`将环境变量设置为相对路径。特别是，这对于在连续集成系统上缓存构建工件非常有用。
+如果来源是箱子。io或`--git`然后默认情况下，箱子将构建在临时目标目录中。为了避免这种情况，可以通过设置`CARGO_TARGET_DIR`将环境变量设置为相对路径。特别是，这对于在连续集成系统上缓存构建工件非常有用。
 
 默认情况下`Cargo.lock`包中包含的文件将被忽略。这意味着Cargo将重新计算要使用的依赖项版本，可能会使用自包发布以来发布的较新版本。这个`--locked`选项可以用来迫使Cargo使用包装好的包装`Cargo.lock`文件（如果可用）。这可能有助于确保可复制的构建，使用发布包时可用的完全相同的依赖项集。如果发布的依赖项的更新版本不再构建在您的系统上，或者存在其他问题，那么它可能也很有用。使用`--locked`您将不会收到任何依赖项的修复或更新。请注意，Cargo并没有开始发布`Cargo.lock`1.37版本之前的文件，这意味着使用以前版本发布的包将不会有`Cargo.lock`文件可用。
 
@@ -116,7 +116,7 @@ which is defined by the <code>registry.default</code> config key which defaults 
 
 功能标志允许您控制启用哪些功能。如果未提供任何功能选项，则`default`为每个选定的软件包激活该功能。
 
-看见[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
+查看[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
 
 <dl>
 
@@ -279,7 +279,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 
@@ -288,7 +288,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## EXAMPLES
 
-1.  从板条箱安装或升级软件包。io:
+1.  从箱子安装或升级软件包。io:
 
     Cargo装卸
 

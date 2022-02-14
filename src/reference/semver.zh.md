@@ -164,7 +164,7 @@ fn main() {
 }
 ```
 
-这不被认为是一个重大变化，因为传统上，glob进口是一个已知的兼容性风险。Glob应避免从外部板条箱进口物品。
+这不被认为是一个重大变化，因为传统上，glob进口是一个已知的兼容性风险。Glob应避免从外部箱子进口物品。
 
 <a id="struct-add-private-field-when-public"></a>
 
@@ -440,7 +440,7 @@ impl Trait for Foo {}  // Error: not all trait items implemented
 缓解策略：
 
 -   始终为新关联的特征项提供默认实现或值。
--   在介绍这种特质时，使用[sealed trait]防止板条箱外的用户实现该特性的技术。
+-   在介绍这种特质时，使用[sealed trait]防止箱子外的用户实现该特性的技术。
 
 <a id="trait-item-signature"></a>
 
@@ -479,7 +479,7 @@ impl Trait for Foo {
 缓解策略：
 
 -   引入带有默认实现的新项，以覆盖新功能，而不是修改现有项。
--   在介绍这种特质时，使用[sealed trait]防止板条箱外的用户实现该特性的技术。
+-   在介绍这种特质时，使用[sealed trait]防止箱子外的用户实现该特性的技术。
 
 <a id="trait-new-default-item"></a>
 
@@ -521,7 +521,7 @@ fn main() {
 请注意，这种模糊性确实存在*不*存在的名称冲突[inherent
 implementations]，因为他们优先于特质项目。
 
-看见[trait-object-safety](#trait-object-safety)在添加特性项时要考虑的特殊情况。
+查看[trait-object-safety](#trait-object-safety)在添加特性项时要考虑的特殊情况。
 
 缓解策略：
 
@@ -588,7 +588,7 @@ impl Trait for Foo {}  // Error: missing generics
 
 缓解策略：
 
--   看见[adding a defaulted trait type parameter](#trait-new-parameter-default).
+-   查看[adding a defaulted trait type parameter](#trait-new-parameter-default).
 
 <a id="trait-new-parameter-default"></a>
 
@@ -1044,9 +1044,9 @@ fn example() {
 
 ### Possibly-breaking: changing the minimum version of Rust required
 
-在新版本的Rust中引入新功能可以打破使用旧版本Rust的项目。这还包括在新发布的Cargo中使用新功能，以及要求在之前在stable上工作的板条箱中只使用夜间功能。
+在新版本的Rust中引入新功能可以打破使用旧版本Rust的项目。这还包括在新发布的Cargo中使用新功能，以及要求在之前在stable上工作的箱子中只使用夜间功能。
 
-出于各种原因，一些项目选择在小版本中允许这种情况。更新到更新版本的Rust通常相对容易。Rust还有一个快速的6周发布周期，一些项目将在一个发布窗口内提供兼容性（例如当前的稳定版本加上N个以前的版本）。请记住，一些大型项目可能无法快速更新其生锈工具链。
+出于各种原因，一些项目选择在小版本中允许这种情况。更新到更新版本的Rust通常相对容易。Rust还有一个快速的6周发布周期，一些项目将在一个发布窗口内提供兼容性（例如当前的稳定版本加上N个以前的版本）。请记住，一些大型项目可能无法快速更新其 Rust 工具链。
 
 缓解策略：
 

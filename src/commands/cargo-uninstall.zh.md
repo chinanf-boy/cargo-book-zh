@@ -2,7 +2,7 @@
 
 ## NAME
 
-卸载Cargo-清除生锈的二进制文件
+卸载Cargo-清除 Rust 的二进制文件
 
 ## SYNOPSIS
 
@@ -12,7 +12,7 @@
 
 此命令将删除随一起安装的软件包[cargo-install(1)](cargo-install.html)这个*规格*参数是要删除的包的包ID规范（请参阅[cargo-pkgid(1)](cargo-pkgid.html)).
 
-默认情况下，板条箱中的所有二进制文件都会被删除，但`--bin`和`--example`标志只能用于删除特定的二进制文件。
+默认情况下，箱子中的所有二进制文件都会被删除，但`--bin`和`--example`标志只能用于删除特定的二进制文件。
 
 按照优先顺序确定安装根目录：
 
@@ -92,7 +92,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

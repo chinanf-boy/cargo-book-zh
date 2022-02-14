@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo验证项目-检查板条箱舱单的正确性
+Cargo验证项目-检查箱子舱单的正确性
 
 ## SYNOPSIS
 
@@ -108,7 +108,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

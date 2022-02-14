@@ -12,7 +12,7 @@ Cargo修复-自动修复rustc报告的线头警告
 
 这个Cargo子命令将自动从诸如警告之类的诊断中获取rustc的建议，并将其应用到源代码中。这是为了帮助自动化任务，而rustc本身已经知道如何告诉您修复这些任务！
 
-执行`cargo fix`引擎盖下会执行吗[cargo-check(1)](cargo-check.html)。适用于您的板条箱的任何警告都将自动修复（如果可能），并且在检查过程完成后，将显示所有剩余的警告。例如，如果要对当前包应用所有修复程序，可以运行：
+执行`cargo fix`引擎盖下会执行吗[cargo-check(1)](cargo-check.html)。适用于您的箱子的任何警告都将自动修复（如果可能），并且在检查过程完成后，将显示所有剩余的警告。例如，如果要对当前包应用所有修复程序，可以运行：
 
 ```
 cargo fix
@@ -84,7 +84,7 @@ edition.</dd>
 
 默认情况下，如果未提供包选择选项，则选择的包取决于选择的清单文件（如果需要，则基于当前工作目录）`--manifest-path`未给出）。如果清单是工作区的根目录，则会选择工作区默认成员，否则只会选择清单定义的包。
 
-可以使用`workspace.default-members`输入根清单。如果未设置，虚拟工作区将包括所有工作区成员（相当于传递）`--workspace`)，非虚拟工作区将只包括根板条箱本身。
+可以使用`workspace.default-members`输入根清单。如果未设置，虚拟工作区将包括所有工作区成员（相当于传递）`--workspace`)，非虚拟工作区将只包括根箱子本身。
 
 <dl>
 
@@ -173,7 +173,7 @@ manifest settings for the target.</dd>
 
 功能标志允许您控制启用哪些功能。如果未提供任何功能选项，则`default`为每个选定的软件包激活该功能。
 
-看见[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
+查看[the features documentation](../reference/features.html#command-line-feature-options)更多细节。
 
 <dl>
 
@@ -350,7 +350,7 @@ the number of CPUs.</dd>
 
 ## ENVIRONMENT
 
-看见[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
+查看[the reference](../reference/environment-variables.html)有关Cargo读取的环境变量的详细信息。
 
 ## EXIT STATUS
 

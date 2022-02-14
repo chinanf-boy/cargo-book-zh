@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Features - Rust Cargo 官书（非官方翻译)</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Cargo ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.zh.html">Introduction</a></li><li class="chapter-item expanded "><a href="../getting-started/index.zh.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting-started/installation.zh.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../getting-started/first-steps.zh.html"><strong aria-hidden="true">1.2.</strong> First Steps with Cargo</a></li></ol></li><li class="chapter-item expanded "><a href="../guide/index.zh.html"><strong aria-hidden="true">2.</strong> Cargo Guide</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../guide/why-cargo-exists.zh.html"><strong aria-hidden="true">2.1.</strong> Why Cargo Exists</a></li><li class="chapter-item expanded "><a href="../guide/creating-a-new-project.zh.html"><strong aria-hidden="true">2.2.</strong> Creating a New Package</a></li><li class="chapter-item expanded "><a href="../guide/working-on-an-existing-project.zh.html"><strong aria-hidden="true">2.3.</strong> Working on an Existing Package</a></li><li class="chapter-item expanded "><a href="../guide/dependencies.zh.html"><strong aria-hidden="true">2.4.</strong> Dependencies</a></li><li class="chapter-item expanded "><a href="../guide/project-layout.zh.html"><strong aria-hidden="true">2.5.</strong> Package Layout</a></li><li class="chapter-item expanded "><a href="../guide/cargo-toml-vs-cargo-lock.zh.html"><strong aria-hidden="true">2.6.</strong> Cargo.toml vs Cargo.lock</a></li><li class="chapter-item expanded "><a href="../guide/tests.zh.html"><strong aria-hidden="true">2.7.</strong> Tests</a></li><li class="chapter-item expanded "><a href="../guide/continuous-integration.zh.html"><strong aria-hidden="true">2.8.</strong> Continuous Integration</a></li><li class="chapter-item expanded "><a href="../guide/cargo-home.zh.html"><strong aria-hidden="true">2.9.</strong> Cargo Home</a></li><li class="chapter-item expanded "><a href="../guide/build-cache.zh.html"><strong aria-hidden="true">2.10.</strong> Build Cache</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/index.zh.html"><strong aria-hidden="true">3.</strong> Cargo Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/specifying-dependencies.zh.html"><strong aria-hidden="true">3.1.</strong> Specifying Dependencies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/overriding-dependencies.zh.html"><strong aria-hidden="true">3.1.1.</strong> Overriding Dependencies</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/manifest.zh.html"><strong aria-hidden="true">3.2.</strong> The Manifest Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/cargo-targets.zh.html"><strong aria-hidden="true">3.2.1.</strong> Cargo Targets</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/workspaces.zh.html"><strong aria-hidden="true">3.3.</strong> Workspaces</a></li><li class="chapter-item expanded "><a href="../reference/features.zh.html" class="active"><strong aria-hidden="true">3.4.</strong> Features</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/features-examples.zh.html"><strong aria-hidden="true">3.4.1.</strong> Features Examples</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/profiles.zh.html"><strong aria-hidden="true">3.5.</strong> Profiles</a></li><li class="chapter-item expanded "><a href="../reference/config.zh.html"><strong aria-hidden="true">3.6.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="../reference/environment-variables.zh.html"><strong aria-hidden="true">3.7.</strong> Environment Variables</a></li><li class="chapter-item expanded "><a href="../reference/build-scripts.zh.html"><strong aria-hidden="true">3.8.</strong> Build Scripts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/build-script-examples.zh.html"><strong aria-hidden="true">3.8.1.</strong> Build Script Examples</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/publishing.zh.html"><strong aria-hidden="true">3.9.</strong> Publishing on crates.io</a></li><li class="chapter-item expanded "><a href="../reference/pkgid-spec.zh.html"><strong aria-hidden="true">3.10.</strong> Package ID Specifications</a></li><li class="chapter-item expanded "><a href="../reference/source-replacement.zh.html"><strong aria-hidden="true">3.11.</strong> Source Replacement</a></li><li class="chapter-item expanded "><a href="../reference/external-tools.zh.html"><strong aria-hidden="true">3.12.</strong> External Tools</a></li><li class="chapter-item expanded "><a href="../reference/registries.zh.html"><strong aria-hidden="true">3.13.</strong> Registries</a></li><li class="chapter-item expanded "><a href="../reference/resolver.zh.html"><strong aria-hidden="true">3.14.</strong> Dependency Resolution</a></li><li class="chapter-item expanded "><a href="../reference/semver.zh.html"><strong aria-hidden="true">3.15.</strong> SemVer Compatibility</a></li><li class="chapter-item expanded "><a href="../reference/future-incompat-report.zh.html"><strong aria-hidden="true">3.16.</strong> Future incompat report</a></li><li class="chapter-item expanded "><a href="../reference/unstable.zh.html"><strong aria-hidden="true">3.17.</strong> Unstable Features</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/index.zh.html"><strong aria-hidden="true">4.</strong> Cargo Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/general-commands.zh.html"><strong aria-hidden="true">4.1.</strong> General Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo.zh.html"><strong aria-hidden="true">4.1.1.</strong> cargo</a></li><li class="chapter-item expanded "><a href="../commands/cargo-help.zh.html"><strong aria-hidden="true">4.1.2.</strong> cargo help</a></li><li class="chapter-item expanded "><a href="../commands/cargo-version.zh.html"><strong aria-hidden="true">4.1.3.</strong> cargo version</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/build-commands.zh.html"><strong aria-hidden="true">4.2.</strong> Build Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-bench.zh.html"><strong aria-hidden="true">4.2.1.</strong> cargo bench</a></li><li class="chapter-item expanded "><a href="../commands/cargo-build.zh.html"><strong aria-hidden="true">4.2.2.</strong> cargo build</a></li><li class="chapter-item expanded "><a href="../commands/cargo-check.zh.html"><strong aria-hidden="true">4.2.3.</strong> cargo check</a></li><li class="chapter-item expanded "><a href="../commands/cargo-clean.zh.html"><strong aria-hidden="true">4.2.4.</strong> cargo clean</a></li><li class="chapter-item expanded "><a href="../commands/cargo-doc.zh.html"><strong aria-hidden="true">4.2.5.</strong> cargo doc</a></li><li class="chapter-item expanded "><a href="../commands/cargo-fetch.zh.html"><strong aria-hidden="true">4.2.6.</strong> cargo fetch</a></li><li class="chapter-item expanded "><a href="../commands/cargo-fix.zh.html"><strong aria-hidden="true">4.2.7.</strong> cargo fix</a></li><li class="chapter-item expanded "><a href="../commands/cargo-run.zh.html"><strong aria-hidden="true">4.2.8.</strong> cargo run</a></li><li class="chapter-item expanded "><a href="../commands/cargo-rustc.zh.html"><strong aria-hidden="true">4.2.9.</strong> cargo rustc</a></li><li class="chapter-item expanded "><a href="../commands/cargo-rustdoc.zh.html"><strong aria-hidden="true">4.2.10.</strong> cargo rustdoc</a></li><li class="chapter-item expanded "><a href="../commands/cargo-test.zh.html"><strong aria-hidden="true">4.2.11.</strong> cargo test</a></li><li class="chapter-item expanded "><a href="../commands/cargo-report.zh.html"><strong aria-hidden="true">4.2.12.</strong> cargo report</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/manifest-commands.zh.html"><strong aria-hidden="true">4.3.</strong> Manifest Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-generate-lockfile.zh.html"><strong aria-hidden="true">4.3.1.</strong> cargo generate-lockfile</a></li><li class="chapter-item expanded "><a href="../commands/cargo-locate-project.zh.html"><strong aria-hidden="true">4.3.2.</strong> cargo locate-project</a></li><li class="chapter-item expanded "><a href="../commands/cargo-metadata.zh.html"><strong aria-hidden="true">4.3.3.</strong> cargo metadata</a></li><li class="chapter-item expanded "><a href="../commands/cargo-pkgid.zh.html"><strong aria-hidden="true">4.3.4.</strong> cargo pkgid</a></li><li class="chapter-item expanded "><a href="../commands/cargo-tree.zh.html"><strong aria-hidden="true">4.3.5.</strong> cargo tree</a></li><li class="chapter-item expanded "><a href="../commands/cargo-update.zh.html"><strong aria-hidden="true">4.3.6.</strong> cargo update</a></li><li class="chapter-item expanded "><a href="../commands/cargo-vendor.zh.html"><strong aria-hidden="true">4.3.7.</strong> cargo vendor</a></li><li class="chapter-item expanded "><a href="../commands/cargo-verify-project.zh.html"><strong aria-hidden="true">4.3.8.</strong> cargo verify-project</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/package-commands.zh.html"><strong aria-hidden="true">4.4.</strong> Package Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-init.zh.html"><strong aria-hidden="true">4.4.1.</strong> cargo init</a></li><li class="chapter-item expanded "><a href="../commands/cargo-install.zh.html"><strong aria-hidden="true">4.4.2.</strong> cargo install</a></li><li class="chapter-item expanded "><a href="../commands/cargo-new.zh.html"><strong aria-hidden="true">4.4.3.</strong> cargo new</a></li><li class="chapter-item expanded "><a href="../commands/cargo-search.zh.html"><strong aria-hidden="true">4.4.4.</strong> cargo search</a></li><li class="chapter-item expanded "><a href="../commands/cargo-uninstall.zh.html"><strong aria-hidden="true">4.4.5.</strong> cargo uninstall</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/publishing-commands.zh.html"><strong aria-hidden="true">4.5.</strong> Publishing Commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cargo-login.zh.html"><strong aria-hidden="true">4.5.1.</strong> cargo login</a></li><li class="chapter-item expanded "><a href="../commands/cargo-owner.zh.html"><strong aria-hidden="true">4.5.2.</strong> cargo owner</a></li><li class="chapter-item expanded "><a href="../commands/cargo-package.zh.html"><strong aria-hidden="true">4.5.3.</strong> cargo package</a></li><li class="chapter-item expanded "><a href="../commands/cargo-publish.zh.html"><strong aria-hidden="true">4.5.4.</strong> cargo publish</a></li><li class="chapter-item expanded "><a href="../commands/cargo-yank.zh.html"><strong aria-hidden="true">4.5.5.</strong> cargo yank</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../faq.zh.html"><strong aria-hidden="true">5.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="../appendix/glossary.zh.html"><strong aria-hidden="true">6.</strong> Appendix: Glossary</a></li><li class="chapter-item expanded "><a href="../appendix/git-authentication.zh.html"><strong aria-hidden="true">7.</strong> Appendix: Git Authentication</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust Cargo 官书（非官方翻译)</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/chinanf-boy/cargo-book-zh/edit/master/src/reference/features.zh.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="features"><a class="header" href="#features">Features</a></h2>
+<p>Cargo“特征”提供了一种表达<a href="../../reference/conditional-compilation.html">conditional compilation</a>和<a href="#optional-dependencies">optional dependencies</a>.一个包在<code>[features]</code>表格<code>Cargo.toml</code>，每个功能都可以启用或禁用。可以在命令行上使用以下标志启用正在生成的包的功能：<code>--features</code>。可以在中的依赖项声明中启用依赖项功能<code>Cargo.toml</code>.</p>
+<p>另见<a href="features-examples.html">Features Examples</a>第二章介绍了如何使用功能的一些示例。</p>
+<h3 id="the-features-section"><a class="header" href="#the-features-section">The <code>[features]</code> section</a></h3>
+<p>特征定义在<code>[features]</code>入座<code>Cargo.toml</code>。每个功能都指定了它启用的其他功能或可选依赖项的数组。以下示例说明了如何将功能用于二维图像处理库，其中可以选择包括对不同图像格式的支持：</p>
+<pre><code class="language-toml">[features]
+# Defines a feature named `webp` that does not enable any other features.
+webp = []
+</code></pre>
+<p>定义了此功能后，<a href="../../reference/conditional-compilation.html"><code>cfg</code> expressions</a>可用于在编译时有条件地包含代码以支持请求的功能。例如，内部<code>lib.rs</code>一揽子计划的内容可能包括：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// This conditionally includes a module which implements WEBP support.
+#[cfg(feature = &quot;webp&quot;)]
+pub mod webp;
+<span class="boring">}
+</span></code></pre></pre>
+<p>使用<code>rustc</code> <a href="../../rustc/command-line-arguments.html#option-cfg"><code>--cfg</code> flag</a>，代码可以通过<a href="../../reference/conditional-compilation.html#the-cfg-attribute"><code>cfg</code> attribute</a>或者<a href="../../std/macro.cfg.html"><code>cfg</code> macro</a>.</p>
+<p>功能可以列出要启用的其他功能。例如，ICO图像格式可以包含BMP和PNG图像，因此当它被启用时，应该确保其他功能也被启用：</p>
+<pre><code class="language-toml">[features]
+bmp = []
+png = []
+ico = [&quot;bmp&quot;, &quot;png&quot;]
+webp = []
+</code></pre>
+<p>功能名称可能包括来自<a href="https://unicode.org/reports/tr31/">Unicode XID standard</a>（其中包括大多数字母），并允许以<code>_</code>或数字<code>0</code>通过<code>9</code>，并且在第一个字符之后还可以包含<code>-</code>, <code>+</code>或<code>.</code>.</p>
+<blockquote>
+<p><strong>笔记</strong>: <a href="https://crates.io/">crates.io</a>对功能名称语法施加额外的约束，这些约束必须是<a href="../../std/primitive.char.html#method.is_ascii_alphanumeric">ASCII alphanumeric</a>角色或<code>_</code>, <code>-</code>或<code>+</code>.</p>
+</blockquote>
+<h3 id="the-default-feature"><a class="header" href="#the-default-feature">The <code>default</code> feature</a></h3>
+<p>默认情况下，除非明确启用，否则所有功能都将被禁用。可以通过指定<code>default</code>特色：</p>
+<pre><code class="language-toml">[features]
+default = [&quot;ico&quot;, &quot;webp&quot;]
+bmp = []
+png = []
+ico = [&quot;bmp&quot;, &quot;png&quot;]
+webp = []
+</code></pre>
+<p>构建包时<code>default</code>功能已启用，从而启用列出的功能。这种行为可以通过以下方式改变：</p>
+<ul>
+<li>这个<code>--no-default-features</code> <a href="#command-line-feature-options">command-line
+flag</a>禁用软件包的默认功能。</li>
+<li>这个<code>default-features = false</code>选项可以在<a href="#dependency-features">dependency
+declaration</a>.</li>
+</ul>
+<blockquote>
+<p><strong>笔记</strong>：在选择默认功能集时要小心。默认功能是一种方便，可以更轻松地使用软件包，而不必强迫用户仔细选择要启用哪些功能以供通用，但也有一些缺点。依赖项自动启用默认功能，除非<code>default-features = false</code>是指定的。这会导致难以确保未启用默认功能，尤其是对于依赖关系图中多次出现的依赖关系。每个包裹都必须确保<code>default-features = false</code>指定以避免启用它们。</p>
+<p>另一个问题是，它可能是一个<a href="#semver-compatibility">SemVer incompatible
+change</a>从默认设置中删除某个功能，因此您应该确信将保留这些功能。</p>
+</blockquote>
+<h3 id="optional-dependencies"><a class="header" href="#optional-dependencies">Optional dependencies</a></h3>
+<p>依赖项可以标记为“可选”，这意味着默认情况下不会编译它们。例如，假设我们的2D图像处理库使用一个外部包来处理GIF图像。这可以这样表达：</p>
+<pre><code class="language-toml">[dependencies]
+gif = { version = &quot;0.11.1&quot;, optional = true }
+</code></pre>
+<p>可选依赖项隐式定义与依赖项同名的功能。这意味着同样的<code>cfg(feature = &quot;gif&quot;)</code>可以在代码中使用语法，并且可以像以下功能一样启用依赖项：<code>--features gif</code>（见<a href="#command-line-feature-options">Command-line feature
+options</a>下面）。</p>
+<blockquote>
+<p><strong>笔记</strong>：中的一个功能<code>[feature]</code>表不能使用与依赖项相同的名称。在夜间频道上，可以通过<a href="unstable.html#namespaced-features">namespaced
+features</a>.</p>
+</blockquote>
+<p>明确定义的功能也可以启用可选的依赖项。只需在功能列表中包含可选依赖项的名称。例如，假设为了支持AVIF图像格式，我们的库需要启用另外两个依赖项：</p>
+<pre><code class="language-toml">[dependencies]
+ravif = { version = &quot;0.6.3&quot;, optional = true }
+rgb = { version = &quot;0.8.25&quot;, optional = true }
+
+[features]
+avif = [&quot;ravif&quot;, &quot;rgb&quot;]
+</code></pre>
+<p>在本例中<code>avif</code>特性将启用列出的两个依赖项。</p>
+<blockquote>
+<p><strong>笔记</strong>：可选包含依赖项的另一种方法是使用<a href="specifying-dependencies.html#platform-specific-dependencies">platform-specific dependencies</a>.这些功能不是使用功能，而是基于目标平台的条件。</p>
+</blockquote>
+<h3 id="dependency-features"><a class="header" href="#dependency-features">Dependency features</a></h3>
+<p>依赖项的功能可以在依赖项声明中启用。这个<code>features</code>键指示要启用的功能：</p>
+<pre><code class="language-toml">[dependencies]
+# Enables the `derive` feature of serde.
+serde = { version = &quot;1.0.118&quot;, features = [&quot;derive&quot;] }
+</code></pre>
+<p>这个<a href="#the-default-feature"><code>default</code> features</a>可以使用禁用<code>default-features = false</code>:</p>
+<pre><code class="language-toml">[dependencies]
+flate2 = { version = &quot;1.0.3&quot;, default-features = false, features = [&quot;zlib&quot;] }
+</code></pre>
+<blockquote>
+<p><strong>笔记</strong>：这可能无法确保禁用默认功能。如果另一个依赖项包括<code>flate2</code>没有具体说明<code>default-features = false</code>，则会启用默认功能。查看<a href="#feature-unification">feature
+unification</a>下面是更多细节。</p>
+</blockquote>
+<p>还可以在中启用依赖项的功能<code>[features]</code>桌子语法是<code>&quot;package-name/feature-name&quot;</code>.例如：</p>
+<pre><code class="language-toml">[dependencies]
+jpeg-decoder = { version = &quot;0.1.20&quot;, default-features = false }
+
+[features]
+# Enables parallel processing support by enabling the &quot;rayon&quot; feature of jpeg-decoder.
+parallel = [&quot;jpeg-decoder/rayon&quot;]
+</code></pre>
+<blockquote>
+<p><strong>笔记</strong>当前位置<code>&quot;package-name/feature-name&quot;</code>语法还将启用<code>package-name</code>如果是可选的依赖项。在夜间频道上，可以通过<a href="unstable.html#weak-dependency-features">weak
+dependency features</a>.</p>
+</blockquote>
+<h3 id="command-line-feature-options"><a class="header" href="#command-line-feature-options">Command-line feature options</a></h3>
+<p>以下命令行标志可用于控制启用了哪些功能：</p>
+<ul>
+<li>
+<p><code>--features</code> <em>特征</em>：启用列出的功能。多个要素可以用逗号或空格分隔。如果使用空格，请确保在从外壳（例如<code>--features &quot;foo bar&quot;</code>).如果在一个系统中构建多个包<a href="workspaces.html">workspace</a>这个<code>package-name/feature-name</code>语法可用于指定特定工作区成员的功能。</p>
+</li>
+<li>
+<p><code>--all-features</code>：激活命令行上选定的所有软件包的所有功能。</p>
+</li>
+<li>
+<p><code>--no-default-features</code>：不激活<a href="#the-default-feature"><code>default</code>
+feature</a>所选软件包的名称。</p>
+</li>
+</ul>
+<h3 id="feature-unification"><a class="header" href="#feature-unification">Feature unification</a></h3>
+<p>功能对于定义它们的包来说是独一无二的。在包上启用功能不会在其他包上启用同名功能。</p>
+<p>当一个依赖项被多个包使用时，Cargo在构建它时将使用该依赖项上启用的所有功能的并集。这有助于确保只使用依赖项的一个副本。看到了吗<a href="resolver.html#features">features section</a>有关详细信息，请参阅解析器文档。</p>
+<p>例如，让我们看看<a href="https://crates.io/crates/winapi"><code>winapi</code></a>使用<a href="https://github.com/retep998/winapi-rs/blob/0.3.9/Cargo.toml#L25-L431">large
+number</a>有很多特点。如果你的包裹依赖于一个包裹<code>foo</code>它支持的“fileapi”和“handleapi”功能<code>winapi</code>，以及另一种依赖关系<code>bar</code>它启用了的“std”和“winnt”功能<code>winapi</code>然后<code>winapi</code>将在启用所有这四个功能的情况下构建。</p>
+<p><img src="../images/winapi-features.svg" alt="winapi features example" /></p>
+<p>这样做的一个结果是，功能应该<em>添加剂</em>.也就是说，启用功能不应禁用功能，而且启用任何功能组合通常应该是安全的。功能不应引入<a href="#semver-compatibility">SemVer-incompatible change</a>.</p>
+<p>例如，如果您希望可选地支持<a href="../../reference/names/preludes.html#the-no_std-attribute"><code>no_std</code></a>环境，<strong>不要</strong>使用<code>no_std</code>特色相反，使用<code>std</code>特色<em>使能够</em>
+<code>std</code>.例如：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span>#![no_std]
+
+<span class="boring">fn main() {
+</span>#[cfg(feature = &quot;std&quot;)]
+extern crate std;
+
+#[cfg(feature = &quot;std&quot;)]
+pub fn function_that_requires_std() {
+    // ...
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h4 id="mutually-exclusive-features"><a class="header" href="#mutually-exclusive-features">Mutually exclusive features</a></h4>
+<p>在极少数情况下，功能可能相互不兼容。如果可能的话，应该避免这种情况，因为它需要协调依赖关系图中包的所有使用，以避免将它们一起启用。如果不可能，请考虑添加编译错误来检测此场景。例如：</p>
+<pre><code class="language-rust ignore">#[cfg(all(feature = &quot;foo&quot;, feature = &quot;bar&quot;))]
+compile_error!(&quot;feature \&quot;foo\&quot; and feature \&quot;bar\&quot; cannot be enabled at the same time&quot;);
+</code></pre>
+<p>不要使用互斥的特征，考虑其他选项：</p>
+<ul>
+<li>将功能拆分为单独的包。</li>
+<li>当发生冲突时，<a href="features-examples.html#feature-precedence">choose one feature over
+another</a>这个<a href="https://crates.io/crates/cfg-if"><code>cfg-if</code></a>软件包可以帮助编写更复杂的代码<code>cfg</code>表达。</li>
+<li>设计代码以允许同时启用这些功能，并使用运行时选项来控制所使用的功能。例如，使用配置文件、命令行参数或环境变量来选择要启用的行为。</li>
+</ul>
+<h4 id="inspecting-resolved-features"><a class="header" href="#inspecting-resolved-features">Inspecting resolved features</a></h4>
+<p>在复杂的依赖关系图中，有时很难理解如何在不同的软件包上启用不同的功能。这个<a href="../commands/cargo-tree.html"><code>cargo tree</code></a>命令提供了几个选项来帮助检查和可视化哪些功能已启用。一些可供尝试的选项：</p>
+<ul>
+<li><code>cargo tree -e features</code>：这将在依赖关系图中显示功能。每个功能将显示哪个软件包启用了它。</li>
+<li><code>cargo tree -f &quot;{p} {f}&quot;</code>：这是一个更紧凑的视图，显示每个软件包上启用的功能的逗号分隔列表。</li>
+<li><code>cargo tree -e features -i foo</code>：这将反转树，显示功能如何流入给定的包“foo”。这可能很有用，因为查看整个图表可能会非常大，而且会让人不知所措。当您试图找出在特定软件包上启用了哪些功能以及为什么启用时，请使用此选项。请参见本文底部的示例<a href="../commands/cargo-tree.html"><code>cargo tree</code></a>关于如何阅读这一页。</li>
+</ul>
+<h3 id="feature-resolver-version-2"><a class="header" href="#feature-resolver-version-2">Feature resolver version 2</a></h3>
+<p>可以使用指定不同的功能分解程序<code>resolver</code>现场<code>Cargo.toml</code>，就像这样：</p>
+<pre><code class="language-toml">[package]
+name = &quot;my-package&quot;
+version = &quot;1.0.0&quot;
+resolver = &quot;2&quot;
+</code></pre>
+<p>看到了吗<a href="resolver.html#resolver-versions">resolver versions</a>有关指定冲突解决程序版本的详细信息，请参见第节。</p>
+<p>版本<code>&quot;2&quot;</code>在一些不需要统一特性的情况下，解析器可以避免统一特性。具体情况见下表<a href="resolver.html#feature-resolver-version-2">resolver chapter</a>，但简而言之，它避免在以下情况下统一：</p>
+<ul>
+<li>在上启用的功能<a href="specifying-dependencies.html#platform-specific-dependencies">platform-specific dependencies</a>对于当前未构建的目标，将忽略。</li>
+<li><a href="specifying-dependencies.html#build-dependencies">Build-dependencies</a>proc宏与普通依赖项不共享功能。</li>
+<li><a href="specifying-dependencies.html#development-dependencies">Dev-dependencies</a>除非构建了需要的目标（如测试或示例），否则不要激活功能。</li>
+</ul>
+<p>在某些情况下，避免统一是必要的。例如，如果生成依赖项启用<code>std</code>特性，并且相同的依赖项用作<code>no_std</code>环境，使能<code>std</code>会破坏建筑。</p>
+<p>然而，一个缺点是，这可能会增加构建时间，因为依赖项被构建了多次（每个都有不同的功能）。使用该版本时<code>&quot;2&quot;</code>解析器，建议检查多次生成的依赖项，以减少总体生成时间。如果不是<em>必修的</em>要构建具有不同特性的复制包，请考虑将特性添加到<code>features</code>列表中的<a href="#dependency-features">dependency
+declaration</a>因此，复制品最终具有相同的特性（因此Cargo只构建一次）。您可以使用<a href="../commands/cargo-tree.html"><code>cargo tree --duplicates</code></a>命令它将显示多次构建的包；查找列出的任何具有相同版本的条目。查看<a href="#inspecting-resolved-features">Inspecting resolved
+features</a>获取有关已解析功能的更多信息。对于生成依赖项，如果使用<code>--target</code>标记，因为在该场景中，生成依赖项总是与正常依赖项分开生成。</p>
+<h4 id="resolver-version-2-command-line-flags"><a class="header" href="#resolver-version-2-command-line-flags">Resolver version 2 command-line flags</a></h4>
+<p>这个<code>resolver = &quot;2&quot;</code>设置也会更改<code>--features</code>和<code>--no-default-features</code> <a href="#command-line-feature-options">command-line options</a>.</p>
+<p>有版本<code>&quot;1&quot;</code>，则只能在当前工作目录中为包启用功能。例如，在包含包的工作区中<code>foo</code>和<code>bar</code>，并且您位于包的目录中<code>foo</code>，然后执行命令<code>cargo build -p bar --features bar-feat</code>，这将失败，因为<code>--features</code>仅允许在上启用功能的标志<code>foo</code>.</p>
+<p>具有<code>resolver = &quot;2&quot;</code>，features标志允许为在命令行上选择的任何软件包启用功能<code>-p</code>和<code>--workspace</code>选项。例如：</p>
+<pre><code class="language-sh"># This command is allowed with resolver = &quot;2&quot;, regardless of which directory
+# you are in.
+cargo build -p foo -p bar --features foo-feat,bar-feat
+
+# This explicit equivalent works with any resolver version:
+cargo build -p foo -p bar --features foo/foo-feat,bar/bar-feat
+</code></pre>
+<p>此外<code>resolver = &quot;1&quot;</code>这个<code>--no-default-features</code>flag仅禁用当前目录中包的默认功能。对于版本“2”，它将禁用所有工作区成员的默认功能。</p>
+<h3 id="build-scripts"><a class="header" href="#build-scripts">Build scripts</a></h3>
+<p><a href="build-scripts.html">Build scripts</a>可以通过检查<code>CARGO_FEATURE_&lt;name&gt;</code>环境变量，在哪里<code>&lt;name&gt;</code>功能名称是否已转换为大写和小写<code>-</code>皈依<code>_</code>.</p>
+<h3 id="required-features"><a class="header" href="#required-features">Required features</a></h3>
+<p>这个<a href="cargo-targets.html#the-required-features-field"><code>required-features</code> field</a>可用于禁用特定的<a href="cargo-targets.html">Cargo
+targets</a>如果功能未启用。有关更多详细信息，请参阅链接文档。</p>
+<h3 id="semver-compatibility"><a class="header" href="#semver-compatibility">SemVer compatibility</a></h3>
+<p>启用功能不应引入SemVer不兼容的更改。例如，该功能不应以可能破坏现有用途的方式更改现有API。有关哪些更改兼容的更多详细信息，请参阅<a href="semver.html">SemVer Compatibility chapter</a>.</p>
+<p>添加和删除功能定义和可选依赖项时应小心，因为这些有时可能是向后不兼容的更改。更多详细信息请参见<a href="semver.html#cargo">Cargo section</a>在SemVer兼容性章节中。简而言之，遵循以下规则：</p>
+<ul>
+<li>在小版本中，通常可以安全地执行以下操作：
+<ul>
+<li>添加一个<a href="semver.html#cargo-feature-add">new feature</a>或<a href="semver.html#cargo-dep-add">optional dependency</a>.</li>
+<li><a href="semver.html#cargo-change-dep-feature">Change the features used on a dependency</a>.</li>
+</ul>
+</li>
+<li>通常应注意以下几点：<strong>不</strong>在小版本中完成：
+<ul>
+<li><a href="semver.html#cargo-feature-remove">Remove a feature</a>或<a href="semver.html#cargo-remove-opt-dep">optional dependency</a>.</li>
+<li><a href="semver.html#item-remove">Moving existing public code behind a feature</a>.</li>
+<li><a href="semver.html#cargo-feature-remove-another">Remove a feature from a feature list</a>.</li>
+</ul>
+</li>
+</ul>
+<p>有关注意事项和示例，请参见链接。</p>
+<h3 id="feature-documentation-and-discovery"><a class="header" href="#feature-documentation-and-discovery">Feature documentation and discovery</a></h3>
+<p>我们鼓励您记录软件包中提供的功能。这可以通过添加<a href="../../rustdoc/how-to-write-documentation.html">doc comments</a>在顶部<code>lib.rs</code>.作为示例，请参见<a href="https://github.com/rust-lang/regex/blob/1.4.2/src/lib.rs#L488-L583">regex crate source</a>，渲染时可以在<a href="https://docs.rs/regex/1.4.2/regex/#crate-features">docs.rs</a>如果您有其他文档，例如用户指南，请考虑在那里添加文档（例如，参见<a href="https://serde.rs/feature-flags.html">serde.rs</a>如果您有一个二进制项目，请考虑在项目的自述文件或其他文档中记录特性（例如，参见<a href="https://github.com/mozilla/sccache/blob/0.2.13/README.md#build-requirements">sccache</a>).</p>
+<p>清楚地记录这些特性可以设定对被认为“不稳定”或不应该使用的特性的期望。例如，如果存在可选依赖项，但不希望用户将该可选依赖项明确列为功能，请将其从文档列表中排除。</p>
+<p>发表于<a href="https://docs.rs/">docs.rs</a>可以在中使用元数据<code>Cargo.toml</code>控制在生成文档时启用哪些功能。查看<a href="https://docs.rs/about/metadata">docs.rs metadata documentation</a>更多细节。</p>
+<blockquote>
+<p><strong>笔记</strong>：Rustdoc实验性地支持注释文档，以指示使用某些API需要哪些功能。看到了吗<a href="../../unstable-book/language-features/doc-cfg.html"><code>doc_cfg</code></a>有关更多详细信息，请参阅文档。例如<a href="https://docs.rs/syn/1.0.54/syn/#modules"><code>syn</code>
+documentation</a>，您可以看到彩色框，其中注明了使用它所需的功能。</p>
+</blockquote>
+<h4 id="discovering-features"><a class="header" href="#discovering-features">Discovering features</a></h4>
+<p>当特性被记录在库API中时，用户可以更容易地发现哪些特性可用以及它们的用途。如果软件包的功能文档不可用，可以查看<code>Cargo.toml</code>文件，但有时很难找到它。箱子页面<a href="https://crates.io/">crates.io</a>有到源存储库的链接（如果可用）。像这样的工具<a href="../commands/cargo-vendor.html"><code>cargo vendor</code></a>或<a href="https://crates.io/crates/cargo-clone-crate">cargo-clone-crate</a>可以用来下载源代码并检查它。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../reference/workspaces.zh.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../reference/features-examples.zh.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../reference/workspaces.zh.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../reference/features-examples.zh.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
