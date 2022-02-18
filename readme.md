@@ -43,7 +43,7 @@
 
   - [x] [Specifying Dependencies](src/reference/specifying-dependencies.zh.zh.md)
     - [x] [Overriding Dependencies](src/reference/overriding-dependencies.zh.md)
-  - [ ] [The Manifest Format](src/reference/manifest.zh.md)
+  - [x] [The Manifest Format](src/reference/manifest.zh.md)
     - [x] [Cargo Targets](src/reference/cargo-targets.zh.md)
   - [ ] [Workspaces](src/reference/workspaces.zh.md)
   - [ ] [Features](src/reference/features.zh.md)
