@@ -264,7 +264,7 @@ cargo build --profile release-lto
 
 ### Profile selection
 
-使用的配置文件取决于命令，命令行标志如`--release`或`--profile`，以及包裹（如果是[overrides](#overrides))。如果未指定任何配置文件，则默认配置文件为：
+使用的配置文件取决于命令，命令行标志如`--release`或`--profile`，以及包（如果是[overrides](#overrides))。如果未指定任何配置文件，则默认配置文件为：
 
 | 命令 | 默认配置文件 |
 | --- | ------ |

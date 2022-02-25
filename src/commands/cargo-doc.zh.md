@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo文件-生成包裹的文件
+Cargo文件-生成包的文件
 
 ## SYNOPSIS
 

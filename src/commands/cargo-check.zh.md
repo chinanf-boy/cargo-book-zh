@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo检查-检查当前包裹
+Cargo检查-检查当前包
 
 ## SYNOPSIS
 

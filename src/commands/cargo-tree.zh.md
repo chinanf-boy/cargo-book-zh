@@ -286,7 +286,7 @@ for more information about how toolchain overrides work.</dd>
 
     货运树
 
-2.  显示所有依赖于`syn`包裹：
+2.  显示所有依赖于`syn`包：
 
     货运树-i syn
 
@@ -300,7 +300,7 @@ for more information about how toolchain overrides work.</dd>
     cargo tree -d
     ```
 
-5.  解释为什么为`syn`包裹：
+5.  解释为什么为`syn`包：
 
     ```
     cargo tree -e features -i syn

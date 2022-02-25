@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo搜索——在箱子中搜索包裹。木卫一
+Cargo搜索——在箱子中搜索包。木卫一
 
 ## SYNOPSIS
 
@@ -92,7 +92,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## EXAMPLES
 
-1.  从箱子中寻找包裹。io:
+1.  从箱子中寻找包。io:
 
     Cargo搜索服务
 

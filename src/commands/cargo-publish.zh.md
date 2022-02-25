@@ -2,7 +2,7 @@
 
 ## NAME
 
-Cargo发布-将包裹上载到注册表
+Cargo发布-将包上载到注册表
 
 ## SYNOPSIS
 

@@ -108,7 +108,7 @@ token = "854DvwSlUwEHtIo3kWy6x7UCPKHfzCmy"
 
 > 注意：虽然索引文件名是小写的，但包含包名的字段`Cargo.toml`索引JSON数据区分大小写，可能包含大小写字符。
 
-上面的目录名是根据转换成小写的包名计算的；它由标记表示`{lowerprefix}`.当使用原始包名而不进行大小写转换时，生成的目录名由标记表示`{prefix}`.例如，包裹`MyCrate`会有一个`{prefix}`属于`My/Cr`还有`{lowerprefix}`属于`my/cr`.一般来说，使用`{prefix}`推荐超过`{lowerprefix}`，但每种选择都有利弊。使用`{prefix}`在不区分大小写的文件系统上，会导致（无害但不美观的）目录别名。例如`crate`和`CrateTwo`有`{prefix}`价值观`cr/at`和`Cr/at`; 这些在Unix机器上是不同的，但在Windows上是同一目录的别名。使用大小写规范化的目录可以避免别名，但在区分大小写的文件系统上，更难支持缺少大小写的旧版本的Cargo`{prefix}`/`{lowerprefix}`。例如，nginx重写规则可以轻松构建`{prefix}`但无法将大小写转换为构造`{lowerprefix}`.
+上面的目录名是根据转换成小写的包名计算的；它由标记表示`{lowerprefix}`.当使用原始包名而不进行大小写转换时，生成的目录名由标记表示`{prefix}`.例如，包`MyCrate`会有一个`{prefix}`属于`My/Cr`还有`{lowerprefix}`属于`my/cr`.一般来说，使用`{prefix}`推荐超过`{lowerprefix}`，但每种选择都有利弊。使用`{prefix}`在不区分大小写的文件系统上，会导致（无害但不美观的）目录别名。例如`crate`和`CrateTwo`有`{prefix}`价值观`cr/at`和`Cr/at`; 这些在Unix机器上是不同的，但在Windows上是同一目录的别名。使用大小写规范化的目录可以避免别名，但在区分大小写的文件系统上，更难支持缺少大小写的旧版本的Cargo`{prefix}`/`{lowerprefix}`。例如，nginx重写规则可以轻松构建`{prefix}`但无法将大小写转换为构造`{lowerprefix}`.
 
 注册中心应考虑对包索引中添加的包名称执行限制。Cargo本身允许使用任何名称[alphanumeric], `-`或`_`角色。[crates.io]施加了自身的限制，包括：
 

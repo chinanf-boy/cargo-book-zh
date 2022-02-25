@@ -129,7 +129,7 @@ for more information about how toolchain overrides work.</dd>
 
 ## EXAMPLES
 
-1.  检索的包规范`foo`包裹：
+1.  检索的包规范`foo`包：
 
     Cargo包装费
 

@@ -2,7 +2,7 @@
 
 ## NAME
 
-cargo fetch（Cargo提取）-从网络中提取包裹的依赖项
+cargo fetch（Cargo提取）-从网络中提取包的依赖项
 
 ## SYNOPSIS
 

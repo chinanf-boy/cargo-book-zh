@@ -2,7 +2,7 @@
 
 ## NAME
 
-cargo generate lockfile（Cargo生成锁定文件）-为包裹生成锁定文件
+cargo generate lockfile（Cargo生成锁定文件）-为包生成锁定文件
 
 ## SYNOPSIS
 
