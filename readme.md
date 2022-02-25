@@ -46,7 +46,7 @@
   - [x] [The Manifest Format](src/reference/manifest.zh.md)
     - [x] [Cargo Targets](src/reference/cargo-targets.zh.md)
   - [x] [Workspaces](src/reference/workspaces.zh.md)
-  - [ ] [Features](src/reference/features.zh.md)
+  - [x] [Features](src/reference/features.zh.md)
     - [ ] [Features Examples](src/reference/features-examples.zh.md)
   - [ ] [Profiles](src/reference/profiles.zh.md)
   - [ ] [Configuration](src/reference/config.zh.md)
@@ -122,4 +122,3 @@
 [If help, **buy** me coffee —— 营养跟不上了，给我来瓶营养快线吧! 💰](https://github.com/chinanf-boy/live-need-money)
 
 ---
-
