@@ -47,7 +47,7 @@
     - [x] [Cargo Targets](src/reference/cargo-targets.zh.md)
   - [x] [Workspaces](src/reference/workspaces.zh.md)
   - [x] [Features](src/reference/features.zh.md)
-    - [ ] [Features Examples](src/reference/features-examples.zh.md)
+    - [x] [Features Examples](src/reference/features-examples.zh.md)
   - [ ] [Profiles](src/reference/profiles.zh.md)
   - [ ] [Configuration](src/reference/config.zh.md)
   - [ ] [Environment Variables](src/reference/environment-variables.zh.md)

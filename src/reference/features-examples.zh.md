@@ -111,12 +111,12 @@ requirement][serde-equals]以确保它们保持同步。
 
 <!-- TODO: 2022-2-25  -->
 
-一些软件包想要尝试 API 或语言的实验性功能，这些功能只在 Rust [nightly channel]上可用，但是，他们可能不想要求用户也使用夜间频道。例如[`wasm-bindgen`]它有一个[`nightly` feature][wasm-bindgen-nightly]这使得[extended API][wasm-bindgen-unsize]使用[`Unsize`]在撰写本文时，只在夜间频道提供的标记特征。
+一些软件包想要尝试 API 或语言的实验性功能，这些功能只在 Rust [nightly channel]上可用，但是，他们可能不想要求用户也使用 nightly channel。例如[`wasm-bindgen`]有一个[`nightly` feature][wasm-bindgen-nightly]，使得[extended API][wasm-bindgen-unsize]能够使用 nightly channel 上的[`Unsize`] marker trait。
 
-请注意，在它使用的箱子的底部[`cfg_attr` to enable the nightly
-feature][wasm-bindgen-cfg_attr].记住[`feature` attribute]与 Cargo 功能无关，用于选择实验性语言功能。
+请注意，在箱子的根目录上，它使用[`cfg_attr` 启用 nightly
+功能][wasm-bindgen-cfg_attr]。记住[`feature` 属性]与 Cargo 功能无关，用于实验性语言功能——(可选择性)。
 
-这个[`simd_support` feature][rand-simd_support]关于[`rand`]package 是另一个例子，它依赖于只在夜间频道上构建的依赖项。
+[`rand`]的这个[`simd_support` feature][rand-simd_support]是另一个例子，它依赖于只在 nightly channel 上构建的依赖项。
 
 [`wasm-bindgen`]: https://crates.io/crates/wasm-bindgen
 [nightly channel]: ../../book/appendix-07-nightly-rust.html
@@ -130,8 +130,8 @@ feature][wasm-bindgen-cfg_attr].记住[`feature` attribute]与 Cargo 功能无�
 
 ### Experimental features
 
-有些软件包有新的功能，他们可能想试用，而不必保证这些 API 的稳定性。这些功能通常被记录为实验性的，因此将来可能会改变或中断，即使是在一个小版本中。例如[`async-std`]包，它有一个[`unstable` feature][async-std-unstable]哪一个[gates
-new APIs][async-std-gate]人们可以选择使用，但可能还没有完全准备好被依赖。
+有些软件包有新的功能，他们可能想试用，却不保证这些 API 的稳定性。这些功能通常被记录为实验性的，因为将来可能会改变或中断（即使是在一个小版本中）。例如[`async-std`]包，它有一个[`unstable` feature][async-std-unstable]，会有个[gates
+new APIs][async-std-gate]能选择使用，但可能还没有完全准备好被依赖。
 
 [`async-std`]: https://crates.io/crates/async-std
 [async-std-unstable]: https://github.com/async-rs/async-std/blob/v1.8.0/Cargo.toml#L38-L42
